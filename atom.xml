@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>darebeat</title>
+  
+  <subtitle>知识分享</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2022-11-17T07:38:12.733Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>darebeat</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ODPS视图使用方案研究</title>
+    <link href="http://example.com/bigdata/2e8ba1a50f1f/"/>
+    <id>http://example.com/bigdata/2e8ba1a50f1f/</id>
+    <published>2022-07-01T12:54:33.000Z</published>
+    <updated>2022-11-17T07:38:12.733Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="bigdata" scheme="http://example.com/categories/bigdata/"/>
+    
+    
+    <category term="odps" scheme="http://example.com/tags/odps/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ODPS重点参数语法-使用小记</title>
+    <link href="http://example.com/bigdata/e0bf7a72d4cc/"/>
+    <id>http://example.com/bigdata/e0bf7a72d4cc/</id>
+    <published>2022-06-17T04:57:00.000Z</published>
+    <updated>2022-11-17T07:38:12.733Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="bigdata" scheme="http://example.com/categories/bigdata/"/>
+    
+    
+    <category term="odps" scheme="http://example.com/tags/odps/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL基础知识</title>
+    <link href="http://example.com/database/fb2181cebc1b/"/>
+    <id>http://example.com/database/fb2181cebc1b/</id>
+    <published>2022-06-13T13:21:07.000Z</published>
+    <updated>2022-11-17T07:38:12.727Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="database" scheme="http://example.com/categories/database/"/>
+    
+    
+    <category term="database" scheme="http://example.com/tags/database/"/>
+    
+    <category term="mysql" scheme="http://example.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Puppeteer用法记录</title>
+    <link href="http://example.com/tools/343775dbb396/"/>
+    <id>http://example.com/tools/343775dbb396/</id>
+    <published>2022-06-13T13:21:07.000Z</published>
+    <updated>2022-11-17T07:38:12.767Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="http://example.com/categories/tools/"/>
+    
+    
+    <category term="web" scheme="http://example.com/tags/web/"/>
+    
+    <category term="puppeteer" scheme="http://example.com/tags/puppeteer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx配置SSL自签名证书的方法</title>
+    <link href="http://example.com/tools/d92c90720b86/"/>
+    <id>http://example.com/tools/d92c90720b86/</id>
+    <published>2022-06-11T09:03:10.000Z</published>
+    <updated>2022-11-17T07:38:12.731Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="http://example.com/categories/tools/"/>
+    
+    
+    <category term="nginx" scheme="http://example.com/tags/nginx/"/>
+    
+    <category term="签名" scheme="http://example.com/tags/%E7%AD%BE%E5%90%8D/"/>
+    
+    <category term="秘钥" scheme="http://example.com/tags/%E7%A7%98%E9%92%A5/"/>
+    
+    <category term="CA证书" scheme="http://example.com/tags/CA%E8%AF%81%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL树结构递归查询</title>
+    <link href="http://example.com/database/71cd6511c90c/"/>
+    <id>http://example.com/database/71cd6511c90c/</id>
+    <published>2022-05-20T09:54:38.000Z</published>
+    <updated>2022-11-17T07:38:12.727Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="database" scheme="http://example.com/categories/database/"/>
+    
+    
+    <category term="database" scheme="http://example.com/tags/database/"/>
+    
+    <category term="mysql" scheme="http://example.com/tags/mysql/"/>
+    
+    <category term="递归查询" scheme="http://example.com/tags/%E9%80%92%E5%BD%92%E6%9F%A5%E8%AF%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL中SQL语句的执行过程</title>
+    <link href="http://example.com/database/1b54426f3b69/"/>
+    <id>http://example.com/database/1b54426f3b69/</id>
+    <published>2022-05-18T08:14:54.000Z</published>
+    <updated>2022-11-17T07:38:12.727Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="database" scheme="http://example.com/categories/database/"/>
+    
+    
+    <category term="database" scheme="http://example.com/tags/database/"/>
+    
+    <category term="mysql" scheme="http://example.com/tags/mysql/"/>
+    
+    <category term="查询优化" scheme="http://example.com/tags/%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA-SDK-调用dataworks-API接口案例</title>
+    <link href="http://example.com/dataworks/fe60251da947/"/>
+    <id>http://example.com/dataworks/fe60251da947/</id>
+    <published>2022-03-17T11:43:28.000Z</published>
+    <updated>2022-11-17T07:38:12.708Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="dataworks" scheme="http://example.com/categories/dataworks/"/>
+    
+    
+    <category term="dataworks" scheme="http://example.com/tags/dataworks/"/>
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+    <category term="sdk" scheme="http://example.com/tags/sdk/"/>
+    
+    <category term="api" scheme="http://example.com/tags/api/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows下解决端口占用问题</title>
+    <link href="http://example.com/tools/889f20bc15f8/"/>
+    <id>http://example.com/tools/889f20bc15f8/</id>
+    <published>2022-02-19T01:04:37.000Z</published>
+    <updated>2022-11-17T07:38:12.768Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="http://example.com/categories/tools/"/>
+    
+    
+    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="windowns" scheme="http://example.com/tags/windowns/"/>
+    
+    <category term="端口占用" scheme="http://example.com/tags/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记住这些,解决你80%以上MySQL查询优化的问题</title>
+    <link href="http://example.com/database/9b2bba635ec3/"/>
+    <id>http://example.com/database/9b2bba635ec3/</id>
+    <published>2021-02-18T11:35:53.000Z</published>
+    <updated>2022-11-17T07:38:12.726Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="database" scheme="http://example.com/categories/database/"/>
+    
+    
+    <category term="database" scheme="http://example.com/tags/database/"/>
+    
+    <category term="mysql" scheme="http://example.com/tags/mysql/"/>
+    
+    <category term="查询优化" scheme="http://example.com/tags/%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SHELL命令-常用的日期函数</title>
+    <link href="http://example.com/shell/74cf2c539a95/"/>
+    <id>http://example.com/shell/74cf2c539a95/</id>
+    <published>2021-02-03T00:05:38.000Z</published>
+    <updated>2022-11-17T07:38:12.764Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="shell" scheme="http://example.com/categories/shell/"/>
+    
+    
+    <category term="date" scheme="http://example.com/tags/date/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQOOP原理和使用小记</title>
+    <link href="http://example.com/tools/72e844b12004/"/>
+    <id>http://example.com/tools/72e844b12004/</id>
+    <published>2021-01-31T10:09:16.000Z</published>
+    <updated>2022-11-17T07:38:12.713Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="http://example.com/categories/tools/"/>
+    
+    
+    <category term="etl" scheme="http://example.com/tags/etl/"/>
+    
+    <category term="sqoop" scheme="http://example.com/tags/sqoop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DATAX使用小记</title>
+    <link href="http://example.com/tools/9d4f957a96a3/"/>
+    <id>http://example.com/tools/9d4f957a96a3/</id>
+    <published>2021-01-25T09:29:38.000Z</published>
+    <updated>2022-11-17T07:38:12.712Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="http://example.com/categories/tools/"/>
+    
+    
+    <category term="datax" scheme="http://example.com/tags/datax/"/>
+    
+    <category term="etl" scheme="http://example.com/tags/etl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TeamViewer解决5分钟强制退出问题</title>
+    <link href="http://example.com/tools/ad684c6217de/"/>
+    <id>http://example.com/tools/ad684c6217de/</id>
+    <published>2021-01-20T08:53:21.000Z</published>
+    <updated>2022-11-17T07:38:12.767Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="http://example.com/categories/tools/"/>
+    
+    
+    <category term="mac" scheme="http://example.com/tags/mac/"/>
+    
+    <category term="teamviewer" scheme="http://example.com/tags/teamviewer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7.x上sftp的安装配置</title>
+    <link href="http://example.com/tools/b53d9e26907b/"/>
+    <id>http://example.com/tools/b53d9e26907b/</id>
+    <published>2021-01-14T14:59:57.000Z</published>
+    <updated>2022-11-17T07:38:12.714Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="http://example.com/categories/tools/"/>
+    
+    
+    <category term="centos" scheme="http://example.com/tags/centos/"/>
+    
+    <category term="sftp" scheme="http://example.com/tags/sftp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7.x上一键FTP安装脚本</title>
+    <link href="http://example.com/tools/7ad8582eea12/"/>
+    <id>http://example.com/tools/7ad8582eea12/</id>
+    <published>2021-01-13T06:07:05.000Z</published>
+    <updated>2022-11-17T07:38:12.713Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="http://example.com/categories/tools/"/>
+    
+    
+    <category term="centos" scheme="http://example.com/tags/centos/"/>
+    
+    <category term="ftp" scheme="http://example.com/tags/ftp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7.x上安装samba服务</title>
+    <link href="http://example.com/tools/3889eaac3885/"/>
+    <id>http://example.com/tools/3889eaac3885/</id>
+    <published>2021-01-12T00:52:13.000Z</published>
+    <updated>2022-11-17T07:38:12.713Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="http://example.com/categories/tools/"/>
+    
+    
+    <category term="samba" scheme="http://example.com/tags/samba/"/>
+    
+    <category term="centos" scheme="http://example.com/tags/centos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DRG付费与DIP付费</title>
+    <link href="http://example.com/tools/ce39ed8e7619/"/>
+    <id>http://example.com/tools/ce39ed8e7619/</id>
+    <published>2021-01-11T01:37:36.000Z</published>
+    <updated>2022-11-17T07:38:12.726Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="http://example.com/categories/tools/"/>
+    
+    
+    <category term="drg" scheme="http://example.com/tags/drg/"/>
+    
+    <category term="dip" scheme="http://example.com/tags/dip/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hive一些优化方法记录</title>
+    <link href="http://example.com/database/e4478b6f26ad/"/>
+    <id>http://example.com/database/e4478b6f26ad/</id>
+    <published>2021-01-10T03:02:55.000Z</published>
+    <updated>2022-11-17T07:38:12.712Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="database" scheme="http://example.com/categories/database/"/>
+    
+    
+    <category term="database" scheme="http://example.com/tags/database/"/>
+    
+    <category term="hive" scheme="http://example.com/tags/hive/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQLSERVER使用小记</title>
+    <link href="http://example.com/database/f8c4eb0af00b/"/>
+    <id>http://example.com/database/f8c4eb0af00b/</id>
+    <published>2021-01-09T05:41:36.000Z</published>
+    <updated>2022-11-17T07:38:12.711Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="database" scheme="http://example.com/categories/database/"/>
+    
+    
+    <category term="database" scheme="http://example.com/tags/database/"/>
+    
+    <category term="sqlserver" scheme="http://example.com/tags/sqlserver/"/>
+    
+    <category term="mssql" scheme="http://example.com/tags/mssql/"/>
+    
+  </entry>
+  
+</feed>
