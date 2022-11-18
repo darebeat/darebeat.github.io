@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-11-17T07:38:12.733Z</updated>
+  <updated>2022-11-18T02:05:29.480Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>ODPS视图使用方案研究</title>
-    <link href="http://example.com/bigdata/2e8ba1a50f1f/"/>
-    <id>http://example.com/bigdata/2e8ba1a50f1f/</id>
+    <link href="http://example.com/article/71/"/>
+    <id>http://example.com/article/71/</id>
     <published>2022-07-01T12:54:33.000Z</published>
-    <updated>2022-11-17T07:38:12.733Z</updated>
+    <updated>2022-11-18T02:05:29.480Z</updated>
     
     
       
@@ -43,10 +43,10 @@
   
   <entry>
     <title>ODPS重点参数语法-使用小记</title>
-    <link href="http://example.com/bigdata/e0bf7a72d4cc/"/>
-    <id>http://example.com/bigdata/e0bf7a72d4cc/</id>
+    <link href="http://example.com/article/69/"/>
+    <id>http://example.com/article/69/</id>
     <published>2022-06-17T04:57:00.000Z</published>
-    <updated>2022-11-17T07:38:12.733Z</updated>
+    <updated>2022-11-18T02:05:21.950Z</updated>
     
     
       
@@ -68,10 +68,10 @@
   
   <entry>
     <title>MySQL基础知识</title>
-    <link href="http://example.com/database/fb2181cebc1b/"/>
-    <id>http://example.com/database/fb2181cebc1b/</id>
+    <link href="http://example.com/article/68/"/>
+    <id>http://example.com/article/68/</id>
     <published>2022-06-13T13:21:07.000Z</published>
-    <updated>2022-11-17T07:38:12.727Z</updated>
+    <updated>2022-11-18T02:03:48.510Z</updated>
     
     
       
@@ -95,10 +95,10 @@
   
   <entry>
     <title>Puppeteer用法记录</title>
-    <link href="http://example.com/tools/343775dbb396/"/>
-    <id>http://example.com/tools/343775dbb396/</id>
+    <link href="http://example.com/article/61/"/>
+    <id>http://example.com/article/61/</id>
     <published>2022-06-13T13:21:07.000Z</published>
-    <updated>2022-11-17T07:38:12.767Z</updated>
+    <updated>2022-11-18T02:08:20.163Z</updated>
     
     
       
@@ -122,10 +122,10 @@
   
   <entry>
     <title>Nginx配置SSL自签名证书的方法</title>
-    <link href="http://example.com/tools/d92c90720b86/"/>
-    <id>http://example.com/tools/d92c90720b86/</id>
+    <link href="http://example.com/article/67/"/>
+    <id>http://example.com/article/67/</id>
     <published>2022-06-11T09:03:10.000Z</published>
-    <updated>2022-11-17T07:38:12.731Z</updated>
+    <updated>2022-11-18T02:05:10.967Z</updated>
     
     
       
@@ -153,10 +153,10 @@
   
   <entry>
     <title>MySQL树结构递归查询</title>
-    <link href="http://example.com/database/71cd6511c90c/"/>
-    <id>http://example.com/database/71cd6511c90c/</id>
+    <link href="http://example.com/article/65/"/>
+    <id>http://example.com/article/65/</id>
     <published>2022-05-20T09:54:38.000Z</published>
-    <updated>2022-11-17T07:38:12.727Z</updated>
+    <updated>2022-11-18T02:03:40.884Z</updated>
     
     
       
@@ -182,10 +182,10 @@
   
   <entry>
     <title>MySQL中SQL语句的执行过程</title>
-    <link href="http://example.com/database/1b54426f3b69/"/>
-    <id>http://example.com/database/1b54426f3b69/</id>
+    <link href="http://example.com/article/64/"/>
+    <id>http://example.com/article/64/</id>
     <published>2022-05-18T08:14:54.000Z</published>
-    <updated>2022-11-17T07:38:12.727Z</updated>
+    <updated>2022-11-18T02:03:34.003Z</updated>
     
     
       
@@ -211,10 +211,10 @@
   
   <entry>
     <title>JAVA-SDK-调用dataworks-API接口案例</title>
-    <link href="http://example.com/dataworks/fe60251da947/"/>
-    <id>http://example.com/dataworks/fe60251da947/</id>
+    <link href="http://example.com/article/70/"/>
+    <id>http://example.com/article/70/</id>
     <published>2022-03-17T11:43:28.000Z</published>
-    <updated>2022-11-17T07:38:12.708Z</updated>
+    <updated>2022-11-18T01:55:03.144Z</updated>
     
     
       
@@ -242,10 +242,10 @@
   
   <entry>
     <title>Windows下解决端口占用问题</title>
-    <link href="http://example.com/tools/889f20bc15f8/"/>
-    <id>http://example.com/tools/889f20bc15f8/</id>
+    <link href="http://example.com/article/63/"/>
+    <id>http://example.com/article/63/</id>
     <published>2022-02-19T01:04:37.000Z</published>
-    <updated>2022-11-17T07:38:12.768Z</updated>
+    <updated>2022-11-18T02:08:28.654Z</updated>
     
     
       
@@ -271,10 +271,10 @@
   
   <entry>
     <title>记住这些,解决你80%以上MySQL查询优化的问题</title>
-    <link href="http://example.com/database/9b2bba635ec3/"/>
-    <id>http://example.com/database/9b2bba635ec3/</id>
+    <link href="http://example.com/article/62/"/>
+    <id>http://example.com/article/62/</id>
     <published>2021-02-18T11:35:53.000Z</published>
-    <updated>2022-11-17T07:38:12.726Z</updated>
+    <updated>2022-11-18T02:03:25.576Z</updated>
     
     
       
@@ -300,10 +300,10 @@
   
   <entry>
     <title>SHELL命令-常用的日期函数</title>
-    <link href="http://example.com/shell/74cf2c539a95/"/>
-    <id>http://example.com/shell/74cf2c539a95/</id>
+    <link href="http://example.com/article/60/"/>
+    <id>http://example.com/article/60/</id>
     <published>2021-02-03T00:05:38.000Z</published>
-    <updated>2022-11-17T07:38:12.764Z</updated>
+    <updated>2022-11-18T02:07:25.457Z</updated>
     
     
       
@@ -325,10 +325,10 @@
   
   <entry>
     <title>SQOOP原理和使用小记</title>
-    <link href="http://example.com/tools/72e844b12004/"/>
-    <id>http://example.com/tools/72e844b12004/</id>
+    <link href="http://example.com/article/59/"/>
+    <id>http://example.com/article/59/</id>
     <published>2021-01-31T10:09:16.000Z</published>
-    <updated>2022-11-17T07:38:12.713Z</updated>
+    <updated>2022-11-18T01:56:49.118Z</updated>
     
     
       
@@ -352,10 +352,10 @@
   
   <entry>
     <title>DATAX使用小记</title>
-    <link href="http://example.com/tools/9d4f957a96a3/"/>
-    <id>http://example.com/tools/9d4f957a96a3/</id>
+    <link href="http://example.com/article/58/"/>
+    <id>http://example.com/article/58/</id>
     <published>2021-01-25T09:29:38.000Z</published>
-    <updated>2022-11-17T07:38:12.712Z</updated>
+    <updated>2022-11-18T01:56:38.622Z</updated>
     
     
       
@@ -379,10 +379,10 @@
   
   <entry>
     <title>TeamViewer解决5分钟强制退出问题</title>
-    <link href="http://example.com/tools/ad684c6217de/"/>
-    <id>http://example.com/tools/ad684c6217de/</id>
+    <link href="http://example.com/article/57/"/>
+    <id>http://example.com/article/57/</id>
     <published>2021-01-20T08:53:21.000Z</published>
-    <updated>2022-11-17T07:38:12.767Z</updated>
+    <updated>2022-11-18T02:08:10.863Z</updated>
     
     
       
@@ -406,10 +406,10 @@
   
   <entry>
     <title>CentOS7.x上sftp的安装配置</title>
-    <link href="http://example.com/tools/b53d9e26907b/"/>
-    <id>http://example.com/tools/b53d9e26907b/</id>
+    <link href="http://example.com/article/56/"/>
+    <id>http://example.com/article/56/</id>
     <published>2021-01-14T14:59:57.000Z</published>
-    <updated>2022-11-17T07:38:12.714Z</updated>
+    <updated>2022-11-18T01:57:41.731Z</updated>
     
     
       
@@ -433,10 +433,10 @@
   
   <entry>
     <title>CentOS7.x上一键FTP安装脚本</title>
-    <link href="http://example.com/tools/7ad8582eea12/"/>
-    <id>http://example.com/tools/7ad8582eea12/</id>
+    <link href="http://example.com/article/55/"/>
+    <id>http://example.com/article/55/</id>
     <published>2021-01-13T06:07:05.000Z</published>
-    <updated>2022-11-17T07:38:12.713Z</updated>
+    <updated>2022-11-18T01:57:29.190Z</updated>
     
     
       
@@ -460,10 +460,10 @@
   
   <entry>
     <title>CentOS7.x上安装samba服务</title>
-    <link href="http://example.com/tools/3889eaac3885/"/>
-    <id>http://example.com/tools/3889eaac3885/</id>
+    <link href="http://example.com/article/54/"/>
+    <id>http://example.com/article/54/</id>
     <published>2021-01-12T00:52:13.000Z</published>
-    <updated>2022-11-17T07:38:12.713Z</updated>
+    <updated>2022-11-18T01:57:19.757Z</updated>
     
     
       
@@ -487,10 +487,10 @@
   
   <entry>
     <title>DRG付费与DIP付费</title>
-    <link href="http://example.com/tools/ce39ed8e7619/"/>
-    <id>http://example.com/tools/ce39ed8e7619/</id>
+    <link href="http://example.com/article/53/"/>
+    <id>http://example.com/article/53/</id>
     <published>2021-01-11T01:37:36.000Z</published>
-    <updated>2022-11-17T07:38:12.726Z</updated>
+    <updated>2022-11-18T02:03:16.739Z</updated>
     
     
       
@@ -514,10 +514,10 @@
   
   <entry>
     <title>Hive一些优化方法记录</title>
-    <link href="http://example.com/database/e4478b6f26ad/"/>
-    <id>http://example.com/database/e4478b6f26ad/</id>
+    <link href="http://example.com/article/52/"/>
+    <id>http://example.com/article/52/</id>
     <published>2021-01-10T03:02:55.000Z</published>
-    <updated>2022-11-17T07:38:12.712Z</updated>
+    <updated>2022-11-18T01:56:26.984Z</updated>
     
     
       
@@ -541,10 +541,10 @@
   
   <entry>
     <title>SQLSERVER使用小记</title>
-    <link href="http://example.com/database/f8c4eb0af00b/"/>
-    <id>http://example.com/database/f8c4eb0af00b/</id>
+    <link href="http://example.com/article/51/"/>
+    <id>http://example.com/article/51/</id>
     <published>2021-01-09T05:41:36.000Z</published>
-    <updated>2022-11-17T07:38:12.711Z</updated>
+    <updated>2022-11-18T01:56:14.292Z</updated>
     
     
       
