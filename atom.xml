@@ -344,9 +344,9 @@
     <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
     
     
-    <category term="sqoop" scheme="https://www.darebeat.cn/tags/sqoop/"/>
-    
     <category term="etl" scheme="https://www.darebeat.cn/tags/etl/"/>
+    
+    <category term="sqoop" scheme="https://www.darebeat.cn/tags/sqoop/"/>
     
   </entry>
   
@@ -371,9 +371,9 @@
     <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
     
     
-    <category term="etl" scheme="https://www.darebeat.cn/tags/etl/"/>
-    
     <category term="datax" scheme="https://www.darebeat.cn/tags/datax/"/>
+    
+    <category term="etl" scheme="https://www.darebeat.cn/tags/etl/"/>
     
   </entry>
   
