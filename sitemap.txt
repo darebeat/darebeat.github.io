@@ -80,9 +80,9 @@ https://www.darebeat.cn/bbs/
 https://www.darebeat.cn/about/
 https://www.darebeat.cn/404/
 https://www.darebeat.cn/
-https://www.darebeat.cn/tags/R/
 https://www.darebeat.cn/tags/git/
 https://www.darebeat.cn/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/
+https://www.darebeat.cn/tags/R/
 https://www.darebeat.cn/tags/python/
 https://www.darebeat.cn/tags/%E5%8C%85%E7%AE%A1%E7%90%86/
 https://www.darebeat.cn/tags/%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/
@@ -172,8 +172,8 @@ https://www.darebeat.cn/tags/api/
 https://www.darebeat.cn/tags/SQL/
 https://www.darebeat.cn/tags/drds/
 https://www.darebeat.cn/tags/realtime/
-https://www.darebeat.cn/categories/R/
 https://www.darebeat.cn/categories/git/
+https://www.darebeat.cn/categories/R/
 https://www.darebeat.cn/categories/python/
 https://www.darebeat.cn/categories/docker/
 https://www.darebeat.cn/categories/k8s/
