@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>darebeat</title>
+  
+  <subtitle>知识分享</subtitle>
+  <link href="https://www.darebeat.cn/atom.xml" rel="self"/>
+  
+  <link href="https://www.darebeat.cn/"/>
+  <updated>2023-02-05T02:47:23.325Z</updated>
+  <id>https://www.darebeat.cn/</id>
+  
+  <author>
+    <name>darebeat</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flink知识点总结</title>
+    <link href="https://www.darebeat.cn/article/74/"/>
+    <id>https://www.darebeat.cn/article/74/</id>
+    <published>2022-12-27T11:44:16.000Z</published>
+    <updated>2023-02-05T02:47:23.325Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="bigdata" scheme="https://www.darebeat.cn/categories/bigdata/"/>
+    
+    
+    <category term="flink" scheme="https://www.darebeat.cn/tags/flink/"/>
+    
+    <category term="realtime" scheme="https://www.darebeat.cn/tags/realtime/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DRDS-最佳实践</title>
+    <link href="https://www.darebeat.cn/article/73/"/>
+    <id>https://www.darebeat.cn/article/73/</id>
+    <published>2022-12-17T10:34:08.000Z</published>
+    <updated>2023-02-05T02:47:13.952Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="database" scheme="https://www.darebeat.cn/categories/database/"/>
+    
+    
+    <category term="database" scheme="https://www.darebeat.cn/tags/database/"/>
+    
+    <category term="mysql" scheme="https://www.darebeat.cn/tags/mysql/"/>
+    
+    <category term="drds" scheme="https://www.darebeat.cn/tags/drds/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ODPS-SQL优化总结</title>
+    <link href="https://www.darebeat.cn/article/72/"/>
+    <id>https://www.darebeat.cn/article/72/</id>
+    <published>2022-12-02T12:54:33.000Z</published>
+    <updated>2023-02-05T02:47:04.271Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="bigdata" scheme="https://www.darebeat.cn/categories/bigdata/"/>
+    
+    
+    <category term="odps" scheme="https://www.darebeat.cn/tags/odps/"/>
+    
+    <category term="SQL" scheme="https://www.darebeat.cn/tags/SQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ODPS视图使用方案研究</title>
+    <link href="https://www.darebeat.cn/article/71/"/>
+    <id>https://www.darebeat.cn/article/71/</id>
+    <published>2022-07-01T12:54:33.000Z</published>
+    <updated>2023-02-05T02:46:55.710Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="bigdata" scheme="https://www.darebeat.cn/categories/bigdata/"/>
+    
+    
+    <category term="odps" scheme="https://www.darebeat.cn/tags/odps/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ODPS重点参数语法-使用小记</title>
+    <link href="https://www.darebeat.cn/article/69/"/>
+    <id>https://www.darebeat.cn/article/69/</id>
+    <published>2022-06-17T04:57:00.000Z</published>
+    <updated>2023-02-05T02:46:15.376Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="bigdata" scheme="https://www.darebeat.cn/categories/bigdata/"/>
+    
+    
+    <category term="odps" scheme="https://www.darebeat.cn/tags/odps/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Puppeteer用法记录</title>
+    <link href="https://www.darebeat.cn/article/61/"/>
+    <id>https://www.darebeat.cn/article/61/</id>
+    <published>2022-06-13T13:21:07.000Z</published>
+    <updated>2023-02-05T02:44:46.232Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
+    
+    
+    <category term="web" scheme="https://www.darebeat.cn/tags/web/"/>
+    
+    <category term="puppeteer" scheme="https://www.darebeat.cn/tags/puppeteer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL基础知识</title>
+    <link href="https://www.darebeat.cn/article/68/"/>
+    <id>https://www.darebeat.cn/article/68/</id>
+    <published>2022-06-13T13:21:07.000Z</published>
+    <updated>2023-02-05T02:46:06.245Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="database" scheme="https://www.darebeat.cn/categories/database/"/>
+    
+    
+    <category term="database" scheme="https://www.darebeat.cn/tags/database/"/>
+    
+    <category term="mysql" scheme="https://www.darebeat.cn/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx配置SSL自签名证书的方法</title>
+    <link href="https://www.darebeat.cn/article/67/"/>
+    <id>https://www.darebeat.cn/article/67/</id>
+    <published>2022-06-11T09:03:10.000Z</published>
+    <updated>2023-02-05T02:45:55.928Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
+    
+    
+    <category term="nginx" scheme="https://www.darebeat.cn/tags/nginx/"/>
+    
+    <category term="签名" scheme="https://www.darebeat.cn/tags/%E7%AD%BE%E5%90%8D/"/>
+    
+    <category term="秘钥" scheme="https://www.darebeat.cn/tags/%E7%A7%98%E9%92%A5/"/>
+    
+    <category term="CA证书" scheme="https://www.darebeat.cn/tags/CA%E8%AF%81%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL树结构递归查询</title>
+    <link href="https://www.darebeat.cn/article/65/"/>
+    <id>https://www.darebeat.cn/article/65/</id>
+    <published>2022-05-20T09:54:38.000Z</published>
+    <updated>2023-02-05T02:45:36.435Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="database" scheme="https://www.darebeat.cn/categories/database/"/>
+    
+    
+    <category term="database" scheme="https://www.darebeat.cn/tags/database/"/>
+    
+    <category term="mysql" scheme="https://www.darebeat.cn/tags/mysql/"/>
+    
+    <category term="递归查询" scheme="https://www.darebeat.cn/tags/%E9%80%92%E5%BD%92%E6%9F%A5%E8%AF%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL中SQL语句的执行过程</title>
+    <link href="https://www.darebeat.cn/article/64/"/>
+    <id>https://www.darebeat.cn/article/64/</id>
+    <published>2022-05-18T08:14:54.000Z</published>
+    <updated>2023-02-05T02:45:18.762Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="database" scheme="https://www.darebeat.cn/categories/database/"/>
+    
+    
+    <category term="database" scheme="https://www.darebeat.cn/tags/database/"/>
+    
+    <category term="mysql" scheme="https://www.darebeat.cn/tags/mysql/"/>
+    
+    <category term="查询优化" scheme="https://www.darebeat.cn/tags/%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA-SDK-调用dataworks-API接口案例</title>
+    <link href="https://www.darebeat.cn/article/70/"/>
+    <id>https://www.darebeat.cn/article/70/</id>
+    <published>2022-03-17T11:43:28.000Z</published>
+    <updated>2023-02-05T02:46:28.384Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="dataworks" scheme="https://www.darebeat.cn/categories/dataworks/"/>
+    
+    
+    <category term="java" scheme="https://www.darebeat.cn/tags/java/"/>
+    
+    <category term="dataworks" scheme="https://www.darebeat.cn/tags/dataworks/"/>
+    
+    <category term="sdk" scheme="https://www.darebeat.cn/tags/sdk/"/>
+    
+    <category term="api" scheme="https://www.darebeat.cn/tags/api/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows下解决端口占用问题</title>
+    <link href="https://www.darebeat.cn/article/63/"/>
+    <id>https://www.darebeat.cn/article/63/</id>
+    <published>2022-02-19T01:04:37.000Z</published>
+    <updated>2023-02-05T02:45:09.341Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
+    
+    
+    <category term="工具" scheme="https://www.darebeat.cn/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="windowns" scheme="https://www.darebeat.cn/tags/windowns/"/>
+    
+    <category term="端口占用" scheme="https://www.darebeat.cn/tags/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记住这些,解决你80%以上MySQL查询优化的问题</title>
+    <link href="https://www.darebeat.cn/article/62/"/>
+    <id>https://www.darebeat.cn/article/62/</id>
+    <published>2021-02-18T11:35:53.000Z</published>
+    <updated>2023-02-05T02:44:56.651Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="database" scheme="https://www.darebeat.cn/categories/database/"/>
+    
+    
+    <category term="database" scheme="https://www.darebeat.cn/tags/database/"/>
+    
+    <category term="mysql" scheme="https://www.darebeat.cn/tags/mysql/"/>
+    
+    <category term="查询优化" scheme="https://www.darebeat.cn/tags/%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SHELL命令-常用的日期函数</title>
+    <link href="https://www.darebeat.cn/article/60/"/>
+    <id>https://www.darebeat.cn/article/60/</id>
+    <published>2021-02-03T00:05:38.000Z</published>
+    <updated>2023-02-05T02:44:37.095Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="shell" scheme="https://www.darebeat.cn/categories/shell/"/>
+    
+    
+    <category term="date" scheme="https://www.darebeat.cn/tags/date/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQOOP原理和使用小记</title>
+    <link href="https://www.darebeat.cn/article/59/"/>
+    <id>https://www.darebeat.cn/article/59/</id>
+    <published>2021-01-31T10:09:16.000Z</published>
+    <updated>2023-02-05T02:44:26.711Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
+    
+    
+    <category term="etl" scheme="https://www.darebeat.cn/tags/etl/"/>
+    
+    <category term="sqoop" scheme="https://www.darebeat.cn/tags/sqoop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DATAX使用小记</title>
+    <link href="https://www.darebeat.cn/article/58/"/>
+    <id>https://www.darebeat.cn/article/58/</id>
+    <published>2021-01-25T09:29:38.000Z</published>
+    <updated>2023-02-05T02:44:14.714Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
+    
+    
+    <category term="datax" scheme="https://www.darebeat.cn/tags/datax/"/>
+    
+    <category term="etl" scheme="https://www.darebeat.cn/tags/etl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TeamViewer解决5分钟强制退出问题</title>
+    <link href="https://www.darebeat.cn/article/57/"/>
+    <id>https://www.darebeat.cn/article/57/</id>
+    <published>2021-01-20T08:53:21.000Z</published>
+    <updated>2023-02-05T02:46:42.970Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
+    
+    
+    <category term="mac" scheme="https://www.darebeat.cn/tags/mac/"/>
+    
+    <category term="teamviewer" scheme="https://www.darebeat.cn/tags/teamviewer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7.x上sftp的安装配置</title>
+    <link href="https://www.darebeat.cn/article/56/"/>
+    <id>https://www.darebeat.cn/article/56/</id>
+    <published>2021-01-14T14:59:57.000Z</published>
+    <updated>2023-02-05T02:44:04.575Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
+    
+    
+    <category term="centos" scheme="https://www.darebeat.cn/tags/centos/"/>
+    
+    <category term="sftp" scheme="https://www.darebeat.cn/tags/sftp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7.x上一键FTP安装脚本</title>
+    <link href="https://www.darebeat.cn/article/55/"/>
+    <id>https://www.darebeat.cn/article/55/</id>
+    <published>2021-01-13T06:07:05.000Z</published>
+    <updated>2023-02-05T02:43:55.080Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
+    
+    
+    <category term="centos" scheme="https://www.darebeat.cn/tags/centos/"/>
+    
+    <category term="ftp" scheme="https://www.darebeat.cn/tags/ftp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7.x上安装samba服务</title>
+    <link href="https://www.darebeat.cn/article/54/"/>
+    <id>https://www.darebeat.cn/article/54/</id>
+    <published>2021-01-12T00:52:13.000Z</published>
+    <updated>2023-02-05T02:43:36.323Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
+    
+    
+    <category term="centos" scheme="https://www.darebeat.cn/tags/centos/"/>
+    
+    <category term="samba" scheme="https://www.darebeat.cn/tags/samba/"/>
+    
+  </entry>
+  
+</feed>
