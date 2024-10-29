@@ -6,7 +6,7 @@
   <link href="https://www.darebeat.cn/atom.xml" rel="self"/>
   
   <link href="https://www.darebeat.cn/"/>
-  <updated>2024-10-29T03:10:24.021Z</updated>
+  <updated>2024-10-29T03:23:40.271Z</updated>
   <id>https://www.darebeat.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.darebeat.cn/article/75/"/>
     <id>https://www.darebeat.cn/article/75/</id>
     <published>2023-11-15T07:36:54.000Z</published>
-    <updated>2024-10-29T03:10:24.021Z</updated>
+    <updated>2024-10-29T03:23:40.271Z</updated>
     
     
       
@@ -452,9 +452,9 @@
     <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
     
     
-    <category term="sqoop" scheme="https://www.darebeat.cn/tags/sqoop/"/>
-    
     <category term="etl" scheme="https://www.darebeat.cn/tags/etl/"/>
+    
+    <category term="sqoop" scheme="https://www.darebeat.cn/tags/sqoop/"/>
     
   </entry>
   
@@ -479,9 +479,9 @@
     <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
     
     
-    <category term="etl" scheme="https://www.darebeat.cn/tags/etl/"/>
-    
     <category term="datax" scheme="https://www.darebeat.cn/tags/datax/"/>
+    
+    <category term="etl" scheme="https://www.darebeat.cn/tags/etl/"/>
     
   </entry>
   
