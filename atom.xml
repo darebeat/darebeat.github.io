@@ -6,7 +6,7 @@
   <link href="https://www.darebeat.cn/atom.xml" rel="self"/>
   
   <link href="https://www.darebeat.cn/"/>
-  <updated>2024-10-29T00:54:56.881Z</updated>
+  <updated>2024-10-29T02:58:39.801Z</updated>
   <id>https://www.darebeat.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ambari2.8.0+bigtop3.2.0大数据组件编译</title>
+    <link href="https://www.darebeat.cn/article/75/"/>
+    <id>https://www.darebeat.cn/article/75/</id>
+    <published>2023-11-15T07:36:54.000Z</published>
+    <updated>2024-10-29T02:58:39.801Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="bigdata" scheme="https://www.darebeat.cn/categories/bigdata/"/>
+    
+    
+    <category term="BDP" scheme="https://www.darebeat.cn/tags/BDP/"/>
+    
+  </entry>
   
   <entry>
     <title>Flink知识点总结</title>
@@ -150,33 +175,6 @@
   </entry>
   
   <entry>
-    <title>Puppeteer用法记录</title>
-    <link href="https://www.darebeat.cn/article/61/"/>
-    <id>https://www.darebeat.cn/article/61/</id>
-    <published>2022-06-13T13:21:07.000Z</published>
-    <updated>2024-10-29T00:54:56.881Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
-    
-    
-    <category term="web" scheme="https://www.darebeat.cn/tags/web/"/>
-    
-    <category term="puppeteer" scheme="https://www.darebeat.cn/tags/puppeteer/"/>
-    
-  </entry>
-  
-  <entry>
     <title>MySQL基础知识</title>
     <link href="https://www.darebeat.cn/article/68/"/>
     <id>https://www.darebeat.cn/article/68/</id>
@@ -200,6 +198,33 @@
     <category term="database" scheme="https://www.darebeat.cn/tags/database/"/>
     
     <category term="mysql" scheme="https://www.darebeat.cn/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Puppeteer用法记录</title>
+    <link href="https://www.darebeat.cn/article/61/"/>
+    <id>https://www.darebeat.cn/article/61/</id>
+    <published>2022-06-13T13:21:07.000Z</published>
+    <updated>2024-10-29T00:54:56.881Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
+    
+    
+    <category term="web" scheme="https://www.darebeat.cn/tags/web/"/>
+    
+    <category term="puppeteer" scheme="https://www.darebeat.cn/tags/puppeteer/"/>
     
   </entry>
   
@@ -538,33 +563,6 @@
     <category term="centos" scheme="https://www.darebeat.cn/tags/centos/"/>
     
     <category term="ftp" scheme="https://www.darebeat.cn/tags/ftp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS7.x上安装samba服务</title>
-    <link href="https://www.darebeat.cn/article/54/"/>
-    <id>https://www.darebeat.cn/article/54/</id>
-    <published>2021-01-12T00:52:13.000Z</published>
-    <updated>2024-10-29T00:54:56.881Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
-    
-    
-    <category term="centos" scheme="https://www.darebeat.cn/tags/centos/"/>
-    
-    <category term="samba" scheme="https://www.darebeat.cn/tags/samba/"/>
     
   </entry>
   
