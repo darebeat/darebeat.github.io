@@ -6,7 +6,7 @@
   <link href="https://www.darebeat.cn/atom.xml" rel="self"/>
   
   <link href="https://www.darebeat.cn/"/>
-  <updated>2024-10-29T02:58:39.801Z</updated>
+  <updated>2024-10-29T03:10:24.021Z</updated>
   <id>https://www.darebeat.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.darebeat.cn/article/75/"/>
     <id>https://www.darebeat.cn/article/75/</id>
     <published>2023-11-15T07:36:54.000Z</published>
-    <updated>2024-10-29T02:58:39.801Z</updated>
+    <updated>2024-10-29T03:10:24.021Z</updated>
     
     
       
@@ -175,33 +175,6 @@
   </entry>
   
   <entry>
-    <title>MySQL基础知识</title>
-    <link href="https://www.darebeat.cn/article/68/"/>
-    <id>https://www.darebeat.cn/article/68/</id>
-    <published>2022-06-13T13:21:07.000Z</published>
-    <updated>2024-10-29T00:54:56.881Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="database" scheme="https://www.darebeat.cn/categories/database/"/>
-    
-    
-    <category term="database" scheme="https://www.darebeat.cn/tags/database/"/>
-    
-    <category term="mysql" scheme="https://www.darebeat.cn/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Puppeteer用法记录</title>
     <link href="https://www.darebeat.cn/article/61/"/>
     <id>https://www.darebeat.cn/article/61/</id>
@@ -225,6 +198,33 @@
     <category term="web" scheme="https://www.darebeat.cn/tags/web/"/>
     
     <category term="puppeteer" scheme="https://www.darebeat.cn/tags/puppeteer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL基础知识</title>
+    <link href="https://www.darebeat.cn/article/68/"/>
+    <id>https://www.darebeat.cn/article/68/</id>
+    <published>2022-06-13T13:21:07.000Z</published>
+    <updated>2024-10-29T00:54:56.881Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="database" scheme="https://www.darebeat.cn/categories/database/"/>
+    
+    
+    <category term="database" scheme="https://www.darebeat.cn/tags/database/"/>
+    
+    <category term="mysql" scheme="https://www.darebeat.cn/tags/mysql/"/>
     
   </entry>
   
@@ -452,9 +452,9 @@
     <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
     
     
-    <category term="etl" scheme="https://www.darebeat.cn/tags/etl/"/>
-    
     <category term="sqoop" scheme="https://www.darebeat.cn/tags/sqoop/"/>
+    
+    <category term="etl" scheme="https://www.darebeat.cn/tags/etl/"/>
     
   </entry>
   
@@ -479,9 +479,9 @@
     <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
     
     
-    <category term="datax" scheme="https://www.darebeat.cn/tags/datax/"/>
-    
     <category term="etl" scheme="https://www.darebeat.cn/tags/etl/"/>
+    
+    <category term="datax" scheme="https://www.darebeat.cn/tags/datax/"/>
     
   </entry>
   
