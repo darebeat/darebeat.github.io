@@ -131,7 +131,99 @@
         line-height: 48px;
         font-size: 1.4rem;
     }
-</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/nginx/"><span class="chip bg-color">nginx</span></a> <a href="/tags/certbot/"><span class="chip bg-color">certbot</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/tools/" class="post-category">tools</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2020-11-22</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 810</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><h2 id="配置文件准备"><a href="#配置文件准备" class="headerlink" title="配置文件准备"></a>配置文件准备</h2><p>根据需要配置初始化配置,<code>token</code>建议写入配置文件</p><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dnspod.conf</span></span><br><span class="line">cat &gt; dnspod.conf &lt;&lt; EOF</span><br><span class="line"><span class="comment"># dnspod</span></span><br><span class="line"><span class="comment"># [申请文档](https://www.dnspod.cn/console/user/security)</span></span><br><span class="line">certbot_dns_dnspod:dns_dnspod_email = <span class="string">"DNSPOD-API-REQUIRES-A-VALID-EMAIL"</span></span><br><span class="line">certbot_dns_dnspod:dns_dnspod_api_token = <span class="string">"DNSPOD-API-TOKEN"</span></span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="comment"># .env</span></span><br><span class="line">cat &gt; .env &lt;&lt; EOF</span><br><span class="line"><span class="comment"># 阿里云</span></span><br><span class="line"><span class="comment"># [申请文档](https://help.aliyun.com/knowledge_detail/38738.html)</span></span><br><span class="line">ALY_KEY=</span><br><span class="line">ALY_TOKEN=</span><br><span class="line"><span class="comment"># 腾讯云</span></span><br><span class="line"><span class="comment"># [申请文档](https://console.cloud.tencent.com/cam/capi)</span></span><br><span class="line">TXY_KEY=</span><br><span class="line">TXY_TOKEN=</span><br><span class="line"><span class="comment"># 华为云</span></span><br><span class="line"><span class="comment"># [申请文档](https://support.huaweicloud.com/devg-apisign/api-sign-provide.html)</span></span><br><span class="line">HWY_KEY=</span><br><span class="line">HWY_TOKEN=</span><br><span class="line"><span class="comment"># GoDaddy</span></span><br><span class="line"><span class="comment"># [申请文档](https://developer.godaddy.com/getstarted)</span></span><br><span class="line">GODADDY_KEY=</span><br><span class="line">GODADDY_TOKEN=</span><br><span class="line">EOF</span><br></pre></td></tr></tbody></table></figure><h2 id="生成一个证书"><a href="#生成一个证书" class="headerlink" title="生成一个证书"></a>生成一个证书</h2><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; docker-compose.yaml &lt;&lt; EOF</span><br><span class="line">version: <span class="string">"3"</span></span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line">  certbot:</span><br><span class="line">    image: darebeat/certbot</span><br><span class="line">    container_name: certbot</span><br><span class="line">    env_file:</span><br><span class="line">      - .env</span><br><span class="line">    environment: </span><br><span class="line">      - CERT_START_MODE=certonly <span class="comment"># 控制初始化或自动续期</span></span><br><span class="line">      - CERT_DNS_VENDOR=hwy <span class="comment"># dnspod|hwy|txy|aly|godaddy</span></span><br><span class="line">      - CERT_EMAIL=darebeat@126.com</span><br><span class="line">      - CERT_REQ_DOMAINS=darebeat.cn,*.darebeat.cn,*.blog.darebeat.cn <span class="comment"># 多个域名用英文逗号隔开</span></span><br><span class="line">      - CERT_CRON_TIME=1 1 */7 * * <span class="comment"># crontab日期格式 # 分 时 日 月 周</span></span><br><span class="line">      - CERT_LOG_DIR=/var/<span class="built_in">log</span></span><br><span class="line">      - TZ=Asia/Shanghai</span><br><span class="line">    volumes:</span><br><span class="line">      - ./etc:/etc/letsencrypt:z</span><br><span class="line">      - ./lib:/var/lib/letsencrypt:z</span><br><span class="line">      - ./<span class="built_in">log</span>:/var/<span class="built_in">log</span>/letsencrypt:z</span><br><span class="line">      - ./domains:/opt/certbot/certbot-dns-cnyun/domains:ro</span><br><span class="line">      <span class="comment"># - ./docker-entrypoint.sh:/docker-entrypoint.sh # 可以根据需要调整脚本</span></span><br><span class="line">    entrypoint: /docker-entrypoint.sh <span class="comment"># 覆盖镜像默认指令</span></span><br><span class="line">    <span class="built_in">command</span>: </span><br><span class="line">      - certonly    <span class="comment"># 同CERT_START_MODE,可以任选其一进行配置(这个优先级高)</span></span><br><span class="line">      - hwy         <span class="comment"># 同CERT_DNS_VENDOR,可以任选其一进行配置(这个优先级高)</span></span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动并查看日志</span></span><br><span class="line">docker-compose up</span><br></pre></td></tr></tbody></table></figure><h2 id="自动续期"><a href="#自动续期" class="headerlink" title="自动续期"></a>自动续期</h2><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; docker-compose.yaml &lt;&lt; EOF</span><br><span class="line">version: <span class="string">"3"</span></span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line">  certbot:</span><br><span class="line">    image: darebeat/certbot</span><br><span class="line">    container_name: certbot</span><br><span class="line">    env_file:</span><br><span class="line">      - .env</span><br><span class="line">    environment: </span><br><span class="line">      - CERT_START_MODE=renew-auto <span class="comment"># 控制初始化或自动续期</span></span><br><span class="line">      - CERT_DNS_VENDOR=hwy <span class="comment"># dnspod|hwy|txy|aly|godaddy</span></span><br><span class="line">      - CERT_EMAIL=darebeat@126.com</span><br><span class="line">      - CERT_REQ_DOMAINS=darebeat.cn,*.darebeat.cn,*.blog.darebeat.cn <span class="comment"># 多个域名用英文逗号隔开</span></span><br><span class="line">      - CERT_CRON_TIME=1 1 */7 * * <span class="comment"># crontab日期格式,证书有效期&lt;30天才会renew，所以crontab可以配置为1天或1周 # 分 时 日 月 周</span></span><br><span class="line">      - CERT_LOG_DIR=/var/<span class="built_in">log</span></span><br><span class="line">      - TZ=Asia/Shanghai</span><br><span class="line">    volumes:</span><br><span class="line">      - ./etc:/etc/letsencrypt:z</span><br><span class="line">      - ./lib:/var/lib/letsencrypt:z</span><br><span class="line">      - ./<span class="built_in">log</span>:/var/<span class="built_in">log</span>/letsencrypt:z</span><br><span class="line">      - ./domains:/opt/certbot/certbot-dns-cnyun/domains:ro</span><br><span class="line">      <span class="comment"># - ./docker-entrypoint.sh:/docker-entrypoint.sh # 可以根据需要调整脚本</span></span><br><span class="line">    entrypoint: /docker-entrypoint.sh <span class="comment"># 覆盖镜像默认指令</span></span><br><span class="line">    <span class="built_in">command</span>: </span><br><span class="line">      - renew-auto  <span class="comment"># 同CERT_START_MODE,可以任选其一进行配置(这个优先级高)</span></span><br><span class="line">      - hwy         <span class="comment"># 同CERT_DNS_VENDOR,可以任选其一进行配置(这个优先级高)</span></span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">docker-compose up -d</span><br><span class="line"><span class="comment"># 查看日志</span></span><br><span class="line">docker logs -f certbot</span><br><span class="line">docker <span class="built_in">exec</span> -it certbot tail -f <span class="variable">${CERT_LOG_DIR:-/var/log}</span>/renew.log</span><br></pre></td></tr></tbody></table></figure><h2 id="环境变量说明"><a href="#环境变量说明" class="headerlink" title="环境变量说明"></a>环境变量说明</h2><ul><li><code>CERT_START_MODE</code>: <code>&lt;必选项&gt;</code> 控制初始化或自动续期<ul><li><code>certonly</code> 第一次初始化证书</li><li><code>renew</code> 手动控制证书更新</li><li><code>renew-auto</code> 自动控制初始化和自动续期</li><li><code>*</code> 其他情况,参考最原始命令</li></ul></li><li><code>CERT_DNS_VENDOR</code> <code>&lt;必选项&gt;</code> 域名解析提供的供应商,和域名云服务器对应;<ul><li><code>dnspod</code>|<code>hwy</code>|<code>txy</code>|<code>aly</code>|<code>godaddy</code> 调用不同的dns解析生成验证证书</li><li><code>*</code> 其他情况,参考最原始命令</li></ul></li><li><code>CERT_EMAIL</code>: <code>&lt;必选项&gt;</code> 域名过期通知邮箱</li><li><code>CERT_REQ_DOMAINS</code>: <code>&lt;必选项&gt;</code> 需要生成证书的域名,多个域名用英文逗号分隔;生成的证书文件夹名称以第一个作为标准</li><li><code>CERT_CRON_TIME</code>: <code>&lt;可选项&gt;</code> 定时自动证书续期;当且仅当<code>CERT_START_MODE=renew-auto</code>时使用,默认<code>1 1 */1 * *</code></li><li><code>CERT_LOG_DIR</code>: <code>&lt;可选项&gt;</code> 设置自动证书续期日志目录;当且仅当<code>CERT_START_MODE=renew-auto</code>时使用,默认<code>/var/log</code></li></ul><h2 id="问题与支持"><a href="#问题与支持" class="headerlink" title="问题与支持"></a>问题与支持</h2><ul><li><strong>Blog :</strong> <a href="https://blog.darebeat.cn/" target="_blank" rel="noopener">https://blog.darebeat.cn</a></li><li><strong>Github:</strong> <a href="https://github.com/darebeat/docker-center/tree/master/deploy/certbot" target="_blank" rel="noopener">https://github.com/darebeat/docker-center/tree/master/deploy/certbot</a></li><li><strong>Gitee :</strong> <a href="https://gitee.com/darebeat/docker-center.git" target="_blank" rel="noopener">https://gitee.com/darebeat/docker-center.git</a></li></ul></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/19/">https://www.darebeat.cn/article/19/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
+</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/nginx/"><span class="chip bg-color">nginx</span></a> <a href="/tags/certbot/"><span class="chip bg-color">certbot</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/tools/" class="post-category">tools</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2020-11-22</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 126</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><link rel="stylesheet" href="/libs/prism/prism.min.css"><div class="card-content article-card-content"><div id="articleContent"><h2 id="配置文件准备"><a href="#配置文件准备" class="headerlink" title="配置文件准备"></a>配置文件准备</h2><p>根据需要配置初始化配置,<code>token</code>建议写入配置文件</p><pre class="line-numbers language-sh"><code class="language-sh"># dnspod.conf
+cat > dnspod.conf << EOF
+# dnspod
+# [申请文档](https://www.dnspod.cn/console/user/security)
+certbot_dns_dnspod:dns_dnspod_email = "DNSPOD-API-REQUIRES-A-VALID-EMAIL"
+certbot_dns_dnspod:dns_dnspod_api_token = "DNSPOD-API-TOKEN"
+EOF
+
+# .env
+cat > .env << EOF
+# 阿里云
+# [申请文档](https://help.aliyun.com/knowledge_detail/38738.html)
+ALY_KEY=
+ALY_TOKEN=
+# 腾讯云
+# [申请文档](https://console.cloud.tencent.com/cam/capi)
+TXY_KEY=
+TXY_TOKEN=
+# 华为云
+# [申请文档](https://support.huaweicloud.com/devg-apisign/api-sign-provide.html)
+HWY_KEY=
+HWY_TOKEN=
+# GoDaddy
+# [申请文档](https://developer.godaddy.com/getstarted)
+GODADDY_KEY=
+GODADDY_TOKEN=
+EOF
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="生成一个证书"><a href="#生成一个证书" class="headerlink" title="生成一个证书"></a>生成一个证书</h2><pre class="line-numbers language-sh"><code class="language-sh">cat > docker-compose.yaml << EOF
+version: "3"
+
+services:
+  certbot:
+    image: darebeat/certbot
+    container_name: certbot
+    env_file:
+      - .env
+    environment: 
+      - CERT_START_MODE=certonly # 控制初始化或自动续期
+      - CERT_DNS_VENDOR=hwy # dnspod|hwy|txy|aly|godaddy
+      - CERT_EMAIL=darebeat@126.com
+      - CERT_REQ_DOMAINS=darebeat.cn,*.darebeat.cn,*.blog.darebeat.cn # 多个域名用英文逗号隔开
+      - CERT_CRON_TIME=1 1 */7 * * # crontab日期格式 # 分 时 日 月 周
+      - CERT_LOG_DIR=/var/log
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./etc:/etc/letsencrypt:z
+      - ./lib:/var/lib/letsencrypt:z
+      - ./log:/var/log/letsencrypt:z
+      - ./domains:/opt/certbot/certbot-dns-cnyun/domains:ro
+      # - ./docker-entrypoint.sh:/docker-entrypoint.sh # 可以根据需要调整脚本
+    entrypoint: /docker-entrypoint.sh # 覆盖镜像默认指令
+    command: 
+      - certonly    # 同CERT_START_MODE,可以任选其一进行配置(这个优先级高)
+      - hwy         # 同CERT_DNS_VENDOR,可以任选其一进行配置(这个优先级高)
+EOF
+
+# 启动并查看日志
+docker-compose up
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="自动续期"><a href="#自动续期" class="headerlink" title="自动续期"></a>自动续期</h2><pre class="line-numbers language-sh"><code class="language-sh">cat > docker-compose.yaml << EOF
+version: "3"
+
+services:
+  certbot:
+    image: darebeat/certbot
+    container_name: certbot
+    env_file:
+      - .env
+    environment: 
+      - CERT_START_MODE=renew-auto # 控制初始化或自动续期
+      - CERT_DNS_VENDOR=hwy # dnspod|hwy|txy|aly|godaddy
+      - CERT_EMAIL=darebeat@126.com
+      - CERT_REQ_DOMAINS=darebeat.cn,*.darebeat.cn,*.blog.darebeat.cn # 多个域名用英文逗号隔开
+      - CERT_CRON_TIME=1 1 */7 * * # crontab日期格式,证书有效期<30天才会renew，所以crontab可以配置为1天或1周 # 分 时 日 月 周
+      - CERT_LOG_DIR=/var/log
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./etc:/etc/letsencrypt:z
+      - ./lib:/var/lib/letsencrypt:z
+      - ./log:/var/log/letsencrypt:z
+      - ./domains:/opt/certbot/certbot-dns-cnyun/domains:ro
+      # - ./docker-entrypoint.sh:/docker-entrypoint.sh # 可以根据需要调整脚本
+    entrypoint: /docker-entrypoint.sh # 覆盖镜像默认指令
+    command: 
+      - renew-auto  # 同CERT_START_MODE,可以任选其一进行配置(这个优先级高)
+      - hwy         # 同CERT_DNS_VENDOR,可以任选其一进行配置(这个优先级高)
+EOF
+
+# 启动
+docker-compose up -d
+# 查看日志
+docker logs -f certbot
+docker exec -it certbot tail -f ${CERT_LOG_DIR:-/var/log}/renew.log
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="环境变量说明"><a href="#环境变量说明" class="headerlink" title="环境变量说明"></a>环境变量说明</h2><ul><li><code>CERT_START_MODE</code>: <code>&lt;必选项&gt;</code> 控制初始化或自动续期<ul><li><code>certonly</code> 第一次初始化证书</li><li><code>renew</code> 手动控制证书更新</li><li><code>renew-auto</code> 自动控制初始化和自动续期</li><li><code>*</code> 其他情况,参考最原始命令</li></ul></li><li><code>CERT_DNS_VENDOR</code> <code>&lt;必选项&gt;</code> 域名解析提供的供应商,和域名云服务器对应;<ul><li><code>dnspod</code>|<code>hwy</code>|<code>txy</code>|<code>aly</code>|<code>godaddy</code> 调用不同的dns解析生成验证证书</li><li><code>*</code> 其他情况,参考最原始命令</li></ul></li><li><code>CERT_EMAIL</code>: <code>&lt;必选项&gt;</code> 域名过期通知邮箱</li><li><code>CERT_REQ_DOMAINS</code>: <code>&lt;必选项&gt;</code> 需要生成证书的域名,多个域名用英文逗号分隔;生成的证书文件夹名称以第一个作为标准</li><li><code>CERT_CRON_TIME</code>: <code>&lt;可选项&gt;</code> 定时自动证书续期;当且仅当<code>CERT_START_MODE=renew-auto</code>时使用,默认<code>1 1 */1 * *</code></li><li><code>CERT_LOG_DIR</code>: <code>&lt;可选项&gt;</code> 设置自动证书续期日志目录;当且仅当<code>CERT_START_MODE=renew-auto</code>时使用,默认<code>/var/log</code></li></ul><h2 id="问题与支持"><a href="#问题与支持" class="headerlink" title="问题与支持"></a>问题与支持</h2><ul><li><strong>Blog :</strong> <a href="https://blog.darebeat.cn/" target="_blank" rel="noopener">https://blog.darebeat.cn</a></li><li><strong>Github:</strong> <a href="https://github.com/darebeat/docker-center/tree/master/deploy/certbot" target="_blank" rel="noopener">https://github.com/darebeat/docker-center/tree/master/deploy/certbot</a></li><li><strong>Gitee :</strong> <a href="https://gitee.com/darebeat/docker-center.git" target="_blank" rel="noopener">https://gitee.com/darebeat/docker-center.git</a></li></ul></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/19/">https://www.darebeat.cn/article/19/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
       document.addEventListener("copy", function (e) {
         let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML});
@@ -348,9 +440,9 @@
             </script><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/darebeat" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fab fa-github"></i></a><a href="mailto:darebeat@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=871731559" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 871731559" data-position="top" data-delay="50"><i class="fab fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><script>
     $(document).ready(function () {
         /* 50ms周期检测函数 */
-        var int = setInterval(fixCount, 50);  
+        var int = setInterval(fixCount, 50);
         /* 初始化首次数据 */
-        var pvcountOffset = 20000;  
+        var pvcountOffset = 20000;
         var uvcountOffset = 5000;
 
         function fixCount() {
@@ -360,9 +452,9 @@
             }
             if ($("#busuanzi_container_site_pv").css("display") != "none") {
                 /* 加上初始数据 */
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); 
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset);
                 /* 停止检测 */
-                clearInterval(int); 
+                clearInterval(int);
             }
         }
     });

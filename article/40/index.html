@@ -131,7 +131,25 @@
         line-height: 48px;
         font-size: 1.4rem;
     }
-</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/%E5%B7%A5%E5%85%B7/"><span class="chip bg-color">工具</span></a> <a href="/tags/%E7%B3%BB%E7%BB%9F/"><span class="chip bg-color">系统</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/tools/" class="post-category">tools</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2020-12-23</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 272</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><p>准备:</p><ul><li>一个至少8g大小的u盘</li><li>原版win10镜像文件(<a href="https://www.microsoft.com/zh-cn/software-download/windows10ISO" target="_blank" rel="noopener">下载地址</a>)</li></ul><h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><p>假如原版win10镜像文件下载后的文件地址为: <code>~/Downloads/Win10_20H2_v2_Chinese(Simplified)_x64.iso</code></p><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">diskutil list <span class="comment"># /dev/disk2 (U盘设备)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将u盘清空,命名为win10,格式化为fat32格式,设置成gpt引导</span></span><br><span class="line">diskutil eraseDisk MS-DOS <span class="string">"WIN10"</span> GPT /dev/disk2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果你的pc主板过于老旧不支持gpt引导,请使用以下命令代替</span></span><br><span class="line">diskutil eraseDisk MS-DOS <span class="string">"WIN10"</span> MBR /dev/disk2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 挂载win10镜像文件</span></span><br><span class="line"><span class="comment"># 会输出类似`/Volumes/CCCOMA_X64FRE_ZH-CN_DV9`挂载的地址</span></span><br><span class="line">hdiutil mount ~/Downloads/Win10_20H2_v2_Chinese(Simplified)_x64.iso </span><br><span class="line"></span><br><span class="line"><span class="comment"># 将镜像文件的内容都复制到u盘内(除了install.wim,因为它大于4gb,后面会解决)</span></span><br><span class="line">rsync -vha --exclude=sources/install.wim /Volumes/CCCOMA_X64FRE_ZH-CN_DV9/ /Volumes/WIN10</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装wimlib工具,使用wimlib来分割install.wim,这样就能塞进fat32格式的u盘了</span></span><br><span class="line">brew install wimlib</span><br><span class="line">wimlib-imagex split /Volumes/CCCOMA_X64FRE_ZH-CN_DV9/sources/install.wim /Volumes/WIN10/sources/install.swm 4000</span><br></pre></td></tr></tbody></table></figure><p>等它提示finished就可以拔出u盘了,此时win10安装u盘已制作完成.</p><p>现在就可以开机选择从U盘启动,开始安装<code>WIN10</code>系统了.</p></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/40/">https://www.darebeat.cn/article/40/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
+</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/%E5%B7%A5%E5%85%B7/"><span class="chip bg-color">工具</span></a> <a href="/tags/%E7%B3%BB%E7%BB%9F/"><span class="chip bg-color">系统</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/tools/" class="post-category">tools</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2020-12-23</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 275</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><link rel="stylesheet" href="/libs/prism/prism.min.css"><div class="card-content article-card-content"><div id="articleContent"><p>准备:</p><ul><li>一个至少8g大小的u盘</li><li>原版win10镜像文件(<a href="https://www.microsoft.com/zh-cn/software-download/windows10ISO" target="_blank" rel="noopener">下载地址</a>)</li></ul><h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><p>假如原版win10镜像文件下载后的文件地址为: <code>~/Downloads/Win10_20H2_v2_Chinese(Simplified)_x64.iso</code></p><pre class="line-numbers language-sh"><code class="language-sh">diskutil list # /dev/disk2 (U盘设备)
+
+# 将u盘清空,命名为win10,格式化为fat32格式,设置成gpt引导
+diskutil eraseDisk MS-DOS "WIN10" GPT /dev/disk2
+
+# 如果你的pc主板过于老旧不支持gpt引导,请使用以下命令代替
+diskutil eraseDisk MS-DOS "WIN10" MBR /dev/disk2
+
+# 挂载win10镜像文件
+# 会输出类似`/Volumes/CCCOMA_X64FRE_ZH-CN_DV9`挂载的地址
+hdiutil mount ~/Downloads/Win10_20H2_v2_Chinese(Simplified)_x64.iso 
+
+# 将镜像文件的内容都复制到u盘内(除了install.wim,因为它大于4gb,后面会解决)
+rsync -vha --exclude=sources/install.wim /Volumes/CCCOMA_X64FRE_ZH-CN_DV9/ /Volumes/WIN10
+
+# 安装wimlib工具,使用wimlib来分割install.wim,这样就能塞进fat32格式的u盘了
+brew install wimlib
+wimlib-imagex split /Volumes/CCCOMA_X64FRE_ZH-CN_DV9/sources/install.wim /Volumes/WIN10/sources/install.swm 4000
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>等它提示finished就可以拔出u盘了,此时win10安装u盘已制作完成.</p><p>现在就可以开机选择从U盘启动,开始安装<code>WIN10</code>系统了.</p></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/40/">https://www.darebeat.cn/article/40/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
       document.addEventListener("copy", function (e) {
         let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML});
@@ -348,9 +366,9 @@
             </script><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/darebeat" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fab fa-github"></i></a><a href="mailto:darebeat@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=871731559" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 871731559" data-position="top" data-delay="50"><i class="fab fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><script>
     $(document).ready(function () {
         /* 50ms周期检测函数 */
-        var int = setInterval(fixCount, 50);  
+        var int = setInterval(fixCount, 50);
         /* 初始化首次数据 */
-        var pvcountOffset = 20000;  
+        var pvcountOffset = 20000;
         var uvcountOffset = 5000;
 
         function fixCount() {
@@ -360,9 +378,9 @@
             }
             if ($("#busuanzi_container_site_pv").css("display") != "none") {
                 /* 加上初始数据 */
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); 
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset);
                 /* 停止检测 */
-                clearInterval(int); 
+                clearInterval(int);
             }
         }
     });

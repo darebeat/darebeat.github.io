@@ -131,7 +131,70 @@
         line-height: 48px;
         font-size: 1.4rem;
     }
-</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/nginx/"><span class="chip bg-color">nginx</span></a> <a href="/tags/%E7%AD%BE%E5%90%8D/"><span class="chip bg-color">签名</span></a> <a href="/tags/%E7%A7%98%E9%92%A5/"><span class="chip bg-color">秘钥</span></a> <a href="/tags/CA%E8%AF%81%E4%B9%A6/"><span class="chip bg-color">CA证书</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/tools/" class="post-category">tools</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2020-11-19</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 368</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">SSL_PATH=.</span><br><span class="line"><span class="comment">#利用openssl生成key秘钥</span></span><br><span class="line">openssl genrsa -des3 -out <span class="variable">${SSL_PATH}</span>/darebeat.cn.key 1024</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建csr证书</span></span><br><span class="line"><span class="comment">## 需要输入一系列的信息。输入的信息中最重要的为Common Name，这里输入的域名即为我们要使用https访问的域名</span></span><br><span class="line"><span class="comment">## 可以使用泛域名如*.webkaka.com来生成所有二级域名可用的网站证书</span></span><br><span class="line">openssl req -new -key <span class="variable">${SSL_PATH}</span>/darebeat.cn.key -out <span class="variable">${SSL_PATH}</span>/darebeat.cn.csr</span><br><span class="line"></span><br><span class="line"><span class="comment"># 去除密码</span></span><br><span class="line"><span class="comment">## 在加载SSL支持的Nginx并使用上述私钥时除去必须的口令，否则会在启动nginx的时候需要输入密码</span></span><br><span class="line">cp <span class="variable">${SSL_PATH}</span>/darebeat.cn.key <span class="variable">${SSL_PATH}</span>/darebeat.cn.key.org</span><br><span class="line">openssl rsa -<span class="keyword">in</span> <span class="variable">${SSL_PATH}</span>/darebeat.cn.key.org -out <span class="variable">${SSL_PATH}</span>/darebeat.cn.key</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成crt证书</span></span><br><span class="line"><span class="comment">## 方法一</span></span><br><span class="line">openssl x509 -req -days 3650 \</span><br><span class="line">  -<span class="keyword">in</span> <span class="variable">${SSL_PATH}</span>/darebeat.cn.csr \</span><br><span class="line">  -signkey <span class="variable">${SSL_PATH}</span>/darebeat.cn.key \</span><br><span class="line">  -out <span class="variable">${SSL_PATH}</span>/darebeat.cn.crt</span><br><span class="line"></span><br><span class="line"><span class="comment">## 方法二</span></span><br><span class="line"><span class="comment">## 也可以直接用key生成crt文件，keyout会重新生成.key文件，重启nginx的时候就不需要输入密码了</span></span><br><span class="line">openssl req -days 36500 -x509 -sha256 -nodes -newkey rsa:2048 \</span><br><span class="line">  -keyout <span class="variable">${SSL_PATH}</span>/darebeat.cn.key \</span><br><span class="line">  -out <span class="variable">${SSL_PATH}</span>/darebeat.cn.crt</span><br></pre></td></tr></tbody></table></figure><h2 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">server {</span><br><span class="line">  listen 443 ssl;</span><br><span class="line">  server_name blog.darebeat.cn;</span><br><span class="line">  # 请求Http资源报错blocked mixed-content</span><br><span class="line">  add_header Content-Security-Policy upgrade-insecure-requests;</span><br><span class="line"></span><br><span class="line">  ssl_certificate ${SSL_PATH}/darebeat.cn.crt;</span><br><span class="line">  ssl_certificate_key ${SSL_PATH}/darebeat.cn.key;</span><br><span class="line">  ssl_protocols TLSv1 TLSv1.1 TLSv1.2 SSLv2 SSLv3;</span><br><span class="line">  ssl_prefer_server_ciphers on;</span><br><span class="line">  ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;</span><br><span class="line">  ssl_session_timeout 5m;</span><br><span class="line">  server_tokens off;</span><br><span class="line"></span><br><span class="line">  location / {</span><br><span class="line">    proxy_pass http://darebeat;</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  location ~ .* {</span><br><span class="line">    proxy_http_version 1.1;</span><br><span class="line">    proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">    proxy_set_header Connection "upgrade";</span><br><span class="line">    proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">    proxy_set_header X-Forwarded-For $remote_addr;</span><br><span class="line">    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">    proxy_set_header Host $http_host;</span><br><span class="line">    proxy_redirect off;</span><br><span class="line">    proxy_pass http://darebeat;</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  error_page 500 502 503 504 /50x.html;</span><br><span class="line">  location = /50x.html {</span><br><span class="line">    root /usr/share/nginx/html;</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/24/">https://www.darebeat.cn/article/24/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
+</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/nginx/"><span class="chip bg-color">nginx</span></a> <a href="/tags/%E7%AD%BE%E5%90%8D/"><span class="chip bg-color">签名</span></a> <a href="/tags/%E7%A7%98%E9%92%A5/"><span class="chip bg-color">秘钥</span></a> <a href="/tags/CA%E8%AF%81%E4%B9%A6/"><span class="chip bg-color">CA证书</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/tools/" class="post-category">tools</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2020-11-19</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 373</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><link rel="stylesheet" href="/libs/prism/prism.min.css"><div class="card-content article-card-content"><div id="articleContent"><pre class="line-numbers language-sh"><code class="language-sh">SSL_PATH=.
+#利用openssl生成key秘钥
+openssl genrsa -des3 -out ${SSL_PATH}/darebeat.cn.key 1024
+
+# 创建csr证书
+## 需要输入一系列的信息。输入的信息中最重要的为Common Name，这里输入的域名即为我们要使用https访问的域名
+## 可以使用泛域名如*.webkaka.com来生成所有二级域名可用的网站证书
+openssl req -new -key ${SSL_PATH}/darebeat.cn.key -out ${SSL_PATH}/darebeat.cn.csr
+
+# 去除密码
+## 在加载SSL支持的Nginx并使用上述私钥时除去必须的口令，否则会在启动nginx的时候需要输入密码
+cp ${SSL_PATH}/darebeat.cn.key ${SSL_PATH}/darebeat.cn.key.org
+openssl rsa -in ${SSL_PATH}/darebeat.cn.key.org -out ${SSL_PATH}/darebeat.cn.key
+
+
+# 生成crt证书
+## 方法一
+openssl x509 -req -days 3650 \
+  -in ${SSL_PATH}/darebeat.cn.csr \
+  -signkey ${SSL_PATH}/darebeat.cn.key \
+  -out ${SSL_PATH}/darebeat.cn.crt
+
+## 方法二
+## 也可以直接用key生成crt文件，keyout会重新生成.key文件，重启nginx的时候就不需要输入密码了
+openssl req -days 36500 -x509 -sha256 -nodes -newkey rsa:2048 \
+  -keyout ${SSL_PATH}/darebeat.cn.key \
+  -out ${SSL_PATH}/darebeat.cn.crt
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h2><pre class="line-numbers language-conf"><code class="language-conf">server {
+  listen 443 ssl;
+  server_name blog.darebeat.cn;
+  # 请求Http资源报错blocked mixed-content
+  add_header Content-Security-Policy upgrade-insecure-requests;
+
+  ssl_certificate ${SSL_PATH}/darebeat.cn.crt;
+  ssl_certificate_key ${SSL_PATH}/darebeat.cn.key;
+  ssl_protocols TLSv1 TLSv1.1 TLSv1.2 SSLv2 SSLv3;
+  ssl_prefer_server_ciphers on;
+  ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
+  ssl_session_timeout 5m;
+  server_tokens off;
+
+  location / {
+    proxy_pass http://darebeat;
+  }
+
+  location ~ .* {
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header Host $http_host;
+    proxy_redirect off;
+    proxy_pass http://darebeat;
+  }
+
+  error_page 500 502 503 504 /50x.html;
+  location = /50x.html {
+    root /usr/share/nginx/html;
+  }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/24/">https://www.darebeat.cn/article/24/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
       document.addEventListener("copy", function (e) {
         let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML});
@@ -348,9 +411,9 @@
             </script><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/darebeat" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fab fa-github"></i></a><a href="mailto:darebeat@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=871731559" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 871731559" data-position="top" data-delay="50"><i class="fab fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><script>
     $(document).ready(function () {
         /* 50ms周期检测函数 */
-        var int = setInterval(fixCount, 50);  
+        var int = setInterval(fixCount, 50);
         /* 初始化首次数据 */
-        var pvcountOffset = 20000;  
+        var pvcountOffset = 20000;
         var uvcountOffset = 5000;
 
         function fixCount() {
@@ -360,9 +423,9 @@
             }
             if ($("#busuanzi_container_site_pv").css("display") != "none") {
                 /* 加上初始数据 */
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); 
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset);
                 /* 停止检测 */
-                clearInterval(int); 
+                clearInterval(int);
             }
         }
     });

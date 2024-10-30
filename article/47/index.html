@@ -131,7 +131,89 @@
         line-height: 48px;
         font-size: 1.4rem;
     }
-</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/docker/"><span class="chip bg-color">docker</span></a> <a href="/tags/flink/"><span class="chip bg-color">flink</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/docker/" class="post-category">docker</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2021-01-05</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 490</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><h2 id="构建最新版本镜像"><a href="#构建最新版本镜像" class="headerlink" title="构建最新版本镜像"></a>构建最新版本镜像</h2><p>flink最新1.12版本镜像由于官方目前没有更新,这里自己构建.</p><p>我这里fork了官方的源码构建了一份,构建源码地址可以参考我的Github:</p><p><a href="https://github.com/darebeat/docker-center/tree/master/build/flink" target="_blank">https://github.com/darebeat/docker-center/tree/master/build/flink</a></p><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果不想自己构建,可以用我已经构建好的版本.</span></span><br><span class="line">docker pull darebeat/flink:1.12.0-scala_2.11</span><br></pre></td></tr></tbody></table></figure><h2 id="docker查看并创建本地公共网络"><a href="#docker查看并创建本地公共网络" class="headerlink" title="docker查看并创建本地公共网络"></a>docker查看并创建本地公共网络</h2><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据需要选择命令执行,如果 deploy 网络已创建,可忽略</span></span><br><span class="line">docker network ls</span><br><span class="line">docker network inspect deploy</span><br><span class="line">docker netwok rm deploy</span><br><span class="line">docker network create --driver=bridge --subnet=172.10.0.0/16 deploy</span><br></pre></td></tr></tbody></table></figure><h2 id="通过docker-compose部署管理应用"><a href="#通过docker-compose部署管理应用" class="headerlink" title="通过docker-compose部署管理应用"></a>通过docker-compose部署管理应用</h2><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 环境变量</span></span><br><span class="line">cat &lt;&lt; EOF &gt; .env</span><br><span class="line">FLINK_IMAGE_NAME=darebeat/flink</span><br><span class="line">FLINK_VERSION=1.12.0-scala_2.11</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="comment"># docker-compose配置文件 docker-compose.yaml</span></span><br><span class="line">cat &lt;&lt; EOF &gt; docker-compose-flink.yaml</span><br><span class="line">version: <span class="string">'3'</span></span><br><span class="line">services:</span><br><span class="line">  jobmanager:</span><br><span class="line">    image: <span class="variable">${FLINK_IMAGE_NAME:-darebeat/flink}</span>:<span class="variable">${FLINK_VERSION:-1.12.0-scala_2.11}</span></span><br><span class="line">    container_name: flink-jobmanager</span><br><span class="line">    hostname: jobmanager</span><br><span class="line">    networks:</span><br><span class="line">      deploy:</span><br><span class="line">        ipv4_address: 172.10.0.2</span><br><span class="line">        aliases:</span><br><span class="line">          - jobmanager</span><br><span class="line">    expose:</span><br><span class="line">      - <span class="string">"6123"</span></span><br><span class="line">    ports:</span><br><span class="line">      - <span class="string">"8081:8081"</span></span><br><span class="line">    <span class="comment"># command: jobmanager # 如果用这种方式启动,查看输出结果需要在运行的容器日志中查看</span></span><br><span class="line">    <span class="built_in">command</span>:</span><br><span class="line">      - bash</span><br><span class="line">      - -c</span><br><span class="line">      - |</span><br><span class="line">        sed -i <span class="string">'s/start-foreground/start/g'</span> /docker-entrypoint.sh</span><br><span class="line">        /docker-entrypoint.sh jobmanager</span><br><span class="line">        tail -f /docker-entrypoint.sh</span><br><span class="line">    environment:</span><br><span class="line">      - |</span><br><span class="line">        FLINK_PROPERTIES=</span><br><span class="line">        jobmanager.rpc.address: jobmanager</span><br><span class="line">    volumes:</span><br><span class="line">      - ./config/flink-jars/:/opt/flink/connector-lib/</span><br><span class="line"></span><br><span class="line">  taskmanager:</span><br><span class="line">    image: <span class="variable">${FLINK_IMAGE_NAME:-darebeat/flink}</span>:<span class="variable">${FLINK_VERSION:-1.12.0-scala_2.11}</span></span><br><span class="line">    container_name: flink-taskmanager</span><br><span class="line">    hostname: taskmanager</span><br><span class="line">    networks:</span><br><span class="line">      deploy:</span><br><span class="line">        ipv4_address: 172.10.0.3</span><br><span class="line">        aliases:</span><br><span class="line">          - taskmanager</span><br><span class="line">    expose:</span><br><span class="line">      - <span class="string">"6121"</span></span><br><span class="line">      - <span class="string">"6122"</span></span><br><span class="line">    depends_on:</span><br><span class="line">      - jobmanager</span><br><span class="line">    <span class="comment"># command: taskmanager # 如果用这种方式启动,查看输出结果需要在运行的容器日志中查看</span></span><br><span class="line">    <span class="built_in">command</span>:</span><br><span class="line">      - bash</span><br><span class="line">      - -c</span><br><span class="line">      - |</span><br><span class="line">        sed -i <span class="string">'s/start-foreground/start/g'</span> /docker-entrypoint.sh</span><br><span class="line">        /docker-entrypoint.sh taskmanager</span><br><span class="line">        tail -f /docker-entrypoint.sh</span><br><span class="line">    scale: 1</span><br><span class="line">    environment:</span><br><span class="line">      - |</span><br><span class="line">        FLINK_PROPERTIES=</span><br><span class="line">        jobmanager.rpc.address: jobmanager</span><br><span class="line">        taskmanager.numberOfTaskSlots: 8 <span class="comment"># 根据自己的机器可以配置更低或更高的数字,配置越高,配置的数字可以越高</span></span><br><span class="line"></span><br><span class="line">networks:</span><br><span class="line">  deploy:</span><br><span class="line">    external: <span class="literal">true</span></span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="comment"># docker-compose管理</span></span><br><span class="line">docker-compose -f docker-compose-flink.yaml up -d <span class="comment"># 启动</span></span><br><span class="line">docker-compose -f docker-compose-flink.yaml down -v <span class="comment"># 停止并移除实例</span></span><br></pre></td></tr></tbody></table></figure><p>浏览器打开 <a href="http://127.0.0.1:8081/" target="_blank" rel="noopener">http://127.0.0.1:8081</a> 可以看到dashboard</p><p>更多docker应用,请参考我的Github:<br><a href="https://github.com/darebeat/docker-center/tree/master/deploy" target="_blank">https://github.com/darebeat/docker-center/tree/master/deploy</a></p></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/47/">https://www.darebeat.cn/article/47/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
+</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/docker/"><span class="chip bg-color">docker</span></a> <a href="/tags/flink/"><span class="chip bg-color">flink</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/docker/" class="post-category">docker</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2021-01-05</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 457</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><link rel="stylesheet" href="/libs/prism/prism.min.css"><div class="card-content article-card-content"><div id="articleContent"><h2 id="构建最新版本镜像"><a href="#构建最新版本镜像" class="headerlink" title="构建最新版本镜像"></a>构建最新版本镜像</h2><p>flink最新1.12版本镜像由于官方目前没有更新,这里自己构建.</p><p>我这里fork了官方的源码构建了一份,构建源码地址可以参考我的Github:</p><p><a href="https://github.com/darebeat/docker-center/tree/master/build/flink" target="_blank">https://github.com/darebeat/docker-center/tree/master/build/flink</a></p><pre class="line-numbers language-sh"><code class="language-sh"># 如果不想自己构建,可以用我已经构建好的版本.
+docker pull darebeat/flink:1.12.0-scala_2.11
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="docker查看并创建本地公共网络"><a href="#docker查看并创建本地公共网络" class="headerlink" title="docker查看并创建本地公共网络"></a>docker查看并创建本地公共网络</h2><pre class="line-numbers language-sh"><code class="language-sh"># 根据需要选择命令执行,如果 deploy 网络已创建,可忽略
+docker network ls
+docker network inspect deploy
+docker netwok rm deploy
+docker network create --driver=bridge --subnet=172.10.0.0/16 deploy
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="通过docker-compose部署管理应用"><a href="#通过docker-compose部署管理应用" class="headerlink" title="通过docker-compose部署管理应用"></a>通过docker-compose部署管理应用</h2><pre class="line-numbers language-sh"><code class="language-sh"># 环境变量
+cat << EOF> .env
+FLINK_IMAGE_NAME=darebeat/flink
+FLINK_VERSION=1.12.0-scala_2.11
+EOF
+
+# docker-compose配置文件 docker-compose.yaml
+cat << EOF> docker-compose-flink.yaml
+version: '3'
+services:
+  jobmanager:
+    image: ${FLINK_IMAGE_NAME:-darebeat/flink}:${FLINK_VERSION:-1.12.0-scala_2.11}
+    container_name: flink-jobmanager
+    hostname: jobmanager
+    networks:
+      deploy:
+        ipv4_address: 172.10.0.2
+        aliases:
+          - jobmanager
+    expose:
+      - "6123"
+    ports:
+      - "8081:8081"
+    # command: jobmanager # 如果用这种方式启动,查看输出结果需要在运行的容器日志中查看
+    command:
+      - bash
+      - -c
+      - |
+        sed -i 's/start-foreground/start/g' /docker-entrypoint.sh
+        /docker-entrypoint.sh jobmanager
+        tail -f /docker-entrypoint.sh
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager
+    volumes:
+      - ./config/flink-jars/:/opt/flink/connector-lib/
+
+  taskmanager:
+    image: ${FLINK_IMAGE_NAME:-darebeat/flink}:${FLINK_VERSION:-1.12.0-scala_2.11}
+    container_name: flink-taskmanager
+    hostname: taskmanager
+    networks:
+      deploy:
+        ipv4_address: 172.10.0.3
+        aliases:
+          - taskmanager
+    expose:
+      - "6121"
+      - "6122"
+    depends_on:
+      - jobmanager
+    # command: taskmanager # 如果用这种方式启动,查看输出结果需要在运行的容器日志中查看
+    command:
+      - bash
+      - -c
+      - |
+        sed -i 's/start-foreground/start/g' /docker-entrypoint.sh
+        /docker-entrypoint.sh taskmanager
+        tail -f /docker-entrypoint.sh
+    scale: 1
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager
+        taskmanager.numberOfTaskSlots: 8 # 根据自己的机器可以配置更低或更高的数字,配置越高,配置的数字可以越高
+
+networks:
+  deploy:
+    external: true
+EOF
+
+# docker-compose管理
+docker-compose -f docker-compose-flink.yaml up -d # 启动
+docker-compose -f docker-compose-flink.yaml down -v # 停止并移除实例
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>浏览器打开 <a href="http://127.0.0.1:8081/" target="_blank" rel="noopener">http://127.0.0.1:8081</a> 可以看到dashboard</p><p>更多docker应用,请参考我的Github:<br><a href="https://github.com/darebeat/docker-center/tree/master/deploy" target="_blank">https://github.com/darebeat/docker-center/tree/master/deploy</a></p></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/47/">https://www.darebeat.cn/article/47/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
       document.addEventListener("copy", function (e) {
         let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML});
@@ -348,9 +430,9 @@
             </script><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/darebeat" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fab fa-github"></i></a><a href="mailto:darebeat@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=871731559" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 871731559" data-position="top" data-delay="50"><i class="fab fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><script>
     $(document).ready(function () {
         /* 50ms周期检测函数 */
-        var int = setInterval(fixCount, 50);  
+        var int = setInterval(fixCount, 50);
         /* 初始化首次数据 */
-        var pvcountOffset = 20000;  
+        var pvcountOffset = 20000;
         var uvcountOffset = 5000;
 
         function fixCount() {
@@ -360,9 +442,9 @@
             }
             if ($("#busuanzi_container_site_pv").css("display") != "none") {
                 /* 加上初始数据 */
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); 
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset);
                 /* 停止检测 */
-                clearInterval(int); 
+                clearInterval(int);
             }
         }
     });

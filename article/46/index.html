@@ -131,7 +131,84 @@
         line-height: 48px;
         font-size: 1.4rem;
     }
-</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/docker/"><span class="chip bg-color">docker</span></a> <a href="/tags/mysql/"><span class="chip bg-color">mysql</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/docker/" class="post-category">docker</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2021-01-03</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 325</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><h2 id="docker查看并创建本地公共网络"><a href="#docker查看并创建本地公共网络" class="headerlink" title="docker查看并创建本地公共网络"></a>docker查看并创建本地公共网络</h2><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据需要选择命令执行,如果 deploy 网络已创建,可忽略</span></span><br><span class="line">docker network ls</span><br><span class="line">docker network inspect deploy</span><br><span class="line">docker netwok rm deploy</span><br><span class="line">docker network create --driver=bridge --subnet=172.10.0.0/16 deploy</span><br></pre></td></tr></tbody></table></figure><h2 id="通过docker-compose部署管理应用"><a href="#通过docker-compose部署管理应用" class="headerlink" title="通过docker-compose部署管理应用"></a>通过docker-compose部署管理应用</h2><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 环境变量</span></span><br><span class="line">cat &lt;&lt; EOF &gt; .env</span><br><span class="line">MYSQL_ROOT_PASSWORD=mysql</span><br><span class="line">MYSQL_USER=canal</span><br><span class="line">MYSQL_PASSWORD=canal </span><br><span class="line">MYSQL_DATABASE=<span class="built_in">test</span></span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="comment"># docker-compose配置文件 docker-compose.yaml</span></span><br><span class="line">cat &lt;&lt; EOF &gt; docker-compose-mysql.yaml</span><br><span class="line">version: <span class="string">'3'</span></span><br><span class="line">services:</span><br><span class="line">  mysql:</span><br><span class="line">    image: mysql:5.7</span><br><span class="line">    container_name: mysql</span><br><span class="line">    restart: always</span><br><span class="line">    networks:</span><br><span class="line">      deploy:</span><br><span class="line">        ipv4_address: 172.10.0.4</span><br><span class="line">        aliases:</span><br><span class="line">          - mysql</span><br><span class="line">    ports:</span><br><span class="line">      - <span class="string">"13306:3306"</span></span><br><span class="line">    env_file:</span><br><span class="line">      - .env</span><br><span class="line">    environment:</span><br><span class="line">      - TZ=Asia/Shanghai</span><br><span class="line">    volumes:</span><br><span class="line">      - ./db:/var/lib/mysql:rw</span><br><span class="line">      - ./src/config/mysqld.cnf:/etc/my.cnf:ro</span><br><span class="line">    tty: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">networks:</span><br><span class="line">  deploy:</span><br><span class="line">    external: <span class="literal">true</span></span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="comment"># mysql自定义配置</span></span><br><span class="line"><span class="comment"># src/config/mysqld.cnf</span></span><br><span class="line">mkdir -p src/config</span><br><span class="line">cat &lt;&lt; EOF &gt; src/config/mysqld.cnf</span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8mb4</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set=utf8mb4</span><br><span class="line">max_allowed_packet=500M</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">character-set-server=utf8mb4</span><br><span class="line">default_authentication_plugin=mysql_native_password</span><br><span class="line">ft_min_word_len=2</span><br><span class="line">lower_case_table_names=1</span><br><span class="line">default_time_zone=+8:00</span><br><span class="line">max_connections = 512</span><br><span class="line">tmp_table_size = 10240M</span><br><span class="line">max_heap_table_size = 10240M</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启binlog,这里按需配置</span></span><br><span class="line"><span class="built_in">log</span>-bin=mysql-bin </span><br><span class="line">binlog-format=ROW <span class="comment"># 选择ROW模式</span></span><br><span class="line">server_id=1 <span class="comment"># 配置MySQL replaction需要定义，不要和Canal的slaveId重复</span></span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="comment"># docker-compose管理</span></span><br><span class="line">docker-compose -f docker-compose-mysql.yaml up -d <span class="comment"># 启动</span></span><br><span class="line">docker-compose -f docker-compose-mysql.yaml down -v <span class="comment"># 停止并移除实例</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接mysql,然后开始你的表演</span></span><br><span class="line">docker <span class="built_in">exec</span> -it mysql mysql -uroot -p</span><br><span class="line"><span class="comment"># 或者通过宿主机IP连接,也可以通过客户端工具连接</span></span><br><span class="line">mysql -h 127.0.0.1 -P 13306 -uroot -p</span><br></pre></td></tr></tbody></table></figure><p>更多docker应用,请参考我的Github:<br><a href="https://github.com/darebeat/docker-center/tree/master/deploy" target="_blank">https://github.com/darebeat/docker-center/tree/master/deploy</a></p></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/46/">https://www.darebeat.cn/article/46/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
+</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/docker/"><span class="chip bg-color">docker</span></a> <a href="/tags/mysql/"><span class="chip bg-color">mysql</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/docker/" class="post-category">docker</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2021-01-03</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 320</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><link rel="stylesheet" href="/libs/prism/prism.min.css"><div class="card-content article-card-content"><div id="articleContent"><h2 id="docker查看并创建本地公共网络"><a href="#docker查看并创建本地公共网络" class="headerlink" title="docker查看并创建本地公共网络"></a>docker查看并创建本地公共网络</h2><pre class="line-numbers language-sh"><code class="language-sh"># 根据需要选择命令执行,如果 deploy 网络已创建,可忽略
+docker network ls
+docker network inspect deploy
+docker netwok rm deploy
+docker network create --driver=bridge --subnet=172.10.0.0/16 deploy
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="通过docker-compose部署管理应用"><a href="#通过docker-compose部署管理应用" class="headerlink" title="通过docker-compose部署管理应用"></a>通过docker-compose部署管理应用</h2><pre class="line-numbers language-sh"><code class="language-sh"># 环境变量
+cat << EOF> .env
+MYSQL_ROOT_PASSWORD=mysql
+MYSQL_USER=canal
+MYSQL_PASSWORD=canal 
+MYSQL_DATABASE=test
+EOF
+
+# docker-compose配置文件 docker-compose.yaml
+cat << EOF> docker-compose-mysql.yaml
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    networks:
+      deploy:
+        ipv4_address: 172.10.0.4
+        aliases:
+          - mysql
+    ports:
+      - "13306:3306"
+    env_file:
+      - .env
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./db:/var/lib/mysql:rw
+      - ./src/config/mysqld.cnf:/etc/my.cnf:ro
+    tty: true
+
+networks:
+  deploy:
+    external: true
+EOF
+
+# mysql自定义配置
+# src/config/mysqld.cnf
+mkdir -p src/config
+cat << EOF> src/config/mysqld.cnf
+[client]
+default-character-set=utf8mb4
+
+[mysql]
+default-character-set=utf8mb4
+max_allowed_packet=500M
+
+[mysqld]
+character-set-server=utf8mb4
+default_authentication_plugin=mysql_native_password
+ft_min_word_len=2
+lower_case_table_names=1
+default_time_zone=+8:00
+max_connections = 512
+tmp_table_size = 10240M
+max_heap_table_size = 10240M
+
+# 开启binlog,这里按需配置
+log-bin=mysql-bin 
+binlog-format=ROW # 选择ROW模式
+server_id=1 # 配置MySQL replaction需要定义，不要和Canal的slaveId重复
+EOF
+
+# docker-compose管理
+docker-compose -f docker-compose-mysql.yaml up -d # 启动
+docker-compose -f docker-compose-mysql.yaml down -v # 停止并移除实例
+
+# 连接mysql,然后开始你的表演
+docker exec -it mysql mysql -uroot -p
+# 或者通过宿主机IP连接,也可以通过客户端工具连接
+mysql -h 127.0.0.1 -P 13306 -uroot -p
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>更多docker应用,请参考我的Github:<br><a href="https://github.com/darebeat/docker-center/tree/master/deploy" target="_blank">https://github.com/darebeat/docker-center/tree/master/deploy</a></p></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/46/">https://www.darebeat.cn/article/46/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
       document.addEventListener("copy", function (e) {
         let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML});
@@ -348,9 +425,9 @@
             </script><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/darebeat" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fab fa-github"></i></a><a href="mailto:darebeat@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=871731559" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 871731559" data-position="top" data-delay="50"><i class="fab fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><script>
     $(document).ready(function () {
         /* 50ms周期检测函数 */
-        var int = setInterval(fixCount, 50);  
+        var int = setInterval(fixCount, 50);
         /* 初始化首次数据 */
-        var pvcountOffset = 20000;  
+        var pvcountOffset = 20000;
         var uvcountOffset = 5000;
 
         function fixCount() {
@@ -360,9 +437,9 @@
             }
             if ($("#busuanzi_container_site_pv").css("display") != "none") {
                 /* 加上初始数据 */
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); 
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset);
                 /* 停止检测 */
-                clearInterval(int); 
+                clearInterval(int);
             }
         }
     });

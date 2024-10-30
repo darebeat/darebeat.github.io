@@ -131,7 +131,136 @@
         line-height: 48px;
         font-size: 1.4rem;
     }
-</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/mac/"><span class="chip bg-color">mac</span></a> <a href="/tags/teamviewer/"><span class="chip bg-color">teamviewer</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/tools/" class="post-category">tools</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2021-01-20</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 417</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><h2 id="生成逻辑脚本"><a href="#生成逻辑脚本" class="headerlink" title="生成逻辑脚本"></a>生成逻辑脚本</h2><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; teamviewer-change-id.py &lt;&lt; EOF</span><br><span class="line"><span class="comment">#!/usr/bin/env python </span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line">import sys</span><br><span class="line">import os</span><br><span class="line">import glob</span><br><span class="line">import platform</span><br><span class="line">import re</span><br><span class="line">import random</span><br><span class="line">import string</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span>(<span class="string">''</span><span class="string">'</span></span><br><span class="line"><span class="string">--------------------------------</span></span><br><span class="line"><span class="string">TeamViewer ID Changer for MAC OS</span></span><br><span class="line"><span class="string">--------------------------------</span></span><br><span class="line"><span class="string">'</span><span class="string">''</span>)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> platform.system() != <span class="string">'Darwin'</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'This script can be run only on MAC OS.'</span>)</span><br><span class="line">    sys.exit();</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> os.geteuid() != 0:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'This script must be run form root.'</span>)</span><br><span class="line">    sys.exit();</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> os.environ.has_key(<span class="string">'SUDO_USER'</span>):</span><br><span class="line">    USERNAME = os.environ[<span class="string">'SUDO_USER'</span>]</span><br><span class="line">    <span class="keyword">if</span> USERNAME == <span class="string">'root'</span>:</span><br><span class="line">       <span class="built_in">print</span>(<span class="string">'Can not find user name. Run this script via sudo from regular user'</span>)</span><br><span class="line">       sys.exit();</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Can not find user name. Run this script via sudo from regular user'</span>)</span><br><span class="line">    sys.exit();</span><br><span class="line"> </span><br><span class="line">HOMEDIRLIB = <span class="string">'/Users/'</span> + USERNAME  + <span class="string">'/Library/Preferences/'</span></span><br><span class="line">GLOBALLIB  =  <span class="string">'/Library/Preferences/'</span></span><br><span class="line"> </span><br><span class="line">CONFIGS = []</span><br><span class="line"> </span><br><span class="line"><span class="comment"># Find config files</span></span><br><span class="line"> </span><br><span class="line">def listdir_fullpath(d):</span><br><span class="line">    <span class="built_in">return</span> [os.path.join(d, f) <span class="keyword">for</span> f <span class="keyword">in</span> os.listdir(d)]</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> listdir_fullpath(HOMEDIRLIB):</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'teamviewer'</span>.lower() <span class="keyword">in</span> file.lower():</span><br><span class="line">        CONFIGS.append(file)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> not CONFIGS:</span><br><span class="line">    <span class="built_in">print</span> (<span class="string">''</span><span class="string">'</span></span><br><span class="line"><span class="string">There is no TemViewer configs found.</span></span><br><span class="line"><span class="string">Maybe you have deleted it manualy or never run TeamViewer after installation.</span></span><br><span class="line"><span class="string">Nothing to delete.</span></span><br><span class="line"><span class="string">'</span><span class="string">''</span>)</span><br><span class="line"><span class="comment"># Delete config files</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Configs found:\n"</span>)</span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> CONFIGS:</span><br><span class="line">        <span class="built_in">print</span> file</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">''</span><span class="string">'</span></span><br><span class="line"><span class="string">This files will be DELETED permanently.</span></span><br><span class="line"><span class="string">All TeamViewer settings will be lost</span></span><br><span class="line"><span class="string">'</span><span class="string">''</span>)</span><br><span class="line">    raw_input(<span class="string">"Press Enter to continue or CTR+C to abort..."</span>)</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> CONFIGS:</span><br><span class="line">        try:</span><br><span class="line">            os.remove(file)</span><br><span class="line">        except:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"Cannot delete config files. Permission denied?"</span>)</span><br><span class="line">            sys.exit();</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Done."</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># Find binaryes</span></span><br><span class="line"> </span><br><span class="line">TMBINARYES = [</span><br><span class="line"><span class="string">'/Applications/TeamViewer.app/Contents/MacOS/TeamViewer'</span>,</span><br><span class="line"><span class="string">'/Applications/TeamViewer.app/Contents/MacOS/TeamViewer_Service'</span>,</span><br><span class="line"><span class="string">'/Applications/TeamViewer.app/Contents/Helpers/TeamViewer_Desktop'</span>,</span><br><span class="line">]</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> TMBINARYES:</span><br><span class="line">    <span class="keyword">if</span> os.path.exists(file):</span><br><span class="line">        pass</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"File not found: "</span> + file)</span><br><span class="line">        <span class="built_in">print</span> (<span class="string">"Install TeamViewer correctly"</span>)</span><br><span class="line">        sys.exit();</span><br><span class="line"> </span><br><span class="line"><span class="comment"># Patch files</span></span><br><span class="line"> </span><br><span class="line">def idpatch(fpath,platf,serial):</span><br><span class="line">    file = open(fpath, <span class="string">'r+b'</span>)</span><br><span class="line">    binary = file.read()</span><br><span class="line">    PlatformPattern = <span class="string">"IOPlatformExpert.{6}"</span></span><br><span class="line">    SerialPattern =  <span class="string">"IOPlatformSerialNumber%s%s%sUUID"</span></span><br><span class="line"> </span><br><span class="line">    binary = re.sub(PlatformPattern, platf, binary)</span><br><span class="line">    binary = re.sub(SerialPattern % (chr(0), <span class="string">"[0-9a-zA-Z]{8,8}"</span>, chr(0)), SerialPattern%(chr(0), serial, chr(0)), binary)</span><br><span class="line"> </span><br><span class="line">    file = open(fpath,<span class="string">'wb'</span>).write(binary)</span><br><span class="line">    <span class="built_in">return</span> True</span><br><span class="line"> </span><br><span class="line">def random_generator(size=8, chars=string.ascii_uppercase + string.digits):</span><br><span class="line">    <span class="built_in">return</span> <span class="string">''</span>.join(random.choice(chars) <span class="keyword">for</span> _ <span class="keyword">in</span> range(size))</span><br><span class="line"> </span><br><span class="line">RANDOMSERIAL = random_generator()</span><br><span class="line">RANDOMPLATFORM = <span class="string">"IOPlatformExpert"</span> + random_generator(6)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> TMBINARYES:</span><br><span class="line">    try:</span><br><span class="line">        idpatch(file,RANDOMPLATFORM,RANDOMSERIAL)</span><br><span class="line">    except:</span><br><span class="line">        <span class="built_in">print</span> <span class="string">"Error: can not patch file "</span> + file</span><br><span class="line">        <span class="built_in">print</span> <span class="string">"Wrong version?"</span></span><br><span class="line">        sys.exit();</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span> <span class="string">"PlatformDevice: "</span> + RANDOMPLATFORM</span><br><span class="line"><span class="built_in">print</span> <span class="string">"PlatformSerial: "</span> + RANDOMSERIAL</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span>(<span class="string">''</span><span class="string">'</span></span><br><span class="line"><span class="string">ID changed sucessfully.</span></span><br><span class="line"><span class="string">!!! Restart computer before using TeamViewer !!!!</span></span><br><span class="line"><span class="string">'</span><span class="string">''</span>)</span><br><span class="line">EOF</span><br></pre></td></tr></tbody></table></figure><h2 id="执行步骤"><a href="#执行步骤" class="headerlink" title="执行步骤"></a>执行步骤</h2><ul><li><p>退出teamviewer</p></li><li><p>执行脚本</p><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo python teamviewer-change-id.py</span><br></pre></td></tr></tbody></table></figure></li><li><p>重启电脑</p></li></ul></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/57/">https://www.darebeat.cn/article/57/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
+</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/mac/"><span class="chip bg-color">mac</span></a> <a href="/tags/teamviewer/"><span class="chip bg-color">teamviewer</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/tools/" class="post-category">tools</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2021-01-20</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 402</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><link rel="stylesheet" href="/libs/prism/prism.min.css"><div class="card-content article-card-content"><div id="articleContent"><h2 id="生成逻辑脚本"><a href="#生成逻辑脚本" class="headerlink" title="生成逻辑脚本"></a>生成逻辑脚本</h2><pre class="line-numbers language-sh"><code class="language-sh">cat > teamviewer-change-id.py << EOF
+#!/usr/bin/env python 
+ 
+#coding:utf-8
+import sys
+import os
+import glob
+import platform
+import re
+import random
+import string
+ 
+print('''
+--------------------------------
+TeamViewer ID Changer for MAC OS
+--------------------------------
+''')
+ 
+if platform.system() != 'Darwin':
+    print('This script can be run only on MAC OS.')
+    sys.exit();
+ 
+if os.geteuid() != 0:
+    print('This script must be run form root.')
+    sys.exit();
+ 
+if os.environ.has_key('SUDO_USER'):
+    USERNAME = os.environ['SUDO_USER']
+    if USERNAME == 'root':
+       print('Can not find user name. Run this script via sudo from regular user')
+       sys.exit();
+else:
+    print('Can not find user name. Run this script via sudo from regular user')
+    sys.exit();
+ 
+HOMEDIRLIB = '/Users/' + USERNAME  + '/Library/Preferences/'
+GLOBALLIB  =  '/Library/Preferences/'
+ 
+CONFIGS = []
+ 
+# Find config files
+ 
+def listdir_fullpath(d):
+    return [os.path.join(d, f) for f in os.listdir(d)]
+ 
+for file in listdir_fullpath(HOMEDIRLIB):
+    if 'teamviewer'.lower() in file.lower():
+        CONFIGS.append(file)
+ 
+if not CONFIGS:
+    print ('''
+There is no TemViewer configs found.
+Maybe you have deleted it manualy or never run TeamViewer after installation.
+Nothing to delete.
+''')
+# Delete config files
+else:
+    print("Configs found:\n")
+    for file in CONFIGS:
+        print file
+ 
+    print('''
+This files will be DELETED permanently.
+All TeamViewer settings will be lost
+''')
+    raw_input("Press Enter to continue or CTR+C to abort...")
+ 
+    for file in CONFIGS:
+        try:
+            os.remove(file)
+        except:
+            print("Cannot delete config files. Permission denied?")
+            sys.exit();
+    print("Done.")
+ 
+# Find binaryes
+ 
+TMBINARYES = [
+'/Applications/TeamViewer.app/Contents/MacOS/TeamViewer',
+'/Applications/TeamViewer.app/Contents/MacOS/TeamViewer_Service',
+'/Applications/TeamViewer.app/Contents/Helpers/TeamViewer_Desktop',
+]
+ 
+for file in TMBINARYES:
+    if os.path.exists(file):
+        pass
+    else:
+        print("File not found: " + file)
+        print ("Install TeamViewer correctly")
+        sys.exit();
+ 
+# Patch files
+ 
+def idpatch(fpath,platf,serial):
+    file = open(fpath, 'r+b')
+    binary = file.read()
+    PlatformPattern = "IOPlatformExpert.{6}"
+    SerialPattern =  "IOPlatformSerialNumber%s%s%sUUID"
+ 
+    binary = re.sub(PlatformPattern, platf, binary)
+    binary = re.sub(SerialPattern % (chr(0), "[0-9a-zA-Z]{8,8}", chr(0)), SerialPattern%(chr(0), serial, chr(0)), binary)
+ 
+    file = open(fpath,'wb').write(binary)
+    return True
+ 
+def random_generator(size=8, chars=string.ascii_uppercase + string.digits):
+    return ''.join(random.choice(chars) for _ in range(size))
+ 
+RANDOMSERIAL = random_generator()
+RANDOMPLATFORM = "IOPlatformExpert" + random_generator(6)
+ 
+ 
+for file in TMBINARYES:
+    try:
+        idpatch(file,RANDOMPLATFORM,RANDOMSERIAL)
+    except:
+        print "Error: can not patch file " + file
+        print "Wrong version?"
+        sys.exit();
+ 
+print "PlatformDevice: " + RANDOMPLATFORM
+print "PlatformSerial: " + RANDOMSERIAL
+ 
+print('''
+ID changed sucessfully.
+!!! Restart computer before using TeamViewer !!!!
+''')
+EOF
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="执行步骤"><a href="#执行步骤" class="headerlink" title="执行步骤"></a>执行步骤</h2><ul><li><p>退出teamviewer</p></li><li><p>执行脚本</p><pre class="line-numbers language-sh"><code class="language-sh">sudo python teamviewer-change-id.py
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>重启电脑</p></li></ul></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/57/">https://www.darebeat.cn/article/57/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
       document.addEventListener("copy", function (e) {
         let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML});
@@ -348,9 +477,9 @@
             </script><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/darebeat" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fab fa-github"></i></a><a href="mailto:darebeat@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=871731559" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 871731559" data-position="top" data-delay="50"><i class="fab fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><script>
     $(document).ready(function () {
         /* 50ms周期检测函数 */
-        var int = setInterval(fixCount, 50);  
+        var int = setInterval(fixCount, 50);
         /* 初始化首次数据 */
-        var pvcountOffset = 20000;  
+        var pvcountOffset = 20000;
         var uvcountOffset = 5000;
 
         function fixCount() {
@@ -360,9 +489,9 @@
             }
             if ($("#busuanzi_container_site_pv").css("display") != "none") {
                 /* 加上初始数据 */
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); 
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset);
                 /* 停止检测 */
-                clearInterval(int); 
+                clearInterval(int);
             }
         }
     });

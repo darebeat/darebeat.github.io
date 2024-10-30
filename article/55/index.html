@@ -131,7 +131,156 @@
         line-height: 48px;
         font-size: 1.4rem;
     }
-</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/centos/"><span class="chip bg-color">centos</span></a> <a href="/tags/ftp/"><span class="chip bg-color">ftp</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/tools/" class="post-category">tools</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2021-01-13</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 853</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><p>FTP是FileTransferProtocol（文件传输协议）的英文简称，而中文简称为“文传协议”。用于Internet上的控制文件的双向传输。同时，它也是一个应用程序（Application）。基于不同的操作系统有不同的FTP应用程序，而所有这些应用程序都遵守同一种协议以传输文件。在FTP的使用当中，用户经常遇到两个概念：”下载”（Download）和”上传”（Upload）。”下载”文件就是从远程主机拷贝文件至自己的计算机上；”上传”文件就是将文件从自己的计算机中拷贝至远程主机上。用Internet语言来说，用户可通过客户机程序向（从）远程主机上传（下载）文件。</p><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment">#此脚本目前只是为了方便centos7下安装vsftp,其他版本后期集成。</span></span><br><span class="line"><span class="comment">#ftp数据存放目录</span></span><br><span class="line">ftp_data=/home/ftp</span><br><span class="line"><span class="function"><span class="title">check_friewalld</span></span>(){</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"开始检查防火墙设置"</span></span><br><span class="line">    systemctl status firewalld |grep runing &amp; &gt;/dev/null</span><br><span class="line">    <span class="keyword">if</span> [ $? -ne 0 ]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        firewall-cmd --add-port=21/tcp --zone=public --permanent</span><br><span class="line">        firewall-cmd --add-service=ftp</span><br><span class="line">        firewall-cmd --reload</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">if</span> [ $? -eq 0 ]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"防火墙开启成功"</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    useradd -s /sbin/nologin ftp</span><br><span class="line">}</span><br><span class="line"><span class="comment">#搭建ftp</span></span><br><span class="line"><span class="function"><span class="title">install_vsftp</span></span>(){</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"开始安装vsftp 并且检查环境"</span> </span><br><span class="line">    yum -y install vsftpd libdb-utils</span><br><span class="line">    <span class="keyword">if</span> [ $? -ne 0 ]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"请检查你的yum源情况，是否出现无法用，可单独在终端执行 yum makecache 测试"</span></span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="comment">#检查防火墙,开放21端口</span></span><br><span class="line">    check_friewalld</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"开始配置ftp"</span></span><br><span class="line">    mv /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf_bak</span><br><span class="line">    <span class="comment">#配置数据写入到配置文件</span></span><br><span class="line"></span><br><span class="line">    cat &gt;/etc/vsftpd/vsftpd.conf&lt;&lt;LWT</span><br><span class="line">listen=yes</span><br><span class="line">anonymous_enable=no</span><br><span class="line">dirmessage_enable=YES</span><br><span class="line">xferlog_enable=YES</span><br><span class="line">xferlog_file=/var/<span class="built_in">log</span>/vsftpd.log</span><br><span class="line">xferlog_std_format=YES</span><br><span class="line">chroot_list_enable=YES</span><br><span class="line">chroot_list_file=/etc/vsftpd/chroot_list</span><br><span class="line">chroot_local_user=yes</span><br><span class="line">guest_enable=YES</span><br><span class="line">guest_username=ftp</span><br><span class="line">user_config_dir=/etc/vsftpd/vsftpd_user_conf</span><br><span class="line">pam_service_name=vsftpd.vu</span><br><span class="line">allow_writeable_chroot=YES</span><br><span class="line">local_enable=YES</span><br><span class="line">LWT</span><br><span class="line"></span><br><span class="line">    <span class="built_in">read</span> -p <span class="string">"输入ftp用户:"</span> ftp_user</span><br><span class="line">    <span class="keyword">if</span> [ ! -n <span class="string">"<span class="variable">$ftp_user</span>"</span> ];<span class="keyword">then</span></span><br><span class="line">        ftp_user=<span class="built_in">test</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">read</span> -p <span class="string">"输入ftp用户密码:"</span> ftp_passwd</span><br><span class="line">    <span class="keyword">if</span> [ ! -n <span class="string">"<span class="variable">$ftp_passwd</span>"</span> ];<span class="keyword">then</span></span><br><span class="line">        ftp_passwd=123456</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">cd</span> /etc/vsftpd</span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$ftp_user</span> &gt;/etc/vsftpd/user.txt</span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$ftp_passwd</span> &gt;&gt;/etc/vsftpd/user.txt</span><br><span class="line">    db_load -T -t <span class="built_in">hash</span> -f user.txt vsftpd_login.db</span><br><span class="line">    chmod 600 /etc/vsftpd/vsftpd_login.db</span><br><span class="line">    touch /etc/pam.d/vsftpd.vu</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"判断此系统是32位操作系统还是64位"</span></span><br><span class="line">    <span class="comment">#判断centos系统位64位还是32位</span></span><br><span class="line">    xd=`getconf LONG_BIT`</span><br><span class="line">    <span class="keyword">if</span> [ <span class="variable">$xd</span>  -eq <span class="string">'64'</span> ];<span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"此系统为64位"</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"auth required /lib64/security/pam_userdb.so db=/etc/vsftpd/vsftpd_login"</span> &gt;  /etc/pam.d/vsftpd.vu</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"account required /lib64/security/pam_userdb.so db=/etc/vsftpd/vsftpd_login"</span> &gt;&gt; /etc/pam.d/vsftpd.vu</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"auth required /lib/security/pam_userdb.so db=/etc/vsftpd/vsftpd_login"</span> &gt; /etc/pam.d/vsftpd.vu</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"account required /lib/security/pam_userdb.so db=/etc/vsftpd/vsftpd_login"</span> &gt;&gt; /etc/pam.d/vsftpd.vu</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="comment">#限制用户切换工作目录</span></span><br><span class="line">    touch /etc/vsftpd/chroot_list</span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$ftp_user</span> &gt;&gt;/etc/vsftpd/chroot_list</span><br><span class="line">    <span class="comment">#配置虚拟用户的配置文件</span></span><br><span class="line">    mkdir -p /etc/vsftpd/vsftpd_user_conf</span><br><span class="line">    <span class="built_in">cd</span> /etc/vsftpd/vsftpd_user_conf</span><br><span class="line">    <span class="comment">#写入用户权限配置</span></span><br><span class="line">    cat &gt;<span class="variable">$ftp_user</span> &lt;&lt;LWT</span><br><span class="line">write_enable=YES</span><br><span class="line">anon_world_readable_only=NO</span><br><span class="line">anon_upload_enable=YES</span><br><span class="line">anon_mkdir_write_enable=YES</span><br><span class="line">anon_other_write_enable=YES</span><br><span class="line">LWT</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"local_root="</span><span class="variable">$ftp_data</span>/<span class="variable">$ftp_user</span>&gt;&gt;<span class="variable">$ftp_user</span></span><br><span class="line">    mkdir -p <span class="variable">$ftp_data</span></span><br><span class="line">    chown -R ftp:root <span class="variable">$ftp_data</span></span><br><span class="line">    chmod o+rw <span class="variable">$ftp_data</span></span><br><span class="line">    mkdir -p <span class="variable">$ftp_data</span>/<span class="variable">$ftp_user</span></span><br><span class="line">    chmod -R 777 <span class="variable">$ftp_data</span>/<span class="variable">$ftp_user</span></span><br><span class="line">    systemctl restart vsftpd.service</span><br><span class="line">}</span><br><span class="line"><span class="comment">#创建虚拟用户</span></span><br><span class="line"><span class="function"><span class="title">create_user</span></span>(){</span><br><span class="line">    ftp_passwd=123456</span><br><span class="line">    <span class="built_in">read</span> -p <span class="string">"输入你要创建的用户名:"</span> ftp_user</span><br><span class="line">    <span class="keyword">if</span> [ ! -n  <span class="string">"<span class="variable">$ftp_user</span>"</span> ];<span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"你没有输入用户名,退出"</span></span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">read</span> -p <span class="string">"输入密码:"</span> ftp_pass</span><br><span class="line">        <span class="keyword">if</span> [ ! -n <span class="string">"<span class="variable">$ftp_pass</span>"</span> ];<span class="keyword">then</span></span><br><span class="line">            <span class="built_in">echo</span> <span class="string">"密码没有输入,默认123456"</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            ftp_passwd=<span class="variable">$ftp_pass</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">cd</span> /etc/vsftpd</span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$ftp_user</span> &gt;&gt;/etc/vsftpd/user.txt</span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$ftp_passwd</span> &gt;&gt;/etc/vsftpd/user.txt</span><br><span class="line">    db_load -T -t <span class="built_in">hash</span> -f user.txt /etc/vsftpd/vsftpd_login.db</span><br><span class="line">    chmod 600 /etc/vsftpd/vsftpd_login.db</span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$ftp_user</span> &gt;&gt;/etc/vsftpd/chroot_list</span><br><span class="line">    <span class="built_in">cd</span> /etc/vsftpd/vsftpd_user_conf</span><br><span class="line">    cat &gt;<span class="variable">$ftp_user</span>&lt;&lt;LWT </span><br><span class="line">write_enable=YES</span><br><span class="line">anon_world_readable_only=NO</span><br><span class="line">anon_upload_enable=YES</span><br><span class="line">anon_mkdir_write_enable=YES</span><br><span class="line">anon_other_write_enable=YES</span><br><span class="line">LWT</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"local_root="</span><span class="variable">$ftp_data</span>/<span class="variable">$ftp_user</span>&gt;&gt;<span class="variable">$ftp_user</span></span><br><span class="line">    mkdir -p <span class="variable">$ftp_data</span>/<span class="variable">$ftp_user</span></span><br><span class="line">    chmod -R 777 <span class="variable">$ftp_data</span>/<span class="variable">$ftp_user</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"输入你要操作的内容"</span></span><br><span class="line">select var <span class="keyword">in</span> install_vsftpd create_user quit</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">case</span> <span class="variable">$var</span> <span class="keyword">in</span> </span><br><span class="line">    install_vsftpd)</span><br><span class="line">        install_vsftp;</span><br><span class="line">        ;;</span><br><span class="line">    create_user)</span><br><span class="line">        create_user</span><br><span class="line">        ;;</span><br><span class="line">    quit)</span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">        ;;</span><br><span class="line">    <span class="keyword">esac</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></tbody></table></figure></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/55/">https://www.darebeat.cn/article/55/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
+</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/centos/"><span class="chip bg-color">centos</span></a> <a href="/tags/ftp/"><span class="chip bg-color">ftp</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/tools/" class="post-category">tools</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2021-01-13</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 737</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><link rel="stylesheet" href="/libs/prism/prism.min.css"><div class="card-content article-card-content"><div id="articleContent"><p>FTP是FileTransferProtocol（文件传输协议）的英文简称，而中文简称为“文传协议”。用于Internet上的控制文件的双向传输。同时，它也是一个应用程序（Application）。基于不同的操作系统有不同的FTP应用程序，而所有这些应用程序都遵守同一种协议以传输文件。在FTP的使用当中，用户经常遇到两个概念：”下载”（Download）和”上传”（Upload）。”下载”文件就是从远程主机拷贝文件至自己的计算机上；”上传”文件就是将文件从自己的计算机中拷贝至远程主机上。用Internet语言来说，用户可通过客户机程序向（从）远程主机上传（下载）文件。</p><pre class="line-numbers language-sh"><code class="language-sh">#!/bin/bash
+#此脚本目前只是为了方便centos7下安装vsftp,其他版本后期集成。
+#ftp数据存放目录
+ftp_data=/home/ftp
+check_friewalld(){
+    echo "开始检查防火墙设置"
+    systemctl status firewalld |grep runing & >/dev/null
+    if [ $? -ne 0 ]
+    then
+        firewall-cmd --add-port=21/tcp --zone=public --permanent
+        firewall-cmd --add-service=ftp
+        firewall-cmd --reload
+    fi
+    if [ $? -eq 0 ]
+    then
+        echo "防火墙开启成功"
+    fi
+    useradd -s /sbin/nologin ftp
+}
+#搭建ftp
+install_vsftp(){
+    echo "开始安装vsftp 并且检查环境" 
+    yum -y install vsftpd libdb-utils
+    if [ $? -ne 0 ]
+    then
+        echo "请检查你的yum源情况，是否出现无法用，可单独在终端执行 yum makecache 测试"
+        exit 1
+    fi
+    #检查防火墙,开放21端口
+    check_friewalld
+    echo "开始配置ftp"
+    mv /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf_bak
+    #配置数据写入到配置文件
+
+    cat >/etc/vsftpd/vsftpd.conf<<LWT
+listen=yes
+anonymous_enable=no
+dirmessage_enable=YES
+xferlog_enable=YES
+xferlog_file=/var/log/vsftpd.log
+xferlog_std_format=YES
+chroot_list_enable=YES
+chroot_list_file=/etc/vsftpd/chroot_list
+chroot_local_user=yes
+guest_enable=YES
+guest_username=ftp
+user_config_dir=/etc/vsftpd/vsftpd_user_conf
+pam_service_name=vsftpd.vu
+allow_writeable_chroot=YES
+local_enable=YES
+LWT
+
+    read -p "输入ftp用户:" ftp_user
+    if [ ! -n "$ftp_user" ];then
+        ftp_user=test
+    fi
+    read -p "输入ftp用户密码:" ftp_passwd
+    if [ ! -n "$ftp_passwd" ];then
+        ftp_passwd=123456
+    fi
+    cd /etc/vsftpd
+    echo $ftp_user >/etc/vsftpd/user.txt
+    echo $ftp_passwd >>/etc/vsftpd/user.txt
+    db_load -T -t hash -f user.txt vsftpd_login.db
+    chmod 600 /etc/vsftpd/vsftpd_login.db
+    touch /etc/pam.d/vsftpd.vu
+    echo "判断此系统是32位操作系统还是64位"
+    #判断centos系统位64位还是32位
+    xd=`getconf LONG_BIT`
+    if [ $xd  -eq '64' ];then
+        echo "此系统为64位"
+        echo "auth required /lib64/security/pam_userdb.so db=/etc/vsftpd/vsftpd_login" >  /etc/pam.d/vsftpd.vu
+        echo "account required /lib64/security/pam_userdb.so db=/etc/vsftpd/vsftpd_login" >> /etc/pam.d/vsftpd.vu
+    else
+        echo "auth required /lib/security/pam_userdb.so db=/etc/vsftpd/vsftpd_login" > /etc/pam.d/vsftpd.vu
+        echo "account required /lib/security/pam_userdb.so db=/etc/vsftpd/vsftpd_login" >> /etc/pam.d/vsftpd.vu
+    fi
+    #限制用户切换工作目录
+    touch /etc/vsftpd/chroot_list
+    echo $ftp_user >>/etc/vsftpd/chroot_list
+    #配置虚拟用户的配置文件
+    mkdir -p /etc/vsftpd/vsftpd_user_conf
+    cd /etc/vsftpd/vsftpd_user_conf
+    #写入用户权限配置
+    cat >$ftp_user <<LWT
+write_enable=YES
+anon_world_readable_only=NO
+anon_upload_enable=YES
+anon_mkdir_write_enable=YES
+anon_other_write_enable=YES
+LWT
+    echo "local_root="$ftp_data/$ftp_user>>$ftp_user
+    mkdir -p $ftp_data
+    chown -R ftp:root $ftp_data
+    chmod o+rw $ftp_data
+    mkdir -p $ftp_data/$ftp_user
+    chmod -R 777 $ftp_data/$ftp_user
+    systemctl restart vsftpd.service
+}
+#创建虚拟用户
+create_user(){
+    ftp_passwd=123456
+    read -p "输入你要创建的用户名:" ftp_user
+    if [ ! -n  "$ftp_user" ];then
+        echo "你没有输入用户名,退出"
+        exit 1
+    else
+        read -p "输入密码:" ftp_pass
+        if [ ! -n "$ftp_pass" ];then
+            echo "密码没有输入,默认123456"
+        else
+            ftp_passwd=$ftp_pass
+        fi
+    fi
+    cd /etc/vsftpd
+    echo $ftp_user >>/etc/vsftpd/user.txt
+    echo $ftp_passwd >>/etc/vsftpd/user.txt
+    db_load -T -t hash -f user.txt /etc/vsftpd/vsftpd_login.db
+    chmod 600 /etc/vsftpd/vsftpd_login.db
+    echo $ftp_user >>/etc/vsftpd/chroot_list
+    cd /etc/vsftpd/vsftpd_user_conf
+    cat >$ftp_user<<LWT 
+write_enable=YES
+anon_world_readable_only=NO
+anon_upload_enable=YES
+anon_mkdir_write_enable=YES
+anon_other_write_enable=YES
+LWT
+    echo "local_root="$ftp_data/$ftp_user>>$ftp_user
+    mkdir -p $ftp_data/$ftp_user
+    chmod -R 777 $ftp_data/$ftp_user
+}
+
+
+echo "输入你要操作的内容"
+select var in install_vsftpd create_user quit
+do
+    case $var in 
+    install_vsftpd)
+        install_vsftp;
+        ;;
+    create_user)
+        create_user
+        ;;
+    quit)
+        exit 1
+        ;;
+    esac
+done
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/55/">https://www.darebeat.cn/article/55/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
       document.addEventListener("copy", function (e) {
         let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML});
@@ -348,9 +497,9 @@
             </script><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/darebeat" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fab fa-github"></i></a><a href="mailto:darebeat@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=871731559" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 871731559" data-position="top" data-delay="50"><i class="fab fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><script>
     $(document).ready(function () {
         /* 50ms周期检测函数 */
-        var int = setInterval(fixCount, 50);  
+        var int = setInterval(fixCount, 50);
         /* 初始化首次数据 */
-        var pvcountOffset = 20000;  
+        var pvcountOffset = 20000;
         var uvcountOffset = 5000;
 
         function fixCount() {
@@ -360,9 +509,9 @@
             }
             if ($("#busuanzi_container_site_pv").css("display") != "none") {
                 /* 加上初始数据 */
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); 
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset);
                 /* 停止检测 */
-                clearInterval(int); 
+                clearInterval(int);
             }
         }
     });
