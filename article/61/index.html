@@ -1,236 +1,4 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
-
-
-<head>
-    <meta charset="utf-8">
-    <meta name="keywords" content="Puppeteer用法记录, darebeat">
-    <meta name="description" content="不恋过去，不畏将来，活在当下，行所当行，阻挡你前进的最大阻力永远是你自己！">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-    <title>Puppeteer用法记录 | darebeat</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-
-    <script src="/libs/jquery/jquery.min.js"></script>
-
-<meta name="generator" content="Hexo 4.2.1">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="darebeat" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
-
-
-
-
-<body>
-    <header class="navbar-fixed">
-    <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper container">
-            <div class="brand-logo">
-                <a href="/" class="waves-effect waves-light">
-                    
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
-                    
-                    <span class="logo-span">darebeat</span>
-                </a>
-            </div>
-            
-
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<ul class="right nav-menu">
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/" class="waves-effect waves-light">
-      
-      <i class="fas fa-home" style="zoom: 0.6;"></i>
-      
-      <span>首页</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/tags" class="waves-effect waves-light">
-      
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
-      
-      <span>标签</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/categories" class="waves-effect waves-light">
-      
-      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
-      
-      <span>分类</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/archives" class="waves-effect waves-light">
-      
-      <i class="fas fa-archive" style="zoom: 0.6;"></i>
-      
-      <span>归档</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
-  <li>
-    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
-    </a>
-  </li>
-</ul>
-
-
-<div id="mobile-nav" class="side-nav sidenav">
-
-    <div class="mobile-head bg-color">
-        
-        <img src="/medias/logo.png" class="logo-img circle responsive-img" alt="LOGO">
-        
-        <div class="logo-name">darebeat</div>
-        <div class="logo-desc">
-            
-            不恋过去，不畏将来，活在当下，行所当行，阻挡你前进的最大阻力永远是你自己！
-            
-        </div>
-    </div>
-
-    
-
-    <ul class="menu-list mobile-menu-list">
-        
-        <li class="m-nav-item">
-	  
-		<a href="/" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-home"></i>
-			
-			首页
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/tags" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-tags"></i>
-			
-			标签
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/categories" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-bookmark"></i>
-			
-			分类
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/archives" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-archive"></i>
-			
-			归档
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			友情链接
-		</a>
-          
-        </li>
-        
-        
-        <li><div class="divider"></div></li>
-        <li>
-            <a href="https://github.com/darebeat" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i>Fork Me
-            </a>
-        </li>
-        
-    </ul>
-</div>
-
-
-        </div>
-
-        
-            <style>
+<!DOCTYPE HTML><html lang="zh-CN"><head><meta charset="utf-8"><meta name="keywords" content="Puppeteer用法记录, darebeat"><meta name="description" content="不恋过去，不畏将来，活在当下，行所当行，阻挡你前进的最大阻力永远是你自己！"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>Puppeteer用法记录 | darebeat</title><link rel="icon" type="image/png" href="/favicon.png"><link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css"><link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css"><link rel="stylesheet" type="text/css" href="/libs/aos/aos.min.css"><link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css"><link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" type="text/css" href="/css/matery.css"><link rel="stylesheet" type="text/css" href="/css/my.css"><script src="/libs/jquery/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><link rel="alternate" href="/atom.xml" title="darebeat" type="application/atom+xml"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"> <a href="/" class="waves-effect waves-light"><img src="/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">darebeat</span></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom: 0.6;"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fas fa-tags" style="zoom: 0.6;"></i> <span>标签</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fas fa-bookmark" style="zoom: 0.6;"></i> <span>分类</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fas fa-archive" style="zoom: 0.6;"></i> <span>归档</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/about" class="waves-effect waves-light"><i class="fas fa-user-circle" style="zoom: 0.6;"></i> <span>关于</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fas fa-address-book" style="zoom: 0.6;"></i> <span>友情链接</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"> <img src="/medias/logo.png" class="logo-img circle responsive-img" alt="LOGO"><div class="logo-name">darebeat</div><div class="logo-desc"> 不恋过去，不畏将来，活在当下，行所当行，阻挡你前进的最大阻力永远是你自己！</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fa-fw fas fa-tags"></i> 标签</a></li><li class="m-nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fa-fw fas fa-bookmark"></i> 分类</a></li><li class="m-nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fa-fw fas fa-archive"></i> 归档</a></li><li class="m-nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa-fw fas fa-user-circle"></i> 关于</a></li><li class="m-nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fa-fw fas fa-address-book"></i> 友情链接</a></li><li><div class="divider"></div></li><li><a href="https://github.com/darebeat" class="waves-effect waves-light" target="_blank"><i class="fab fa-github-square fa-fw"></i> Fork Me</a></li></ul></div></div><style>
     .nav-transparent .github-corner {
         display: none !important;
     }
@@ -273,47 +41,7 @@
             transform: rotate(10deg);
         }
     }
-</style>
-
-<a href="https://github.com/darebeat" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
-   data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewBox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-              fill="currentColor" class="octo-body"></path>
-    </svg>
-</a>
-        
-    </nav>
-
-</header>
-
-    
-
-
-
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/card/0061.png')">
-    <div class="container" style="right: 0px;left: 0px;">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <div class="brand">
-                    <h1 class="description center-align post-title">Puppeteer用法记录</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<main class="post-container content">
-
-    
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.min.css">
-<style>
+</style> <a href="https://github.com/darebeat" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115 130 115 142 142 250 250 250 0Z"></path><path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4L133.7 101.6C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8Z" fill="currentColor" class="octo-body"></path></svg></a></nav></header><div class="bg-cover pd-header post-cover" style="background-image: url('/images/card/0061.png')"><div class="container" style="right: 0px;left: 0px;"><div class="row"><div class="col s12 m12 l12"><div class="brand"><h1 class="description center-align post-title">Puppeteer用法记录</h1></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="/libs/tocbot/tocbot.min.css"><style>
     #articleContent h1::before,
     #articleContent h2::before,
     #articleContent h3::before,
@@ -403,164 +131,25 @@
         line-height: 48px;
         font-size: 1.4rem;
     }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
-<div id="artDetail">
-    <div class="card">
-        <div class="card-content article-info">
-            <div class="row tag-cate">
-                <div class="col s7">
-                    
-                    <div class="article-tag">
-                        
-                            <a href="/tags/web/">
-                                <span class="chip bg-color">web</span>
-                            </a>
-                        
-                            <a href="/tags/puppeteer/">
-                                <span class="chip bg-color">puppeteer</span>
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-                <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/tools/" class="post-category">
-                                tools
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="post-info">
-                
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-13
-                </div>
-                
-
-                
-
-                
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.9k
-                </div>
-                
-
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
-            </div>
-        </div>
-        <hr class="clearfix">
-
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.min.css">
-        
-
-        
-
-        <div class="card-content article-card-content">
-            <div id="articleContent">
-                <h1 id="Puppeteer用法记录"><a href="#Puppeteer用法记录" class="headerlink" title="Puppeteer用法记录"></a>Puppeteer用法记录</h1><div><img src="/images/article/0061-001.jpg" style="width:100%;"></div><br>
-
-<h2 id="Puppeteer-是什么"><a href="#Puppeteer-是什么" class="headerlink" title="Puppeteer 是什么?"></a>Puppeteer 是什么?</h2><p>Puppeteer 是 Chrome 开发团队在 2017 年发布的一个 Node.js 包，用来模拟 Chrome 浏览器的运行。</p>
-<ul>
-<li>Puppeteer 是 Node.js 工具引擎</li>
-<li>Puppeteer 提供了一系列 API，通过 Chrome DevTools Protocol 协议控制 Chromium/Chrome 浏览器的行为</li>
-<li>Puppeteer 默认情况下是以 headless 启动 Chrome 的，也可以通过参数控制启动有界面的 Chrome</li>
-<li>Puppeteer 默认绑定最新的 Chromium 版本，也可以自己设置不同版本的绑定</li>
-<li>Puppeteer 让我们不需要了解太多的底层 CDP 协议实现与浏览器的通信</li>
-</ul>
-<h2 id="Puppeteer-能做什么"><a href="#Puppeteer-能做什么" class="headerlink" title="Puppeteer 能做什么"></a>Puppeteer 能做什么</h2><p>官方称：“Most things that you can do manually in the browser can be done using Puppeteer”，那么具体可以做些什么呢？</p>
-<ul>
-<li>网页截图或者生成 PDF</li>
-<li>爬取 SPA 或 SSR 网站</li>
-<li>UI 自动化测试，模拟表单提交，键盘输入，点击等行为</li>
-<li>捕获网站的时间线，帮助诊断性能问题</li>
-<li>创建一个最新的自动化测试环境，使用最新的 js 和最新的 Chrome 浏览器运行测试用例</li>
-<li>测试 Chrome 扩展程序</li>
-</ul>
-<h2 id="Puppeteer-API-分层结构"><a href="#Puppeteer-API-分层结构" class="headerlink" title="Puppeteer API 分层结构"></a>Puppeteer API 分层结构</h2><p>Puppeteer 中的 API 分层结构基本和浏览器保持一致，下面对常使用到的几个类介绍一下：</p>
-<div><img src="//images/article/0061-002.png" style="width:100%;"></div><br>
-
-<ul>
-<li>Browser： 对应一个浏览器实例，一个 Browser 可以包含多个 BrowserContext</li>
-<li>BrowserContext： 对应浏览器一个上下文会话，就像我们打开一个普通的 Chrome 之后又打开一个隐身模式的浏览器一样，BrowserContext 具有独立的 Session(cookie 和 cache 独立不共享)，一个 BrowserContext 可以包含多个 Page</li>
-<li>Page：表示一个 Tab 页面，通过 browserContext.newPage()/browser.newPage() 创建，browser.newPage() 创建页面时会使用默认的 BrowserContext，一个 Page 可以包含多个 Frame</li>
-<li>Frame: 一个框架，每个页面有一个主框架（page.MainFrame()）,也可以多个子框架，主要由 iframe 标签创建产生的</li>
-<li>ExecutionContext： 是 javascript 的执行环境，每一个 Frame 都一个默认的 javascript 执行环境</li>
-<li>ElementHandle: 对应 DOM 的一个元素节点，通过该该实例可以实现对元素的点击，填写表单等行为，我们可以通过选择器，xPath 等来获取对应的元素</li>
-<li>JsHandle：对应 DOM 中的 javascript 对象，ElementHandle 继承于 JsHandle，由于我们无法直接操作 DOM 中对象，所以封装成 JsHandle 来实现相关功能</li>
-<li>CDPSession：可以直接与原生的 CDP 进行通信，通过 session.send 函数直接发消息，通过 session.on 接收消息，可以实现 Puppeteer API 中没有涉及的功能</li>
-<li>Coverage：获取 JavaScript 和 CSS 代码覆盖率</li>
-<li>Tracing：抓取性能数据进行分析</li>
-<li>Response： 页面收到的响应</li>
-<li>Request： 页面发出的请求</li>
-</ul>
-<h2 id="Chrome-DevTool-Protocol"><a href="#Chrome-DevTool-Protocol" class="headerlink" title="Chrome DevTool Protocol"></a>Chrome DevTool Protocol</h2><ul>
-<li>CDP 基于 WebSocket，利用 WebSocket 实现与浏览器内核的快速数据通道</li>
-<li>CDP 分为多个域（DOM，Debugger，Network，Profiler，Console…），每个域中都定义了相关的命令和事件（Commands and Events）</li>
-<li>我们可以基于 CDP 封装一些工具对 Chrome 浏览器进行调试及分析，比如我们常用的 “Chrome 开发者工具” 就是基于 CDP 实现的</li>
-<li>如果你以 remote-debugging-port 参数启动 Chrome，那么就可以看到所有 Tab 页面的开发者调试前端页面，还会在同一端口上还提供了 http 服务</li>
-</ul>
-<p>主要提供以下几个接口：</p>
-<pre class="line-numbers language-sh"><code class="language-sh">GET /json/version           # 获取浏览器的一些元信息
+</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/web/"><span class="chip bg-color">web</span></a> <a href="/tags/puppeteer/"><span class="chip bg-color">puppeteer</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/tools/" class="post-category">tools</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2022-06-13</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 4.9k</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><link rel="stylesheet" href="/libs/prism/prism.min.css"><div class="card-content article-card-content"><div id="articleContent"><h1 id="puppeteer用法记录">Puppeteer用法记录</h1><div> <img src="/images/article/0061-001.jpg" style="width:100%;"></div><p><br></p><h2 id="puppeteer-是什么">Puppeteer 是什么?</h2><p>Puppeteer 是 Chrome 开发团队在 2017 年发布的一个 Node.js 包，用来模拟 Chrome 浏览器的运行。</p><ul><li>Puppeteer 是 Node.js 工具引擎</li><li>Puppeteer 提供了一系列 API，通过 Chrome DevTools Protocol 协议控制 Chromium/Chrome 浏览器的行为</li><li>Puppeteer 默认情况下是以 headless 启动 Chrome 的，也可以通过参数控制启动有界面的 Chrome</li><li>Puppeteer 默认绑定最新的 Chromium 版本，也可以自己设置不同版本的绑定</li><li>Puppeteer 让我们不需要了解太多的底层 CDP 协议实现与浏览器的通信</li></ul><h2 id="puppeteer-能做什么">Puppeteer 能做什么</h2><p>官方称：“Most things that you can do manually in the browser can be done using Puppeteer”，那么具体可以做些什么呢？</p><ul><li>网页截图或者生成 PDF</li><li>爬取 SPA 或 SSR 网站</li><li>UI 自动化测试，模拟表单提交，键盘输入，点击等行为</li><li>捕获网站的时间线，帮助诊断性能问题</li><li>创建一个最新的自动化测试环境，使用最新的 js 和最新的 Chrome 浏览器运行测试用例</li><li>测试 Chrome 扩展程序</li></ul><h2 id="puppeteer-api-分层结构">Puppeteer API 分层结构</h2><p>Puppeteer 中的 API 分层结构基本和浏览器保持一致，下面对常使用到的几个类介绍一下：</p><div> <img src="//images/article/0061-002.png" style="width:100%;"></div><p><br></p><ul><li>Browser： 对应一个浏览器实例，一个 Browser 可以包含多个 BrowserContext</li><li>BrowserContext： 对应浏览器一个上下文会话，就像我们打开一个普通的 Chrome 之后又打开一个隐身模式的浏览器一样，BrowserContext 具有独立的 Session(cookie 和 cache 独立不共享)，一个 BrowserContext 可以包含多个 Page</li><li>Page：表示一个 Tab 页面，通过 browserContext.newPage()/browser.newPage() 创建，browser.newPage() 创建页面时会使用默认的 BrowserContext，一个 Page 可以包含多个 Frame</li><li>Frame: 一个框架，每个页面有一个主框架（page.MainFrame()）,也可以多个子框架，主要由 iframe 标签创建产生的</li><li>ExecutionContext： 是 javascript 的执行环境，每一个 Frame 都一个默认的 javascript 执行环境</li><li>ElementHandle: 对应 DOM 的一个元素节点，通过该该实例可以实现对元素的点击，填写表单等行为，我们可以通过选择器，xPath 等来获取对应的元素</li><li>JsHandle：对应 DOM 中的 javascript 对象，ElementHandle 继承于 JsHandle，由于我们无法直接操作 DOM 中对象，所以封装成 JsHandle 来实现相关功能</li><li>CDPSession：可以直接与原生的 CDP 进行通信，通过 session.send 函数直接发消息，通过 session.on 接收消息，可以实现 Puppeteer API 中没有涉及的功能</li><li>Coverage：获取 JavaScript 和 CSS 代码覆盖率</li><li>Tracing：抓取性能数据进行分析</li><li>Response： 页面收到的响应</li><li>Request： 页面发出的请求</li></ul><h2 id="chrome-devtool-protocol">Chrome DevTool Protocol</h2><ul><li>CDP 基于 WebSocket，利用 WebSocket 实现与浏览器内核的快速数据通道</li><li>CDP 分为多个域（DOM，Debugger，Network，Profiler，Console…），每个域中都定义了相关的命令和事件（Commands and Events）</li><li>我们可以基于 CDP 封装一些工具对 Chrome 浏览器进行调试及分析，比如我们常用的 “Chrome 开发者工具” 就是基于 CDP 实现的</li><li>如果你以 remote-debugging-port 参数启动 Chrome，那么就可以看到所有 Tab 页面的开发者调试前端页面，还会在同一端口上还提供了 http 服务</li></ul><p>主要提供以下几个接口：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">GET /json/version           # 获取浏览器的一些元信息
 GET /json or /json/list         # 当前浏览器上打开的一些页面信息
 GET /json/protocol          # 获取当前 CDP 的协议信息   
 GET /json/new?{url}           # 开启一共新的 Tab 页面
 GET /json/activate/{targetId}     # 激活某个页面成为当前显示的页面
 GET /json/close/{targetId}      # 关闭某个页面
 GET /devtools/inspector.html      # 打开当前页面的开发者调试工具
-WebSocket /devtools/page/{targetId}   # 获取某个页面的 websocket 地址
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>很多有用的工具都是基于 CDP 实现的，比如 Chrome 开发者工具，chrome-remote-interface，Puppeteer 等</li>
-</ul>
-<h2 id="Headless-Chrome"><a href="#Headless-Chrome" class="headerlink" title="Headless Chrome"></a>Headless Chrome</h2><ul>
-<li>在无界面的环境中运行 Chrome</li>
-<li>通过命令行或者程序语言操作 Chrome</li>
-<li>无需人的干预，运行更稳定</li>
-<li>在启动 Chrome 时添加参数 –headless，便可以 headless 模式启动 Chrome</li>
-</ul>
-<pre class="line-numbers language-sh"><code class="language-sh">alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"  # Mac OS X 命令别名
+WebSocket /devtools/page/{targetId}   # 获取某个页面的 websocket 地址<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>很多有用的工具都是基于 CDP 实现的，比如 Chrome 开发者工具，chrome-remote-interface，Puppeteer 等</li></ul><h2 id="headless-chrome">Headless Chrome</h2><ul><li>在无界面的环境中运行 Chrome</li><li>通过命令行或者程序语言操作 Chrome</li><li>无需人的干预，运行更稳定</li><li>在启动 Chrome 时添加参数 –headless，便可以 headless 模式启动 Chrome</li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"  # Mac OS X 命令别名
 chrome --headless --remote-debugging-port=9222 --disable-gpu           # 开启远程调试
 chrome --headless --disable-gpu --dump-dom https://www.baidu.com         # 获取页面 DOM
-chrome --headless --disable-gpu --screenshot https://www.baidu.com       # 截图
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>chrome 启动时可以加一些什么参数，大家可以点击<a href="https://link.zhihu.com/?target=https%3A//peter.sh/experiments/chromium-command-line-switches/" target="_blank">这里</a>查看</li>
-</ul>
-<h2 id="创建一个-Browser-实例"><a href="#创建一个-Browser-实例" class="headerlink" title="创建一个 Browser 实例"></a>创建一个 Browser 实例</h2><p>puppeteer 提供了两种方法用于创建一个 Browser 实例：</p>
-<ul>
-<li>puppeteer.connect: 连接一个已经存在的 Chrome 实例</li>
-<li>puppeteer.launch: 每次都启动一个 Chrome 实例</li>
-</ul>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> puppeteer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'puppeteer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+chrome --headless --disable-gpu --screenshot https://www.baidu.com       # 截图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><ul><li>chrome 启动时可以加一些什么参数，大家可以点击<a href="https://link.zhihu.com/?target=https%3A//peter.sh/experiments/chromium-command-line-switches/" target="_blank">这里</a>查看</li></ul><h2 id="创建一个-browser-实例">创建一个 Browser 实例</h2><p>puppeteer 提供了两种方法用于创建一个 Browser 实例：</p><ul><li>puppeteer.connect: 连接一个已经存在的 Chrome 实例</li><li>puppeteer.launch: 每次都启动一个 Chrome 实例</li></ul><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> puppeteer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'puppeteer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> request <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'request-promise-native'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">//使用 puppeteer.launch 启动 Chrome</span>
-<span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token comment">//使用 puppeteer.launch 启动 Chrome</span>
+<span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> browser <span class="token operator">=</span> <span class="token keyword">await</span> puppeteer<span class="token punctuation">.</span><span class="token function">launch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    headless<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>   <span class="token comment" spellcheck="true">//有浏览器界面启动</span>
-    slowMo<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>     <span class="token comment" spellcheck="true">//放慢浏览器执行速度，方便测试观察</span>
-    args<span class="token punctuation">:</span> <span class="token punctuation">[</span>      <span class="token comment" spellcheck="true">//启动 Chrome 的参数，详见上文中的介绍</span>
+    <span class="token literal-property property">headless</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>   <span class="token comment">//有浏览器界面启动</span>
+    <span class="token literal-property property">slowMo</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>     <span class="token comment">//放慢浏览器执行速度，方便测试观察</span>
+    <span class="token literal-property property">args</span><span class="token operator">:</span> <span class="token punctuation">[</span>      <span class="token comment">//启动 Chrome 的参数，详见上文中的介绍</span>
       <span class="token string">'–no-sandbox'</span><span class="token punctuation">,</span>
       <span class="token string">'--window-size=1280,960'</span>
     <span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -571,143 +160,84 @@ chrome --headless --disable-gpu --screenshot https://www.baidu.com       # 截�
   <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">//使用 puppeteer.connect 连接一个已经存在的 Chrome 实例</span>
-<span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">//通过 9222 端口的 http 接口获取对应的 websocketUrl</span>
+<span class="token comment">//使用 puppeteer.connect 连接一个已经存在的 Chrome 实例</span>
+<span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">//通过 9222 端口的 http 接口获取对应的 websocketUrl</span>
   <span class="token keyword">let</span> version <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    uri<span class="token punctuation">:</span>  <span class="token string">"http://127.0.0.1:9222/json/version"</span><span class="token punctuation">,</span>
-    json<span class="token punctuation">:</span> <span class="token boolean">true</span>
+    <span class="token literal-property property">uri</span><span class="token operator">:</span>  <span class="token string">"http://127.0.0.1:9222/json/version"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">json</span><span class="token operator">:</span> <span class="token boolean">true</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//直接连接已经存在的 Chrome</span>
+  <span class="token comment">//直接连接已经存在的 Chrome</span>
   <span class="token keyword">let</span> browser <span class="token operator">=</span> <span class="token keyword">await</span> puppeteer<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    browserWSEndpoint<span class="token punctuation">:</span> version<span class="token punctuation">.</span>webSocketDebuggerUrl
+    <span class="token literal-property property">browserWSEndpoint</span><span class="token operator">:</span> version<span class="token punctuation">.</span>webSocketDebuggerUrl
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> page <span class="token operator">=</span> <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">newPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">'https://www.baidu.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">disconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="这两种方式的对比："><a href="#这两种方式的对比：" class="headerlink" title="这两种方式的对比："></a>这两种方式的对比：</h3><ul>
-<li>puppeteer.launch 每次都要重新启动一个 Chrome 进程，启动平均耗时 100 到 150 ms，性能欠佳</li>
-<li>puppeteer.connect 可以实现对于同一个 Chrome 实例的共用，减少启动关闭浏览器的时间消耗</li>
-<li>puppeteer.launch 启动时参数可以动态修改</li>
-<li>通过 puppeteer.connect 我们可以远程连接一个 Chrome 实例，部署在不同的机器上</li>
-<li>puppeteer.connect 多个页面共用一个 chrome 实例，偶尔会出现 Page Crash 现象，需要进行并发控制，并定时重启 Chrome 实例</li>
-</ul>
-<h2 id="加载动态内容"><a href="#加载动态内容" class="headerlink" title="加载动态内容"></a>加载动态内容</h2><h3 id="加载导航页面"><a href="#加载导航页面" class="headerlink" title="加载导航页面"></a>加载导航页面</h3><ul>
-<li>page.goto：打开新页面</li>
-<li>page.goBack ：回退到上一个页面</li>
-<li>page.goForward ：前进到下一个页面</li>
-<li>page.reload ：重新加载页面</li>
-<li>page.waitForNavigation：等待页面跳转</li>
-</ul>
-<p>Pupeeteer 中的基本上所有的操作都是异步的，以上几个 API 都涉及到关于打开一个页面，什么情况下才能判断这个函数执行完毕呢，这些函数都提供了两个参数 waitUtil 和 timeout，waitUtil 表示直到什么出现就算执行完毕，timeout 表示如果超过这个时间还没有结束就抛出异常。</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">'https://www.baidu.com'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-   timeout<span class="token punctuation">:</span> <span class="token number">30</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">,</span>
-   waitUntil<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-     <span class="token string">'load'</span><span class="token punctuation">,</span>        <span class="token comment" spellcheck="true">//等待 “load” 事件触发</span>
-     <span class="token string">'domcontentloaded'</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//等待 “domcontentloaded” 事件触发</span>
-     <span class="token string">'networkidle0'</span><span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">//在 500ms 内没有任何网络连接</span>
-     <span class="token string">'networkidle2'</span>     <span class="token comment" spellcheck="true">//在 500ms 内网络连接个数不超过 2 个</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="这两种方式的对比">这两种方式的对比：</h3><ul><li>puppeteer.launch 每次都要重新启动一个 Chrome 进程，启动平均耗时 100 到 150 ms，性能欠佳</li><li>puppeteer.connect 可以实现对于同一个 Chrome 实例的共用，减少启动关闭浏览器的时间消耗</li><li>puppeteer.launch 启动时参数可以动态修改</li><li>通过 puppeteer.connect 我们可以远程连接一个 Chrome 实例，部署在不同的机器上</li><li>puppeteer.connect 多个页面共用一个 chrome 实例，偶尔会出现 Page Crash 现象，需要进行并发控制，并定时重启 Chrome 实例</li></ul><h2 id="加载动态内容">加载动态内容</h2><h3 id="加载导航页面">加载导航页面</h3><ul><li>page.goto：打开新页面</li><li>page.goBack ：回退到上一个页面</li><li>page.goForward ：前进到下一个页面</li><li>page.reload ：重新加载页面</li><li>page.waitForNavigation：等待页面跳转</li></ul><p>Pupeeteer 中的基本上所有的操作都是异步的，以上几个 API 都涉及到关于打开一个页面，什么情况下才能判断这个函数执行完毕呢，这些函数都提供了两个参数 waitUtil 和 timeout，waitUtil 表示直到什么出现就算执行完毕，timeout 表示如果超过这个时间还没有结束就抛出异常。</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">'https://www.baidu.com'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+   <span class="token literal-property property">timeout</span><span class="token operator">:</span> <span class="token number">30</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+   <span class="token literal-property property">waitUntil</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+     <span class="token string">'load'</span><span class="token punctuation">,</span>        <span class="token comment">//等待 “load” 事件触发</span>
+     <span class="token string">'domcontentloaded'</span><span class="token punctuation">,</span>  <span class="token comment">//等待 “domcontentloaded” 事件触发</span>
+     <span class="token string">'networkidle0'</span><span class="token punctuation">,</span>    <span class="token comment">//在 500ms 内没有任何网络连接</span>
+     <span class="token string">'networkidle2'</span>     <span class="token comment">//在 500ms 内网络连接个数不超过 2 个</span>
    <span class="token punctuation">]</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>以上 waitUtil 有四个事件，业务可以根据需求来设置其中一个或者多个触发才以为结束，networkidle0 和 networkidle2 中的 500ms 对时间性能要求高的用户来说，还是有点长的</p>
-<h3 id="等待元素、请求、响应"><a href="#等待元素、请求、响应" class="headerlink" title="等待元素、请求、响应"></a>等待元素、请求、响应</h3><ul>
-<li>page.waitForXPath：等待 xPath 对应的元素出现，返回对应的 ElementHandle 实例</li>
-<li>page.waitForSelector ：等待选择器对应的元素出现，返回对应的 ElementHandle 实例</li>
-<li>page.waitForResponse ：等待某个响应结束，返回 Response 实例</li>
-<li>page.waitForRequest：等待某个请求出现，返回 Request 实例</li>
-</ul>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">waitForXPath</span><span class="token punctuation">(</span><span class="token string">'//img'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>以上 waitUtil 有四个事件，业务可以根据需求来设置其中一个或者多个触发才以为结束，networkidle0 和 networkidle2 中的 500ms 对时间性能要求高的用户来说，还是有点长的</p><h3 id="等待元素请求响应">等待元素、请求、响应</h3><ul><li>page.waitForXPath：等待 xPath 对应的元素出现，返回对应的 ElementHandle 实例</li><li>page.waitForSelector ：等待选择器对应的元素出现，返回对应的 ElementHandle 实例</li><li>page.waitForResponse ：等待某个响应结束，返回 Response 实例</li><li>page.waitForRequest：等待某个请求出现，返回 Request 实例</li></ul><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">waitForXPath</span><span class="token punctuation">(</span><span class="token string">'//img'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">waitForSelector</span><span class="token punctuation">(</span><span class="token string">'#uniqueId'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">waitForResponse</span><span class="token punctuation">(</span><span class="token string">'https://d.youdata.netease.com/api/dash/hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">waitForRequest</span><span class="token punctuation">(</span><span class="token string">'https://d.youdata.netease.com/api/dash/hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="自定义等待"><a href="#自定义等待" class="headerlink" title="自定义等待"></a>自定义等待</h3><p>如果上面提供的等待方式都不能满足我们的需求，puppeteer 还提供我们提供两个函数：</p>
-<ul>
-<li>page.waitForFunction：等待在页面中自定义函数的执行结果，返回 JsHandle 实例</li>
-<li>page.waitFor：设置等待时间，实在没办法的做法</li>
-</ul>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token punctuation">{</span> 
-  timeout<span class="token punctuation">:</span> <span class="token number">120000</span><span class="token punctuation">,</span> 
-  waitUntil<span class="token punctuation">:</span> <span class="token string">'networkidle2'</span> 
+<span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">waitForRequest</span><span class="token punctuation">(</span><span class="token string">'https://d.youdata.netease.com/api/dash/hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h3 id="自定义等待">自定义等待</h3><p>如果上面提供的等待方式都不能满足我们的需求，puppeteer 还提供我们提供两个函数：</p><ul><li>page.waitForFunction：等待在页面中自定义函数的执行结果，返回 JsHandle 实例</li><li>page.waitFor：设置等待时间，实在没办法的做法</li></ul><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token punctuation">{</span> 
+  <span class="token literal-property property">timeout</span><span class="token operator">:</span> <span class="token number">120000</span><span class="token punctuation">,</span> 
+  <span class="token literal-property property">waitUntil</span><span class="token operator">:</span> <span class="token string">'networkidle2'</span> 
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//我们可以在页面中定义自己认为加载完的事件，在合适的时间点我们将该事件设置为 true</span>
-<span class="token comment" spellcheck="true">//以下是我们项目在触发截图时的判断逻辑，如果 renderdone 出现且为 true 那么就截图，如果是 Object，说明页面加载出错了，我们可以捕获该异常进行提示</span>
+<span class="token comment">//我们可以在页面中定义自己认为加载完的事件，在合适的时间点我们将该事件设置为 true</span>
+<span class="token comment">//以下是我们项目在触发截图时的判断逻辑，如果 renderdone 出现且为 true 那么就截图，如果是 Object，说明页面加载出错了，我们可以捕获该异常进行提示</span>
 <span class="token keyword">let</span> renderdoneHandle <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">waitForFunction</span><span class="token punctuation">(</span><span class="token string">'window.renderdone'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-  polling<span class="token punctuation">:</span> <span class="token number">120</span>
+  <span class="token literal-property property">polling</span><span class="token operator">:</span> <span class="token number">120</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> renderdone <span class="token operator">=</span> <span class="token keyword">await</span> renderdoneHandle<span class="token punctuation">.</span><span class="token function">jsonValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> renderdone <span class="token operator">===</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`加载页面失败：报表</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>renderdone<span class="token punctuation">.</span>componentId<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">出错 -- </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>renderdone<span class="token punctuation">.</span>message<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">加载页面失败：报表</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>renderdone<span class="token punctuation">.</span>componentId<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">出错 -- </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>renderdone<span class="token punctuation">.</span>message<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'页面加载成功'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="两个独立的环境"><a href="#两个独立的环境" class="headerlink" title="两个独立的环境"></a>两个独立的环境</h2><p>在使用 Puppeteer 时我们几乎一定会遇到在这两个环境之间交换数据：运行 Puppeteer 的 Node.js 环境和 Puppeteer 操作的页面 Page DOM，理解这两个环境很重要</p>
-<ul>
-<li>首先 Puppeteer 提供了很多有用的函数去 Page DOM Environment 中执行代码，这个后面会介绍到</li>
-<li>其次 Puppeteer 提供了 ElementHandle 和 JsHandle 将 Page DOM Environment 中元素和对象封装成对应的 Node.js 对象，这样可以直接这些对象的封装函数进行操作 Page DOM</li>
-</ul>
-<div><img src="/images/article/0061-003.png" style="width:100%;"></div><br>
-
-<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><h3 id="1-截图"><a href="#1-截图" class="headerlink" title="1 截图"></a>1 截图</h3><h4 id="1-1-涉及的API"><a href="#1-1-涉及的API" class="headerlink" title="1.1 涉及的API"></a>1.1 涉及的API</h4><ul>
-<li>page.$(‘#uniqueId’)：获取某个选择器对应的第一个元素</li>
-<li>page.$$(‘div’)：获取某个选择器对应的所有元素</li>
-<li>page.$x(‘//img’)：获取某个 xPath 对应的所有元素</li>
-<li>page.waitForXPath(‘//img’)：等待某个 xPath 对应的元素出现</li>
-<li>page.waitForSelector(‘#uniqueId’)：等待某个选择器对应的元素出现</li>
-</ul>
-<h4 id="1-2-Demo"><a href="#1-2-Demo" class="headerlink" title="1.2 Demo"></a>1.2 Demo</h4><p>使用 Puppeteer 既可以对某个页面进行截图，也可以对页面中的某个元素进行截图</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="两个独立的环境">两个独立的环境</h2><p>在使用 Puppeteer 时我们几乎一定会遇到在这两个环境之间交换数据：运行 Puppeteer 的 Node.js 环境和 Puppeteer 操作的页面 Page DOM，理解这两个环境很重要</p><ul><li>首先 Puppeteer 提供了很多有用的函数去 Page DOM Environment 中执行代码，这个后面会介绍到</li><li>其次 Puppeteer 提供了 ElementHandle 和 JsHandle 将 Page DOM Environment 中元素和对象封装成对应的 Node.js 对象，这样可以直接这些对象的封装函数进行操作 Page DOM</li></ul><div> <img src="/images/article/0061-003.png" style="width:100%;"></div><p><br></p><h2 id="使用场景">使用场景</h2><h3 id="截图">1 截图</h3><h4 id="涉及的api">1.1 涉及的API</h4><ul><li>page.$(‘#uniqueId’)：获取某个选择器对应的第一个元素</li><li>page.$$(‘div’)：获取某个选择器对应的所有元素</li><li>page.$x(‘//img’)：获取某个 xPath 对应的所有元素</li><li>page.waitForXPath(‘//img’)：等待某个 xPath 对应的元素出现</li><li>page.waitForSelector(‘#uniqueId’)：等待某个选择器对应的元素出现</li></ul><h4 id="demo">1.2 Demo</h4><p>使用 Puppeteer 既可以对某个页面进行截图，也可以对页面中的某个元素进行截图</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> browser <span class="token operator">=</span> <span class="token keyword">await</span> puppeteer<span class="token punctuation">.</span><span class="token function">launch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> page <span class="token operator">=</span> <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">newPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//设置可视区域大小</span>
-  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">setViewport</span><span class="token punctuation">(</span><span class="token punctuation">{</span>width<span class="token punctuation">:</span> <span class="token number">1920</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">800</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//设置可视区域大小</span>
+  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">setViewport</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">1920</span><span class="token punctuation">,</span> <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">800</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">'https://youdata.163.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//对整个页面截图</span>
+  <span class="token comment">//对整个页面截图</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">screenshot</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    path<span class="token punctuation">:</span> <span class="token string">'./files/capture.png'</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//图片保存路径</span>
-    type<span class="token punctuation">:</span> <span class="token string">'png'</span><span class="token punctuation">,</span>
-    fullPage<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token comment" spellcheck="true">//边滚动边截图</span>
-    <span class="token comment" spellcheck="true">// clip: {x: 0, y: 0, width: 1920, height: 800}</span>
+    <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'./files/capture.png'</span><span class="token punctuation">,</span>  <span class="token comment">//图片保存路径</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'png'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">fullPage</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token comment">//边滚动边截图</span>
+    <span class="token comment">// clip: {x: 0, y: 0, width: 1920, height: 800}</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//对页面某个元素截图</span>
+  <span class="token comment">//对页面某个元素截图</span>
   <span class="token keyword">let</span> <span class="token punctuation">[</span>element<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">$x</span><span class="token punctuation">(</span><span class="token string">'/html/body/section[4]/div/div[2]'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> element<span class="token punctuation">.</span><span class="token function">screenshot</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    path<span class="token punctuation">:</span> <span class="token string">'./files/element.png'</span>
+    <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'./files/element.png'</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-模拟用户登录"><a href="#2-模拟用户登录" class="headerlink" title="2 模拟用户登录"></a>2 模拟用户登录</h3><h4 id="2-1-涉及的API"><a href="#2-1-涉及的API" class="headerlink" title="2.1 涉及的API"></a>2.1 涉及的API</h4><ul>
-<li>elementHandle.click()：点击某个元素</li>
-<li>elementHandle.tap()：模拟手指触摸点击</li>
-<li>elementHandle.focus()：聚焦到某个元素</li>
-<li>elementHandle.hover()：鼠标 hover 到某个元素上</li>
-<li>elementHandle.type(‘hello’)：在输入框输入文本</li>
-</ul>
-<h4 id="2-2-Demo"><a href="#2-2-Demo" class="headerlink" title="2.2 Demo"></a>2.2 Demo</h4><pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="模拟用户登录">2 模拟用户登录</h3><h4 id="涉及的api-1">2.1 涉及的API</h4><ul><li>elementHandle.click()：点击某个元素</li><li>elementHandle.tap()：模拟手指触摸点击</li><li>elementHandle.focus()：聚焦到某个元素</li><li>elementHandle.hover()：鼠标 hover 到某个元素上</li><li>elementHandle.type(‘hello’)：在输入框输入文本</li></ul><h4 id="demo-1">2.2 Demo</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> browser <span class="token operator">=</span> <span class="token keyword">await</span> puppeteer<span class="token punctuation">.</span><span class="token function">launch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    slowMo<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//放慢速度</span>
-    headless<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    defaultViewport<span class="token punctuation">:</span> <span class="token punctuation">{</span>width<span class="token punctuation">:</span> <span class="token number">1440</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">780</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-    ignoreHTTPSErrors<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//忽略 https 报错</span>
-    args<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'--start-fullscreen'</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">//全屏打开页面</span>
+    <span class="token literal-property property">slowMo</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>  <span class="token comment">//放慢速度</span>
+    <span class="token literal-property property">headless</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">defaultViewport</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">1440</span><span class="token punctuation">,</span> <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">780</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">ignoreHTTPSErrors</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">//忽略 https 报错</span>
+    <span class="token literal-property property">args</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'--start-fullscreen'</span><span class="token punctuation">]</span> <span class="token comment">//全屏打开页面</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> page <span class="token operator">=</span> <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">newPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">'https://demo.youdata.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//输入账号密码</span>
+  <span class="token comment">//输入账号密码</span>
   <span class="token keyword">const</span> uniqueIdElement <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#uniqueId'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">await</span> uniqueIdElement<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token string">'admin@admin.com'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>delay<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> passwordElement <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#password'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>delay<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">await</span> uniqueIdElement<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token string">'admin@admin.com'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">delay</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> passwordElement <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#password'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">delay</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> passwordElement<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token string">'123456'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//点击确定按钮进行登录</span>
+  <span class="token comment">//点击确定按钮进行登录</span>
   <span class="token keyword">let</span> okButtonElement <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#btn-ok'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//等待页面跳转完成，一般点击某个按钮需要跳转时，都需要等待 page.waitForNavigation() 执行完毕才表示跳转成功</span>
+  <span class="token comment">//等待页面跳转完成，一般点击某个按钮需要跳转时，都需要等待 page.waitForNavigation() 执行完毕才表示跳转成功</span>
   <span class="token keyword">await</span> Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
     okButtonElement<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     page<span class="token punctuation">.</span><span class="token function">waitForNavigation</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  
@@ -715,38 +245,23 @@ chrome --headless --disable-gpu --screenshot https://www.baidu.com       # 截�
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'admin 登录成功'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-请求拦截"><a href="#3-请求拦截" class="headerlink" title="3 请求拦截"></a>3 请求拦截</h3><h4 id="3-1-涉及的API"><a href="#3-1-涉及的API" class="headerlink" title="3.1 涉及的API"></a>3.1 涉及的API</h4><ul>
-<li>page.on(‘close’) 页面关闭</li>
-<li>page.on(‘console’) console API 被调用</li>
-<li>page.on(‘error’) 页面出错</li>
-<li>page.on(‘load’) 页面加载完</li>
-<li>page.on(‘request’) 收到请求</li>
-<li>page.on(‘requestfailed’) 请求失败</li>
-<li>page.on(‘requestfinished’) 请求成功</li>
-<li>page.on(‘response’) 收到响应</li>
-<li>page.on(‘workercreated’) 创建 webWorker</li>
-<li>page.on(‘workerdestroyed’) 销毁 webWorker</li>
-</ul>
-<h4 id="3-2-Demo"><a href="#3-2-Demo" class="headerlink" title="3.2 Demo"></a>3.2 Demo</h4><p>请求在有些场景下很有必要，拦截一下没必要的请求提高性能，我们可以在监听 Page 的 request 事件，并进行请求拦截，前提是要开启请求拦截 <code>page.setRequestInterception(true)</code>。</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="请求拦截">3 请求拦截</h3><h4 id="涉及的api-2">3.1 涉及的API</h4><ul><li>page.on(‘close’) 页面关闭</li><li>page.on(‘console’) console API 被调用</li><li>page.on(‘error’) 页面出错</li><li>page.on(‘load’) 页面加载完</li><li>page.on(‘request’) 收到请求</li><li>page.on(‘requestfailed’) 请求失败</li><li>page.on(‘requestfinished’) 请求成功</li><li>page.on(‘response’) 收到响应</li><li>page.on(‘workercreated’) 创建 webWorker</li><li>page.on(‘workerdestroyed’) 销毁 webWorker</li></ul><h4 id="demo-2">3.2 Demo</h4><p>请求在有些场景下很有必要，拦截一下没必要的请求提高性能，我们可以在监听 Page 的 request 事件，并进行请求拦截，前提是要开启请求拦截 <code>page.setRequestInterception(true)</code>。</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> browser <span class="token operator">=</span> <span class="token keyword">await</span> puppeteer<span class="token punctuation">.</span><span class="token function">launch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> page <span class="token operator">=</span> <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">newPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> blockTypes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'image'</span><span class="token punctuation">,</span> <span class="token string">'media'</span><span class="token punctuation">,</span> <span class="token string">'font'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">setRequestInterception</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//开启请求拦截</span>
-  page<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span> request <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">setRequestInterception</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//开启请求拦截</span>
+  page<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span> <span class="token parameter">request</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> type <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">resourceType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">const</span> shouldBlock <span class="token operator">=</span> blockTypes<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>shouldBlock<span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token comment" spellcheck="true">//直接阻止请求</span>
+      <span class="token comment">//直接阻止请求</span>
       <span class="token keyword">return</span> request<span class="token punctuation">.</span><span class="token function">abort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-      <span class="token comment" spellcheck="true">//对请求重写</span>
-      <span class="token keyword">return</span> request<span class="token punctuation">.</span><span class="token keyword">continue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//可以对 url，method，postData，headers 进行覆盖</span>
-        headers<span class="token punctuation">:</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> request<span class="token punctuation">.</span><span class="token function">headers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-          <span class="token string">'puppeteer-test'</span><span class="token punctuation">:</span> <span class="token string">'true'</span>
+      <span class="token comment">//对请求重写</span>
+      <span class="token keyword">return</span> request<span class="token punctuation">.</span><span class="token function">continue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token comment">//可以对 url，method，postData，headers 进行覆盖</span>
+        <span class="token literal-property property">headers</span><span class="token operator">:</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> request<span class="token punctuation">.</span><span class="token function">headers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          <span class="token string-property property">'puppeteer-test'</span><span class="token operator">:</span> <span class="token string">'true'</span>
         <span class="token punctuation">}</span><span class="token punctuation">)</span>
       <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
@@ -754,57 +269,40 @@ chrome --headless --disable-gpu --screenshot https://www.baidu.com       # 截�
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">'https://demo.youdata.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="4-获取-WebSocket-响应"><a href="#4-获取-WebSocket-响应" class="headerlink" title="4 获取 WebSocket 响应"></a>4 获取 WebSocket 响应</h3><h4 id="4-1-涉及的API"><a href="#4-1-涉及的API" class="headerlink" title="4.1 涉及的API"></a>4.1 涉及的API</h4><ul>
-<li>page.target().createCDPSession()</li>
-</ul>
-<h4 id="4-2-Demo"><a href="#4-2-Demo" class="headerlink" title="4.2 Demo"></a>4.2 Demo</h4><p>Puppeteer 目前没有提供原生的用于处理 WebSocket 的 API 接口，但是我们可以通过更底层的 Chrome DevTool Protocol (CDP) 协议获得</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="获取-websocket-响应">4 获取 WebSocket 响应</h3><h4 id="涉及的api-3">4.1 涉及的API</h4><ul><li>page.target().createCDPSession()</li></ul><h4 id="demo-3">4.2 Demo</h4><p>Puppeteer 目前没有提供原生的用于处理 WebSocket 的 API 接口，但是我们可以通过更底层的 Chrome DevTool Protocol (CDP) 协议获得</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> browser <span class="token operator">=</span> <span class="token keyword">await</span> puppeteer<span class="token punctuation">.</span><span class="token function">launch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> page <span class="token operator">=</span> <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">newPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//创建 CDP 会话</span>
+  <span class="token comment">//创建 CDP 会话</span>
   <span class="token keyword">let</span> cdpSession <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">target</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">createCDPSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//开启网络调试,监听 Chrome DevTools Protocol 中 Network 相关事件</span>
+  <span class="token comment">//开启网络调试,监听 Chrome DevTools Protocol 中 Network 相关事件</span>
   <span class="token keyword">await</span> cdpSession<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'Network.enable'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//监听 webSocketFrameReceived 事件，获取对应的数据</span>
-  cdpSession<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'Network.webSocketFrameReceived'</span><span class="token punctuation">,</span> frame <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token comment">//监听 webSocketFrameReceived 事件，获取对应的数据</span>
+  cdpSession<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'Network.webSocketFrameReceived'</span><span class="token punctuation">,</span> <span class="token parameter">frame</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     <span class="token keyword">let</span> payloadData <span class="token operator">=</span> frame<span class="token punctuation">.</span>response<span class="token punctuation">.</span>payloadData<span class="token punctuation">;</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>payloadData<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'push:query'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token comment" spellcheck="true">//解析payloadData，拿到服务端推送的数据</span>
-      <span class="token keyword">let</span> res <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>payloadData<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/\{.*\}/</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//解析payloadData，拿到服务端推送的数据</span>
+      <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>payloadData<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\{.*\}</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token keyword">if</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>code <span class="token operator">!==</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`调用websocket接口出错:code=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>res<span class="token punctuation">.</span>code<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,message=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>res<span class="token punctuation">.</span>message<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">调用websocket接口出错:code=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>res<span class="token punctuation">.</span>code<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,message=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>res<span class="token punctuation">.</span>message<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'获取到websocket接口数据：'</span><span class="token punctuation">,</span> res<span class="token punctuation">.</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">'https://netease.youdata.163.com/dash/142161/reportExport?pid=700209493'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">waitForFunction</span><span class="token punctuation">(</span><span class="token string">'window.renderdone'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>polling<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">waitForFunction</span><span class="token punctuation">(</span><span class="token string">'window.renderdone'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">polling</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="5-植入-javascript-代码"><a href="#5-植入-javascript-代码" class="headerlink" title="5 植入 javascript 代码"></a>5 植入 javascript 代码</h3><h4 id="5-1-涉及的API"><a href="#5-1-涉及的API" class="headerlink" title="5.1 涉及的API"></a>5.1 涉及的API</h4><ul>
-<li>page.evaluate(pageFunction[, …args])：在浏览器环境中执行函数</li>
-<li>page.evaluateHandle(pageFunction[, …args])：在浏览器环境中执行函数，返回 JsHandle 对象</li>
-<li>page.$$eval(selector, pageFunction[, …args])：把 selector 对应的所有元素传入到函数并在浏览器环境执行</li>
-<li>page.$eval(selector, pageFunction[, …args])：把 selector 对应的第一个元素传入到函数在浏览器环境执行</li>
-<li>page.evaluateOnNewDocument(pageFunction[, …args])：创建一个新的 Document 时在浏览器环境中执行，会在页面所有脚本执行之前执行</li>
-<li>page.exposeFunction(name, puppeteerFunction)：在 window 对象上注册一个函数，这个函数在 Node  环境中执行，有机会在浏览器环境中调用 Node.js 相关函数库</li>
-</ul>
-<h4 id="5-2-Demo"><a href="#5-2-Demo" class="headerlink" title="5.2 Demo"></a>5.2 Demo</h4><p>Puppeteer 最强大的功能是，你可以在浏览器里执行任何你想要运行的 javascript 代码，下面是我在爬 188 邮箱的收件箱用户列表时，发现每次打开收件箱再关掉都会多处一个 iframe 来，随着打开收件箱的增多，iframe 增多到浏览器卡到无法运行，此时可以在爬虫代码里加了删除无用 iframe 的脚本</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="植入-javascript-代码">5 植入 javascript 代码</h3><h4 id="涉及的api-4">5.1 涉及的API</h4><ul><li>page.evaluate(pageFunction[, …args])：在浏览器环境中执行函数</li><li>page.evaluateHandle(pageFunction[, …args])：在浏览器环境中执行函数，返回 JsHandle 对象</li><li>page.$$eval(selector, pageFunction[, …args])：把 selector 对应的所有元素传入到函数并在浏览器环境执行</li><li>page.$eval(selector, pageFunction[, …args])：把 selector 对应的第一个元素传入到函数在浏览器环境执行</li><li>page.evaluateOnNewDocument(pageFunction[, …args])：创建一个新的 Document 时在浏览器环境中执行，会在页面所有脚本执行之前执行</li><li>page.exposeFunction(name, puppeteerFunction)：在 window 对象上注册一个函数，这个函数在 Node 环境中执行，有机会在浏览器环境中调用 Node.js 相关函数库</li></ul><h4 id="demo-4">5.2 Demo</h4><p>Puppeteer 最强大的功能是，你可以在浏览器里执行任何你想要运行的 javascript 代码，下面是我在爬 188 邮箱的收件箱用户列表时，发现每次打开收件箱再关掉都会多处一个 iframe 来，随着打开收件箱的增多，iframe 增多到浏览器卡到无法运行，此时可以在爬虫代码里加了删除无用 iframe 的脚本</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> browser <span class="token operator">=</span> <span class="token keyword">await</span> puppeteer<span class="token punctuation">.</span><span class="token function">launch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> page <span class="token operator">=</span> <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">newPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">'https://webmail.vip.188.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//注册一个 Node.js 函数，在浏览器里运行</span>
-  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">exposeFunction</span><span class="token punctuation">(</span><span class="token string">'md5'</span><span class="token punctuation">,</span> text <span class="token operator">=</span><span class="token operator">></span>
+  <span class="token comment">//注册一个 Node.js 函数，在浏览器里运行</span>
+  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">exposeFunction</span><span class="token punctuation">(</span><span class="token string">'md5'</span><span class="token punctuation">,</span> <span class="token parameter">text</span> <span class="token operator">=&gt;</span>
     crypto<span class="token punctuation">.</span><span class="token function">createHash</span><span class="token punctuation">(</span><span class="token string">'md5'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">digest</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//通过 page.evaluate 在浏览器里执行删除无用的 iframe 代码</span>
-  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">evaluate</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span>  <span class="token punctuation">{</span>
+  <span class="token comment">//通过 page.evaluate 在浏览器里执行删除无用的 iframe 代码</span>
+  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">evaluate</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>  <span class="token punctuation">{</span>
     <span class="token keyword">let</span> iframes <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'iframe'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span>  iframes<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
       <span class="token keyword">let</span> iframe <span class="token operator">=</span> iframes<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -814,29 +312,25 @@ chrome --headless --disable-gpu --screenshot https://www.baidu.com       # 截�
           iframe<span class="token punctuation">.</span>contentWindow<span class="token punctuation">.</span>document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
           iframe<span class="token punctuation">.</span>contentWindow<span class="token punctuation">.</span>document<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-        <span class="token comment" spellcheck="true">//把iframe从页面移除</span>
+        <span class="token comment">//把iframe从页面移除</span>
         iframe<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>iframe<span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-    <span class="token comment" spellcheck="true">//在页面中调用 Node.js 环境中的函数</span>
+    <span class="token comment">//在页面中调用 Node.js 环境中的函数</span>
     <span class="token keyword">const</span> myHash <span class="token operator">=</span> <span class="token keyword">await</span> window<span class="token punctuation">.</span><span class="token function">md5</span><span class="token punctuation">(</span><span class="token string">'PUPPETEER'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`md5 of </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>myString<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>myHash<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">md5 of </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>myString<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>myHash<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="6-抓取-iframe-中的元素"><a href="#6-抓取-iframe-中的元素" class="headerlink" title="6 抓取 iframe 中的元素"></a>6 抓取 iframe 中的元素</h3><p>一个 Frame 包含了一个执行上下文（Execution Context），我们不能跨 Frame 执行函数，一个页面中可以有多个 Frame，主要是通过 iframe 标签嵌入的生成的。其中在页面上的大部分函数其实是 page.mainFrame().xx 的一个简写，Frame 是树状结构，我们可以通过 frame.childFrames() 遍历到所有的 Frame，如果想在其它 Frame 中执行函数必须获取到对应的 Frame 才能进行相应的处理</p>
-<p>以下是在登录 188 邮箱时，其登录窗口其实是嵌入的一个 iframe，以下代码是获取 iframe 并进行登录</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">const</span> browser <span class="token operator">=</span> <span class="token keyword">await</span> puppeteer<span class="token punctuation">.</span><span class="token function">launch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>headless<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> slowMo<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="抓取-iframe-中的元素">6 抓取 iframe 中的元素</h3><p>一个 Frame 包含了一个执行上下文（Execution Context），我们不能跨 Frame 执行函数，一个页面中可以有多个 Frame，主要是通过 iframe 标签嵌入的生成的。其中在页面上的大部分函数其实是 page.mainFrame().xx 的一个简写，Frame 是树状结构，我们可以通过 frame.childFrames() 遍历到所有的 Frame，如果想在其它 Frame 中执行函数必须获取到对应的 Frame 才能进行相应的处理</p><p>以下是在登录 188 邮箱时，其登录窗口其实是嵌入的一个 iframe，以下代码是获取 iframe 并进行登录</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> browser <span class="token operator">=</span> <span class="token keyword">await</span> puppeteer<span class="token punctuation">.</span><span class="token function">launch</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">headless</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token literal-property property">slowMo</span><span class="token operator">:</span> <span class="token number">50</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> page <span class="token operator">=</span> <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">newPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">'https://www.188.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//点击使用密码登录</span>
+  <span class="token comment">//点击使用密码登录</span>
   <span class="token keyword">let</span> passwordLogin <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">waitForXPath</span><span class="token punctuation">(</span><span class="token string">'//*[@id="qcode"]/div/div[2]/a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> passwordLogin<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> frame <span class="token keyword">of</span> page<span class="token punctuation">.</span><span class="token function">mainFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">childFrames</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//根据 url 找到登录页面对应的 iframe</span>
+    <span class="token comment">//根据 url 找到登录页面对应的 iframe</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>frame<span class="token punctuation">.</span><span class="token function">url</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'passport.188.com'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
       <span class="token keyword">await</span> frame<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token string">'.dlemail'</span><span class="token punctuation">,</span> <span class="token string">'admin@admin.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token keyword">await</span> frame<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token string">'.dlpwd'</span><span class="token punctuation">,</span> <span class="token string">'123456'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -849,142 +343,51 @@ chrome --headless --disable-gpu --screenshot https://www.baidu.com       # 截�
   <span class="token punctuation">}</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="7-页面性能分析"><a href="#7-页面性能分析" class="headerlink" title="7 页面性能分析"></a>7 页面性能分析</h3><p>Puppeteer 提供了对页面性能分析的工具，目前功能还是比较弱的，只能获取到一个页面性能执行的数据，如何分析需要我们自己根据数据进行分析，据说在 2.0 版本会做大的改版： </p>
-<ul>
-<li>一个浏览器同一时间只能 trace 一次 </li>
-<li>在 devTools 的 Performance 可以上传对应的 json 文件并查看分析结果 </li>
-<li>我们可以写脚本来解析 trace.json 中的数据做自动化分析 </li>
-<li>通过 tracing 我们获取页面加载速度以及脚本的执行性能</li>
-</ul>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="页面性能分析">7 页面性能分析</h3><p>Puppeteer 提供了对页面性能分析的工具，目前功能还是比较弱的，只能获取到一个页面性能执行的数据，如何分析需要我们自己根据数据进行分析，据说在 2.0 版本会做大的改版：</p><ul><li>一个浏览器同一时间只能 trace 一次</li><li>在 devTools 的 Performance 可以上传对应的 json 文件并查看分析结果</li><li>我们可以写脚本来解析 trace.json 中的数据做自动化分析</li><li>通过 tracing 我们获取页面加载速度以及脚本的执行性能</li></ul><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> browser <span class="token operator">=</span> <span class="token keyword">await</span> puppeteer<span class="token punctuation">.</span><span class="token function">launch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> page <span class="token operator">=</span> <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">newPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">await</span> page<span class="token punctuation">.</span>tracing<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">{</span>path<span class="token punctuation">:</span> <span class="token string">'./files/trace.json'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">await</span> page<span class="token punctuation">.</span>tracing<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'./files/trace.json'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">'https://www.google.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span>tracing<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">/*
+  <span class="token comment">/*
     continue analysis from 'trace.json'
   */</span>
   <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="文件的上传和下载"><a href="#文件的上传和下载" class="headerlink" title="文件的上传和下载"></a>文件的上传和下载</h3><p>在自动化测试中，经常会遇到对于文件的上传和下载的需求，那么在 Puppeteer 中如何实现呢？</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="文件的上传和下载">文件的上传和下载</h3><p>在自动化测试中，经常会遇到对于文件的上传和下载的需求，那么在 Puppeteer 中如何实现呢？</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> browser <span class="token operator">=</span> <span class="token keyword">await</span> puppeteer<span class="token punctuation">.</span><span class="token function">launch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> page <span class="token operator">=</span> <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">newPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//通过 CDP 会话设置下载路径</span>
+  <span class="token comment">//通过 CDP 会话设置下载路径</span>
   <span class="token keyword">const</span> cdp <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">target</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">createCDPSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> cdp<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'Page.setDownloadBehavior'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-    behavior<span class="token punctuation">:</span> <span class="token string">'allow'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//允许所有下载请求</span>
-    downloadPath<span class="token punctuation">:</span> <span class="token string">'path/to/download'</span>  <span class="token comment" spellcheck="true">//设置下载路径</span>
+    <span class="token literal-property property">behavior</span><span class="token operator">:</span> <span class="token string">'allow'</span><span class="token punctuation">,</span> <span class="token comment">//允许所有下载请求</span>
+    <span class="token literal-property property">downloadPath</span><span class="token operator">:</span> <span class="token string">'path/to/download'</span>  <span class="token comment">//设置下载路径</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//点击按钮触发下载</span>
+  <span class="token comment">//点击按钮触发下载</span>
   <span class="token keyword">await</span> <span class="token punctuation">(</span><span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">waitForSelector</span><span class="token punctuation">(</span><span class="token string">'#someButton'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//等待文件出现，轮训判断文件是否出现</span>
+  <span class="token comment">//等待文件出现，轮训判断文件是否出现</span>
   <span class="token keyword">await</span> <span class="token function">waitForFile</span><span class="token punctuation">(</span><span class="token string">'path/to/download/filename'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  <span class="token comment" spellcheck="true">//上传时对应的 inputElement 必须是&lt;input>元素</span>
+  <span class="token comment">//上传时对应的 inputElement 必须是&lt;input&gt;元素</span>
   <span class="token keyword">let</span> inputElement <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">waitForXPath</span><span class="token punctuation">(</span><span class="token string">'//input[@type="file"]'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> inputElement<span class="token punctuation">.</span><span class="token function">uploadFile</span><span class="token punctuation">(</span><span class="token string">'/path/to/file'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="跳转新-tab-页处理"><a href="#跳转新-tab-页处理" class="headerlink" title="跳转新 tab 页处理"></a>跳转新 tab 页处理</h3><p>在点击一个按钮跳转到新的 Tab 页时会新开一个页面，这个时候我们如何获取改页面对应的 Page 实例呢？</p>
-<p>可以通过监听 Browser 上的 targetcreated 事件来实现，表示有新的页面创建</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">let</span> page <span class="token operator">=</span> <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">newPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="跳转新-tab-页处理">跳转新 tab 页处理</h3><p>在点击一个按钮跳转到新的 Tab 页时会新开一个页面，这个时候我们如何获取改页面对应的 Page 实例呢？</p><p>可以通过监听 Browser 上的 targetcreated 事件来实现，表示有新的页面创建</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> page <span class="token operator">=</span> <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">newPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> btn <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">waitForSelector</span><span class="token punctuation">(</span><span class="token string">'#btn'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//在点击按钮之前，事先定义一个 Promise，用于返回新 tab 的 Page 对象</span>
-<span class="token keyword">const</span> newPagePromise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">></span> 
-  browser<span class="token punctuation">.</span><span class="token function">once</span><span class="token punctuation">(</span><span class="token string">'targetcreated'</span><span class="token punctuation">,</span>target <span class="token operator">=</span><span class="token operator">></span> <span class="token function">res</span><span class="token punctuation">(</span>target<span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">//在点击按钮之前，事先定义一个 Promise，用于返回新 tab 的 Page 对象</span>
+<span class="token keyword">const</span> newPagePromise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> 
+  browser<span class="token punctuation">.</span><span class="token function">once</span><span class="token punctuation">(</span><span class="token string">'targetcreated'</span><span class="token punctuation">,</span><span class="token parameter">target</span> <span class="token operator">=&gt;</span> <span class="token function">res</span><span class="token punctuation">(</span>target<span class="token punctuation">.</span><span class="token function">page</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">await</span> btn<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//点击按钮后，等待新tab对象</span>
-<span class="token keyword">let</span> newPage <span class="token operator">=</span> <span class="token keyword">await</span> newPagePromise<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="模拟不同的设备"><a href="#模拟不同的设备" class="headerlink" title="模拟不同的设备"></a>模拟不同的设备</h3><p>Puppeteer 提供了模拟不同设备的功能，其中 puppeteer.devices 对象上定义很多设备的配置信息，这些配置信息主要包含 viewport 和 userAgent，然后通过函数 page.emulate 实现不同设备的模拟</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> puppeteer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'puppeteer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//点击按钮后，等待新tab对象</span>
+<span class="token keyword">let</span> newPage <span class="token operator">=</span> <span class="token keyword">await</span> newPagePromise<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="模拟不同的设备">模拟不同的设备</h3><p>Puppeteer 提供了模拟不同设备的功能，其中 puppeteer.devices 对象上定义很多设备的配置信息，这些配置信息主要包含 viewport 和 userAgent，然后通过函数 page.emulate 实现不同设备的模拟</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> puppeteer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'puppeteer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> iPhone <span class="token operator">=</span> puppeteer<span class="token punctuation">.</span>devices<span class="token punctuation">[</span><span class="token string">'iPhone 6'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-puppeteer<span class="token punctuation">.</span><span class="token function">launch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">async</span> browser <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+puppeteer<span class="token punctuation">.</span><span class="token function">launch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token parameter">browser</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> page <span class="token operator">=</span> <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">newPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">emulate</span><span class="token punctuation">(</span>iPhone<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">'https://www.google.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="性能和优化"><a href="#性能和优化" class="headerlink" title="性能和优化"></a>性能和优化</h2><p>Chromium消耗最多的资源是CPU，一是渲染需要大量计算，二是Dom的解析与渲染在不同的进程，进程间切换会给CPU造成压力（进程多了之后特别明显）。其次消耗最多的是内存，Chromium是以多进程的方式运行，一个页面会生成一个进程，一个进程占用30M左右的内存，大致估算1000个请求占用30G内存，在并发高的时候内存瓶颈最先显现。</p>
-<ul>
-<li><p>关于共享内存</p>
-<p>Chrome 默认使用 /dev/shm 共享内存，但是 docker 默认/dev/shm 只有64MB，显然是不够使用的，提供两种方式来解决：</p>
-<ul>
-<li>启动 docker 时添加参数 –shm-size=1gb 来增大 /dev/shm 共享内存，但是 swarm 目前不支持 shm-size 参数</li>
-<li>启动 Chrome 添加参数 - disable-dev-shm-usage，禁止使用 /dev/shm 共享内存</li>
-</ul>
-</li>
-<li><p>尽量使用同一个浏览器实例，这样可以实现缓存共用</p>
-</li>
-<li><p>通过请求拦截没必要加载的资源</p>
-</li>
-<li><p>像我们自己打开 Chrome 一样，tab 页多必然会卡，所以必须有效控制 tab 页个数</p>
-</li>
-<li><p>一个 Chrome 实例启动时间长了难免会出现内存泄漏，页面奔溃等现象，所以定时重启 Chrome 实例是有必要的</p>
-</li>
-<li><p>为了加快性能，关闭没必要的配置，比如：-no-sandbox（沙箱功能），–disable-extensions（扩展程序）等</p>
-</li>
-<li><p>尽量避免使用 page.waifFor(1000)，让程序自己决定效果会更好</p>
-</li>
-<li><p>因为和 Chrome 实例连接时使用的 Websocket，会存在 Websocket sticky session 问题，这个需要特别注意</p>
-</li>
-</ul>
-
-                
-            </div>
-            <hr/>
-
-            
-
-    <div class="reprint" id="reprint-statement">
-        
-            <div class="reprint__author">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-user">
-                        文章作者:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">darebeat</a>
-                </span>
-            </div>
-            <div class="reprint__type">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-link">
-                        文章链接:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="https://www.darebeat.cn/article/61/">https://www.darebeat.cn/article/61/</a>
-                </span>
-            </div>
-            <div class="reprint__notice">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-copyright">
-                        版权声明:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
-                    <a href="/about" target="_blank">darebeat</a>
-                    !
-                </span>
-            </div>
-        
-    </div>
-
-    <script async defer>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="性能和优化">性能和优化</h2><p>Chromium消耗最多的资源是CPU，一是渲染需要大量计算，二是Dom的解析与渲染在不同的进程，进程间切换会给CPU造成压力（进程多了之后特别明显）。其次消耗最多的是内存，Chromium是以多进程的方式运行，一个页面会生成一个进程，一个进程占用30M左右的内存，大致估算1000个请求占用30G内存，在并发高的时候内存瓶颈最先显现。</p><ul><li><p>关于共享内存</p><p>Chrome 默认使用 /dev/shm 共享内存，但是 docker 默认/dev/shm 只有64MB，显然是不够使用的，提供两种方式来解决：</p><ul><li>启动 docker 时添加参数 –shm-size=1gb 来增大 /dev/shm 共享内存，但是 swarm 目前不支持 shm-size 参数</li><li>启动 Chrome 添加参数 - disable-dev-shm-usage，禁止使用 /dev/shm 共享内存</li></ul></li><li><p>尽量使用同一个浏览器实例，这样可以实现缓存共用</p></li><li><p>通过请求拦截没必要加载的资源</p></li><li><p>像我们自己打开 Chrome 一样，tab 页多必然会卡，所以必须有效控制 tab 页个数</p></li><li><p>一个 Chrome 实例启动时间长了难免会出现内存泄漏，页面奔溃等现象，所以定时重启 Chrome 实例是有必要的</p></li><li><p>为了加快性能，关闭没必要的配置，比如：-no-sandbox（沙箱功能），–disable-extensions（扩展程序）等</p></li><li><p>尽量避免使用 page.waifFor(1000)，让程序自己决定效果会更好</p></li><li><p>因为和 Chrome 实例连接时使用的 Websocket，会存在 Websocket sticky session 问题，这个需要特别注意</p></li></ul></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/61/">https://www.darebeat.cn/article/61/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
       document.addEventListener("copy", function (e) {
         let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML});
@@ -993,43 +396,7 @@ puppeteer<span class="token punctuation">.</span><span class="token function">la
       function navToReprintStatement() {
         $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
       }
-    </script>
-
-
-
-            <div class="tag_share" style="display: block;">
-                <div class="post-meta__tag-list" style="display: inline-block;">
-                    
-                        <div class="article-tag">
-                            
-                                <a href="/tags/web/">
-                                    <span class="chip bg-color">web</span>
-                                </a>
-                            
-                                <a href="/tags/puppeteer/">
-                                    <span class="chip bg-color">puppeteer</span>
-                                </a>
-                            
-                        </div>
-                    
-                </div>
-                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-<div id="article-share">
-
-    
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
-    
-
-    
-
-</div>
-
-                </div>
-            </div>
-            
-                <style>
+    </script><div class="tag_share" style="display: block;"><div class="post-meta__tag-list" style="display: inline-block;"><div class="article-tag"> <a href="/tags/web/"><span class="chip bg-color">web</span></a> <a href="/tags/puppeteer/"><span class="chip bg-color">puppeteer</span></a></div></div><div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;"><link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css"><div id="article-share"><div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div><script src="/libs/share/js/social-share.min.js"></script></div></div></div><style>
     #reward {
         margin: 40px 0;
         text-align: center;
@@ -1120,206 +487,11 @@ puppeteer<span class="token punctuation">.</span><span class="token function">la
         width: 210px;
         height: 210px;
     }
-</style>
-
-<div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
-
-    <!-- Modal Structure -->
-    <div id="rewardModal" class="modal">
-        <div class="modal-content">
-            <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赞赏是我前进的动力！</h4>
-            <div class="reward-content">
-                <div class="reward-tabs">
-                    <ul class="tabs row">
-                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
-                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
-                    </ul>
-                    <div id="alipay">
-                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
-                    </div>
-                    <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
+</style><div id="reward"> <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fas fa-times"></i></a><h4 class="reward-title">你的赞赏是我前进的动力！</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"> <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"> <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>
     $(function () {
         $('.tabs').tabs();
     });
-</script>
-
-            
-        </div>
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-<article id="prenext-posts" class="prev-next articles">
-    <div class="row article-row">
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/article/69/">
-                    <div class="card-image">
-                        
-                        <img src="/images/card/0069.png" class="responsive-img" alt="ODPS重点参数语法-使用小记">
-                        
-                        <span class="card-title">ODPS重点参数语法-使用小记</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            在日常工作中，记录一些用到阿里云odps的常用的参数语法，记录一下，方便查找和定位。
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-17
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/bigdata/" class="post-category">
-                                    bigdata
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/odps/">
-                        <span class="chip bg-color">odps</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/article/68/">
-                    <div class="card-image">
-                        
-                        <img src="/images/card/0068.jpeg" class="responsive-img" alt="MySQL基础知识">
-                        
-                        <span class="card-title">MySQL基础知识</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            在使用MySQL过程中，一些常用的SQL备注和记录，方便查找定位。
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-13
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/database/" class="post-category">
-                                    database
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/database/">
-                        <span class="chip bg-color">database</span>
-                    </a>
-                    
-                    <a href="/tags/mysql/">
-                        <span class="chip bg-color">mysql</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-    </div>
-</article>
-
-</div>
-
-
-
-<!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-
-<!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
-
-<!-- 代码块复制 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-
-
-<!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
-
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
+</script></div></div><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="fas fa-chevron-left"></i> &nbsp;上一篇</div><div class="card"><a href="/article/69/"><div class="card-image"> <img src="/images/card/0069.png" class="responsive-img" alt="ODPS重点参数语法-使用小记"> <span class="card-title">ODPS重点参数语法-使用小记</span></div></a><div class="card-content article-content"><div class="summary block-with-text"> 在日常工作中，记录一些用到阿里云odps的常用的参数语法，记录一下，方便查找和定位。</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2022-06-17</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/bigdata/" class="post-category">bigdata</a></span></div></div><div class="card-action article-tags"> <a href="/tags/odps/"><span class="chip bg-color">odps</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color"> 下一篇&nbsp;<i class="fas fa-chevron-right"></i></div><div class="card"><a href="/article/68/"><div class="card-image"> <img src="/images/card/0068.jpeg" class="responsive-img" alt="MySQL基础知识"> <span class="card-title">MySQL基础知识</span></div></a><div class="card-content article-content"><div class="summary block-with-text"> 在使用MySQL过程中，一些常用的SQL备注和记录，方便查找定位。</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2022-06-13</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/database/" class="post-category">database</a></span></div></div><div class="card-action article-tags"> <a href="/tags/database/"><span class="chip bg-color">database</span></a> <a href="/tags/mysql/"><span class="chip bg-color">mysql</span></a></div></div></div></div></article></div><script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script><script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script><script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script><script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget card" style="background-color: white;"><div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fas fa-list-ul"></i></a></div><script src="/libs/tocbot/tocbot.min.js"></script><script>
     $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
@@ -1392,47 +564,7 @@ puppeteer<span class="token punctuation">.</span><span class="token function">la
         });
         
     });
-</script>
-
-    
-
-</main>
-
-
-
-
-    <footer class="page-footer bg-color">
-    
-    <div class="container row center-align" style="margin-bottom: 15px !important;">
-        <div class="col s12 m8 l8 copy-right">
-            Copyright&nbsp;&copy;
-            
-                <span id="year">2019-2025</span>
-            
-            &nbsp;|&nbsp;&nbsp;Powered&nbsp;by&nbsp;
-            <a href="/about" target="_blank">darebeat</a>
-            <br>
-            
-            
-            
-            
-            
-            
-            <span id="busuanzi_container_site_pv" style='display:none'>
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv" style='display:none'>
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
-            
-            <br>
-            
-            <span id="sitetime">载入运行时间...</span>
-            <script>
+</script></main><footer class="page-footer bg-color"><div class="container row center-align" style="margin-bottom: 15px !important;"><div class="col s12 m8 l8 copy-right"> Copyright&nbsp;&copy; <span id="year">2019-2025</span> &nbsp;|&nbsp;&nbsp;Powered&nbsp;by&nbsp; <a href="/about" target="_blank">darebeat</a><br> <span id="busuanzi_container_site_pv" style='display:none'>|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次</span> <span id="busuanzi_container_site_uv" style='display:none'>|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人</span><br> <span id="sitetime">载入运行时间...</span><script>
                 function siteTime() {
                     var seconds = 1000;
                     var minutes = seconds * 60;
@@ -1469,49 +601,7 @@ puppeteer<span class="token punctuation">.</span><span class="token function">la
                     }
                 }
                 setInterval(siteTime, 1000);
-            </script>
-            
-            <br>
-            
-        </div>
-        <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/darebeat" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:darebeat@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=871731559" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 871731559" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
-</div>
-    </div>
-</footer>
-
-<div class="progress-bar"></div>
-
-<script>
+            </script><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/darebeat" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fab fa-github"></i></a><a href="mailto:darebeat@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=871731559" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 871731559" data-position="top" data-delay="50"><i class="fab fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><script>
     $(document).ready(function () {
         /* 50ms周期检测函数 */
         var int = setInterval(fixCount, 50);
@@ -1532,22 +622,7 @@ puppeteer<span class="token punctuation">.</span><span class="token function">la
             }
         }
     });
-</script>
-
-
-    <!-- 搜索遮罩框 -->
-<div id="searchModal" class="modal">
-    <div class="modal-content">
-        <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" value="" placeholder="请输入搜索的关键字，比如:bigdata"
-                   class="search-input">
-        </div>
-        <div id="searchResult"></div>
-    </div>
-</div>
-
-<script type="text/javascript">
+</script><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i> &nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" value="" placeholder="请输入搜索的关键字，比如:bigdata" class="search-input"></div><div id="searchResult"></div></div></div><script type="text/javascript">
 $(function () {
     var searchFunc = function (path, search_id, content_id) {
         'use strict';
@@ -1637,28 +712,7 @@ $(function () {
 
     searchFunc('/search.xml', 'searchInput', 'searchResult');
 });
-</script>
-
-    <!-- 回到顶部按钮 -->
-<div id="backTop" class="top-scroll">
-    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-</div>
-
-
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.min.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
-
-    <!-- Baidu Analytics -->
-
-    <!-- Baidu Push -->
-
-<script>
+</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fas fa-arrow-up"></i></a></div><script src="/libs/materialize/materialize.min.js"></script><script src="/libs/masonry/masonry.pkgd.min.js"></script><script src="/libs/aos/aos.min.js"></script><script src="/libs/scrollprogress/scrollProgress.min.js"></script><script src="/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="/js/matery.js"></script><script>
     (function () {
         var bp = document.createElement('script');
         var curProtocol = window.location.protocol.split(':')[0];
@@ -1670,33 +724,4 @@ $(function () {
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(bp, s);
     })();
-</script>
-
-    
-    <script src="/libs/others/clicklove.min.js" async="async"></script>
-    
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
-
-    
-
-    
-
-	
-    
-
-    
-
-    
-
-    
-    <script src="/libs/instantpage/instantpage.min.js" type="module"></script>
-    
-
-    <!-- 雪花特效 -->
-    
-
-</body>
-
-</html>
+</script><script src="/libs/others/clicklove.min.js" async="async"></script><script async src="/libs/others/busuanzi.pure.mini.js"></script><script src="/libs/instantpage/instantpage.min.js" type="module"></script></body></html>

@@ -1,236 +1,4 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
-
-
-<head>
-    <meta charset="utf-8">
-    <meta name="keywords" content="CentOS7.x上安装samba服务, darebeat">
-    <meta name="description" content="不恋过去，不畏将来，活在当下，行所当行，阻挡你前进的最大阻力永远是你自己！">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-    <title>CentOS7.x上安装samba服务 | darebeat</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-
-    <script src="/libs/jquery/jquery.min.js"></script>
-
-<meta name="generator" content="Hexo 4.2.1">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="darebeat" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
-
-
-
-
-<body>
-    <header class="navbar-fixed">
-    <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper container">
-            <div class="brand-logo">
-                <a href="/" class="waves-effect waves-light">
-                    
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
-                    
-                    <span class="logo-span">darebeat</span>
-                </a>
-            </div>
-            
-
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<ul class="right nav-menu">
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/" class="waves-effect waves-light">
-      
-      <i class="fas fa-home" style="zoom: 0.6;"></i>
-      
-      <span>首页</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/tags" class="waves-effect waves-light">
-      
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
-      
-      <span>标签</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/categories" class="waves-effect waves-light">
-      
-      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
-      
-      <span>分类</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/archives" class="waves-effect waves-light">
-      
-      <i class="fas fa-archive" style="zoom: 0.6;"></i>
-      
-      <span>归档</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
-  <li>
-    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
-    </a>
-  </li>
-</ul>
-
-
-<div id="mobile-nav" class="side-nav sidenav">
-
-    <div class="mobile-head bg-color">
-        
-        <img src="/medias/logo.png" class="logo-img circle responsive-img" alt="LOGO">
-        
-        <div class="logo-name">darebeat</div>
-        <div class="logo-desc">
-            
-            不恋过去，不畏将来，活在当下，行所当行，阻挡你前进的最大阻力永远是你自己！
-            
-        </div>
-    </div>
-
-    
-
-    <ul class="menu-list mobile-menu-list">
-        
-        <li class="m-nav-item">
-	  
-		<a href="/" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-home"></i>
-			
-			首页
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/tags" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-tags"></i>
-			
-			标签
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/categories" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-bookmark"></i>
-			
-			分类
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/archives" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-archive"></i>
-			
-			归档
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			友情链接
-		</a>
-          
-        </li>
-        
-        
-        <li><div class="divider"></div></li>
-        <li>
-            <a href="https://github.com/darebeat" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i>Fork Me
-            </a>
-        </li>
-        
-    </ul>
-</div>
-
-
-        </div>
-
-        
-            <style>
+<!DOCTYPE HTML><html lang="zh-CN"><head><meta charset="utf-8"><meta name="keywords" content="CentOS7.x上安装samba服务, darebeat"><meta name="description" content="不恋过去，不畏将来，活在当下，行所当行，阻挡你前进的最大阻力永远是你自己！"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>CentOS7.x上安装samba服务 | darebeat</title><link rel="icon" type="image/png" href="/favicon.png"><link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css"><link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css"><link rel="stylesheet" type="text/css" href="/libs/aos/aos.min.css"><link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css"><link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" type="text/css" href="/css/matery.css"><link rel="stylesheet" type="text/css" href="/css/my.css"><script src="/libs/jquery/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><link rel="alternate" href="/atom.xml" title="darebeat" type="application/atom+xml"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"> <a href="/" class="waves-effect waves-light"><img src="/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">darebeat</span></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom: 0.6;"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fas fa-tags" style="zoom: 0.6;"></i> <span>标签</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fas fa-bookmark" style="zoom: 0.6;"></i> <span>分类</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fas fa-archive" style="zoom: 0.6;"></i> <span>归档</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/about" class="waves-effect waves-light"><i class="fas fa-user-circle" style="zoom: 0.6;"></i> <span>关于</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fas fa-address-book" style="zoom: 0.6;"></i> <span>友情链接</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"> <img src="/medias/logo.png" class="logo-img circle responsive-img" alt="LOGO"><div class="logo-name">darebeat</div><div class="logo-desc"> 不恋过去，不畏将来，活在当下，行所当行，阻挡你前进的最大阻力永远是你自己！</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fa-fw fas fa-tags"></i> 标签</a></li><li class="m-nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fa-fw fas fa-bookmark"></i> 分类</a></li><li class="m-nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fa-fw fas fa-archive"></i> 归档</a></li><li class="m-nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa-fw fas fa-user-circle"></i> 关于</a></li><li class="m-nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fa-fw fas fa-address-book"></i> 友情链接</a></li><li><div class="divider"></div></li><li><a href="https://github.com/darebeat" class="waves-effect waves-light" target="_blank"><i class="fab fa-github-square fa-fw"></i> Fork Me</a></li></ul></div></div><style>
     .nav-transparent .github-corner {
         display: none !important;
     }
@@ -273,47 +41,7 @@
             transform: rotate(10deg);
         }
     }
-</style>
-
-<a href="https://github.com/darebeat" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
-   data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewBox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-              fill="currentColor" class="octo-body"></path>
-    </svg>
-</a>
-        
-    </nav>
-
-</header>
-
-    
-
-
-
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/card/0054.jpeg')">
-    <div class="container" style="right: 0px;left: 0px;">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <div class="brand">
-                    <h1 class="description center-align post-title">CentOS7.x上安装samba服务</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<main class="post-container content">
-
-    
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.min.css">
-<style>
+</style> <a href="https://github.com/darebeat" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115 130 115 142 142 250 250 250 0Z"></path><path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4L133.7 101.6C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8Z" fill="currentColor" class="octo-body"></path></svg></a></nav></header><div class="bg-cover pd-header post-cover" style="background-image: url('/images/card/0054.jpeg')"><div class="container" style="right: 0px;left: 0px;"><div class="row"><div class="col s12 m12 l12"><div class="brand"><h1 class="description center-align post-title">CentOS7.x上安装samba服务</h1></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="/libs/tocbot/tocbot.min.css"><style>
     #articleContent h1::before,
     #articleContent h2::before,
     #articleContent h3::before,
@@ -403,86 +131,7 @@
         line-height: 48px;
         font-size: 1.4rem;
     }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
-<div id="artDetail">
-    <div class="card">
-        <div class="card-content article-info">
-            <div class="row tag-cate">
-                <div class="col s7">
-                    
-                    <div class="article-tag">
-                        
-                            <a href="/tags/centos/">
-                                <span class="chip bg-color">centos</span>
-                            </a>
-                        
-                            <a href="/tags/samba/">
-                                <span class="chip bg-color">samba</span>
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-                <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/tools/" class="post-category">
-                                tools
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="post-info">
-                
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-12
-                </div>
-                
-
-                
-
-                
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.7k
-                </div>
-                
-
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
-            </div>
-        </div>
-        <hr class="clearfix">
-
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.min.css">
-        
-
-        
-
-        <div class="card-content article-card-content">
-            <div id="articleContent">
-                <h2 id="Samba简介"><a href="#Samba简介" class="headerlink" title="Samba简介"></a>Samba简介</h2><p>Samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，由服务器及客户端程序构成。SMB（Server Messages Block，信息服务块）是一种在局域网上共享文件和打印机的一种通信协议，它为局域网内的不同计算机之间提供文件及打印机等资源的共享服务。SMB协议是客户机/服务器型协议，客户机通过该协议可以访问服务器上的共享文件系统、打印机及其他资源。通过设置“NetBIOS over TCP/IP”使得Samba不但能与局域网络主机分享资源，还能与全世界的电脑分享资源。</p>
-<p>Samba最大的功能就是可以用于Linux与windows系统直接的文件共享和打印共享，Samba既可以用于windows与Linux之间的文件共享，也可以用于Linux与Linux之间的资源共享。</p>
-<p>Samba由两个主要程序组成，它们是smbd和nmbd。这两个守护进程在服务器启动到停止期间持续运行，功能各异。Smbd和nmbd使用的全部配置信息全都保存在smb.conf文件中。Smb.conf向smbd和nmbd两个守护进程说明输出什么以便共享，共享输出给谁及如何进行输出。</p>
-<p>Samba提供了基于CIFS的四个服务：文件和打印服务、授权与被授权、名称解析、浏览服务。前两项服务由smbd提供，后两项服务则由nmbd提供。 简单地说，smbd进程的作用是处理到来的SMB软件包，为使用该软件包的资源与Linux进行协商，nmbd进程使主机(或工作站)能浏览Linux服务器。</p>
-<h2 id="Samba安装与查看"><a href="#Samba安装与查看" class="headerlink" title="Samba安装与查看"></a>Samba安装与查看</h2><pre class="line-numbers language-sh"><code class="language-sh"># 安装samba应用
+</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/centos/"><span class="chip bg-color">centos</span></a> <a href="/tags/samba/"><span class="chip bg-color">samba</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/tools/" class="post-category">tools</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2021-01-12</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 4.2k</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><link rel="stylesheet" href="/libs/prism/prism.min.css"><div class="card-content article-card-content"><div id="articleContent"><h2 id="samba简介">Samba简介</h2><p>Samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，由服务器及客户端程序构成。SMB（Server Messages Block，信息服务块）是一种在局域网上共享文件和打印机的一种通信协议，它为局域网内的不同计算机之间提供文件及打印机等资源的共享服务。SMB协议是客户机/服务器型协议，客户机通过该协议可以访问服务器上的共享文件系统、打印机及其他资源。通过设置“NetBIOS over TCP/IP”使得Samba不但能与局域网络主机分享资源，还能与全世界的电脑分享资源。</p><p>Samba最大的功能就是可以用于Linux与windows系统直接的文件共享和打印共享，Samba既可以用于windows与Linux之间的文件共享，也可以用于Linux与Linux之间的资源共享。</p><p>Samba由两个主要程序组成，它们是smbd和nmbd。这两个守护进程在服务器启动到停止期间持续运行，功能各异。Smbd和nmbd使用的全部配置信息全都保存在smb.conf文件中。Smb.conf向smbd和nmbd两个守护进程说明输出什么以便共享，共享输出给谁及如何进行输出。</p><p>Samba提供了基于CIFS的四个服务：文件和打印服务、授权与被授权、名称解析、浏览服务。前两项服务由smbd提供，后两项服务则由nmbd提供。 简单地说，smbd进程的作用是处理到来的SMB软件包，为使用该软件包的资源与Linux进行协商，nmbd进程使主机(或工作站)能浏览Linux服务器。</p><h2 id="samba安装与查看">Samba安装与查看</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 安装samba应用
 yum -y install samba samba-client
 # 启动Samba应用
 systemctl start smb nmb
@@ -496,9 +145,7 @@ man smb.conf
 # 语法检查
 testparm [-v] [/etc/samba/smb.conf]
 # 查看samba服务器状态
-smbstatus
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Samba服务配置介绍"><a href="#Samba服务配置介绍" class="headerlink" title="Samba服务配置介绍"></a>Samba服务配置介绍</h2><h3 id="特定共享设置："><a href="#特定共享设置：" class="headerlink" title="特定共享设置："></a>特定共享设置：</h3><pre><code>[homes] 用户的家目录共享
+smbstatus<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="samba服务配置介绍">Samba服务配置介绍</h2><h3 id="特定共享设置">特定共享设置：</h3><pre class="line-numbers language-none"><code class="language-none">[homes] 用户的家目录共享
 [printers] 定义打印机资源和服务
 [sharename] 自定义的共享目录配置
 其中：#和;开头的语句为注释，大小写不敏感
@@ -507,81 +154,17 @@ smbstatus
 %H 当前用户家目录路径 %U 当前用户用户名
 %g 当前用户所属组 %h samba服务器的主机名
 %L samba服务器的NetBIOS名 %I 客户端主机的IP
-%T 当前日期和时间 %S 可登录的用户名
-</code></pre>
-<h3 id="全局参数-global"><a href="#全局参数-global" class="headerlink" title="全局参数 [global]"></a>全局参数 [global]</h3><ul>
-<li>config file = /usr/local/samba/lib/smb.conf.%m</li>
-</ul>
-<p>说明：config file可以让你使用另一个配置文件来覆盖缺省的配置文件。如果文件不存在，则该项无效。这个参数很有用，可以使得samba配置更灵活，可以让一台samba服务器模拟多台不同配置的服务器。比如，你想让PC1（主机名）这台电脑在访问Samba Server时使用它自己的配置文件，那么先在/etc/samba/host/下为PC1配置一个名为smb.conf.pc1的文件，然后在smb.conf中加入：config file=/etc/samba/host/smb.conf.%m。这样当PC1请求连接Samba Server时，smb.conf.%m就被替换成smb.conf.pc1。这样，对于PC1来说，它所使用的Samba服务就是由smb.conf.pc1定义的，而其他机器访问Samba Server则还是应用smb.conf。</p>
-<ul>
-<li>workgroup = WORKGROUP</li>
-</ul>
-<p>说明：设定 Samba Server 所要加入的工作组或者域。</p>
-<ul>
-<li>erver string = Samba Server Version %v</li>
-</ul>
-<p>说明：设定 Samba Server 的注释，可以是任何字符串，也可以不填。宏%v表示显示Samba的版本号。</p>
-<ul>
-<li>netbios name = smbserver</li>
-</ul>
-<p>说明：设置Samba Server的NetBIOS名称。如果不填，则默认会使用该服务器的DNS名称的第一部分。netbios name和workgroup名字不要设置成一样了。</p>
-<ul>
-<li>interfaces = lo eth0 192.168.12.2/24 192.168.13.2/24</li>
-</ul>
-<p>说明：设置Samba Server监听哪些网卡，可以写网卡名，也可以写该网卡的IP地址。</p>
-<ul>
-<li>hosts allow</li>
-</ul>
-<pre class="line-numbers language-sh"><code class="language-sh"># 表示容许来自172.10.2.*.*的主机连接，但排除172.10.2.55
+%T 当前日期和时间 %S 可登录的用户名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="全局参数-global">全局参数 [global]</h3><ul><li>config file = /usr/local/samba/lib/smb.conf.%m</li></ul><p>说明：config file可以让你使用另一个配置文件来覆盖缺省的配置文件。如果文件不存在，则该项无效。这个参数很有用，可以使得samba配置更灵活，可以让一台samba服务器模拟多台不同配置的服务器。比如，你想让PC1（主机名）这台电脑在访问Samba Server时使用它自己的配置文件，那么先在/etc/samba/host/下为PC1配置一个名为smb.conf.pc1的文件，然后在smb.conf中加入：config file=/etc/samba/host/smb.conf.%m。这样当PC1请求连接Samba Server时，smb.conf.%m就被替换成smb.conf.pc1。这样，对于PC1来说，它所使用的Samba服务就是由smb.conf.pc1定义的，而其他机器访问Samba Server则还是应用smb.conf。</p><ul><li>workgroup = WORKGROUP</li></ul><p>说明：设定 Samba Server 所要加入的工作组或者域。</p><ul><li>erver string = Samba Server Version %v</li></ul><p>说明：设定 Samba Server 的注释，可以是任何字符串，也可以不填。宏%v表示显示Samba的版本号。</p><ul><li>netbios name = smbserver</li></ul><p>说明：设置Samba Server的NetBIOS名称。如果不填，则默认会使用该服务器的DNS名称的第一部分。netbios name和workgroup名字不要设置成一样了。</p><ul><li>interfaces = lo eth0 192.168.12.2/24 192.168.13.2/24</li></ul><p>说明：设置Samba Server监听哪些网卡，可以写网卡名，也可以写该网卡的IP地址。</p><ul><li>hosts allow</li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 表示容许来自172.10.2.*.*的主机连接，但排除172.10.2.55
 hosts allow=172.10.2.EXCEPT172.10.2.55
 # 表示容许来自172.10.2.0/255.255.0.0子网中的所有主机连接
 hosts allow=172.10.2.0/255.255.0.0
 # 表示容许来自M1和M2两台计算机连接
 hosts allow=M1，M2
 # 表示容许来自SC域的所有计算机连接
-hosts allow=@SC
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>说明：表示允许连接到Samba Server的客户端，多个参数以空格隔开。可以用一个IP表示，也可以用一个网段表示。hosts deny 与hosts allow 刚好相反。</p>
-<ul>
-<li>max connections = 0</li>
-</ul>
-<p>说明：max connections用来指定连接Samba Server的最大连接数目。如果超出连接数目，则新的连接请求将被拒绝。0表示不限制。</p>
-<ul>
-<li>deadtime = 0</li>
-</ul>
-<p>说明：deadtime用来设置断掉一个没有打开任何文件的连接的时间。单位是分钟，0代表Samba Server不自动切断任何连接。</p>
-<ul>
-<li>time server = yes/no</li>
-</ul>
-<p>说明：time server用来设置让nmdb成为windows客户端的时间服务器。</p>
-<ul>
-<li>log file = /var/log/samba/log.%m</li>
-</ul>
-<p>说明：设置Samba Server日志文件的存储位置以及日志文件名称。在文件名后加个宏%m（主机名），表示对每台访问Samba Server的机器都单独记录一个日志文件。如果pc1、pc2访问过Samba Server，就会在/var/log/samba目录下留下log.pc1和log.pc2两个日志文件。</p>
-<ul>
-<li>max log size = 50</li>
-</ul>
-<p>说明：设置Samba Server日志文件的最大容量，单位为kB，0代表不限制。</p>
-<ul>
-<li>security = user</li>
-</ul>
-<p>说明：设置用户访问Samba Server的验证方式，一共有四种验证方式。</p>
-<pre><code>- 1.share：用户访问Samba Server不需要提供用户名和口令, 安全性能较低。
+hosts allow=@SC<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>说明：表示允许连接到Samba Server的客户端，多个参数以空格隔开。可以用一个IP表示，也可以用一个网段表示。hosts deny 与hosts allow 刚好相反。</p><ul><li>max connections = 0</li></ul><p>说明：max connections用来指定连接Samba Server的最大连接数目。如果超出连接数目，则新的连接请求将被拒绝。0表示不限制。</p><ul><li>deadtime = 0</li></ul><p>说明：deadtime用来设置断掉一个没有打开任何文件的连接的时间。单位是分钟，0代表Samba Server不自动切断任何连接。</p><ul><li>time server = yes/no</li></ul><p>说明：time server用来设置让nmdb成为windows客户端的时间服务器。</p><ul><li>log file = /var/log/samba/log.%m</li></ul><p>说明：设置Samba Server日志文件的存储位置以及日志文件名称。在文件名后加个宏%m（主机名），表示对每台访问Samba Server的机器都单独记录一个日志文件。如果pc1、pc2访问过Samba Server，就会在/var/log/samba目录下留下log.pc1和log.pc2两个日志文件。</p><ul><li>max log size = 50</li></ul><p>说明：设置Samba Server日志文件的最大容量，单位为kB，0代表不限制。</p><ul><li>security = user</li></ul><p>说明：设置用户访问Samba Server的验证方式，一共有四种验证方式。</p><pre><code>- 1.share：用户访问Samba Server不需要提供用户名和口令, 安全性能较低。
 - 2.user：Samba Server共享目录只能被授权的用户访问,由Samba Server负责检查账号和密码的正确性。账号和密码要在本Samba Server中建立。
 - 3.server：依靠其他Windows NT/2000或Samba Server来验证用户的账号和密码,是一种代理验证。此种安全模式下,系统管理员可以把所有的Windows用户和口令集中到一个NT系统上,使用Windows NT进行Samba认证, 远程服务器可以自动认证全部用户和口令,如果认证失败,Samba将使用用户级安全模式作为替代的方式。
-- 4.domain：域安全级别,使用主域控制器(PDC)来完成认证。
-</code></pre>
-<ul>
-<li>passdb backend = tdbsam</li>
-</ul>
-<p>说明：passdb backend就是用户后台的意思。目前有三种后台：<code>smbpasswd</code>、<code>tdbsam</code>和<code>ldapsam</code>。sam应该是security account manager（安全账户管理）的简写。</p>
-<ul>
-<li><p>1.smbpasswd：该方式是使用smb自己的工具smbpasswd来给系统用户（真实<br>用户或者虚拟用户）设置一个Samba密码，客户端就用这个密码来访问Samba的资源。smbpasswd文件默认在/etc/samba目录下，不过有时候要手工建立该文件。</p>
-</li>
-<li><p>2.tdbsam：该方式则是使用一个数据库文件来建立用户数据库。数据库文件叫passdb.tdb，默认在/etc/samba目录下。passdb.tdb用户数据库可以使用smbpasswd –a来建立Samba用户，不过要建立的Samba用户必须先是系统用户。我们也可以使用pdbedit命令来建立Samba账户。pdbedit命令的参数很多，我们列出几个主要的。</p>
-</li>
-</ul>
-<pre class="line-numbers language-sh"><code class="language-sh"># 新建Samba账户
+- 4.domain：域安全级别,使用主域控制器(PDC)来完成认证。</code></pre><ul><li>passdb backend = tdbsam</li></ul><p>说明：passdb backend就是用户后台的意思。目前有三种后台：<code>smbpasswd</code>、<code>tdbsam</code>和<code>ldapsam</code>。sam应该是security account manager（安全账户管理）的简写。</p><ul><li><p>1.smbpasswd：该方式是使用smb自己的工具smbpasswd来给系统用户（真实 用户或者虚拟用户）设置一个Samba密码，客户端就用这个密码来访问Samba的资源。smbpasswd文件默认在/etc/samba目录下，不过有时候要手工建立该文件。</p></li><li><p>2.tdbsam：该方式则是使用一个数据库文件来建立用户数据库。数据库文件叫passdb.tdb，默认在/etc/samba目录下。passdb.tdb用户数据库可以使用smbpasswd –a来建立Samba用户，不过要建立的Samba用户必须先是系统用户。我们也可以使用pdbedit命令来建立Samba账户。pdbedit命令的参数很多，我们列出几个主要的。</p></li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 新建Samba账户
 pdbedit –a username
 # 删除Samba账户
 pdbedit –x
@@ -592,128 +175,7 @@ pdbedit –Lv
 # 暂停该Samba用户的账号
 pdbedit –c "[D]" –u username
 # 恢复该Samba用户的账号
-pdbedit –c "[]" –u username
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>3.ldapsam：该方式则是基于LDAP的账户管理方式来验证用户。首先要建立LDAP服务，然后设置”passdb backend = ldapsam:ldap://LDAP Server”</li>
-</ul>
-<ul>
-<li>encrypt passwords = yes/no</li>
-</ul>
-<p>说明：是否将认证密码加密。因为现在windows操作系统都是使用加密密码，所以一般要开启此项。不过配置文件默认已开启。</p>
-<ul>
-<li>smb passwd file = /etc/samba/smbpasswd</li>
-</ul>
-<p>说明：用来定义samba用户的密码文件。smbpasswd文件如果没有那就要手工新建。</p>
-<ul>
-<li>username map = /etc/samba/smbusers</li>
-</ul>
-<p>说明：用来定义用户名映射，比如可以将root换成administrator、admin等。不过要事先在smbusers文件中定义好。比如：root = administrator admin，这样就可以用administrator或admin这两个用户来代替root登陆Samba Server，更贴近windows用户的习惯。</p>
-<ul>
-<li>guest account = nobody</li>
-</ul>
-<p>说明：用来设置guest用户名。</p>
-<ul>
-<li>socket options = TCP_NODELAY SO_RCVBUF=8192 SO_SNDBUF=8192</li>
-</ul>
-<p>说明：用来设置服务器和客户端之间会话的Socket选项，可以优化传输速度。</p>
-<ul>
-<li>domain master = yes/no</li>
-</ul>
-<p>说明：设置Samba服务器是否要成为网域主浏览器，网域主浏览器可以管理跨子网域的浏览服务。</p>
-<ul>
-<li>local master = yes/no</li>
-</ul>
-<p>说明：local master用来指定Samba Server是否试图成为本地网域主浏览器。如果设为no，则永远不会成为本地网域主浏览器。但是即使设置为yes，也不等于该Samba Server就能成为主浏览器，还需要参加选举。</p>
-<ul>
-<li>preferred master = yes/no</li>
-</ul>
-<p>说明：设置Samba Server一开机就强迫进行主浏览器选举，可以提高Samba Server成为本地网域主浏览器的机会。如果该参数指定为yes时，最好把domain master也指定为yes。使用该参数时要注意：如果在本Samba Server所在的子网有其他的机器（不论是windows NT还是其他Samba Server）也指定为首要主浏览器时，那么这些机器将会因为争夺主浏览器而在网络上大发广播，影响网络性能。如果同一个区域内有多台Samba Server，将上面三个参数设定在一台即可。</p>
-<ul>
-<li>os level = 200</li>
-</ul>
-<p>说明：设置samba服务器的os level。该参数决定Samba Server是否有机会成为本地网域的主浏览器。os level从0到255，winNT的os level是32，win95/98的os level是1。Windows 2000的os level是64。如果设置为0，则意味着Samba Server将失去浏览选择。如果想让Samba Server成为PDC，那么将它的os level值设大些。</p>
-<ul>
-<li>domain logons = yes/no</li>
-</ul>
-<p>说明：设置Samba Server是否要做为本地域控制器。主域控制器和备份域控制器都需要开启此项。</p>
-<ul>
-<li>logon . = %u.bat</li>
-</ul>
-<p>说明：当使用者用windows客户端登陆，那么Samba将提供一个登陆档。如果设置成%u.bat，那么就要为每个用户提供一个登陆档。如果人比较多，那就比较麻烦。可以设置成一个具体的文件名，比如start.bat，那么用户登陆后都会去执行start.bat，而不用为每个用户设定一个登陆档了。这个文件要放置在[netlogon]的path设置的目录路径下。</p>
-<ul>
-<li>wins support = yes/no</li>
-</ul>
-<p>说明：设置samba服务器是否提供wins服务。</p>
-<ul>
-<li>wins server = wins服务器IP地址</li>
-</ul>
-<p>说明：设置Samba Server是否使用别的wins服务器提供wins服务。</p>
-<ul>
-<li>wins proxy = yes/no</li>
-</ul>
-<p>说明：设置Samba Server是否开启wins代理服务。</p>
-<ul>
-<li>dns proxy = yes/no</li>
-</ul>
-<p>说明：设置Samba Server是否开启dns代理服务。</p>
-<ul>
-<li>load printers = yes/no</li>
-</ul>
-<p>说明：设置是否在启动Samba时就共享打印机。</p>
-<ul>
-<li>printcap name = cups</li>
-</ul>
-<p>说明：设置共享打印机的配置文件。</p>
-<ul>
-<li>printing = cups</li>
-</ul>
-<p>说明：设置Samba共享打印机的类型。现在支持的打印系统有：bsd, sysv, plp, lprng, aix, hpux, qnx</p>
-<h3 id="共享参数-共享名"><a href="#共享参数-共享名" class="headerlink" title="共享参数 [共享名]"></a>共享参数 [共享名]</h3><ul>
-<li>comment = 任意字符串</li>
-</ul>
-<p>说明：comment是对该共享的描述，可以是任意字符串。</p>
-<ul>
-<li>path = 共享目录路径</li>
-</ul>
-<p>说明：path用来指定共享目录的路径。可以用%u、%m这样的宏来代替路径里的unix用户和客户机的Netbios名，用宏表示主要用于[homes]共享域。例如：如果我们不打算用home段做为客户的共享，而是在/home/share/下为每个Linux用户以他的用户名建个目录，作为他的共享目录，这样path就可以写成：path = /home/share/%u; 。用户在连接到这共享时具体的路径会被他的用户名代替，要注意这个用户名路径一定要存在，否则，客户机在访问时会找不到网络路径。同样，如果我们不是以用户来划分目录，而是以客户机来划分目录，为网络上每台可以访问samba的机器都各自建个以它的netbios名的路径，作为不同机器的共享资源，就可以这样写：path = /home/share/%m 。</p>
-<ul>
-<li>browseable = yes/no</li>
-</ul>
-<p>说明：browseable用来指定该共享是否可以浏览。</p>
-<ul>
-<li>writable = yes/no</li>
-</ul>
-<p>说明：writable用来指定该共享路径是否可写。</p>
-<ul>
-<li>available = yes/no</li>
-</ul>
-<p>说明：available用来指定该共享资源是否可用。</p>
-<ul>
-<li>admin users = 该共享的管理者</li>
-</ul>
-<p>说明：admin users用来指定该共享的管理员（对该共享具有完全控制权限）。在samba 3.0中，如果用户验证方式设置成“security=share”时，此项无效。<br>例如：admin users =bobyuan，jane（多个用户中间用逗号隔开）。</p>
-<ul>
-<li>valid users = 允许访问该共享的用户</li>
-</ul>
-<p>说明：valid users用来指定允许访问该共享资源的用户。<br>例如：valid users = bobyuan，@bob，@tech（多个用户或者组中间用逗号隔开，如果要加入一个组就用“@+组名”表示。）</p>
-<ul>
-<li>invalid users = 禁止访问该共享的用户</li>
-</ul>
-<p>说明：invalid users用来指定不允许访问该共享资源的用户。<br>例如：invalid users = root，@bob（多个用户或者组中间用逗号隔开。）</p>
-<ul>
-<li>write list = 允许写入该共享的用户</li>
-</ul>
-<p>说明：write list用来指定可以在该共享下写入文件的用户。<br>例如：write list = bobyuan，@bob</p>
-<ul>
-<li>public = yes/no</li>
-</ul>
-<p>说明：public用来指定该共享是否允许guest账户访问。</p>
-<ul>
-<li>guest ok = yes/no</li>
-</ul>
-<p>说明：意义同”public”。</p>
-<h2 id="部署案例"><a href="#部署案例" class="headerlink" title="部署案例"></a>部署案例</h2><h3 id="一键部署，提供只读访问权限"><a href="#一键部署，提供只读访问权限" class="headerlink" title="一键部署，提供只读访问权限"></a>一键部署，提供只读访问权限</h3><pre class="line-numbers language-sh"><code class="language-sh">#!/bin/bash
+pdbedit –c "[]" –u username<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li><p>3.ldapsam：该方式则是基于LDAP的账户管理方式来验证用户。首先要建立LDAP服务，然后设置”passdb backend = ldapsam:ldap://LDAP Server”</p></li><li><p>encrypt passwords = yes/no</p></li></ul><p>说明：是否将认证密码加密。因为现在windows操作系统都是使用加密密码，所以一般要开启此项。不过配置文件默认已开启。</p><ul><li>smb passwd file = /etc/samba/smbpasswd</li></ul><p>说明：用来定义samba用户的密码文件。smbpasswd文件如果没有那就要手工新建。</p><ul><li>username map = /etc/samba/smbusers</li></ul><p>说明：用来定义用户名映射，比如可以将root换成administrator、admin等。不过要事先在smbusers文件中定义好。比如：root = administrator admin，这样就可以用administrator或admin这两个用户来代替root登陆Samba Server，更贴近windows用户的习惯。</p><ul><li>guest account = nobody</li></ul><p>说明：用来设置guest用户名。</p><ul><li>socket options = TCP_NODELAY SO_RCVBUF=8192 SO_SNDBUF=8192</li></ul><p>说明：用来设置服务器和客户端之间会话的Socket选项，可以优化传输速度。</p><ul><li>domain master = yes/no</li></ul><p>说明：设置Samba服务器是否要成为网域主浏览器，网域主浏览器可以管理跨子网域的浏览服务。</p><ul><li>local master = yes/no</li></ul><p>说明：local master用来指定Samba Server是否试图成为本地网域主浏览器。如果设为no，则永远不会成为本地网域主浏览器。但是即使设置为yes，也不等于该Samba Server就能成为主浏览器，还需要参加选举。</p><ul><li>preferred master = yes/no</li></ul><p>说明：设置Samba Server一开机就强迫进行主浏览器选举，可以提高Samba Server成为本地网域主浏览器的机会。如果该参数指定为yes时，最好把domain master也指定为yes。使用该参数时要注意：如果在本Samba Server所在的子网有其他的机器（不论是windows NT还是其他Samba Server）也指定为首要主浏览器时，那么这些机器将会因为争夺主浏览器而在网络上大发广播，影响网络性能。如果同一个区域内有多台Samba Server，将上面三个参数设定在一台即可。</p><ul><li>os level = 200</li></ul><p>说明：设置samba服务器的os level。该参数决定Samba Server是否有机会成为本地网域的主浏览器。os level从0到255，winNT的os level是32，win95/98的os level是1。Windows 2000的os level是64。如果设置为0，则意味着Samba Server将失去浏览选择。如果想让Samba Server成为PDC，那么将它的os level值设大些。</p><ul><li>domain logons = yes/no</li></ul><p>说明：设置Samba Server是否要做为本地域控制器。主域控制器和备份域控制器都需要开启此项。</p><ul><li>logon . = %u.bat</li></ul><p>说明：当使用者用windows客户端登陆，那么Samba将提供一个登陆档。如果设置成%u.bat，那么就要为每个用户提供一个登陆档。如果人比较多，那就比较麻烦。可以设置成一个具体的文件名，比如start.bat，那么用户登陆后都会去执行start.bat，而不用为每个用户设定一个登陆档了。这个文件要放置在[netlogon]的path设置的目录路径下。</p><ul><li>wins support = yes/no</li></ul><p>说明：设置samba服务器是否提供wins服务。</p><ul><li>wins server = wins服务器IP地址</li></ul><p>说明：设置Samba Server是否使用别的wins服务器提供wins服务。</p><ul><li>wins proxy = yes/no</li></ul><p>说明：设置Samba Server是否开启wins代理服务。</p><ul><li>dns proxy = yes/no</li></ul><p>说明：设置Samba Server是否开启dns代理服务。</p><ul><li>load printers = yes/no</li></ul><p>说明：设置是否在启动Samba时就共享打印机。</p><ul><li>printcap name = cups</li></ul><p>说明：设置共享打印机的配置文件。</p><ul><li>printing = cups</li></ul><p>说明：设置Samba共享打印机的类型。现在支持的打印系统有：bsd, sysv, plp, lprng, aix, hpux, qnx</p><h3 id="共享参数-共享名">共享参数 [共享名]</h3><ul><li>comment = 任意字符串</li></ul><p>说明：comment是对该共享的描述，可以是任意字符串。</p><ul><li>path = 共享目录路径</li></ul><p>说明：path用来指定共享目录的路径。可以用%u、%m这样的宏来代替路径里的unix用户和客户机的Netbios名，用宏表示主要用于[homes]共享域。例如：如果我们不打算用home段做为客户的共享，而是在/home/share/下为每个Linux用户以他的用户名建个目录，作为他的共享目录，这样path就可以写成：path = /home/share/%u; 。用户在连接到这共享时具体的路径会被他的用户名代替，要注意这个用户名路径一定要存在，否则，客户机在访问时会找不到网络路径。同样，如果我们不是以用户来划分目录，而是以客户机来划分目录，为网络上每台可以访问samba的机器都各自建个以它的netbios名的路径，作为不同机器的共享资源，就可以这样写：path = /home/share/%m 。</p><ul><li>browseable = yes/no</li></ul><p>说明：browseable用来指定该共享是否可以浏览。</p><ul><li>writable = yes/no</li></ul><p>说明：writable用来指定该共享路径是否可写。</p><ul><li>available = yes/no</li></ul><p>说明：available用来指定该共享资源是否可用。</p><ul><li>admin users = 该共享的管理者</li></ul><p>说明：admin users用来指定该共享的管理员（对该共享具有完全控制权限）。在samba 3.0中，如果用户验证方式设置成“security=share”时，此项无效。 例如：admin users =bobyuan，jane（多个用户中间用逗号隔开）。</p><ul><li>valid users = 允许访问该共享的用户</li></ul><p>说明：valid users用来指定允许访问该共享资源的用户。 例如：valid users = bobyuan，<span class="citation" data-cites="bob">@bob</span>，<span class="citation" data-cites="tech">@tech</span>（多个用户或者组中间用逗号隔开，如果要加入一个组就用“@+组名”表示。）</p><ul><li>invalid users = 禁止访问该共享的用户</li></ul><p>说明：invalid users用来指定不允许访问该共享资源的用户。 例如：invalid users = root，<span class="citation" data-cites="bob">@bob</span>（多个用户或者组中间用逗号隔开。）</p><ul><li>write list = 允许写入该共享的用户</li></ul><p>说明：write list用来指定可以在该共享下写入文件的用户。 例如：write list = bobyuan，<span class="citation" data-cites="bob">@bob</span></p><ul><li>public = yes/no</li></ul><p>说明：public用来指定该共享是否允许guest账户访问。</p><ul><li>guest ok = yes/no</li></ul><p>说明：意义同”public”。</p><h2 id="部署案例">部署案例</h2><h3 id="一键部署提供只读访问权限">一键部署，提供只读访问权限</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#!/bin/bash
 if [ "$#" -ne 1 ]
 then
    echo "运行脚本格式为：$0 /dir/"
@@ -726,7 +188,7 @@ else
    fi
 fi
 
-if ! rpm -q samba >/dev/null
+if ! rpm -q samba &gt;/dev/null
 then
    echo "将要安装samba"
    sleep 1
@@ -739,7 +201,7 @@ then
 fi
 
 dirconf="/etc/samba/smb.conf"
-cat >> $dirconf << EOF
+cat &gt;&gt; $dirconf &lt;&lt; EOF
 [global]
         workgroup = workgroup   # 工作组名称
         security = user         # 安全认证方式（user、share、domain、server）
@@ -759,7 +221,7 @@ fi
 
 chmod 777 $1
 chown nobody:nobody $1
-echo "test" > $1/test.txt
+echo "test" &gt; $1/test.txt
 
 systemctl start smb
 if [ $? -ne 0 ]
@@ -767,9 +229,7 @@ then
    echo "samba服务启动失败，请检查配置文件是否正常"
 else
    echo "samba服务启动正常"
-fi
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="规划用户权限案例"><a href="#规划用户权限案例" class="headerlink" title="规划用户权限案例"></a>规划用户权限案例</h3><pre class="line-numbers language-sh"><code class="language-sh"># 创建用户
+fi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="规划用户权限案例">规划用户权限案例</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 创建用户
 useradd -s /sbin/nologin logadmin
 useradd -s /sbin/nologin admin
 useradd -g admin -s /sbin/nologin shared
@@ -789,7 +249,7 @@ chown admin.admin /data/shared
 chmod -R 777 /data/logger
 chmod -R 777 /data/shared
 # 配置Samba服务
-cat>/etc/samba/smb.conf<<EOF
+cat&gt;/etc/samba/smb.conf&lt;&lt;EOF
 [global]
     workgroup = SC.LOCAL
     server string = Samba Server Version %v
@@ -832,75 +292,21 @@ cat>/etc/samba/smb.conf<<EOF
     directory mask = 0777
     force directory mode = 0777
     force create mode = 0777
-EOF
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="SMB客户端访问"><a href="#SMB客户端访问" class="headerlink" title="SMB客户端访问"></a>SMB客户端访问</h2><ul>
-<li>UNC路径: Universal Naming Convention,通用命名规范</li>
-<li>终端下使用smbclient登录服务器</li>
-</ul>
-<pre class="line-numbers language-sh"><code class="language-sh">smbclient -L 127.0.0.1 -U admin
+EOF<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="smb客户端访问">SMB客户端访问</h2><ul><li>UNC路径: Universal Naming Convention,通用命名规范</li><li>终端下使用smbclient登录服务器</li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">smbclient -L 127.0.0.1 -U admin
 yum -y install cifs-utils
 mkdir -p /mnt/shared
 mount -o username=admin //127.0.0.1/shared /mnt/shared
 # 手动挂载
 mount -t cifs -o user=admin,password=xxxx //127.0.0.1/shared /mnt/shared
 # 开机自动挂载
-cat > /etc/smb.txt << EOF
+cat &gt; /etc/smb.txt &lt;&lt; EOF
 username=admin
 password=xxxx
 EOF
 chmod 600 /etc/smb.txt
-cat >> /etc/fstab << EOF
+cat &gt;&gt; /etc/fstab &lt;&lt; EOF
 //127.0.0.1/shared /mnt/shared cifs credentials=/etc/smb.txt 0 0
-EOF
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-                
-            </div>
-            <hr/>
-
-            
-
-    <div class="reprint" id="reprint-statement">
-        
-            <div class="reprint__author">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-user">
-                        文章作者:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">darebeat</a>
-                </span>
-            </div>
-            <div class="reprint__type">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-link">
-                        文章链接:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="https://www.darebeat.cn/article/54/">https://www.darebeat.cn/article/54/</a>
-                </span>
-            </div>
-            <div class="reprint__notice">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-copyright">
-                        版权声明:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
-                    <a href="/about" target="_blank">darebeat</a>
-                    !
-                </span>
-            </div>
-        
-    </div>
-
-    <script async defer>
+EOF<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/54/">https://www.darebeat.cn/article/54/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
       document.addEventListener("copy", function (e) {
         let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML});
@@ -909,43 +315,7 @@ EOF
       function navToReprintStatement() {
         $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
       }
-    </script>
-
-
-
-            <div class="tag_share" style="display: block;">
-                <div class="post-meta__tag-list" style="display: inline-block;">
-                    
-                        <div class="article-tag">
-                            
-                                <a href="/tags/centos/">
-                                    <span class="chip bg-color">centos</span>
-                                </a>
-                            
-                                <a href="/tags/samba/">
-                                    <span class="chip bg-color">samba</span>
-                                </a>
-                            
-                        </div>
-                    
-                </div>
-                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-<div id="article-share">
-
-    
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
-    
-
-    
-
-</div>
-
-                </div>
-            </div>
-            
-                <style>
+    </script><div class="tag_share" style="display: block;"><div class="post-meta__tag-list" style="display: inline-block;"><div class="article-tag"> <a href="/tags/centos/"><span class="chip bg-color">centos</span></a> <a href="/tags/samba/"><span class="chip bg-color">samba</span></a></div></div><div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;"><link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css"><div id="article-share"><div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div><script src="/libs/share/js/social-share.min.js"></script></div></div></div><style>
     #reward {
         margin: 40px 0;
         text-align: center;
@@ -1036,210 +406,11 @@ EOF
         width: 210px;
         height: 210px;
     }
-</style>
-
-<div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
-
-    <!-- Modal Structure -->
-    <div id="rewardModal" class="modal">
-        <div class="modal-content">
-            <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赞赏是我前进的动力！</h4>
-            <div class="reward-content">
-                <div class="reward-tabs">
-                    <ul class="tabs row">
-                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
-                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
-                    </ul>
-                    <div id="alipay">
-                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
-                    </div>
-                    <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
+</style><div id="reward"> <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fas fa-times"></i></a><h4 class="reward-title">你的赞赏是我前进的动力！</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"> <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"> <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>
     $(function () {
         $('.tabs').tabs();
     });
-</script>
-
-            
-        </div>
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-<article id="prenext-posts" class="prev-next articles">
-    <div class="row article-row">
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/article/55/">
-                    <div class="card-image">
-                        
-                        <img src="/images/card/0055.jpeg" class="responsive-img" alt="CentOS7.x上一键FTP安装脚本">
-                        
-                        <span class="card-title">CentOS7.x上一键FTP安装脚本</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            FTP是FileTransferProtocol（文件传输协议）的英文简称，而中文简称为“文传协议”。用于Internet上的控制文件的双向传输。
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-13
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/tools/" class="post-category">
-                                    tools
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/centos/">
-                        <span class="chip bg-color">centos</span>
-                    </a>
-                    
-                    <a href="/tags/ftp/">
-                        <span class="chip bg-color">ftp</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/article/53/">
-                    <div class="card-image">
-                        
-                        <img src="/images/card/0053.png" class="responsive-img" alt="DRG付费与DIP付费">
-                        
-                        <span class="card-title">DRG付费与DIP付费</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            过去，按项目付费是医保结算主流模式，通俗点解释，就是根据诊治过程中用到的所有药品，服务项目，耗材，如支架、针管、纱布等等，用了多少结算多少，医保根据费用按比例报销。这种模式，容易滋生过度医疗，不但造成医疗资源的浪费，还让参保人多花钱、医保基金多支出。开展DIP和DRG付费国家试点是进一步深化医保支付方式改革的一项重要工作，可实现医疗、医保、患者三方共赢。
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-11
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/tools/" class="post-category">
-                                    tools
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/drg/">
-                        <span class="chip bg-color">drg</span>
-                    </a>
-                    
-                    <a href="/tags/dip/">
-                        <span class="chip bg-color">dip</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-    </div>
-</article>
-
-</div>
-
-
-
-<!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-
-<!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
-
-<!-- 代码块复制 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-
-
-<!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
-
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
+</script></div></div><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="fas fa-chevron-left"></i> &nbsp;上一篇</div><div class="card"><a href="/article/55/"><div class="card-image"> <img src="/images/card/0055.jpeg" class="responsive-img" alt="CentOS7.x上一键FTP安装脚本"> <span class="card-title">CentOS7.x上一键FTP安装脚本</span></div></a><div class="card-content article-content"><div class="summary block-with-text"> FTP是FileTransferProtocol（文件传输协议）的英文简称，而中文简称为“文传协议”。用于Internet上的控制文件的双向传输。</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2021-01-13</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/tools/" class="post-category">tools</a></span></div></div><div class="card-action article-tags"> <a href="/tags/centos/"><span class="chip bg-color">centos</span></a> <a href="/tags/ftp/"><span class="chip bg-color">ftp</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color"> 下一篇&nbsp;<i class="fas fa-chevron-right"></i></div><div class="card"><a href="/article/53/"><div class="card-image"> <img src="/images/card/0053.png" class="responsive-img" alt="DRG付费与DIP付费"> <span class="card-title">DRG付费与DIP付费</span></div></a><div class="card-content article-content"><div class="summary block-with-text"> 过去，按项目付费是医保结算主流模式，通俗点解释，就是根据诊治过程中用到的所有药品，服务项目，耗材，如支架、针管、纱布等等，用了多少结算多少，医保根据费用按比例报销。这种模式，容易滋生过度医疗，不但造成医疗资源的浪费，还让参保人多花钱、医保基金多支出。开展DIP和DRG付费国家试点是进一步深化医保支付方式改革的一项重要工作，可实现医疗、医保、患者三方共赢。</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2021-01-11</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/tools/" class="post-category">tools</a></span></div></div><div class="card-action article-tags"> <a href="/tags/drg/"><span class="chip bg-color">drg</span></a> <a href="/tags/dip/"><span class="chip bg-color">dip</span></a></div></div></div></div></article></div><script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script><script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script><script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script><script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget card" style="background-color: white;"><div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fas fa-list-ul"></i></a></div><script src="/libs/tocbot/tocbot.min.js"></script><script>
     $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
@@ -1312,47 +483,7 @@ EOF
         });
         
     });
-</script>
-
-    
-
-</main>
-
-
-
-
-    <footer class="page-footer bg-color">
-    
-    <div class="container row center-align" style="margin-bottom: 15px !important;">
-        <div class="col s12 m8 l8 copy-right">
-            Copyright&nbsp;&copy;
-            
-                <span id="year">2019-2025</span>
-            
-            &nbsp;|&nbsp;&nbsp;Powered&nbsp;by&nbsp;
-            <a href="/about" target="_blank">darebeat</a>
-            <br>
-            
-            
-            
-            
-            
-            
-            <span id="busuanzi_container_site_pv" style='display:none'>
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv" style='display:none'>
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
-            
-            <br>
-            
-            <span id="sitetime">载入运行时间...</span>
-            <script>
+</script></main><footer class="page-footer bg-color"><div class="container row center-align" style="margin-bottom: 15px !important;"><div class="col s12 m8 l8 copy-right"> Copyright&nbsp;&copy; <span id="year">2019-2025</span> &nbsp;|&nbsp;&nbsp;Powered&nbsp;by&nbsp; <a href="/about" target="_blank">darebeat</a><br> <span id="busuanzi_container_site_pv" style='display:none'>|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次</span> <span id="busuanzi_container_site_uv" style='display:none'>|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人</span><br> <span id="sitetime">载入运行时间...</span><script>
                 function siteTime() {
                     var seconds = 1000;
                     var minutes = seconds * 60;
@@ -1389,49 +520,7 @@ EOF
                     }
                 }
                 setInterval(siteTime, 1000);
-            </script>
-            
-            <br>
-            
-        </div>
-        <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/darebeat" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:darebeat@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=871731559" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 871731559" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
-</div>
-    </div>
-</footer>
-
-<div class="progress-bar"></div>
-
-<script>
+            </script><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/darebeat" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fab fa-github"></i></a><a href="mailto:darebeat@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=871731559" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 871731559" data-position="top" data-delay="50"><i class="fab fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><script>
     $(document).ready(function () {
         /* 50ms周期检测函数 */
         var int = setInterval(fixCount, 50);
@@ -1452,22 +541,7 @@ EOF
             }
         }
     });
-</script>
-
-
-    <!-- 搜索遮罩框 -->
-<div id="searchModal" class="modal">
-    <div class="modal-content">
-        <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" value="" placeholder="请输入搜索的关键字，比如:bigdata"
-                   class="search-input">
-        </div>
-        <div id="searchResult"></div>
-    </div>
-</div>
-
-<script type="text/javascript">
+</script><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i> &nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" value="" placeholder="请输入搜索的关键字，比如:bigdata" class="search-input"></div><div id="searchResult"></div></div></div><script type="text/javascript">
 $(function () {
     var searchFunc = function (path, search_id, content_id) {
         'use strict';
@@ -1557,28 +631,7 @@ $(function () {
 
     searchFunc('/search.xml', 'searchInput', 'searchResult');
 });
-</script>
-
-    <!-- 回到顶部按钮 -->
-<div id="backTop" class="top-scroll">
-    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-</div>
-
-
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.min.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
-
-    <!-- Baidu Analytics -->
-
-    <!-- Baidu Push -->
-
-<script>
+</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fas fa-arrow-up"></i></a></div><script src="/libs/materialize/materialize.min.js"></script><script src="/libs/masonry/masonry.pkgd.min.js"></script><script src="/libs/aos/aos.min.js"></script><script src="/libs/scrollprogress/scrollProgress.min.js"></script><script src="/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="/js/matery.js"></script><script>
     (function () {
         var bp = document.createElement('script');
         var curProtocol = window.location.protocol.split(':')[0];
@@ -1590,33 +643,4 @@ $(function () {
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(bp, s);
     })();
-</script>
-
-    
-    <script src="/libs/others/clicklove.min.js" async="async"></script>
-    
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
-
-    
-
-    
-
-	
-    
-
-    
-
-    
-
-    
-    <script src="/libs/instantpage/instantpage.min.js" type="module"></script>
-    
-
-    <!-- 雪花特效 -->
-    
-
-</body>
-
-</html>
+</script><script src="/libs/others/clicklove.min.js" async="async"></script><script async src="/libs/others/busuanzi.pure.mini.js"></script><script src="/libs/instantpage/instantpage.min.js" type="module"></script></body></html>

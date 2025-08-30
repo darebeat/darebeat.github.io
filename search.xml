@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>指令系统概述</title>
+      <link href="/article/82/"/>
+      <url>/article/82/</url>
+      
+        <content type="html"><![CDATA[categories:RIT<br />
+tags:RIT,SAD,指令系统,流水线<br />
+summary:讲述了计算机指令系统的分类及其特点，复杂指令系统（CISC）与精简指令系统（RISC）的定义、特性及区别，并深入解析了RISC中采用的流水线技术及其相关概念，包括流水线周期、执行时间计算、吞吐率、最大吞吐率和加速比等。]]></content>
+      
+      
+      <categories>
+          
+          <category> RIT </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> RIT </tag>
+            
+            <tag> SAD </tag>
+            
+            <tag> 指令系统 </tag>
+            
+            <tag> 流水线 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>计算机体系结构概述</title>
       <link href="/article/81/"/>
       <url>/article/81/</url>
@@ -634,7 +667,7 @@ summary:SHELL命令-常用的日期函数。]]></content>
       <url>/article/59/</url>
       
         <content type="html"><![CDATA[categories:tools<br />
-tags:etl,sqoop<br />
+tags:sqoop,etl<br />
 summary:Sqoop是一个在结构化数据和Hadoop之间进行批量数据迁移的工具,结构化数据可以是MySQL、Oracle等RDBMS.Sqoop底层用MapReduce程序实现抽取、转换、加载,MapReduce天生的特性保证了并行化和高容错率,而且相比Kettle等传统ETL工具,任务跑在Hadoop集群上,减少了ETL服务器资源的使用情况。]]></content>
       
       
@@ -647,9 +680,9 @@ summary:Sqoop是一个在结构化数据和Hadoop之间进行批量数据迁移�
       
         <tags>
             
-            <tag> etl </tag>
-            
             <tag> sqoop </tag>
+            
+            <tag> etl </tag>
             
         </tags>
       
@@ -663,7 +696,7 @@ summary:Sqoop是一个在结构化数据和Hadoop之间进行批量数据迁移�
       <url>/article/58/</url>
       
         <content type="html"><![CDATA[categories:tools<br />
-tags:datax,etl<br />
+tags:etl,datax<br />
 summary:datax是阿里巴巴内部被广泛使用的离线数据同步工具或平台,通过配置reader+writer的配置方式，实现各种异步数据源之间的数据同步。]]></content>
       
       
@@ -676,9 +709,9 @@ summary:datax是阿里巴巴内部被广泛使用的离线数据同步工具或�
       
         <tags>
             
-            <tag> datax </tag>
-            
             <tag> etl </tag>
+            
+            <tag> datax </tag>
             
         </tags>
       
@@ -1582,35 +1615,6 @@ summary:certbot自动化生成https证书，为你的网站保驾护航。]]></c
     
     
     <entry>
-      <title>Ngnix-是如何实现高性能的?</title>
-      <link href="/article/26/"/>
-      <url>/article/26/</url>
-      
-        <content type="html"><![CDATA[categories:tools<br />
-tags:nginx,高性能<br />
-summary:Nginx高性能原因是什么? Ngnix是如何实现高性能的?]]></content>
-      
-      
-      <categories>
-          
-          <category> tools </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> nginx </tag>
-            
-            <tag> 高性能 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>HTTP基础知识</title>
       <link href="/article/32/"/>
       <url>/article/32/</url>
@@ -1632,6 +1636,35 @@ summary:HTTP使用URL(统一资源定位符)来定位资源，它是URI(统一�
             <tag> 基础知识 </tag>
             
             <tag> http </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Ngnix-是如何实现高性能的?</title>
+      <link href="/article/26/"/>
+      <url>/article/26/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:nginx,高性能<br />
+summary:Nginx高性能原因是什么? Ngnix是如何实现高性能的?]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nginx </tag>
+            
+            <tag> 高性能 </tag>
             
         </tags>
       
@@ -2057,7 +2090,7 @@ summary:Kubernetes作为一款社区最火的容器管理调度软件，解决�
       <url>/article/5/</url>
       
         <content type="html"><![CDATA[categories:k8s<br />
-tags:k8s,centos,环境配置<br />
+tags:k8s,环境配置,centos<br />
 summary:Kubernetes作为一款社区最火的容器管理调度软件，解决了容器的编排调度和一致性能力问题。]]></content>
       
       
@@ -2072,9 +2105,9 @@ summary:Kubernetes作为一款社区最火的容器管理调度软件，解决�
             
             <tag> k8s </tag>
             
-            <tag> centos </tag>
-            
             <tag> 环境配置 </tag>
+            
+            <tag> centos </tag>
             
         </tags>
       
@@ -2088,7 +2121,7 @@ summary:Kubernetes作为一款社区最火的容器管理调度软件，解决�
       <url>/article/7/</url>
       
         <content type="html"><![CDATA[categories:k8s<br />
-tags:k8s,环境配置,mac<br />
+tags:k8s,mac,环境配置<br />
 summary:Kubernetes作为一款社区最火的容器管理调度软件，解决了容器的编排调度和一致性能力问题。]]></content>
       
       
@@ -2103,9 +2136,9 @@ summary:Kubernetes作为一款社区最火的容器管理调度软件，解决�
             
             <tag> k8s </tag>
             
-            <tag> 环境配置 </tag>
-            
             <tag> mac </tag>
+            
+            <tag> 环境配置 </tag>
             
         </tags>
       

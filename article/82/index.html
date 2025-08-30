@@ -1,0 +1,583 @@
+<!DOCTYPE HTML><html lang="zh-CN"><head><meta charset="utf-8"><meta name="keywords" content="指令系统概述, darebeat"><meta name="description" content="不恋过去，不畏将来，活在当下，行所当行，阻挡你前进的最大阻力永远是你自己！"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>指令系统概述 | darebeat</title><link rel="icon" type="image/png" href="/favicon.png"><link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css"><link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css"><link rel="stylesheet" type="text/css" href="/libs/aos/aos.min.css"><link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css"><link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" type="text/css" href="/css/matery.css"><link rel="stylesheet" type="text/css" href="/css/my.css"><script src="/libs/jquery/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="darebeat" type="application/atom+xml"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"> <a href="/" class="waves-effect waves-light"><img src="/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">darebeat</span></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom: 0.6;"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fas fa-tags" style="zoom: 0.6;"></i> <span>标签</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fas fa-bookmark" style="zoom: 0.6;"></i> <span>分类</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fas fa-archive" style="zoom: 0.6;"></i> <span>归档</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/about" class="waves-effect waves-light"><i class="fas fa-user-circle" style="zoom: 0.6;"></i> <span>关于</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fas fa-address-book" style="zoom: 0.6;"></i> <span>友情链接</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"> <img src="/medias/logo.png" class="logo-img circle responsive-img" alt="LOGO"><div class="logo-name">darebeat</div><div class="logo-desc"> 不恋过去，不畏将来，活在当下，行所当行，阻挡你前进的最大阻力永远是你自己！</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fa-fw fas fa-tags"></i> 标签</a></li><li class="m-nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fa-fw fas fa-bookmark"></i> 分类</a></li><li class="m-nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fa-fw fas fa-archive"></i> 归档</a></li><li class="m-nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa-fw fas fa-user-circle"></i> 关于</a></li><li class="m-nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fa-fw fas fa-address-book"></i> 友情链接</a></li><li><div class="divider"></div></li><li><a href="https://github.com/darebeat" class="waves-effect waves-light" target="_blank"><i class="fab fa-github-square fa-fw"></i> Fork Me</a></li></ul></div></div><style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style> <a href="https://github.com/darebeat" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115 130 115 142 142 250 250 250 0Z"></path><path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4L133.7 101.6C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8Z" fill="currentColor" class="octo-body"></path></svg></a></nav></header><div class="bg-cover pd-header post-cover" style="background-image: url('/images/card/0082.png')"><div class="container" style="right: 0px;left: 0px;"><div class="row"><div class="col s12 m12 l12"><div class="brand"><h1 class="description center-align post-title">指令系统概述</h1></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="/libs/tocbot/tocbot.min.css"><style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/RIT/"><span class="chip bg-color">RIT</span></a> <a href="/tags/SAD/"><span class="chip bg-color">SAD</span></a> <a href="/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/"><span class="chip bg-color">指令系统</span></a> <a href="/tags/%E6%B5%81%E6%B0%B4%E7%BA%BF/"><span class="chip bg-color">流水线</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/RIT/" class="post-category">RIT</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2025-08-29</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 828</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><link rel="stylesheet" href="/libs/prism/prism.min.css"><div class="card-content article-card-content"><div id="articleContent"><h2 id="指令系统概述">指令系统概述</h2><p>指令系统分为CISC与RISC，各有特点，RISC因高效性更适用于现代高性能计算。流水线技术是提升指令执行效率的关键，理解其周期、执行时间、吞吐率、加速比等概念对掌握其优势至关重要。建议通过例题加深对公式及概念的理解与应用。</p><div> <img src="/images/article/0082-001.jpg" style="width:100%;"></div><p><br></p><h3 id="指令系统的定义">指令系统的定义</h3><p>指令系统是计算机硬件的语言系统，即计算机所能执行的全部指令的集合，反映其基本功能。</p><h3 id="类比理解">类比理解</h3><p>类比扫地机器人能完成扫地、拖地、喷水等功能，计算机指令系统体现其可执行的操作。</p><h2 id="指令的组成">指令的组成</h2><h3 id="操作码字段op">操作码字段（OP）</h3><p>表示指令的功能，如加减乘除、与或非、转移跳转等。</p><h3 id="地址码字段ad">地址码字段（AD）</h3><p>表示操作数的地址或直接操作数，决定操作对象在内存或寄存器中的位置。</p><h3 id="控制器处理">控制器处理</h3><p>操作码字段需通过指令译码器进行翻译，以执行相应操作。</p><h2 id="复杂指令系统cisc">复杂指令系统（CISC）</h2><h3 id="定义与背景">定义与背景</h3><p>CISC（Complex Instruction Set Computer）旨在通过增加复杂指令提升计算机功能。</p><h3 id="特点">特点</h3><ul><li>指令数量众多，可达数百条。</li><li>指令使用频率遵循“28原则”：20%常用指令占程序中80%出现频率。</li><li>支持多种寻址方式。</li><li>指令长度不固定，增加译码复杂度。</li><li>可直接对主存数据处理，效率较低。</li><li>以微程序控制为主，通过微指令生成控制信号。</li></ul><h2 id="精简指令系统risc">精简指令系统（RISC）</h2><h3 id="定义与思想">定义与思想</h3><p>RISC（Reduced Instruction Set Computer）基于“28原则”精简指令集，保留高频指令。</p><h3 id="特点-1">特点</h3><ul><li>指令数量少。寻址方式少。</li><li>指令长度固定，格式统一。</li><li>以硬布线逻辑控制为主，速度更快。</li><li>单指令单周期执行，采用流水线技术。</li><li>编译优化更简单。</li><li>CPU中通用寄存器数量多，提升执行速度。</li><li>总体执行效率高于CISC。</li></ul><h2 id="流水线技术介绍">流水线技术介绍</h2><h3 id="概念来源">概念来源</h3><p>借鉴工业流水线思想，如汽车装配中工人并行工作，提升整体效率。</p><h3 id="计算机中的应用">计算机中的应用</h3><p>指令执行分为多个阶段（如取指、分析、执行），每个阶段由独立硬件并行处理。</p><h3 id="发展历程">发展历程</h3><ul><li>顺序执行：指令串行执行，效率低。</li><li>重叠执行：部分并行，提升有限。</li><li>流水线执行：全面并行，效率大幅提升。</li></ul><h2 id="流水线执行时间计算">流水线执行时间计算</h2><h3 id="流水线周期定义">流水线周期定义</h3><ul><li>流水线周期为各阶段中执行时间最长的一段。</li><li>公式</li></ul><p><span class="math display"><em>T</em><sub>总</sub> = <em>T</em><sub>1</sub> + <em>T</em><sub>2</sub> + … + <em>T</em><sub><em>k</em></sub> + (<em>n</em> − 1) ⋅ <em>Δ</em><em>T</em></span></p><p>其中：</p><ul><li><p><span class="math display"><em>T</em><sub>1</sub> + <em>T</em><sub>2</sub> + … + <em>T</em><sub><em>k</em></sub></span>：第一条指令执行时间。</p></li><li><p><span class="math display"><em>Δ</em><em>T</em></span>：流水线周期。</p></li><li><p><span class="math display"><em>n</em></span>：指令总数。</p></li><li><p>例题解析</p></li><li><p>指令分三段，时间分别为2ns、2ns、1ns。</p></li><li><p>执行100条指令：</p></li></ul><p><span class="math display"><em>T</em><sub>总</sub> = (2 + 2 + 1) + (100 − 1) ⋅ 2 = 5 + 198 = 203 ns</span></p><h2 id="流水线相关性能指标">流水线相关性能指标</h2><h3 id="吞吐率tp">吞吐率（TP）</h3><p>单位时间内执行的指令数。</p><p><span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -2.272ex;" xmlns="http://www.w3.org/2000/svg" width="10.413ex" height="4.801ex" role="img" focusable="false" viewBox="0 -1118 4602.7 2122.2"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D447" d="M40 437Q21 437 21 445 21 450 37 501T71 602L88 651Q93 669 101 677H569 659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437 640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631 469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46 418 46 427 45T436 36Q436 31 433 22 429 4 424 1L422 0Q419 0 415 0 410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83 94Q174 46 189 55 190 56 191 56 196 59 201 76T241 233Q258 301 269 344 339 619 339 625 339 630 310 630H279Q212 630 191 624 146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="mi" transform="translate(704,0)"><path data-c="1D443" d="M287 628Q287 635 230 637 206 637 199 638T192 648Q192 649 194 659 200 679 203 681T397 683Q587 682 600 680 664 669 707 631T751 530Q751 453 685 389 616 321 507 303 500 302 402 301H307L277 182Q247 66 247 59 247 55 248 54T255 50 272 48 305 46H336Q342 37 342 35 342 19 335 5 330 0 319 0 316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11 33 13 36 25 40 41 44 43T67 46Q94 46 127 49 141 52 146 61 149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597 609 619 560 635Q553 636 480 637 463 637 445 637T416 636 404 636Q391 635 386 627 384 621 367 550T332 412 314 344Q314 342 395 342H407 430Q542 342 590 392 617 419 631 471T645 554Z"></path></g><g data-mml-node="mo" transform="translate(1732.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347 722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153 722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mfrac" transform="translate(2788.6,0)"><g data-mml-node="mi" transform="translate(607.1,676)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341 56 388 89 425 135 442Q171 442 195 424T225 390 231 369Q231 367 232 367L243 378Q304 442 382 442 436 442 469 415T503 336 465 179 427 52Q427 26 444 26 450 26 453 27 482 32 505 65T540 145Q542 153 560 153 580 153 580 145 580 144 576 130 568 101 554 73T508 17 439-10Q392-10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291 189 157Q156 26 151 16 138-11 108-11 95-11 87-5T76 7 74 17Q74 30 112 180T152 343Q153 348 153 366 153 405 129 405 91 405 66 305 60 285 60 284 58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="msub" transform="translate(220,-686)"><g data-mml-node="mi"><path data-c="1D447" d="M40 437Q21 437 21 445 21 450 37 501T71 602L88 651Q93 669 101 677H569 659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437 640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631 469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46 418 46 427 45T436 36Q436 31 433 22 429 4 424 1L422 0Q419 0 415 0 410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83 94Q174 46 189 55 190 56 191 56 196 59 201 76T241 233Q258 301 269 344 339 619 339 625 339 630 310 630H279Q212 630 191 624 146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="TeXAtom" transform="translate(617,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">总</text></g></g></g><rect width="1574.1" height="60" x="120" y="220"></rect></g></g></g></svg></mjx-container></span></p><p>例：100条指令，总时间203ns →<span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -1.602ex;" xmlns="http://www.w3.org/2000/svg" width="18.869ex" height="4.638ex" role="img" focusable="false" viewBox="0 -1342 8340.1 2050"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D447" d="M40 437Q21 437 21 445 21 450 37 501T71 602L88 651Q93 669 101 677H569 659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437 640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631 469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46 418 46 427 45T436 36Q436 31 433 22 429 4 424 1L422 0Q419 0 415 0 410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83 94Q174 46 189 55 190 56 191 56 196 59 201 76T241 233Q258 301 269 344 339 619 339 625 339 630 310 630H279Q212 630 191 624 146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="mi" transform="translate(704,0)"><path data-c="1D443" d="M287 628Q287 635 230 637 206 637 199 638T192 648Q192 649 194 659 200 679 203 681T397 683Q587 682 600 680 664 669 707 631T751 530Q751 453 685 389 616 321 507 303 500 302 402 301H307L277 182Q247 66 247 59 247 55 248 54T255 50 272 48 305 46H336Q342 37 342 35 342 19 335 5 330 0 319 0 316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11 33 13 36 25 40 41 44 43T67 46Q94 46 127 49 141 52 146 61 149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597 609 619 560 635Q553 636 480 637 463 637 445 637T416 636 404 636Q391 635 386 627 384 621 367 550T332 412 314 344Q314 342 395 342H407 430Q542 342 590 392 617 419 631 471T645 554Z"></path></g><g data-mml-node="mo" transform="translate(1732.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347 722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153 722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mfrac" transform="translate(2788.6,0)"><g data-mml-node="mn" transform="translate(220,676)"><path data-c="31" d="M213 578 200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641 273 663Q275 666 285 666 294 666 302 660V361L303 61Q310 54 315 52T339 48 401 46H427V0H416Q395 3 257 3 121 3 100 0H88V46H114Q136 46 152 46T177 47 193 50 201 52 207 57 213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666 297 666 345 640T423 548Q460 465 460 320 460 165 417 83 397 41 362 16T301-15 250-22Q224-22 198-16T137 16 82 83Q39 165 39 320 39 494 96 585ZM321 597Q291 629 250 629 208 629 178 597 153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16 290 16 318 46 347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path><path data-c="30" d="M96 585Q152 666 249 666 297 666 345 640T423 548Q460 465 460 320 460 165 417 83 397 41 362 16T301-15 250-22Q224-22 198-16T137 16 82 83Q39 165 39 320 39 494 96 585ZM321 597Q291 629 250 629 208 629 178 597 153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16 290 16 318 46 347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1000,0)"></path></g><g data-mml-node="mn" transform="translate(220,-686)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315 301 241Q265 210 201 149L142 93 218 92Q375 92 385 97 392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19 31Q50 38 56 46T86 81Q115 113 136 137 145 147 170 174T204 211 233 244 261 278 284 308 305 340 320 369 333 401 340 431 343 464Q343 527 309 573T212 619Q179 619 154 602T119 569 109 550Q109 549 114 549 132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path data-c="30" d="M96 585Q152 666 249 666 297 666 345 640T423 548Q460 465 460 320 460 165 417 83 397 41 362 16T301-15 250-22Q224-22 198-16T137 16 82 83Q39 165 39 320 39 494 96 585ZM321 597Q291 629 250 629 208 629 178 597 153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16 290 16 318 46 347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664 351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336 375 315Q457 262 457 175 457 96 395 37T238-22Q158-22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94 148 82 136 74 126 70 118 67L114 66Q165 21 238 21 293 21 321 74 338 107 338 175V195Q338 290 274 322 259 328 213 329L171 330 168 332Q166 335 166 348 166 366 174 366 202 366 232 371 266 376 294 413T322 525V533Q322 590 287 612 265 626 240 626 208 626 181 615T143 592 132 580H135Q138 579 143 578T153 573 165 566 175 555 183 540 186 520Q186 498 172 481T127 463Z" transform="translate(1000,0)"></path></g><rect width="1700" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(5006.3,0)"><path data-c="2248" d="M55 319Q55 360 72 393T114 444 163 472 205 482Q207 482 213 482T223 483Q262 483 296 468T393 413L443 381Q502 346 553 346 609 346 649 375T694 454Q694 465 698 474T708 483Q722 483 722 452 722 386 675 338T555 289Q514 289 468 310T388 357 308 404 224 426Q164 426 125 393T83 318Q81 289 69 289 55 289 55 319ZM55 85Q55 126 72 159T114 210 163 238 205 248Q207 248 213 248T223 249Q262 249 296 234T393 179L443 147Q502 112 553 112 609 112 649 141T694 220Q694 249 708 249T722 217Q722 153 675 104T555 55Q514 55 468 76T388 123 308 170 224 192Q164 192 125 159T83 84Q80 55 69 55 55 55 55 85Z"></path></g><g data-mml-node="mn" transform="translate(6062.1,0)"><path data-c="30" d="M96 585Q152 666 249 666 297 666 345 640T423 548Q460 465 460 320 460 165 417 83 397 41 362 16T301-15 250-22Q224-22 198-16T137 16 82 83Q39 165 39 320 39 494 96 585ZM321 597Q291 629 250 629 208 629 178 597 153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16 290 16 318 46 347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0 96 17 78 60Z" transform="translate(500,0)"></path><path data-c="34" d="M462 0Q444 3 333 3 217 3 199 0H190V46H221Q241 46 248 46T265 48 279 53 286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675 336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212 183 211H293Z" transform="translate(778,0)"></path><path data-c="39" d="M352 287Q304 211 232 211 154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606 171 666 243 666 245 666 249 666T257 665H261Q273 665 286 663T323 651 370 619 413 560Q456 472 456 334 456 194 396 97 361 41 312 10T208-22Q147-22 108 7T68 93 121 149Q143 149 158 135T173 96Q173 78 164 65T148 49 135 44L131 43Q131 41 138 37T164 27 206 22H212Q272 22 313 86 352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542 341 552 337 562T323 588 293 615 246 625Q208 625 181 598 160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z" transform="translate(1278,0)"></path><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664 351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336 375 315Q457 262 457 175 457 96 395 37T238-22Q158-22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94 148 82 136 74 126 70 118 67L114 66Q165 21 238 21 293 21 321 74 338 107 338 175V195Q338 290 274 322 259 328 213 329L171 330 168 332Q166 335 166 348 166 366 174 366 202 366 232 371 266 376 294 413T322 525V533Q322 590 287 612 265 626 240 626 208 626 181 615T143 592 132 580H135Q138 579 143 578T153 573 165 566 175 555 183 540 186 520Q186 498 172 481T127 463Z" transform="translate(1778,0)"></path></g></g></g></svg></mjx-container></span></p><h3 id="最大吞吐率tp_max">最大吞吐率（TP_max）</h3><p>例：<span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -1.552ex;" xmlns="http://www.w3.org/2000/svg" width="30.935ex" height="4.588ex" role="img" focusable="false" viewBox="0 -1342 13673.1 2028"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="394" d="M51 0Q46 4 46 7 46 9 215 357T388 709Q391 716 416 716 439 716 444 709 447 705 616 357T786 7Q786 4 781 0H51ZM507 344 384 596 137 92 383 91H630Q630 93 507 344Z"></path></g><g data-mml-node="mi" transform="translate(833,0)"><path data-c="1D447" d="M40 437Q21 437 21 445 21 450 37 501T71 602L88 651Q93 669 101 677H569 659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437 640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631 469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46 418 46 427 45T436 36Q436 31 433 22 429 4 424 1L422 0Q419 0 415 0 410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83 94Q174 46 189 55 190 56 191 56 196 59 201 76T241 233Q258 301 269 344 339 619 339 625 339 630 310 630H279Q212 630 191 624 146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="mo" transform="translate(1814.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347 722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153 722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mn" transform="translate(2870.6,0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315 301 241Q265 210 201 149L142 93 218 92Q375 92 385 97 392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19 31Q50 38 56 46T86 81Q115 113 136 137 145 147 170 174T204 211 233 244 261 278 284 308 305 340 320 369 333 401 340 431 343 464Q343 527 309 573T212 619Q179 619 154 602T119 569 109 550Q109 549 114 549 132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mstyle" transform="translate(3370.6,0)"><g data-mml-node="mspace"></g></g><g data-mml-node="mtext" transform="translate(3537.6,0)"><path data-c="6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122 103 161 103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441 178 442H181V402Q181 364 182 364T187 369 199 384 218 402 247 421 285 437Q305 442 336 442 450 438 463 329 464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62 380 64 380 200 379 335 378 343 372 371 358 385T334 402 308 404Q263 404 229 370 202 343 195 315T187 232V168 108Q187 78 188 68T191 55 200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path><path data-c="73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401 98 382 98 349 97 344 98 336T114 312 157 287Q175 282 201 278T245 269 277 256Q294 248 310 236T342 195 359 133Q359 71 321 31T198-10H190Q138-10 94 26L86 19 77 10Q71 4 65-1L54-11H46 42Q39-11 33-5V74 132Q33 153 35 157T45 162H54Q66 162 70 158T75 146 82 119 101 77Q136 26 198 26 295 26 295 104 295 133 277 151 257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424 143 442 187 447H198Q238 447 268 432L283 424 292 431Q302 440 314 448H322 326Q329 448 335 442V310L329 304H301Q295 310 295 316Z" transform="translate(556,0)"></path></g><g data-mml-node="mo" transform="translate(4765.3,0)"><path data-c="2192" d="M56 237T56 250 70 270H835Q719 357 692 493 692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506 732 497 735 481 743 456Q765 389 816 336T935 261Q944 258 944 250 944 244 939 241T915 231 877 212Q836 186 806 152T761 85 740 35 732 4Q730-6 727-8T711-11Q691-11 691 0 691 7 696 25 728 151 835 230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(6043.1,0)"><path data-c="1D447" d="M40 437Q21 437 21 445 21 450 37 501T71 602L88 651Q93 669 101 677H569 659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437 640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631 469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46 418 46 427 45T436 36Q436 31 433 22 429 4 424 1L422 0Q419 0 415 0 410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83 94Q174 46 189 55 190 56 191 56 196 59 201 76T241 233Q258 301 269 344 339 619 339 625 339 630 310 630H279Q212 630 191 624 146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="msub" transform="translate(6747.1,0)"><g data-mml-node="mi"><path data-c="1D443" d="M287 628Q287 635 230 637 206 637 199 638T192 648Q192 649 194 659 200 679 203 681T397 683Q587 682 600 680 664 669 707 631T751 530Q751 453 685 389 616 321 507 303 500 302 402 301H307L277 182Q247 66 247 59 247 55 248 54T255 50 272 48 305 46H336Q342 37 342 35 342 19 335 5 330 0 319 0 316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11 33 13 36 25 40 41 44 43T67 46Q94 46 127 49 141 52 146 61 149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597 609 619 560 635Q553 636 480 637 463 637 445 637T416 636 404 636Q391 635 386 627 384 621 367 550T332 412 314 344Q314 342 395 342H407 430Q542 342 590 392 617 419 631 471T645 554Z"></path></g><g data-mml-node="TeXAtom" transform="translate(675,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122 103 161 103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441 178 442H181V402Q181 364 182 364T187 369 199 384 218 402 247 421 285 437Q305 442 336 442 351 442 364 440T387 434 406 426 421 417 432 406 441 395 448 384 452 374 455 366L457 361 460 365Q463 369 466 373T475 384 488 397 503 410 523 422 546 432 572 439 603 442Q729 442 740 329 741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62 657 64 657 200 656 335 655 343 649 371 635 385T611 402 585 404Q540 404 506 370 479 343 472 315T464 232V168 108Q464 78 465 68T468 55 477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62 380 64 380 200 379 335 378 343 372 371 358 385T334 402 308 404Q263 404 229 370 202 343 195 315T187 232V168 108Q187 78 188 68T191 55 200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path><path data-c="61" d="M137 305T115 305 78 320 63 359Q63 394 97 421T218 448Q291 448 336 416T396 340Q401 326 401 309T402 194V124Q402 76 407 58T428 40Q443 40 448 56T453 109V145H493V106Q492 66 490 59 481 29 455 12T400-6 353 12 329 54V58L327 55Q325 52 322 49T314 40 302 29 287 17 269 6 247-2 221-8 190-11Q130-11 82 20T34 107Q34 128 41 147T68 188 116 225 194 253 304 268H318V290Q318 324 312 340 290 411 215 411 197 411 181 410T156 406 148 403Q170 388 170 359 170 334 154 320ZM126 106Q126 75 150 51T209 26Q247 26 276 49T315 109Q317 116 318 175 318 233 317 233 309 233 296 232T251 223 193 203 147 166 126 106Z" transform="translate(833,0)"></path><path data-c="78" d="M201 0Q189 3 102 3 26 3 17 0H11V46H25Q48 47 67 52T96 61 121 78 139 96 160 122 180 150L226 210 168 288Q159 301 149 315T133 336 122 351 113 363 107 370 100 376 94 379 88 381 80 383Q74 383 44 385H16V431H23Q59 429 126 429 219 429 229 431H237V385Q201 381 201 369 201 367 211 353T239 315 268 274L272 270 297 304Q329 345 329 358 329 364 327 369T322 376 317 380 310 384L307 385H302V431H309Q324 428 408 428 487 428 493 431H499V385H492Q443 385 411 368 394 360 377 341T312 257L296 236 358 151Q424 61 429 57T446 50Q464 46 499 46H516V0H510 502Q494 1 482 1T457 2 432 2 414 3Q403 3 377 3T327 1L304 0H295V46H298Q309 46 320 51T331 63Q331 65 291 120L250 175Q249 174 219 133T185 88Q181 83 181 74 181 63 188 55T206 46Q208 46 208 23V0H201Z" transform="translate(1333,0)"></path></g></g></g><g data-mml-node="mo" transform="translate(9065.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347 722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153 722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mfrac" transform="translate(10121.6,0)"><g data-mml-node="mn" transform="translate(220,676)"><path data-c="31" d="M213 578 200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641 273 663Q275 666 285 666 294 666 302 660V361L303 61Q310 54 315 52T339 48 401 46H427V0H416Q395 3 257 3 121 3 100 0H88V46H114Q136 46 152 46T177 47 193 50 201 52 207 57 213 61V578Z"></path></g><g data-mml-node="mn" transform="translate(220,-686)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315 301 241Q265 210 201 149L142 93 218 92Q375 92 385 97 392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19 31Q50 38 56 46T86 81Q115 113 136 137 145 147 170 174T204 211 233 244 261 278 284 308 305 340 320 369 333 401 340 431 343 464Q343 527 309 573T212 619Q179 619 154 602T119 569 109 550Q109 549 114 549 132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><rect width="700" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(11339.4,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347 722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153 722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mn" transform="translate(12395.1,0)"><path data-c="30" d="M96 585Q152 666 249 666 297 666 345 640T423 548Q460 465 460 320 460 165 417 83 397 41 362 16T301-15 250-22Q224-22 198-16T137 16 82 83Q39 165 39 320 39 494 96 585ZM321 597Q291 629 250 629 208 629 178 597 153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16 290 16 318 46 347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0 96 17 78 60Z" transform="translate(500,0)"></path><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22 294 22 326 82 345 115 345 210 345 313 318 349 292 382 260 382H254Q176 382 136 314 132 307 129 306T114 304Q97 304 95 310 93 314 93 485V614Q93 664 98 664 100 666 102 666 103 666 123 658T178 642 253 634Q324 634 389 662 397 666 402 666 410 666 410 648V635Q328 538 205 538 174 538 149 544L139 546V374Q158 388 169 396T205 412 256 420Q337 420 393 355T449 201Q449 109 385 44T229-22Q148-22 99 32T50 154Q50 178 61 192T84 210 107 214Q132 214 148 197T164 157Z" transform="translate(778,0)"></path></g></g></g></svg></mjx-container></span></p><h2 id="加速比s">加速比（S）</h2><p>不使用流水线与使用流水线执行时间的比值。</p><p><span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -2.272ex;" xmlns="http://www.w3.org/2000/svg" width="10.18ex" height="5.564ex" role="img" focusable="false" viewBox="0 -1455.2 4499.8 2459.3"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284 308 311 278 321T236 341Q176 383 176 462 176 523 208 573T273 648Q302 673 343 688T407 704H418 425Q521 704 564 640 565 640 577 653T603 682 623 704Q624 704 627 704T632 705Q645 705 645 698T617 577 585 459 569 456Q549 456 549 465 549 471 550 475 550 478 551 494T553 520Q553 554 544 579T526 616 501 641Q465 662 419 662 362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186 541 164 528 137T492 78 426 18 332-20Q320-22 298-22 199-22 144 33L134 44 106 13Q83-14 78-18T65-22Q52-22 52-14 52-11 110 221 112 227 130 227H143Q149 221 149 216 149 214 148 207T144 186 142 153Q144 114 160 87T203 47 255 29 308 24Z"></path></g><g data-mml-node="mo" transform="translate(922.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347 722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153 722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mfrac" transform="translate(1978.6,0)"><g data-mml-node="msub" transform="translate(220,778.2)"><g data-mml-node="mi"><path data-c="1D447" d="M40 437Q21 437 21 445 21 450 37 501T71 602L88 651Q93 669 101 677H569 659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437 640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631 469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46 418 46 427 45T436 36Q436 31 433 22 429 4 424 1L422 0Q419 0 415 0 410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83 94Q174 46 189 55 190 56 191 56 196 59 201 76T241 233Q258 301 269 344 339 619 339 625 339 630 310 630H279Q212 630 191 624 146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="TeXAtom" transform="translate(617,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">顺</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">序</text></g></g></g><g data-mml-node="msub" transform="translate(220,-686)"><g data-mml-node="mi"><path data-c="1D447" d="M40 437Q21 437 21 445 21 450 37 501T71 602L88 651Q93 669 101 677H569 659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437 640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631 469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46 418 46 427 45T436 36Q436 31 433 22 429 4 424 1L422 0Q419 0 415 0 410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83 94Q174 46 189 55 190 56 191 56 196 59 201 76T241 233Q258 301 269 344 339 619 339 625 339 630 310 630H279Q212 630 191 624 146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="TeXAtom" transform="translate(617,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">流</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">水</text></g></g></g><rect width="2281.2" height="60" x="120" y="220"></rect></g></g></g></svg></mjx-container></span></p><p>例：顺序执行时间500ns，流水执行203ns →<span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -1.602ex;" xmlns="http://www.w3.org/2000/svg" width="15.905ex" height="4.638ex" role="img" focusable="false" viewBox="0 -1342 7030.1 2050"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284 308 311 278 321T236 341Q176 383 176 462 176 523 208 573T273 648Q302 673 343 688T407 704H418 425Q521 704 564 640 565 640 577 653T603 682 623 704Q624 704 627 704T632 705Q645 705 645 698T617 577 585 459 569 456Q549 456 549 465 549 471 550 475 550 478 551 494T553 520Q553 554 544 579T526 616 501 641Q465 662 419 662 362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186 541 164 528 137T492 78 426 18 332-20Q320-22 298-22 199-22 144 33L134 44 106 13Q83-14 78-18T65-22Q52-22 52-14 52-11 110 221 112 227 130 227H143Q149 221 149 216 149 214 148 207T144 186 142 153Q144 114 160 87T203 47 255 29 308 24Z"></path></g><g data-mml-node="mo" transform="translate(922.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347 722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153 722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mfrac" transform="translate(1978.6,0)"><g data-mml-node="mn" transform="translate(220,676)"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22 294 22 326 82 345 115 345 210 345 313 318 349 292 382 260 382H254Q176 382 136 314 132 307 129 306T114 304Q97 304 95 310 93 314 93 485V614Q93 664 98 664 100 666 102 666 103 666 123 658T178 642 253 634Q324 634 389 662 397 666 402 666 410 666 410 648V635Q328 538 205 538 174 538 149 544L139 546V374Q158 388 169 396T205 412 256 420Q337 420 393 355T449 201Q449 109 385 44T229-22Q148-22 99 32T50 154Q50 178 61 192T84 210 107 214Q132 214 148 197T164 157Z"></path><path data-c="30" d="M96 585Q152 666 249 666 297 666 345 640T423 548Q460 465 460 320 460 165 417 83 397 41 362 16T301-15 250-22Q224-22 198-16T137 16 82 83Q39 165 39 320 39 494 96 585ZM321 597Q291 629 250 629 208 629 178 597 153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16 290 16 318 46 347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path><path data-c="30" d="M96 585Q152 666 249 666 297 666 345 640T423 548Q460 465 460 320 460 165 417 83 397 41 362 16T301-15 250-22Q224-22 198-16T137 16 82 83Q39 165 39 320 39 494 96 585ZM321 597Q291 629 250 629 208 629 178 597 153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16 290 16 318 46 347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1000,0)"></path></g><g data-mml-node="mn" transform="translate(220,-686)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315 301 241Q265 210 201 149L142 93 218 92Q375 92 385 97 392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19 31Q50 38 56 46T86 81Q115 113 136 137 145 147 170 174T204 211 233 244 261 278 284 308 305 340 320 369 333 401 340 431 343 464Q343 527 309 573T212 619Q179 619 154 602T119 569 109 550Q109 549 114 549 132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path data-c="30" d="M96 585Q152 666 249 666 297 666 345 640T423 548Q460 465 460 320 460 165 417 83 397 41 362 16T301-15 250-22Q224-22 198-16T137 16 82 83Q39 165 39 320 39 494 96 585ZM321 597Q291 629 250 629 208 629 178 597 153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16 290 16 318 46 347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664 351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336 375 315Q457 262 457 175 457 96 395 37T238-22Q158-22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94 148 82 136 74 126 70 118 67L114 66Q165 21 238 21 293 21 321 74 338 107 338 175V195Q338 290 274 322 259 328 213 329L171 330 168 332Q166 335 166 348 166 366 174 366 202 366 232 371 266 376 294 413T322 525V533Q322 590 287 612 265 626 240 626 208 626 181 615T143 592 132 580H135Q138 579 143 578T153 573 165 566 175 555 183 540 186 520Q186 498 172 481T127 463Z" transform="translate(1000,0)"></path></g><rect width="1700" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(4196.3,0)"><path data-c="2248" d="M55 319Q55 360 72 393T114 444 163 472 205 482Q207 482 213 482T223 483Q262 483 296 468T393 413L443 381Q502 346 553 346 609 346 649 375T694 454Q694 465 698 474T708 483Q722 483 722 452 722 386 675 338T555 289Q514 289 468 310T388 357 308 404 224 426Q164 426 125 393T83 318Q81 289 69 289 55 289 55 319ZM55 85Q55 126 72 159T114 210 163 238 205 248Q207 248 213 248T223 249Q262 249 296 234T393 179L443 147Q502 112 553 112 609 112 649 141T694 220Q694 249 708 249T722 217Q722 153 675 104T555 55Q514 55 468 76T388 123 308 170 224 192Q164 192 125 159T83 84Q80 55 69 55 55 55 55 85Z"></path></g><g data-mml-node="mn" transform="translate(5252.1,0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315 301 241Q265 210 201 149L142 93 218 92Q375 92 385 97 392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19 31Q50 38 56 46T86 81Q115 113 136 137 145 147 170 174T204 211 233 244 261 278 284 308 305 340 320 369 333 401 340 431 343 464Q343 527 309 573T212 619Q179 619 154 602T119 569 109 550Q109 549 114 549 132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0 96 17 78 60Z" transform="translate(500,0)"></path><path data-c="34" d="M462 0Q444 3 333 3 217 3 199 0H190V46H221Q241 46 248 46T265 48 279 53 286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675 336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212 183 211H293Z" transform="translate(778,0)"></path><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601 351 623 311 626 240 626 194 566 147 500 147 364L148 360Q153 366 156 373 197 433 263 433H267Q313 433 348 414 372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149 440 90 387 34T253-22Q225-22 199-14T143 16 92 75 56 172 42 313ZM257 397Q227 397 205 380T171 335 154 278 148 216Q148 133 160 97T198 39Q222 21 251 21 302 21 329 59 342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z" transform="translate(1278,0)"></path></g></g></g></svg></mjx-container></span></p></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/82/">https://www.darebeat.cn/article/82/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML});
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script><div class="tag_share" style="display: block;"><div class="post-meta__tag-list" style="display: inline-block;"><div class="article-tag"> <a href="/tags/RIT/"><span class="chip bg-color">RIT</span></a> <a href="/tags/SAD/"><span class="chip bg-color">SAD</span></a> <a href="/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/"><span class="chip bg-color">指令系统</span></a> <a href="/tags/%E6%B5%81%E6%B0%B4%E7%BA%BF/"><span class="chip bg-color">流水线</span></a></div></div><div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;"><link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css"><div id="article-share"><div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div><script src="/libs/share/js/social-share.min.js"></script></div></div></div><style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style><div id="reward"> <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fas fa-times"></i></a><h4 class="reward-title">你的赞赏是我前进的动力！</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"> <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"> <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script></div></div><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="far fa-dot-circle"></i> &nbsp;本篇</div><div class="card"><a href="/article/82/"><div class="card-image"> <img src="/images/card/0082.png" class="responsive-img" alt="指令系统概述"> <span class="card-title">指令系统概述</span></div></a><div class="card-content article-content"><div class="summary block-with-text"> 讲述了计算机指令系统的分类及其特点，复杂指令系统（CISC）与精简指令系统（RISC）的定义、特性及区别，并深入解析了RISC中采用的流水线技术及其相关概念，包括流水线周期、执行时间计算、吞吐率、最大吞吐率和加速比等。</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2025-08-29</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/RIT/" class="post-category">RIT</a></span></div></div><div class="card-action article-tags"> <a href="/tags/RIT/"><span class="chip bg-color">RIT</span></a> <a href="/tags/SAD/"><span class="chip bg-color">SAD</span></a> <a href="/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/"><span class="chip bg-color">指令系统</span></a> <a href="/tags/%E6%B5%81%E6%B0%B4%E7%BA%BF/"><span class="chip bg-color">流水线</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color"> 下一篇&nbsp;<i class="fas fa-chevron-right"></i></div><div class="card"><a href="/article/81/"><div class="card-image"> <img src="/images/card/0081.png" class="responsive-img" alt="计算机体系结构概述"> <span class="card-title">计算机体系结构概述</span></div></a><div class="card-content article-content"><div class="summary block-with-text"> 计算机体系结构，包括计算机硬件组成、指令系统、存储系统、校验码技术与总线概念，重点介绍了各部件功能及指令执行流程。</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2025-08-28</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/RIT/" class="post-category">RIT</a></span></div></div><div class="card-action article-tags"> <a href="/tags/RIT/"><span class="chip bg-color">RIT</span></a> <a href="/tags/SAD/"><span class="chip bg-color">SAD</span></a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"><span class="chip bg-color">计算机体系结构</span></a></div></div></div></div></article></div><script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script><script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script><script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script><script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget card" style="background-color: white;"><div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fas fa-list-ul"></i></a></div><script src="/libs/tocbot/tocbot.min.js"></script><script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        /* modify the toc link href to support Chinese. */
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        /* modify the heading title id to support Chinese. */
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        /* Set scroll toc fixed. */
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        /* 切换TOC目录展开收缩的相关操作. */
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script></main><footer class="page-footer bg-color"><div class="container row center-align" style="margin-bottom: 15px !important;"><div class="col s12 m8 l8 copy-right"> Copyright&nbsp;&copy; <span id="year">2019-2025</span> &nbsp;|&nbsp;&nbsp;Powered&nbsp;by&nbsp; <a href="/about" target="_blank">darebeat</a><br> <span id="busuanzi_container_site_pv" style='display:none'>|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次</span> <span id="busuanzi_container_site_uv" style='display:none'>|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人</span><br> <span id="sitetime">载入运行时间...</span><script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "5";
+                    var startDate = "17";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/darebeat" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fab fa-github"></i></a><a href="mailto:darebeat@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=871731559" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 871731559" data-position="top" data-delay="50"><i class="fab fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><script>
+    $(document).ready(function () {
+        /* 50ms周期检测函数 */
+        var int = setInterval(fixCount, 50);
+        /* 初始化首次数据 */
+        var pvcountOffset = 20000;
+        var uvcountOffset = 5000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                /* 加上初始数据 */
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset);
+                /* 停止检测 */
+                clearInterval(int);
+            }
+        }
+    });
+</script><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i> &nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" value="" placeholder="请输入搜索的关键字，比如:bigdata" class="search-input"></div><div id="searchResult"></div></div></div><script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                /* get the contents from search data */
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    /* perform local searching */
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        /* only match artiles with not empty titles and contents */
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        /* show search results */
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim(); /* .replace(/<[^>]+>/g, ""); */
+                            if (first_occur >= 0) {
+                                /* cut out 100 characters */
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                /* highlight all keywords */
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>";
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fas fa-arrow-up"></i></a></div><script src="/libs/materialize/materialize.min.js"></script><script src="/libs/masonry/masonry.pkgd.min.js"></script><script src="/libs/aos/aos.min.js"></script><script src="/libs/scrollprogress/scrollProgress.min.js"></script><script src="/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="/js/matery.js"></script><script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script><script src="/libs/others/clicklove.min.js" async="async"></script><script async src="/libs/others/busuanzi.pure.mini.js"></script><script src="/libs/instantpage/instantpage.min.js" type="module"></script></body></html>

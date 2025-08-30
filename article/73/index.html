@@ -1,236 +1,4 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
-
-
-<head>
-    <meta charset="utf-8">
-    <meta name="keywords" content="DRDS-最佳实践, darebeat">
-    <meta name="description" content="不恋过去，不畏将来，活在当下，行所当行，阻挡你前进的最大阻力永远是你自己！">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-    <title>DRDS-最佳实践 | darebeat</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-
-    <script src="/libs/jquery/jquery.min.js"></script>
-
-<meta name="generator" content="Hexo 4.2.1">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="darebeat" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
-
-
-
-
-<body>
-    <header class="navbar-fixed">
-    <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper container">
-            <div class="brand-logo">
-                <a href="/" class="waves-effect waves-light">
-                    
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
-                    
-                    <span class="logo-span">darebeat</span>
-                </a>
-            </div>
-            
-
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<ul class="right nav-menu">
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/" class="waves-effect waves-light">
-      
-      <i class="fas fa-home" style="zoom: 0.6;"></i>
-      
-      <span>首页</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/tags" class="waves-effect waves-light">
-      
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
-      
-      <span>标签</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/categories" class="waves-effect waves-light">
-      
-      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
-      
-      <span>分类</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/archives" class="waves-effect waves-light">
-      
-      <i class="fas fa-archive" style="zoom: 0.6;"></i>
-      
-      <span>归档</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
-  <li>
-    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
-    </a>
-  </li>
-</ul>
-
-
-<div id="mobile-nav" class="side-nav sidenav">
-
-    <div class="mobile-head bg-color">
-        
-        <img src="/medias/logo.png" class="logo-img circle responsive-img" alt="LOGO">
-        
-        <div class="logo-name">darebeat</div>
-        <div class="logo-desc">
-            
-            不恋过去，不畏将来，活在当下，行所当行，阻挡你前进的最大阻力永远是你自己！
-            
-        </div>
-    </div>
-
-    
-
-    <ul class="menu-list mobile-menu-list">
-        
-        <li class="m-nav-item">
-	  
-		<a href="/" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-home"></i>
-			
-			首页
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/tags" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-tags"></i>
-			
-			标签
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/categories" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-bookmark"></i>
-			
-			分类
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/archives" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-archive"></i>
-			
-			归档
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			友情链接
-		</a>
-          
-        </li>
-        
-        
-        <li><div class="divider"></div></li>
-        <li>
-            <a href="https://github.com/darebeat" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i>Fork Me
-            </a>
-        </li>
-        
-    </ul>
-</div>
-
-
-        </div>
-
-        
-            <style>
+<!DOCTYPE HTML><html lang="zh-CN"><head><meta charset="utf-8"><meta name="keywords" content="DRDS-最佳实践, darebeat"><meta name="description" content="不恋过去，不畏将来，活在当下，行所当行，阻挡你前进的最大阻力永远是你自己！"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>DRDS-最佳实践 | darebeat</title><link rel="icon" type="image/png" href="/favicon.png"><link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css"><link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css"><link rel="stylesheet" type="text/css" href="/libs/aos/aos.min.css"><link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css"><link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" type="text/css" href="/css/matery.css"><link rel="stylesheet" type="text/css" href="/css/my.css"><script src="/libs/jquery/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><link rel="alternate" href="/atom.xml" title="darebeat" type="application/atom+xml"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"> <a href="/" class="waves-effect waves-light"><img src="/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">darebeat</span></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom: 0.6;"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fas fa-tags" style="zoom: 0.6;"></i> <span>标签</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fas fa-bookmark" style="zoom: 0.6;"></i> <span>分类</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fas fa-archive" style="zoom: 0.6;"></i> <span>归档</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/about" class="waves-effect waves-light"><i class="fas fa-user-circle" style="zoom: 0.6;"></i> <span>关于</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fas fa-address-book" style="zoom: 0.6;"></i> <span>友情链接</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"> <img src="/medias/logo.png" class="logo-img circle responsive-img" alt="LOGO"><div class="logo-name">darebeat</div><div class="logo-desc"> 不恋过去，不畏将来，活在当下，行所当行，阻挡你前进的最大阻力永远是你自己！</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fa-fw fas fa-tags"></i> 标签</a></li><li class="m-nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fa-fw fas fa-bookmark"></i> 分类</a></li><li class="m-nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fa-fw fas fa-archive"></i> 归档</a></li><li class="m-nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa-fw fas fa-user-circle"></i> 关于</a></li><li class="m-nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fa-fw fas fa-address-book"></i> 友情链接</a></li><li><div class="divider"></div></li><li><a href="https://github.com/darebeat" class="waves-effect waves-light" target="_blank"><i class="fab fa-github-square fa-fw"></i> Fork Me</a></li></ul></div></div><style>
     .nav-transparent .github-corner {
         display: none !important;
     }
@@ -273,47 +41,7 @@
             transform: rotate(10deg);
         }
     }
-</style>
-
-<a href="https://github.com/darebeat" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
-   data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewBox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-              fill="currentColor" class="octo-body"></path>
-    </svg>
-</a>
-        
-    </nav>
-
-</header>
-
-    
-
-
-
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/card/0073.png')">
-    <div class="container" style="right: 0px;left: 0px;">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <div class="brand">
-                    <h1 class="description center-align post-title">DRDS-最佳实践</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<main class="post-container content">
-
-    
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.min.css">
-<style>
+</style> <a href="https://github.com/darebeat" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115 130 115 142 142 250 250 250 0Z"></path><path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4L133.7 101.6C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8Z" fill="currentColor" class="octo-body"></path></svg></a></nav></header><div class="bg-cover pd-header post-cover" style="background-image: url('/images/card/0073.png')"><div class="container" style="right: 0px;left: 0px;"><div class="row"><div class="col s12 m12 l12"><div class="brand"><h1 class="description center-align post-title">DRDS-最佳实践</h1></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="/libs/tocbot/tocbot.min.css"><style>
     #articleContent h1::before,
     #articleContent h2::before,
     #articleContent h3::before,
@@ -403,135 +131,25 @@
         line-height: 48px;
         font-size: 1.4rem;
     }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
-<div id="artDetail">
-    <div class="card">
-        <div class="card-content article-info">
-            <div class="row tag-cate">
-                <div class="col s7">
-                    
-                    <div class="article-tag">
-                        
-                            <a href="/tags/database/">
-                                <span class="chip bg-color">database</span>
-                            </a>
-                        
-                            <a href="/tags/mysql/">
-                                <span class="chip bg-color">mysql</span>
-                            </a>
-                        
-                            <a href="/tags/drds/">
-                                <span class="chip bg-color">drds</span>
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-                <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/database/" class="post-category">
-                                database
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="post-info">
-                
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-12-17
-                </div>
-                
-
-                
-
-                
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
-                </div>
-                
-
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
-            </div>
-        </div>
-        <hr class="clearfix">
-
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.min.css">
-        
-
-        
-
-        <div class="card-content article-card-content">
-            <div id="articleContent">
-                <h2 id="如何选择拆分键"><a href="#如何选择拆分键" class="headerlink" title="如何选择拆分键"></a>如何选择拆分键</h2><p>拆分键即分库/分表字段，是在水平拆分过程中用于生成拆分规则的数据表字段。根据拆分键的值将数据表水平拆分到每个数据库实例上的物理分库中。</p>
-<p><em><strong>注意:无论选择什么拆分键，采用何种拆分策略，都要注意拆分值是否存在热点的问题，尽量规避热点数据来选择拆分键。</strong></em></p>
-<h3 id="业务逻辑主体有对应的字段"><a href="#业务逻辑主体有对应的字段" class="headerlink" title="业务逻辑主体有对应的字段"></a>业务逻辑主体有对应的字段</h3><p>业务逻辑上的主体，通常与业务的应用场景相关，下面的一些典型应用场景都有明确的业务逻辑主体，可用于拆分键：</p>
-<ul>
-<li>面向用户的互联网应用，都是围绕用户维度来做各种操作，那么业务逻辑主体就是用户，可使用用户对应的字段作为拆分键；</li>
-<li>侧重于卖家的电商应用，都是围绕卖家维度来进行各种操作，那么业务逻辑主体就是卖家，可使用卖家对应的字段作为拆分键；</li>
-<li>游戏类的应用，是围绕玩家维度来做各种操作，那么业务逻辑主体就是玩家，可使用玩家对应的字段作为拆分键；</li>
-<li>车联网方面的应用，则是基于车辆信息进行操作，那么业务逻辑主体就是车辆，可使用车辆对应的字段作为拆分键；</li>
-<li>税务类的应用，主要是基于纳税人的信息来开展前台业务，那么业务逻辑主体就是纳税人，可使用纳税人对应的字段作为拆分键。</li>
-</ul>
-<p>例如，某面向买家的电商应用，由于确定了业务逻辑主体为卖家，那么建议选择对应的字段<code>买家标识</code>作为拆分键。</p>
-<pre class="line-numbers language-SQL"><code class="language-SQL">create table xxx_order (
+</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/database/"><span class="chip bg-color">database</span></a> <a href="/tags/mysql/"><span class="chip bg-color">mysql</span></a> <a href="/tags/drds/"><span class="chip bg-color">drds</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/database/" class="post-category">database</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2022-12-17</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 3.1k</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><link rel="stylesheet" href="/libs/prism/prism.min.css"><div class="card-content article-card-content"><div id="articleContent"><h2 id="如何选择拆分键">如何选择拆分键</h2><p>拆分键即分库/分表字段，是在水平拆分过程中用于生成拆分规则的数据表字段。根据拆分键的值将数据表水平拆分到每个数据库实例上的物理分库中。</p><p><strong><em>注意:无论选择什么拆分键，采用何种拆分策略，都要注意拆分值是否存在热点的问题，尽量规避热点数据来选择拆分键。</em></strong></p><h3 id="业务逻辑主体有对应的字段">业务逻辑主体有对应的字段</h3><p>业务逻辑上的主体，通常与业务的应用场景相关，下面的一些典型应用场景都有明确的业务逻辑主体，可用于拆分键：</p><ul><li>面向用户的互联网应用，都是围绕用户维度来做各种操作，那么业务逻辑主体就是用户，可使用用户对应的字段作为拆分键；</li><li>侧重于卖家的电商应用，都是围绕卖家维度来进行各种操作，那么业务逻辑主体就是卖家，可使用卖家对应的字段作为拆分键；</li><li>游戏类的应用，是围绕玩家维度来做各种操作，那么业务逻辑主体就是玩家，可使用玩家对应的字段作为拆分键；</li><li>车联网方面的应用，则是基于车辆信息进行操作，那么业务逻辑主体就是车辆，可使用车辆对应的字段作为拆分键；</li><li>税务类的应用，主要是基于纳税人的信息来开展前台业务，那么业务逻辑主体就是纳税人，可使用纳税人对应的字段作为拆分键。</li></ul><p>例如，某面向买家的电商应用，由于确定了业务逻辑主体为卖家，那么建议选择对应的字段<code>买家标识</code>作为拆分键。</p><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">create table xxx_order (
       id int(11) not null
     , seller_id int(11) not null
     , trade_id int(11) not null
     , buyer_id int(11) not null
     , buyer_nick varchar(64)
     , primary key (id)
-) dbpartition by hash(buyer_id) tbpartition by hash(buyer_id) tbpartitions 8;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="非业务逻辑主体"><a href="#非业务逻辑主体" class="headerlink" title="非业务逻辑主体"></a>非业务逻辑主体</h3><ul>
-<li>根据数据分布和访问的均衡度来考虑拆分键，尽量将数据表中的数据相对均匀地分布在不同的物理分库/分表中，适用于大量分析型查询的应用场景（查询并发度大部分能维持为1）；</li>
-<li>按照数字（字符串）类型与时间类型字段相结合作为拆分键，进行分库和分表，适用于日志检索类的应用场景。</li>
-</ul>
-<p>例如，某日志系统记录用户的所有操作，可以选择用户标识与时间字段相结合作为拆分键，并按照一周七天进行分表。</p>
-<pre class="line-numbers language-SQL"><code class="language-SQL">create table xxx_log (
+) dbpartition by hash(buyer_id) tbpartition by hash(buyer_id) tbpartitions 8;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="非业务逻辑主体">非业务逻辑主体</h3><ul><li>根据数据分布和访问的均衡度来考虑拆分键，尽量将数据表中的数据相对均匀地分布在不同的物理分库/分表中，适用于大量分析型查询的应用场景（查询并发度大部分能维持为1）；</li><li>按照数字（字符串）类型与时间类型字段相结合作为拆分键，进行分库和分表，适用于日志检索类的应用场景。</li></ul><p>例如，某日志系统记录用户的所有操作，可以选择用户标识与时间字段相结合作为拆分键，并按照一周七天进行分表。</p><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">create table xxx_log (
       userid int(11) not null
     , name varchar(64) not null
     , operation varchar(128)
     , actiondate date
-) dbpartition by hash(userid) tbpartition by week(actiondate) tbpartitions 7;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="如何选择分片数"><a href="#如何选择分片数" class="headerlink" title="如何选择分片数"></a>如何选择分片数</h2><ul>
-<li>DRDS中的水平拆分有两个层次：分库和分表。</li>
-<li>每个 <code>RDS</code> 实例上默认会创建8个物理分库，每个物理分库上可以创建一个或多个物理分表。</li>
-<li>分表数通常也被称为分片数。</li>
-</ul>
-<p>一般情况下，建议单个物理分表的容量不超过500万行数据。通常可以预估1到2年的数据增长量，用估算出的总数据量除以总的物理分库数，再除以建议的最大数据量500万，即可得出每个物理分库上需要创建的物理分表数：</p>
-<pre class="line-numbers language-formula"><code class="language-formula">物理分库上的物理分表数 = 向上取整(估算的总数据量 / (RDS 实例数 * 8) / 5,000,000)
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>因此，当计算出的物理分表数等于1时，分库即可，无需再进一步分表，即每个物理分库上一个物理分表；若计算结果大于1，则建议既分库又分表，即每个物理分库上多个物理分表。</p>
-<pre class="line-numbers language-example"><code class="language-example"># 例如，某用户预估一张表在2年后的总数据量大概是1亿行，有4个 RDS 实例，那么按照上述公式计算：
+) dbpartition by hash(userid) tbpartition by week(actiondate) tbpartitions 7;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="如何选择分片数">如何选择分片数</h2><ul><li>DRDS中的水平拆分有两个层次：分库和分表。</li><li>每个 <code>RDS</code> 实例上默认会创建8个物理分库，每个物理分库上可以创建一个或多个物理分表。</li><li>分表数通常也被称为分片数。</li></ul><p>一般情况下，建议单个物理分表的容量不超过500万行数据。通常可以预估1到2年的数据增长量，用估算出的总数据量除以总的物理分库数，再除以建议的最大数据量500万，即可得出每个物理分库上需要创建的物理分表数：</p><pre class="line-numbers language-formula" data-language="formula"><code class="language-formula">物理分库上的物理分表数 = 向上取整(估算的总数据量 / (RDS 实例数 * 8) / 5,000,000)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>因此，当计算出的物理分表数等于1时，分库即可，无需再进一步分表，即每个物理分库上一个物理分表；若计算结果大于1，则建议既分库又分表，即每个物理分库上多个物理分表。</p><pre class="line-numbers language-example" data-language="example"><code class="language-example"># 例如，某用户预估一张表在2年后的总数据量大概是1亿行，有4个 RDS 实例，那么按照上述公式计算：
 # 结果为1，那么只分库即可，即每个物理分库上1个物理分表。
 物理分库上的物理分表数 = CEILING(100,000,000 / ( 4 * 8 ) / 5,000,000) = CEILING(0.625) = 1
 
 # 若上述例子中仅有1个 RDS 实例，那么按照上述公式计算：
 # 结果为3，那么建议既分库又分表，即每个物理分库上3个物理分表。
-物理分库上的物理分表数 = CEILING(100,000,000 / ( 1 * 8 ) / 5,000,000) = CEILING(2.5) = 3
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="DRDS中的SQL优化"><a href="#DRDS中的SQL优化" class="headerlink" title="DRDS中的SQL优化"></a>DRDS中的SQL优化</h2><h3 id="查看统计信息"><a href="#查看统计信息" class="headerlink" title="查看统计信息"></a>查看统计信息</h3><pre class="line-numbers language-SQL"><code class="language-SQL">-- 查看整体的统计信息，这些信息都是瞬时值
+物理分库上的物理分表数 = CEILING(100,000,000 / ( 1 * 8 ) / 5,000,000) = CEILING(2.5) = 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="drds中的sql优化">DRDS中的SQL优化</h2><h3 id="查看统计信息">查看统计信息</h3><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">-- 查看整体的统计信息，这些信息都是瞬时值
 show stats;
 show full stats;
 
@@ -542,30 +160,19 @@ show full db status like xxx_db;
 
 -- 获取表的信息，该指令聚合了底层各个物理分表的数据
 show table status like 'xxx_tb%';
-/!TDDL:SCAN='xxx_db'*/show table status like 'xxx_tb%';
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="查看执行计划"><a href="#查看执行计划" class="headerlink" title="查看执行计划"></a>查看执行计划</h3><p>DRDS执行计划分为两个层次，DRDS层的执行计划与 RDS/MySQL 层的执行计划。对执行计划的分析是进行 SQL 优化的有效方法，可以了解 DRDS 或 RDS/MySQL 是否对 SQL 语句生成了最优化的执行计划，是否有优化的空间等，从而为 SQL 优化提供重要的参考信息。</p>
-<pre class="line-numbers language-SQL"><code class="language-SQL"># 查看 DRDS 层 SQL 语句的概要执行计划，包括执行的分库、物理语句和整体参数。
+/!TDDL:SCAN='xxx_db'*/show table status like 'xxx_tb%';<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="查看执行计划">查看执行计划</h3><p>DRDS执行计划分为两个层次，DRDS层的执行计划与 RDS/MySQL 层的执行计划。对执行计划的分析是进行 SQL 优化的有效方法，可以了解 DRDS 或 RDS/MySQL 是否对 SQL 语句生成了最优化的执行计划，是否有优化的空间等，从而为 SQL 优化提供重要的参考信息。</p><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL"># 查看 DRDS 层 SQL 语句的概要执行计划，包括执行的分库、物理语句和整体参数。
 explain select * from xxx_table limit 10;
 
 # 查看 DRDS 层 SQL 语句的详细执行计划，包括执行语句类型、并发度、返回字段信息、物理表和库分组等。
 explain detail select * from xxx_table limit 10;
 
 # 查看底层 RDS/MySQL 的执行计划，等同于 MySQL 的 EXPLAIN 语句。
-explain execute select * from xxx_table limit 10;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="TRACE指令"><a href="#TRACE指令" class="headerlink" title="TRACE指令"></a>TRACE指令</h3><ul>
-<li>TRACE 指令可以跟踪 SQL 的执行过程和各个阶段的执行开销，与执行计划相结合，更有助于对 SQL 进行优化。</li>
-<li>TRACE 指令包含两条相关的指令：TRACE 和 SHOW TRACE，需要在一起配合使用。</li>
-</ul>
-<pre class="line-numbers language-SQL"><code class="language-SQL"># TRACE命令会实际执行SQL，在执行过程中记录所有节点消耗的时间，并返回执行结果
+explain execute select * from xxx_table limit 10;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="trace指令">TRACE指令</h3><ul><li>TRACE 指令可以跟踪 SQL 的执行过程和各个阶段的执行开销，与执行计划相结合，更有助于对 SQL 进行优化。</li><li>TRACE 指令包含两条相关的指令：TRACE 和 SHOW TRACE，需要在一起配合使用。</li></ul><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL"># TRACE命令会实际执行SQL，在执行过程中记录所有节点消耗的时间，并返回执行结果
 trace select * from xxx_table limit 10;
 
 # TRACE指令执行完毕后，可以执行SHOW TRACE命令查看结果，根据每个组件的时间消耗来判断慢SQL的瓶颈。
 # 根据TIME_COST（单位毫秒）列可以判断哪个节点上的执行时间消耗大。
-show trace;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="查询慢SQL"><a href="#查询慢SQL" class="headerlink" title="查询慢SQL"></a>查询慢SQL</h3><pre class="line-numbers language-SQL"><code class="language-SQL"># SQL字符串匹配等方式来获取指定的慢SQL
+show trace;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="查询慢sql">查询慢SQL</h3><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL"># SQL字符串匹配等方式来获取指定的慢SQL
 show full slow where `SQL` like '%select sleep(50)%';
 
 # 根据逻辑慢SQL中获取到的TRACE_ID,获取这个SQL的物理执行情况
@@ -592,37 +199,7 @@ trace {SQL};
 show trace;
 
 # 检查该慢SQL语句在RDS for MySQL上的执行计划
-/!TDDL:node={GROUP_NAME}*/ EXPLAIN {SQL};
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="SQL优化的基本原则"><a href="#SQL优化的基本原则" class="headerlink" title="SQL优化的基本原则"></a>SQL优化的基本原则</h3><p>基本原则：尽量让更多的计算可下推到RDS for MySQL上执行。<br>    - JOIN连接；<br>    - 过滤条件，如WHERE或HAVING中的条件；<br>    - 聚合计算，如COUNT，GROUP BY等；<br>    - 排序，如ORDER BY；<br>    - 去重，如DISTINCT；<br>    - 函数计算，如NOW()函数等；<br>    - 子查询。</p>
-<ul>
-<li>尽量在 JOIN 条件或过滤条件中带上拆分键，避免全表扫描；</li>
-<li>拆分键的过滤条件的取值范围越小，越有助于提高的查询速度，等值过滤效率最高，如果拆分键的条件是 IN 条件，则 IN 后面的值的数目应尽可能少（需要远少于分片数，并且数目不会随业务的增长而增多）；</li>
-<li>如果 SQL 语句不带有拆分键，那么 DISTINCT、GROUP BY 和 ORDER BY 在同一个 SQL 语句中尽量只出现一种；</li>
-<li>尽可能早的减少查询的数据量，比如使用 LIMIT ，子查询中添加过滤条件等；</li>
-<li>如果在一条 SQL 查询中必须同时使用 DISTINCT、GROUP BY 与 ORDER BY，应尽可能保证 DISTINCT、GROUP BY 与 ORDER BY 语句后所带的字段相同，且尽量为拆分键，使最终的 SQL 查询只返回少量数据；</li>
-<li>在进行 JOIN 操作时，尽可能早的过滤掉不需要的数据后再进行关联，把小表作为驱动表（将 JOIN 中的左表称为驱动表），且让驱动表带有尽可能多的过滤条件；</li>
-</ul>
-<h2 id="如何处理DDL异常"><a href="#如何处理DDL异常" class="headerlink" title="如何处理DDL异常"></a>如何处理DDL异常</h2><h3 id="失败的情况"><a href="#失败的情况" class="headerlink" title="失败的情况"></a>失败的情况</h3><ul>
-<li>DDL在分库执行失败，DDL 在任意分库执行出错都可能导致各分表结构不一致</li>
-<li>执行长时间无响应。在对大表执行 DDL 操作时，有可能由于分库的执行时间过长导致 DDL 长时间无响应。</li>
-</ul>
-<p>判断 DDL 操作是 In-place 还是 Copy Table 操作，可以查看操作结束后 “rows affected” 这一项的返回值，一个非0的值意味着该操作需要重建整张表，这时可能需要考虑在流量低谷去执行该操作。</p>
-<p>执行一个大表 DDL 操作前，可以先通过以下步骤判定这是一个快速或慢速操作：</p>
-<ul>
-<li>1.复制表结构生成一张克隆表；</li>
-<li>2.插入一些数据</li>
-<li>3.在克隆表上执行这个 DDL 操作</li>
-<li>4.检查操作完成后 “rows affected” 值是否是0。一个非0的值意味着该操作需要重建整张表，这时可能需要考虑在流量低谷去执行该操作。</li>
-</ul>
-<h3 id="失败的处理"><a href="#失败的处理" class="headerlink" title="失败的处理"></a>失败的处理</h3><ul>
-<li>1.使用 CHECK TABLE 指令检查表结构。如果返回结果只有一行且为状态正常则可认为表状态一致。此时进行步骤2，否则进行步骤3；</li>
-<li>2.使用 SHOW CREATE TABLE 指令检查表结构。如果显示的表结构符合 DDL 执行后的预期则可认为 DDL 执行成功，否则继续进行步骤3；</li>
-<li>3.使用 SHOW PROCESSLIST 指令观察所有当前执行的 SQL 状态。如有仍在执行的 DDL 操作，请等候其执行完成后再进行步骤1、2，检查表结构是否符合预期，否则进行步骤4；</li>
-<li>4.重新执行 DDL 操作。如果出现 Lock conflict 的报错请进行步骤5，否则进行步骤3；</li>
-<li>5.使用 RELEASE DBLOCK 指令释放 DDL 操作锁，然后进行步骤4。</li>
-</ul>
-<pre class="line-numbers language-SQL"><code class="language-SQL"># 使用 CHECK TABLE 指令检查表结构，当返回结果只有一行且显示状态 OK 时，表明表结构一致
+/!TDDL:node={GROUP_NAME}*/ EXPLAIN {SQL};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="sql优化的基本原则">SQL优化的基本原则</h3><p>基本原则：尽量让更多的计算可下推到RDS for MySQL上执行。 - JOIN连接； - 过滤条件，如WHERE或HAVING中的条件； - 聚合计算，如COUNT，GROUP BY等； - 排序，如ORDER BY； - 去重，如DISTINCT； - 函数计算，如NOW()函数等； - 子查询。</p><ul><li>尽量在 JOIN 条件或过滤条件中带上拆分键，避免全表扫描；</li><li>拆分键的过滤条件的取值范围越小，越有助于提高的查询速度，等值过滤效率最高，如果拆分键的条件是 IN 条件，则 IN 后面的值的数目应尽可能少（需要远少于分片数，并且数目不会随业务的增长而增多）；</li><li>如果 SQL 语句不带有拆分键，那么 DISTINCT、GROUP BY 和 ORDER BY 在同一个 SQL 语句中尽量只出现一种；</li><li>尽可能早的减少查询的数据量，比如使用 LIMIT ，子查询中添加过滤条件等；</li><li>如果在一条 SQL 查询中必须同时使用 DISTINCT、GROUP BY 与 ORDER BY，应尽可能保证 DISTINCT、GROUP BY 与 ORDER BY 语句后所带的字段相同，且尽量为拆分键，使最终的 SQL 查询只返回少量数据；</li><li>在进行 JOIN 操作时，尽可能早的过滤掉不需要的数据后再进行关联，把小表作为驱动表（将 JOIN 中的左表称为驱动表），且让驱动表带有尽可能多的过滤条件；</li></ul><h2 id="如何处理ddl异常">如何处理DDL异常</h2><h3 id="失败的情况">失败的情况</h3><ul><li>DDL在分库执行失败，DDL 在任意分库执行出错都可能导致各分表结构不一致</li><li>执行长时间无响应。在对大表执行 DDL 操作时，有可能由于分库的执行时间过长导致 DDL 长时间无响应。</li></ul><p>判断 DDL 操作是 In-place 还是 Copy Table 操作，可以查看操作结束后 “rows affected” 这一项的返回值，一个非0的值意味着该操作需要重建整张表，这时可能需要考虑在流量低谷去执行该操作。</p><p>执行一个大表 DDL 操作前，可以先通过以下步骤判定这是一个快速或慢速操作：</p><ul><li>1.复制表结构生成一张克隆表；</li><li>2.插入一些数据</li><li>3.在克隆表上执行这个 DDL 操作</li><li>4.检查操作完成后 “rows affected” 值是否是0。一个非0的值意味着该操作需要重建整张表，这时可能需要考虑在流量低谷去执行该操作。</li></ul><h3 id="失败的处理">失败的处理</h3><ul><li>1.使用 CHECK TABLE 指令检查表结构。如果返回结果只有一行且为状态正常则可认为表状态一致。此时进行步骤2，否则进行步骤3；</li><li>2.使用 SHOW CREATE TABLE 指令检查表结构。如果显示的表结构符合 DDL 执行后的预期则可认为 DDL 执行成功，否则继续进行步骤3；</li><li>3.使用 SHOW PROCESSLIST 指令观察所有当前执行的 SQL 状态。如有仍在执行的 DDL 操作，请等候其执行完成后再进行步骤1、2，检查表结构是否符合预期，否则进行步骤4；</li><li>4.重新执行 DDL 操作。如果出现 Lock conflict 的报错请进行步骤5，否则进行步骤3；</li><li>5.使用 RELEASE DBLOCK 指令释放 DDL 操作锁，然后进行步骤4。</li></ul><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL"># 使用 CHECK TABLE 指令检查表结构，当返回结果只有一行且显示状态 OK 时，表明表结构一致
 check table xxxx;
 
 # 检查表结构
@@ -644,63 +221,7 @@ kill 'ALL';
 Lock conflict , maybe last DDL is still running
 
 # 取消及锁释放
-release dblock;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="实例性能瓶颈判断"><a href="#实例性能瓶颈判断" class="headerlink" title="实例性能瓶颈判断"></a>实例性能瓶颈判断</h2><p>数据库性能主要可以从响应时间（RT）和容量（QPS）两个指标进行衡量。RT指标反映的是单个SQL的性能，这类性能问题可以通过SQL优化等方法进行解决。通过扩充容<br>量来提升性能，适用于低延时高QPS类型的数据库访问业务。</p>
-<ul>
-<li>CPU和IOPS利用率超出90%或持续超出80%，则意味着当前实例性能出现瓶颈；</li>
-<li>RDS的磁盘空间存储容量的余量建议保持在30%以上；</li>
-</ul>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
-<li><a href="https://help.aliyun.com/document_detail/29666.html" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/29666.html</a></li>
-</ul>
-
-                
-            </div>
-            <hr/>
-
-            
-
-    <div class="reprint" id="reprint-statement">
-        
-            <div class="reprint__author">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-user">
-                        文章作者:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">darebeat</a>
-                </span>
-            </div>
-            <div class="reprint__type">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-link">
-                        文章链接:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="https://www.darebeat.cn/article/73/">https://www.darebeat.cn/article/73/</a>
-                </span>
-            </div>
-            <div class="reprint__notice">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-copyright">
-                        版权声明:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
-                    <a href="/about" target="_blank">darebeat</a>
-                    !
-                </span>
-            </div>
-        
-    </div>
-
-    <script async defer>
+release dblock;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="实例性能瓶颈判断">实例性能瓶颈判断</h2><p>数据库性能主要可以从响应时间（RT）和容量（QPS）两个指标进行衡量。RT指标反映的是单个SQL的性能，这类性能问题可以通过SQL优化等方法进行解决。通过扩充容 量来提升性能，适用于低延时高QPS类型的数据库访问业务。</p><ul><li>CPU和IOPS利用率超出90%或持续超出80%，则意味着当前实例性能出现瓶颈；</li><li>RDS的磁盘空间存储容量的余量建议保持在30%以上；</li></ul><h2 id="参考资料">参考资料</h2><ul><li>https://help.aliyun.com/document_detail/29666.html</li></ul></div><hr/><div class="reprint" id="reprint-statement"><div class="reprint__author"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">darebeat</a></span></div><div class="reprint__type"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://www.darebeat.cn/article/73/">https://www.darebeat.cn/article/73/</a></span></div><div class="reprint__notice"> <span class="reprint-meta" style="font-weight: bold;"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">darebeat</a> !</span></div></div><script async defer>
       document.addEventListener("copy", function (e) {
         let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML});
@@ -709,47 +230,7 @@ release dblock;
       function navToReprintStatement() {
         $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
       }
-    </script>
-
-
-
-            <div class="tag_share" style="display: block;">
-                <div class="post-meta__tag-list" style="display: inline-block;">
-                    
-                        <div class="article-tag">
-                            
-                                <a href="/tags/database/">
-                                    <span class="chip bg-color">database</span>
-                                </a>
-                            
-                                <a href="/tags/mysql/">
-                                    <span class="chip bg-color">mysql</span>
-                                </a>
-                            
-                                <a href="/tags/drds/">
-                                    <span class="chip bg-color">drds</span>
-                                </a>
-                            
-                        </div>
-                    
-                </div>
-                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-<div id="article-share">
-
-    
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
-    
-
-    
-
-</div>
-
-                </div>
-            </div>
-            
-                <style>
+    </script><div class="tag_share" style="display: block;"><div class="post-meta__tag-list" style="display: inline-block;"><div class="article-tag"> <a href="/tags/database/"><span class="chip bg-color">database</span></a> <a href="/tags/mysql/"><span class="chip bg-color">mysql</span></a> <a href="/tags/drds/"><span class="chip bg-color">drds</span></a></div></div><div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;"><link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css"><div id="article-share"><div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div><script src="/libs/share/js/social-share.min.js"></script></div></div></div><style>
     #reward {
         margin: 40px 0;
         text-align: center;
@@ -840,210 +321,11 @@ release dblock;
         width: 210px;
         height: 210px;
     }
-</style>
-
-<div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
-
-    <!-- Modal Structure -->
-    <div id="rewardModal" class="modal">
-        <div class="modal-content">
-            <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赞赏是我前进的动力！</h4>
-            <div class="reward-content">
-                <div class="reward-tabs">
-                    <ul class="tabs row">
-                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
-                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
-                    </ul>
-                    <div id="alipay">
-                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
-                    </div>
-                    <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
+</style><div id="reward"> <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fas fa-times"></i></a><h4 class="reward-title">你的赞赏是我前进的动力！</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"> <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"> <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>
     $(function () {
         $('.tabs').tabs();
     });
-</script>
-
-            
-        </div>
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-<article id="prenext-posts" class="prev-next articles">
-    <div class="row article-row">
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/article/74/">
-                    <div class="card-image">
-                        
-                        <img src="/images/card/0074.png" class="responsive-img" alt="Flink知识点总结">
-                        
-                        <span class="card-title">Flink知识点总结</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Flink是大数据领域下的分布式实时和离线计算引擎，每一个数据流起始于一个或多个source,并终止于一个或多个sink，数据流流向类似于一个有向无环图。
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-27
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/bigdata/" class="post-category">
-                                    bigdata
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/flink/">
-                        <span class="chip bg-color">flink</span>
-                    </a>
-                    
-                    <a href="/tags/realtime/">
-                        <span class="chip bg-color">realtime</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/article/72/">
-                    <div class="card-image">
-                        
-                        <img src="/images/card/0072.png" class="responsive-img" alt="ODPS-SQL优化总结">
-                        
-                        <span class="card-title">ODPS-SQL优化总结</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            在数据处理和数据分析过程中，SQL都是主流的数据处理工具。海量数据下的高效数据流转，是数据方向必须直面的一个挑战。
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-02
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/bigdata/" class="post-category">
-                                    bigdata
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/odps/">
-                        <span class="chip bg-color">odps</span>
-                    </a>
-                    
-                    <a href="/tags/SQL/">
-                        <span class="chip bg-color">SQL</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-    </div>
-</article>
-
-</div>
-
-
-
-<!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-
-<!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
-
-<!-- 代码块复制 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-
-
-<!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
-
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
+</script></div></div><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="fas fa-chevron-left"></i> &nbsp;上一篇</div><div class="card"><a href="/article/74/"><div class="card-image"> <img src="/images/card/0074.png" class="responsive-img" alt="Flink知识点总结"> <span class="card-title">Flink知识点总结</span></div></a><div class="card-content article-content"><div class="summary block-with-text"> Flink是大数据领域下的分布式实时和离线计算引擎，每一个数据流起始于一个或多个source,并终止于一个或多个sink，数据流流向类似于一个有向无环图。</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2022-12-27</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/bigdata/" class="post-category">bigdata</a></span></div></div><div class="card-action article-tags"> <a href="/tags/flink/"><span class="chip bg-color">flink</span></a> <a href="/tags/realtime/"><span class="chip bg-color">realtime</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color"> 下一篇&nbsp;<i class="fas fa-chevron-right"></i></div><div class="card"><a href="/article/72/"><div class="card-image"> <img src="/images/card/0072.png" class="responsive-img" alt="ODPS-SQL优化总结"> <span class="card-title">ODPS-SQL优化总结</span></div></a><div class="card-content article-content"><div class="summary block-with-text"> 在数据处理和数据分析过程中，SQL都是主流的数据处理工具。海量数据下的高效数据流转，是数据方向必须直面的一个挑战。</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2022-12-02</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/bigdata/" class="post-category">bigdata</a></span></div></div><div class="card-action article-tags"> <a href="/tags/odps/"><span class="chip bg-color">odps</span></a> <a href="/tags/SQL/"><span class="chip bg-color">SQL</span></a></div></div></div></div></article></div><script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script><script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script><script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script><script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget card" style="background-color: white;"><div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fas fa-list-ul"></i></a></div><script src="/libs/tocbot/tocbot.min.js"></script><script>
     $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
@@ -1116,47 +398,7 @@ release dblock;
         });
         
     });
-</script>
-
-    
-
-</main>
-
-
-
-
-    <footer class="page-footer bg-color">
-    
-    <div class="container row center-align" style="margin-bottom: 15px !important;">
-        <div class="col s12 m8 l8 copy-right">
-            Copyright&nbsp;&copy;
-            
-                <span id="year">2019-2025</span>
-            
-            &nbsp;|&nbsp;&nbsp;Powered&nbsp;by&nbsp;
-            <a href="/about" target="_blank">darebeat</a>
-            <br>
-            
-            
-            
-            
-            
-            
-            <span id="busuanzi_container_site_pv" style='display:none'>
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv" style='display:none'>
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
-            
-            <br>
-            
-            <span id="sitetime">载入运行时间...</span>
-            <script>
+</script></main><footer class="page-footer bg-color"><div class="container row center-align" style="margin-bottom: 15px !important;"><div class="col s12 m8 l8 copy-right"> Copyright&nbsp;&copy; <span id="year">2019-2025</span> &nbsp;|&nbsp;&nbsp;Powered&nbsp;by&nbsp; <a href="/about" target="_blank">darebeat</a><br> <span id="busuanzi_container_site_pv" style='display:none'>|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次</span> <span id="busuanzi_container_site_uv" style='display:none'>|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人</span><br> <span id="sitetime">载入运行时间...</span><script>
                 function siteTime() {
                     var seconds = 1000;
                     var minutes = seconds * 60;
@@ -1193,49 +435,7 @@ release dblock;
                     }
                 }
                 setInterval(siteTime, 1000);
-            </script>
-            
-            <br>
-            
-        </div>
-        <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/darebeat" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:darebeat@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=871731559" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 871731559" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
-</div>
-    </div>
-</footer>
-
-<div class="progress-bar"></div>
-
-<script>
+            </script><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/darebeat" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fab fa-github"></i></a><a href="mailto:darebeat@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=871731559" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 871731559" data-position="top" data-delay="50"><i class="fab fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><script>
     $(document).ready(function () {
         /* 50ms周期检测函数 */
         var int = setInterval(fixCount, 50);
@@ -1256,22 +456,7 @@ release dblock;
             }
         }
     });
-</script>
-
-
-    <!-- 搜索遮罩框 -->
-<div id="searchModal" class="modal">
-    <div class="modal-content">
-        <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" value="" placeholder="请输入搜索的关键字，比如:bigdata"
-                   class="search-input">
-        </div>
-        <div id="searchResult"></div>
-    </div>
-</div>
-
-<script type="text/javascript">
+</script><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i> &nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" value="" placeholder="请输入搜索的关键字，比如:bigdata" class="search-input"></div><div id="searchResult"></div></div></div><script type="text/javascript">
 $(function () {
     var searchFunc = function (path, search_id, content_id) {
         'use strict';
@@ -1361,28 +546,7 @@ $(function () {
 
     searchFunc('/search.xml', 'searchInput', 'searchResult');
 });
-</script>
-
-    <!-- 回到顶部按钮 -->
-<div id="backTop" class="top-scroll">
-    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-</div>
-
-
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.min.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
-
-    <!-- Baidu Analytics -->
-
-    <!-- Baidu Push -->
-
-<script>
+</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fas fa-arrow-up"></i></a></div><script src="/libs/materialize/materialize.min.js"></script><script src="/libs/masonry/masonry.pkgd.min.js"></script><script src="/libs/aos/aos.min.js"></script><script src="/libs/scrollprogress/scrollProgress.min.js"></script><script src="/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="/js/matery.js"></script><script>
     (function () {
         var bp = document.createElement('script');
         var curProtocol = window.location.protocol.split(':')[0];
@@ -1394,33 +558,4 @@ $(function () {
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(bp, s);
     })();
-</script>
-
-    
-    <script src="/libs/others/clicklove.min.js" async="async"></script>
-    
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
-
-    
-
-    
-
-	
-    
-
-    
-
-    
-
-    
-    <script src="/libs/instantpage/instantpage.min.js" type="module"></script>
-    
-
-    <!-- 雪花特效 -->
-    
-
-</body>
-
-</html>
+</script><script src="/libs/others/clicklove.min.js" async="async"></script><script async src="/libs/others/busuanzi.pure.mini.js"></script><script src="/libs/instantpage/instantpage.min.js" type="module"></script></body></html>
