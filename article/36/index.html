@@ -1,0 +1,1617 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="常见基本回测指标, darebeat">
+    <meta name="description" content="不恋过去，不畏将来，活在当下，行所当行，阻挡你前进的最大阻力永远是你自己！">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>常见基本回测指标 | darebeat</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="darebeat" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">darebeat</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img" alt="LOGO">
+        
+        <div class="logo-name">darebeat</div>
+        <div class="logo-desc">
+            
+            不恋过去，不畏将来，活在当下，行所当行，阻挡你前进的最大阻力永远是你自己！
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/darebeat" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/darebeat" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/card/0036.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">常见基本回测指标</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.min.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/algorithm/">
+                                <span class="chip bg-color">algorithm</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%9B%9E%E6%B5%8B%E6%8C%87%E6%A0%87/">
+                                <span class="chip bg-color">回测指标</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/algorithm/" class="post-category">
+                                algorithm
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-12-16
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7.4k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="1-年化收益率"><a href="#1-年化收益率" class="headerlink" title="1 年化收益率"></a>1 年化收益率</h2><p>年化收益率是把当前收益率(日收益率、周收益率、月收益率)换算成年收益率来计算的,是一种理论收益率,并不是真正的已取得的收益率.例如日收益率是万分之一,则年化收益率是3.65﹪(平年是365天).因为年化收益率是变动的,所以年收益率不一定和年化收益率相同.</p>
+<pre class="line-numbers language-txt"><code class="language-txt">年收益率:一笔投资一年实际收益的比率.
+年化收益率:投资(货币基金常用)在一段时间内(比如7天)的收益,假定一年都是这个水平,折算的年收益率.
+
+年化收益率=[(投资内收益/本金)/投资天数]*有效投资时间*100%
+年化收益率(单利)=持有收益率/持有时间[年]*100%
+年化收益率(复利)=[(1+持有收益率)^(1/持有时间[年])-1]*100%
+
+年化收益=本金×年化收益率
+实际收益=本金×年化收益率×投资天数/有效投资时间
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-1-有效投资时间"><a href="#1-1-有效投资时间" class="headerlink" title="1.1 有效投资时间"></a>1.1 有效投资时间</h3><p>有效投资时间<code>D</code>是随不同市场而变动的</p>
+<ul>
+<li>1.像银行存款、票据、债券等一般每年按<code>360</code>天(或很少情况下<code>365</code>天)计息,即<code>D=360</code>天.</li>
+<li>2.而股票、期货等公开交易市场,其有效投资时间便是一年的交易日数,扣除节假日后约为<code>250</code>日(每年<code>52</code>周,每周<code>5</code>个交易日,一年大约<code>10</code>天节假日: <code>52×5-10=250</code>)即<code>D=250</code>天.</li>
+<li>3.对于房地产、普通商业、实业等由于每天都可以买卖或开业,并不受节假日的影响,所以有效投资时间便是一年的自然日数,即<code>D=365</code>天.</li>
+<li>4.因闰年而导致的个别年份多一天等非常特殊的情况,由于其影响很小,自然可忽略不计</li>
+</ul>
+<h3 id="1-2-计算公式"><a href="#1-2-计算公式" class="headerlink" title="1.2 计算公式"></a>1.2 计算公式</h3><p>假设: </p>
+<ul>
+<li>(1)投资人投入本金<code>C</code>于市场,经过时间T后其市值变为<code>V</code>;</li>
+<li>(2)<code>D</code>表示一年的有效投资时间</li>
+</ul>
+<p>则该次投资中: </p>
+<pre class="line-numbers language-txt"><code class="language-txt">1.持有收益为: P=V-C
+2.持有收益率为: K=P/C=(V-C)/C=V/C-1
+3.年化收益率(单利: 一次性投资)为: 
+  (1).Y=(1+K)^N-1=(1+K)^(D/T)-1
+  (2).Y=(V/C)^N-1=(V/C)^(D/T)-1
+  其中 N=D/T 表示投资人一年内重复投资的次数
+4.年化收益率(复利: 连续多期投资)为: Y=(1+K)^N-1=(1+K)^(D/T)-1
+  其中: K=∏(Ki+1)-1, T=∑Ti
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-3-单利-一次性投资"><a href="#1-3-单利-一次性投资" class="headerlink" title="1.3 单利: 一次性投资"></a>1.3 单利: 一次性投资</h3><p>假设投资人在某一时刻投资了本金<code>C</code>于一个市场(比如股市),经过一段时间<code>T</code>后其市值变为<code>V</code>,</p>
+<p>则这段时间内投资人的收益(或亏损,如果<code>V&lt;C</code>的话)为<code>P=V-C</code>,</p>
+<p>其收益率(即绝对收益率,以下简称收益率)为<code>K=P/C=(V-C)/C=V/C-1</code>,</p>
+<p>而假设一年的所有有效投资时间为<code>D</code>,</p>
+<p>则投资人可在一年内重复投资的次数为<code>N=D/T</code>,</p>
+<p>那么该次投资的年化收益率便可表示为: <code>Y=(1+K)^N-1=(1+K)^(D/T)-1</code>或<code>Y=(V/C)^N-1=(V/C)^(D/T)-1</code>.</p>
+<ul>
+<li><p>栗子1: </p>
+<p>假设投资者甲投资1万元(<code>C=1</code>万元),经过一个月后市值增长为1.1万元(<code>V=1.1</code>万元),</p>
+<p>则其收益为<code>P=V-C=0.1</code>万元,即赚了<code>1000</code>元.</p>
+<p>那么其该次投资的收益率为<code>K=P/C=10%</code>,</p>
+<p>由于一年有<code>12</code>个月即一年可以重复进行<code>12</code>次(<code>N=D/T=12</code>),</p>
+<p>同样的投资,所以其年化收益率为<code>Y=(1+K)^12-1=1.1^12-1≈213.84%</code>.即一个月赚<code>10%</code>相当于一年变成<code>2.1384</code>倍,投资者甲反复如此投资的话,1万元本金一年后可以增值到<code>31384</code>元.</p>
+<p>反之,如果很不幸该投资人一个月亏掉了<code>1000</code>元,</p>
+<p>那么该次投资的净收益为<code>P=-0.1</code>万元,收益率为<code>K=P/C=-10%</code>,</p>
+<p>年化收益率为<code>Y=(1+K)^12-1=0.9^12-1≈-71.76%</code>.</p>
+<p>也就是说投资人每个月都亏<code>10%</code>的话,一年后将亏掉本金的<code>71.76%</code>,到年底其1万元本金便只剩<code>2824</code>元了.</p>
+</li>
+<li><p>栗子2:</p>
+<p>假如投资者乙做长线,<code>28</code>月赚了<code>3.6</code>倍,即最初投资的本金<code>1</code>万元两年零4个月后增值到<code>4.6</code>万元.这里该次投资的投资时间为<code>T=28</code>月,</p>
+<p>所以其每年可以重复投资的次数为<code>N=D/T=12/28</code>.</p>
+<p>其该次投资的收益率为<code>K=360%</code>,</p>
+<p>而年化收益率为<code>Y=(1+K)^N-1=4.6^(12/28)-1≈92.33%</code>,也就是接近于每年翻番.</p>
+</li>
+<li><p>栗子3:</p>
+<p>假如投资者乙第二次的长线投资是<code>35</code>个月亏损了<code>68%</code>,即最初投资的1万元本金<code>2</code>年另<code>11</code>个月后只剩下<code>3200</code>元.</p>
+<p>那么其本次投资的时间为<code>T=35</code>月,<code>N=D/T=12/35</code>,</p>
+<p>而收益率<code>K=-68%</code>,</p>
+<p>则年化收益率<code>Y=(1+K)^N-1=0.32^(12/35)-1≈-32.34%</code>,即接近于每年亏损<code>1/3</code>.</p>
+</li>
+<li><p>栗子4:</p>
+<p>再看一个超长期的投资者丙,假设他投资1万元买入的股票<code>26</code>年后增值了<code>159</code>倍至<code>160</code>万元.</p>
+<p>那么其该次投资中<code>T=26</code>年,<code>N=D/T=1/26</code>,</p>
+<p>收益率<code>K=15900%</code>,</p>
+<p>而年化收益率<code>Y=(1+K)^N-1=160^(1/26)-1=21.55%</code>,也就是说其投资水平与另一个一年赚<code>21.55%</code>的投资者相当.</p>
+</li>
+<li><p>栗子5:</p>
+<p>假设投资者丙最初买入的另一只股票<code>18.3</code>年后只剩下<code>5%</code>,即一万元本金亏损到只剩<code>500</code>元,</p>
+<p>那么该次投资中<code>T=18.3</code>年,<code>N=D/T=1/18.3</code>,</p>
+<p>收益率<code>K=-95%</code>,</p>
+<p>而年化收益率则为: <code>Y=(1+K)^N-1=0.05^(1/18.3)-1≈-15.1%</code>.即相当于每年亏损了本金的<code>15.1%</code>.</p>
+</li>
+<li><p>栗子6:</p>
+<p>假如投资者丁在权证或期货等市场上做交易,每天可做多次<code>T+0</code>交易,假设该市场一天交易<code>4</code>小时,</p>
+<p>一年的有效交易时间为<code>D=250日×4小时/天×60分钟/小时=60000分钟</code>.</p>
+<p>假设他某天某时某刻投资1万元开仓,15分钟后平仓赚了108元.</p>
+<p>那么该次交易中<code>T=15分钟</code>,<code>N=D/T=60000/15=4000</code>,</p>
+<p>收益率<code>K=108/10000=1.08%</code>,</p>
+<p>则年化收益率为<code>Y=(1+K)^N-1=1.0108^4000-1≈4.58×10^18</code>!</p>
+<p>既相当于一年赚458亿亿倍！由此可知,交易时间越短的话,即使单次收益的绝对收益很小,但年化收益率都非常非常大,往往变成一个天文数字！</p>
+<p>而假如他另一次交易中<code>37</code>分钟1万元本金亏损了<code>76</code>元的话,</p>
+<p>则该次<code>T=37分钟</code>,</p>
+<p><code>N=D/T=60000/37≈1621.62</code>,</p>
+<p>收益率<code>K=-0.76%</code>,</p>
+<p>故年化收益率为<code>Y=(1+K)^N-1=0.9924^1621.62-1≈0-1=-100%</code>.</p>
+</li>
+</ul>
+<h3 id="1-4-复利-连续多期投资"><a href="#1-4-复利-连续多期投资" class="headerlink" title="1.4 复利: 连续多期投资"></a>1.4 复利: 连续多期投资</h3><p>假设投资人用本金<code>C</code>开始,连续进行了<code>n</code>次投资,那么其第i次(<code>i=1～n</code>)投资的情况与上述的单次投资完全一样,</p>
+<p>具体可表示为: </p>
+<p>第<code>i</code>次投资的期初本金为<code>Ci</code>,</p>
+<p>期末市值为<code>Vi</code>,</p>
+<p>所耗时间为<code>Ti</code>,</p>
+<p>该次投资的净收益为<code>Pi=Vi-Ci</code>,</p>
+<p>其收益率为<code>Ki=Pi/Ci=(Vi-Ci)/Ci=Vi/Ci-1</code>.</p>
+<p>在没有追加或减少投资资金的情况下,显然每次投资的期末市值等于下一次投资的期初本金,即<code>Vi=Ci+1</code>.</p>
+<p>而第一次投资的本金为<code>C1=C</code>.全部<code>n</code>次投资完成后,其净收益<code>P</code>等于每次投资的收益总和即<code>P=∑Pi</code>,投资时间等于每次投资的时间总和即<code>T=∑Ti</code>,而投资收益<code>K=∏(Ki+1)-1</code>.</p>
+<p>然后将全部<code>n</code>次投资的结果看作一次投资,使用上面介绍的一次性投资的计算方法,即可简单地计算出该段时间全部n次投资的年化收益率.</p>
+<ul>
+<li><p>栗子1:</p>
+<p>假设投资人最初投资1万元本金,第1次3个月赚了<code>50%</code>,账户增值至<code>1.5</code>万元;</p>
+<p>紧接着第二次两个月亏损了<code>40%</code>账户缩水至<code>0.9</code>万元;</p>
+<p>然后马上第三次八个月赚了<code>120%</code>,账户增值至<code>1.98</code>万元.</p>
+<p>则总的来看,投资人最初的1万元经过<code>13</code>个月后增值至<code>1.98</code>万元,</p>
+<p>其净收益为<code>P=0.98</code>万元,</p>
+<p>收益率为<code>K=98%</code>,</p>
+<p>年化收益率为<code>Y=(1+K)^N-1=1.98^(12/13)-1≈87.87%</code>.</p>
+<p>请注意这里每一次的投资净收益分别为<code>0.5</code>万元,<code>-0.6</code>万元和<code>1.08</code>万元,其总收益即为三者之和<code>0.98</code>万元.</p>
+<p>与此同时,三次的收益率分别为<code>50%</code>,<code>-40%</code>和<code>120%</code>,其总的收益率为<code>K=∏(Ki+1)-1=1.5×0.6×2.2-1=98%</code>.</p>
+<p>也就是说在既不追加也不减少本金的情况下,将多次投资的总和全部看成一次投资来计算,其结果与单独计算每一次投资后再合成没有任何差别,当然相比之下前者就是非常简单的方法了.</p>
+</li>
+<li><p>栗子2: 上述例子中,如果三次投资并不是连续的,中间有资金空闲的情况</p>
+<p>假如说第一次卖出后空仓了<code>3.7</code>个月,期间收获税后利息<code>18.62</code>元,</p>
+<p>而第二次投资后在第三次投资前又空仓了<code>2.5</code>个月,期间收获税后利息<code>7.55</code>元,又该如何计算呢？！</p>
+<p>看起来很复杂,其实非常简单！完全可以把两次空仓当作另两次存银行赚取活期利息的投资,这样一来,加上上述的<code>3</code>次投资,不就变成了连续的<code>5</code>次投资了吗？</p>
+<p>总的来说,不就是1万元本金经过<code>19.2</code>个月(<code>13+3.7+2.5=19.2</code>)后增值到<code>19826.17</code>元吗？</p>
+<p>这样收益率<code>K=98.2617%</code>,</p>
+<p>而年化收益率<code>Y=(1+K)^N-1=1.982617^(12/19.2)-1≈53.38%</code></p>
+<p>其实即使中间没有利息,比如说将钱免息借给朋友一段时间再收回来,也都是一样的.总之,只要将一段考察时间内的总收益<code>K</code>和时间<code>T</code>带入公式<code>Y=(1+K)^N-1=(1+K)^(D/T)-1</code>即可.</p>
+</li>
+<li><p>栗子3: 在投资本金变动的情况下,又如何来计算呢？</p>
+<p>假如投资者进行开放式基金交易,受客户的申购或赎回影响其投资资金量每天不断地发生变动.</p>
+<p>这时候虽然最终的净收益必然也等于每一次的净收益之和,即<code>P=∑Pi</code>,</p>
+<p>投资时间等于连续每期投资的时间之和,即<code>T=∑Ti</code>.</p>
+<p>但由于不断追加或减少投资本金,造成每一次的期末市值并不等于下一次的期初本金,即<code>Vi≠Ci+1</code>.</p>
+<p>这种情况下,便有两种方法来计算年化收益率,第一种是几何平均的方法,即先计算连续每期的收益率<code>Ki</code>,再根据总的收益率<code>K=∏(Ki+1)-1</code>计算出总收益率<code>K</code>,再代入公式<code>Y=(1+K)^N-1=(1+K)^(D/T)-1</code>计算即可.</p>
+<p>在本金大幅度变动的情况下,这种办法可以做到公平而精确地考察和比较投资者的收益水平.</p>
+<p>而在本金变动幅度不是很大的情况下,直接采用期初的本金<code>C</code>和总的净收益<code>P</code>代入公式<code>Y=(V/C)^N-1=(V/C)^(D/T)-1</code>计算即可,其实质是将其简化为没有本金变动的情况.</p>
+</li>
+</ul>
+<pre class="line-numbers language-py"><code class="language-py">import pandas as pd
+import tushare as ts
+
+start_date='2020-01-01'
+end_date='2020-12-16'
+
+# http://tushare.org/trading.html#id2
+df=ts.get_hist_data('600519',start=start_date,end=end_date)
+rs=(df.head(1)['close'].values[0]/df.tail(1)['close'].values[0])**(250/df.shape[0])-1
+print('股票600519的年化收益率=%.2f%s' % (rs*100,'%'))
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-output"><code class="language-output">输出: 
+股票600519的年化收益率=69.11%
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="2-夏普比率"><a href="#2-夏普比率" class="headerlink" title="2 夏普比率"></a>2 夏普比率</h2><p>夏普比率(Sharpe Ratio),又被称为夏普指数 — 基金绩效评价标准化指标.夏普比率在现代投资理论的研究表明,风险的大小在决定组合的表现上具有基础性的作用.风险调整后的收益率就是一个可以同时对收益与风险加以考虑的综合指标,长期能够排除风险因素对绩效评估的不利影响.夏普比率就是一个可以同时对收益与风险加以综合考虑的三大经典指标之一. 投资中有一个常规的特点,即投资标的的预期报酬越高,投资人所能忍受的波动风险越高;反之,预期报酬越低,波动风险也越低.所以理性的投资人选择投资标的与投资组合的主要目的为: 在固定所能承受的风险下,追求最大的报酬;或在固定的预期报酬下,追求最低的风险.</p>
+<h3 id="2-1-核心思想"><a href="#2-1-核心思想" class="headerlink" title="2.1 核心思想"></a>2.1 核心思想</h3><p>夏普指数代表投资人每多承担一分风险,可以拿到几分超额报酬;若大于1,代表基金报酬率高过波动风险;若为小于1,代表基金操作风险大过于报酬率.这样一来,每个投资组合都可以计算<code>Sharpe Ratio</code>,即投资回报与多冒风险的比例,这个比例越高,投资组合越佳.</p>
+<ul>
+<li>代表投资人每多承担一分风险,可以拿到几分报酬,单位风险所获得的超额回报率</li>
+<li>该比率越高,策略承担单位风险得到的超额回报率越高</li>
+</ul>
+<h3 id="2-2-计算公式"><a href="#2-2-计算公式" class="headerlink" title="2.2 计算公式"></a>2.2 计算公式</h3><pre class="line-numbers language-txt"><code class="language-txt">夏普比率=(投资组合预期报酬率-无风险利率)/投资组合超额报酬率的标准差
+
+SharpeRatio=(E(Rp)-Rf)/σp
+# E(Rp): 投资组合预期报酬率
+# Rf: 无风险利率
+# σp: 投资组合超额报酬率的标准差
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-3-举个栗子"><a href="#2-3-举个栗子" class="headerlink" title="2.3 举个栗子"></a>2.3 举个栗子</h3><p>假如国债的回报是3%,而您的投资组合预期回报是<code>15%</code>,您的投资组合的标准偏差是<code>6%</code>,那么用<code>15%－3%</code>,可以得出<code>12%</code>(代表您超出无风险投资的回报),再用<code>12%/6%=2</code>,代表投资者风险每增长<code>1%</code>,换来的是<code>2%</code>的多余收益.</p>
+<pre class="line-numbers language-py"><code class="language-py">import pandas as pd
+import numpy as np
+
+year_list=[]
+month_list=[]
+rtn_list=[]
+
+# 生成对数收益率,以半年为周期
+for year in range(2006,2017):
+  for month in [6,12]:
+    year_list.append(year)
+    month_list.append(month)
+    rtn=round((-1)**(month/6)*(month/6/10),3)+(np.random.random()-0.5)*0.1
+    rtn_list.append(rtn)
+
+# 生成半年为周期的收益率df
+df=pd.DataFrame()
+df['year']=year_list
+df['month']=month_list
+df['rtn']=rtn_list
+
+# 计算其夏普比率: 
+# 这组收益率是对数收益率,从2006年到2016年,以半年为频率,总共22个数据点
+round(df['rtn'].mean()/df['rtn'].std()*np.sqrt(2),3)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-output"><code class="language-output">输出
+0.405
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="2-4-注意问题"><a href="#2-4-注意问题" class="headerlink" title="2.4 注意问题"></a>2.4 注意问题</h3><p>在具体运用中仍需要对夏普比率的适用性加以注意: </p>
+<ul>
+<li>1.用标准差对收益进行风险调整,其隐含的假设就是所考察的组合构成了投资者投资的全部.因此只有在考虑在众多的基金中选择购买某一只基金时,夏普比率才能够作为一项重要的依据;</li>
+<li>2.使用标准差作为风险指标也被人们认为不是很合适的.</li>
+<li>3.夏普比率的有效性还依赖于可以以相同的无风险利率借贷的假设;</li>
+<li>4.夏普比率没有基准点,因此其大小本身没有意义,只有在与其他组合的比较中才有价值;</li>
+<li>5.夏普比率是线性的,但在有效前沿上,风险与收益之间的变换并不是线性的.因此,夏普指数在对标准差较大的基金的绩效衡量上存在偏差;</li>
+<li>6.夏普比率未考虑组合之间的相关性,因此纯粹依据夏普值的大小构建组合存在很大问题;</li>
+<li>7.夏普比率与其他很多指标一样,衡量的是基金的历史表现,因此并不能简单地依据基金的历史表现进行未来操作.</li>
+<li>8.计算上,夏普指数同样存在一个稳定性问题: 夏普指数的计算结果与时间跨度和收益计算的时间间隔的选取有关.</li>
+</ul>
+<p>尽管夏普比率存在上述诸多限制和问题,但它仍以其计算上的简便性和不需要过多的假设条件而在实践中获得了广泛的运用.</p>
+<h2 id="3-最大回撤率"><a href="#3-最大回撤率" class="headerlink" title="3 最大回撤率"></a>3 最大回撤率</h2><p>最大回撤率: 在选定周期内任一历史时点往后推,产品净值走到最低点时的收益率回撤幅度的最大值.最大回撤用来描述买入产品后可能出现的最糟糕的情况.最大回撤是一个重要的风险指标,对于对冲基金和数量化策略交易,该指标比波动率还重要,最大回撤是越低越好.</p>
+<div><img src="/images/article/0036-001.jpeg" style="width:100%;"></div><br>
+
+<h3 id="3-1-具体表现"><a href="#3-1-具体表现" class="headerlink" title="3.1 具体表现"></a>3.1 具体表现</h3><p>1.回撤用来衡量该私募产品的抗风险能力</p>
+<p>  2010年7月20日初始净值1;恰逢2010年10月美国推出QE2全球股市大涨,该基金净值增长到1.8;其后国内股市剧烈震荡,截止2011年4月25,该基金净值为0.98.假设投资者在最高峰时期认购,半年后在最低潮时期赎回,亏损45.5%.此就是最大回撤率给高位追买的投资者的指示意义</p>
+<p>2.回撤用来描述任一投资者可能面临的最大亏损</p>
+<p>  一个基金产品用历史绝对收益衡量,它的初始认购者一直持有或许是赚钱的,但是在该私募基金表现最优异时候认购的投资者却不一定赚钱,还甚至有可能巨亏.</p>
+<p>  比如：一个基金产品成立于2008年11月上证指数<code>1700</code>点初始净值为<code>1</code>,在2009年8月上证指数上涨到<code>3400</code>点时,净值达到<code>2.1</code>,为投资者带来<code>110%</code>回报.在2009-2012持续3年下跌市道中,该基金净值下降到<code>1.2</code>.单从业绩来看,基金依然为投资者创造<code>20%</code>收益,可是若是在2009年8月认购的投资者则亏损幅度达<code>42.8%</code>,而这<code>42.8%</code>就是该基金的最大回撤率.</p>
+<h3 id="3-2-计算公式"><a href="#3-2-计算公式" class="headerlink" title="3.2 计算公式"></a>3.2 计算公式</h3><p><code>D</code>为某一天的净值,<code>i</code>为某一天,<code>j</code>为<code>i</code>后的某一天,<code>Di</code>为第<code>i</code>天的产品净值,<code>Dj</code>则是<code>Di</code>后面某一天的净值</p>
+<p><code>drawdown=max((Di-Dj)/Di)</code></p>
+<h3 id="3-3-举个栗子"><a href="#3-3-举个栗子" class="headerlink" title="3.3 举个栗子"></a>3.3 举个栗子</h3><pre class="line-numbers language-py"><code class="language-py">import pandas as pd
+import tushare as ts
+
+start_date='2020-01-01'
+end_date='2020-12-16'
+
+def get_max_drawdown(code,start=start_date,end=end_date):  
+  df=ts.get_hist_data(code,start=start,end=end)  
+  hf=df['close'].max()  
+  df['dropdown']=(1-df['close']/hf)  
+  max_d=df['dropdown'].max()  
+  print('max dropdown of %s is %.2f%s' % (code,max_d*100,'%'))
+
+get_max_drawdown('002049')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-output"><code class="language-output">输出: 
+max dropdown of 002049 is 68.04%
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="4-贝塔比率-Beta-x2F-β"><a href="#4-贝塔比率-Beta-x2F-β" class="headerlink" title="4 贝塔比率(Beta/β)"></a>4 贝塔比率(Beta/β)</h2><p>β系数也称为贝塔系数(Beta coefficient),是一种风险指数,用来衡量个别股票或股票基金相对于整个股市的价格波动情况.β系数是一种评估证券系统性风险的工具,用以度量一种证券或一个投资证券组合相对总体市场的波动性,在股票、基金等投资术语中常见.</p>
+<ul>
+<li>相当于业绩评价基准收益的总体波动性</li>
+<li>衡量策略的系统性风险:<br>如果Beta为1,策略和市场(参照沪深300指数)同进退<br>如果Beta为1.1,市场上涨10%时,策略上涨11%;市场下滑10%时,策略下滑11%.<br>如果Beta为0.9,市场上涨10%时,策略上涨9%;市场下滑10%时,策略下滑9%.</li>
+</ul>
+<p>那么问题来了, Beta值到底是大好还是小好呢？</p>
+<p>这得具体问题具体分析,如果是牛市,股市兴兴向荣,个股、大盘狂涨,那就要选择Beta值大的策略;</p>
+<p>如果是熊市,经济下行压力大,就应该选择Beta值小的策略,这样就可以比较好的控制风险,确保资金的安全.</p>
+<h3 id="4-1-方法概述"><a href="#4-1-方法概述" class="headerlink" title="4.1 方法概述"></a>4.1 方法概述</h3><p>当前,从研究范式的特征和视角来划分,股票投资分析方法主要有如下三种：</p>
+<ul>
+<li>基本分析</li>
+<li>技术分析</li>
+<li>演化分析</li>
+</ul>
+<p>这三种分析方法所依赖的理论基础、前提假设、研究范式、应用范围各不相同,在实际应用中它们既相互联系,又有重要区别.</p>
+<p>其中基本分析属于一般经济学范式,技术分析属于数理或牛顿范式,演化分析属于生物学或达尔文范式;</p>
+<p>基本分析主要应用于投资标的物的选择上,技术分析和演化分析则主要应用于具体操作的时机和空间判断上,作为提高股票投资分析有效性和可靠性的重要手段.</p>
+<p>在评估股市波动风险与投资机会的方法中,贝塔系数是衡量结构性与系统性风险的重要参考指标之一,其真实含义就是个别资产及其组合(个股波动),相对于整体资产(大盘波动)的偏离程度.</p>
+<h3 id="4-2-基本定义"><a href="#4-2-基本定义" class="headerlink" title="4.2 基本定义"></a>4.2 基本定义</h3><p>贝塔系数是统计学上的概念,它所反映的是某一投资对象相对于大盘的表现情况.</p>
+<p>其绝对值越大,显示其收益变化幅度相对于大盘的变化幅度越大;</p>
+<p>绝对值越小,显示其变化幅度相对于大盘越小.</p>
+<p>如果是负值,则显示其变化的方向与大盘的变化方向相反;大盘涨的时候它跌,大盘跌的时候它涨.</p>
+<p>由于我们投资于投资基金是为了取得专家理财的服务,以取得优于被动投资于大盘的表现情况,这一指标可以作为考察基金经理降低投资波动性风险的能力.</p>
+<p>在计算贝塔系数时,除了基金的表现数据外,还需要有作为反映大盘表现的指标.</p>
+<p>根据投资理论,全体市场本身的β系数为1,若基金投资组合净值的波动大于全体市场的波动幅度,则β系数大于1.</p>
+<p>反之,若基金投资组合净值的波动小于全体市场的波动幅度,则β系数就小于1.</p>
+<p><code>β</code>系数越大于证券,通常是投机性较强的证券.</p>
+<p>以美国为例,通常以标准普尔五百企业指数(S&amp;P 500)代表股市,贝塔系数为1.</p>
+<p>一个共同基金的贝塔系数如果是<code>1.10</code>,表示其波动是股市的<code>1.10</code> 倍,亦即上涨时比市场表现优10%,而下跌时则更差10%;</p>
+<p>若贝塔系数为<code>0.5</code>,则波动情况只及一半.</p>
+<p><code>β=0.5</code>为低风险股票,</p>
+<p><code>β=1.0</code>表示为平均风险股票,</p>
+<p><code>β=2.0</code> → 高风险股票,</p>
+<p>大多数股票的β系数介于<code>0.5</code>到<code>1.5</code>间.</p>
+<p>贝塔系数衡量股票收益相对于业绩评价基准收益的总体波动性,是一个相对指标. </p>
+<p><code>β</code>越高,意味着股票相对于业绩评价基准的波动性越大.</p>
+<p><code>β</code>大于<code>1</code>,则股票的波动性大于业绩评价基准的波动性.反之亦然.</p>
+<p><code>β</code>为<code>1</code>,则市场上涨<code>10%</code>,股票上涨<code>10%</code>;</p>
+<p>市场下滑<code>10%</code>,股票相应下滑<code>10%</code>.</p>
+<p>如果<code>β</code>为<code>1.1</code>,市场上涨<code>10%</code>时,股票上涨<code>11%</code>;市场下滑<code>10%</code>时,股票下滑<code>11%</code>.</p>
+<p>如果<code>β</code>为<code>0.9</code>,市场上涨<code>10%</code>时,股票上涨<code>9%</code>;市场下滑<code>10%</code>时,股票下滑<code>9%</code>.</p>
+<p>Beta系数起源于资本资产定价模型(CAPM模型),它的真实含义就是特定资产(或资产组合)的系统风险度量.</p>
+<p>所谓系统风险,是指资产受宏观经济、市场情绪等整体性因素影响而发生的价格波动,换句话说,就是股票与大盘之间的联动性,系统风险比例越高,联动性越强.</p>
+<p>与系统风险相对的就是个别风险,即由公司自身因素所导致的价格波动.</p>
+<pre class="line-numbers language-txt"><code class="language-txt">总风险=系统风险+个别风险
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>而Beta则体现了特定资产的价格对整体经济波动的敏感性,即市场组合价值变动1个百分点,该资产的价值变动了几个百分点</p>
+<p>或者用更通俗的说法:大盘上涨1个百分点,该股票的价格变动了几个百分点.</p>
+<p>用公式表示就是：</p>
+<pre class="line-numbers language-txt"><code class="language-txt">实际中,一般用单个股票资产的历史收益率对同期指数(大盘)收益率进行回归,回归系数就是Beta系数.
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="4-3-计算方式"><a href="#4-3-计算方式" class="headerlink" title="4.3 计算方式"></a>4.3 计算方式</h3><pre class="line-numbers language-txt"><code class="language-txt">Cov(ra,rm)=ρam*σa*σm
+βa=Cov(ra,rm)/(σm^2)
+βa=ρam*σa/σm
+
+# ra: 证券a的收益
+# rm: 市场收益
+# Cov(ra,rm): 证券a的收益与市场收益的协方差
+# ρam: 证券a与市场的相关系数
+# σa: 证券a的标准差
+# σm: 市场的标准差
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>根据如上公式,贝塔系数并不代表证券价格波动与总体市场波动的直接联系.</p>
+<p>不能绝对地说,<code>β</code>越大,证券价格波动<code>σa</code>相对于总体市场波动<code>σm</code>越大;</p>
+<p>同样,<code>β</code>越小,也不完全代表<code>σa</code>相对于<code>σm</code>越小.</p>
+<p>甚至即使<code>β=0</code>也不能代表证券无风险,而有可能是证券价格波动与市场价格波动无关<code>ρam=0</code>,但是可以确定,如果证券无风险<code>σa</code>,<code>β</code>一定为零.</p>
+<ul>
+<li><p>注意：掌握β值的含义</p>
+<ul>
+<li><code>β=1</code>,表示该单项资产的风险收益率与市场组合平均风险收益率呈同比例变化,其风险情况与市场投资组合的风险情况一致</li>
+<li><code>β&gt;1</code>,说明该单项资产的风险收益率高于市场组合平均风险收益率,则该单项资产的风险大于整个市场投资组合的风险</li>
+<li><code>β&lt;1</code>,说明该单项资产的风险收益率小于市场组合平均风险收益率,则该单项资产的风险程度小于整个市场投资组合的风险</li>
+</ul>
+</li>
+</ul>
+<h3 id="一般用途"><a href="#一般用途" class="headerlink" title="一般用途"></a>一般用途</h3><ul>
+<li>1.计算资本成本,做出投资决策(只有回报率高于资本成本的项目才应投资)</li>
+<li>2.计算资本成本,制定业绩考核及激励标准</li>
+<li>3.计算资本成本,进行资产估值(Beta是现金流贴现模型的基础)</li>
+<li>4.确定单个资产或组合的系统风险,用于资产组合的投资管理,特别是股指期货或其他金融衍生品的避险(或投机)</li>
+<li>5.贝塔系数在证券市场上的应用</li>
+</ul>
+<h3 id="两种模型"><a href="#两种模型" class="headerlink" title="两种模型"></a>两种模型</h3><ul>
+<li>1.一种是CAPM模型(资本资产定价模型,也称证券市场线模型,security market line)</li>
+</ul>
+<pre class="line-numbers language-txt"><code class="language-txt">E(Ri)=Rf+βi(Rm-Rf)
+
+其中：
+E(Ri)=资产i的期望收益率
+Rf=无风险收益率
+Rm=市场平均收益率
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>2.另一种是市场模型</li>
+</ul>
+<pre class="line-numbers language-txt"><code class="language-txt">E(Ri)=αi+βiRm
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这两个模型都是单变量线性模型,都可用最小二乘法确定模型中的参数.</p>
+<p>在这两个模型中,β系数都是模型的斜率.</p>
+<p>当<code>αi=Rf(1-βi)</code>时,这两个模型是可以互相转换的.</p>
+<h2 id="5-阿尔法比率-Alpha-x2F-α"><a href="#5-阿尔法比率-Alpha-x2F-α" class="headerlink" title="5 阿尔法比率(Alpha/α)"></a>5 阿尔法比率(Alpha/α)</h2><p>在当代金融领域,阿尔法代表的最普遍的意思是超额回报.</p>
+<ul>
+<li>实际收益和按照Beta系数计算的期望收益之间的差额.</li>
+<li>代表策略多大程度上跑赢了预期的收益率</li>
+</ul>
+<div><img src="/images/article/0036-002.png" style="width:100%;"></div><br>
+
+<h3 id="5-1-计算公式"><a href="#5-1-计算公式" class="headerlink" title="5.1 计算公式"></a>5.1 计算公式</h3><pre class="line-numbers language-txt"><code class="language-txt">阿尔法系数=投资的实际回报率-市场无风险利率-贝塔系数*市场回报
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="5-2-举个例子："><a href="#5-2-举个例子：" class="headerlink" title="5.2 举个例子："></a>5.2 举个例子：</h3><p>一个投资沪深300的基金,2016年的实际收益率为<code>9%</code>,那么它的阿尔法系数<code>α=9%-1.5%-1*5.6%=1.9</code></p>
+<p>这个阿尔法系数在计算时,<code>市场无风险利率是以中国一年期定存利率为标准</code>,默认贝塔是1,5.6%是沪深300在2015年的涨幅.</p>
+<p><code>如果阿尔法大于0(α&gt;0),则说明这只基金还可以,阿尔法小于0(α&lt;0),买这个基金还不如银行定存.</code></p>
+<p>其实如果股市跌的一塌糊涂,阿尔法及时很高,收益率也是负的.但是并不代表这只基金不好,<code>阿尔法越高,这个基金相对于银行存款来说就越适合投资.</code></p>
+<pre class="line-numbers language-py"><code class="language-py">import pandas as pd
+import tushare as ts
+import matplotlib.pyplot as plt
+
+start_date='2020-01-01'
+end_date='2020-12-16'
+
+def calculate_beta(df_stock,df_hs300,code,start=start_date,end=end_date):  
+  df=pd.DataFrame({code:df_stock['close'].pct_change(),'hs300':df_hs300['close'].pct_change()},index=df_stock.index)
+  cov=df.corr().iloc[0,1]
+  df_hs300['change']=df_hs300['close'].pct_change()*100
+  var=df_hs300['change'].var()
+  beta=cov/var
+  return beta
+
+# 定价曲线
+def make_capm(code,start=start_date,end=end_date):
+  df_stock=ts.get_hist_data(code,start=start,end=end)
+  df_hs300=ts.get_hist_data('hs300',start=start,end=end)
+  df_stock.sort_index(ascending=True,inplace=True)
+  df_hs300.sort_index(ascending=True,inplace=True)
+  beta=calculate_beta(df_stock,df_hs300,code,start=start,end=end)
+  loss_free_return=0.04
+  df=pd.DataFrame({code:df_stock['close']/df_stock['close'].values[1]-1,
+           'hs300':df_hs300['close']/df_hs300['close'].values[1]-1,
+           'days':range(1,df_stock.shape[0]+1)},index=df_stock.index)
+  df['beta']=df['days']*loss_free_return/250 + beta*(df['hs300']-df['days']*loss_free_return/250)
+  df['alpha']=df[code]-df['beta']
+  df[[code,'hs300','beta','alpha']].plot(figsize=(960/72,480/72))
+
+make_capm('600519')
+plt.show()
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div><img src="/images/article/0036-003.png" style="width:100%;"></div><br>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">darebeat</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.darebeat.cn/article/36/">https://www.darebeat.cn/article/36/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">darebeat</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML});
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/algorithm/">
+                                    <span class="chip bg-color">algorithm</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%9B%9E%E6%B5%8B%E6%8C%87%E6%A0%87/">
+                                    <span class="chip bg-color">回测指标</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赞赏是我前进的动力！</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/article/37/">
+                    <div class="card-image">
+                        
+                        <img src="/images/card/0037.jpeg" class="responsive-img" alt="常见分类衡量指标">
+                        
+                        <span class="card-title">常见分类衡量指标</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一些常见的分类衡量指标整理。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/algorithm/" class="post-category">
+                                    algorithm
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/algorithm/">
+                        <span class="chip bg-color">algorithm</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%88%86%E7%B1%BB%E6%8C%87%E6%A0%87/">
+                        <span class="chip bg-color">分类指标</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/article/34/">
+                    <div class="card-image">
+                        
+                        <img src="/images/card/0034.jpg" class="responsive-img" alt="一文带你轻松了解SSH命令">
+                        
+                        <span class="card-title">一文带你轻松了解SSH命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            OpenSSH是SSH连接工具的免费版本。telnet，rlogin和ftp用户可能还没意识到他们在互联网上传输的密码是未加密的，但SSH是加密的，OpenSSH加密所有通信（包括密码），有效消除了窃听，连接劫持和其它攻击。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/shell/" class="post-category">
+                                    shell
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ssh/">
+                        <span class="chip bg-color">ssh</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        /* modify the toc link href to support Chinese. */
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        /* modify the heading title id to support Chinese. */
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        /* Set scroll toc fixed. */
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        /* 切换TOC目录展开收缩的相关操作. */
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2025</span>
+            
+            &nbsp;|&nbsp;&nbsp;Powered&nbsp;by&nbsp;
+            <a href="/about" target="_blank">darebeat</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv" style='display:none'>
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "5";
+                    var startDate = "17";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/darebeat" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:darebeat@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=871731559" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 871731559" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script>
+    $(document).ready(function () {
+        /* 50ms周期检测函数 */
+        var int = setInterval(fixCount, 50);
+        /* 初始化首次数据 */
+        var pvcountOffset = 20000;
+        var uvcountOffset = 5000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                /* 加上初始数据 */
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset);
+                /* 停止检测 */
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" value="" placeholder="请输入搜索的关键字，比如:bigdata"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                /* get the contents from search data */
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    /* perform local searching */
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        /* only match artiles with not empty titles and contents */
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        /* show search results */
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim(); /* .replace(/<[^>]+>/g, ""); */
+                            if (first_occur >= 0) {
+                                /* cut out 100 characters */
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                /* highlight all keywords */
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>";
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.min.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.min.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.min.js" type="module"></script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+</body>
+
+</html>

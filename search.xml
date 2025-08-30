@@ -1,0 +1,2368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>计算机体系结构概述</title>
+      <link href="/article/81/"/>
+      <url>/article/81/</url>
+      
+        <content type="html"><![CDATA[categories:RIT<br />
+tags:RIT,SAD,计算机体系结构<br />
+summary:计算机体系结构，包括计算机硬件组成、指令系统、存储系统、校验码技术与总线概念，重点介绍了各部件功能及指令执行流程。]]></content>
+      
+      
+      <categories>
+          
+          <category> RIT </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> RIT </tag>
+            
+            <tag> SAD </tag>
+            
+            <tag> 计算机体系结构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>统计学常用检验方法</title>
+      <link href="/article/80/"/>
+      <url>/article/80/</url>
+      
+        <content type="html"><![CDATA[categories:bigdata<br />
+tags:统计分析,检验方法,卡方检验,T检验,方差检验<br />
+summary:系统地掌握统计学基础中的指标测量类型、集中趋势和离散趋势指标及其计算方法。这将有助于在数据分析中选择合适的统计方法，进行有效的数据解读和决策。]]></content>
+      
+      
+      <categories>
+          
+          <category> bigdata </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 统计分析 </tag>
+            
+            <tag> 检验方法 </tag>
+            
+            <tag> 卡方检验 </tag>
+            
+            <tag> T检验 </tag>
+            
+            <tag> 方差检验 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>抽样的概念与应用场景</title>
+      <link href="/article/79/"/>
+      <url>/article/79/</url>
+      
+        <content type="html"><![CDATA[categories:bigdata<br />
+tags:统计分析,抽样<br />
+summary:系统地掌握统计学基础中的指标测量类型、集中趋势和离散趋势指标及其计算方法。这将有助于在数据分析中选择合适的统计方法，进行有效的数据解读和决策。]]></content>
+      
+      
+      <categories>
+          
+          <category> bigdata </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 统计分析 </tag>
+            
+            <tag> 抽样 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>描述性统计常用数据指标</title>
+      <link href="/article/78/"/>
+      <url>/article/78/</url>
+      
+        <content type="html"><![CDATA[categories:bigdata<br />
+tags:统计分析,数据指标<br />
+summary:系统地掌握统计学基础中的指标测量类型、集中趋势和离散趋势指标及其计算方法。这将有助于在数据分析中选择合适的统计方法，进行有效的数据解读和决策。]]></content>
+      
+      
+      <categories>
+          
+          <category> bigdata </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 统计分析 </tag>
+            
+            <tag> 数据指标 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ECS磁盘挂载脚本</title>
+      <link href="/article/77/"/>
+      <url>/article/77/</url>
+      
+        <content type="html"><![CDATA[categories:SHELL<br />
+tags:磁盘挂载<br />
+summary:在阿里云ECS实例中，挂载磁盘通常需要编写一个Shell脚本来自动化分区、格式化和挂载过程。]]></content>
+      
+      
+      <categories>
+          
+          <category> SHELL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 磁盘挂载 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ODPS一些SQL使用场景标注</title>
+      <link href="/article/76/"/>
+      <url>/article/76/</url>
+      
+        <content type="html"><![CDATA[categories:bigdata<br />
+tags:odps,SQL<br />
+summary:在数据处理和数据分析过程中，SQL都是主流的数据处理工具。海量数据下的高效数据流转，是数据方向必须直面的一个挑战。]]></content>
+      
+      
+      <categories>
+          
+          <category> bigdata </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> odps </tag>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Ambari2.8.0+bigtop3.2.0大数据组件编译</title>
+      <link href="/article/75/"/>
+      <url>/article/75/</url>
+      
+        <content type="html"><![CDATA[categories:bigdata<br />
+tags:BDP<br />
+summary:Ambari2.8.0+bigtop3.2.0编译环境和步骤。]]></content>
+      
+      
+      <categories>
+          
+          <category> bigdata </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> BDP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flink知识点总结</title>
+      <link href="/article/74/"/>
+      <url>/article/74/</url>
+      
+        <content type="html"><![CDATA[categories:bigdata<br />
+tags:flink,realtime<br />
+summary:Flink是大数据领域下的分布式实时和离线计算引擎，每一个数据流起始于一个或多个source,并终止于一个或多个sink，数据流流向类似于一个有向无环图。]]></content>
+      
+      
+      <categories>
+          
+          <category> bigdata </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> flink </tag>
+            
+            <tag> realtime </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DRDS-最佳实践</title>
+      <link href="/article/73/"/>
+      <url>/article/73/</url>
+      
+        <content type="html"><![CDATA[categories:database<br />
+tags:database,mysql,drds<br />
+summary:在使用DRDS过程中，结合官方文档和实际的工作经验，记录一些关于DRDS的最佳实践。]]></content>
+      
+      
+      <categories>
+          
+          <category> database </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> database </tag>
+            
+            <tag> mysql </tag>
+            
+            <tag> drds </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ODPS-SQL优化总结</title>
+      <link href="/article/72/"/>
+      <url>/article/72/</url>
+      
+        <content type="html"><![CDATA[categories:bigdata<br />
+tags:odps,SQL<br />
+summary:在数据处理和数据分析过程中，SQL都是主流的数据处理工具。海量数据下的高效数据流转，是数据方向必须直面的一个挑战。]]></content>
+      
+      
+      <categories>
+          
+          <category> bigdata </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> odps </tag>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ODPS视图使用方案研究</title>
+      <link href="/article/71/"/>
+      <url>/article/71/</url>
+      
+        <content type="html"><![CDATA[categories:bigdata<br />
+tags:odps<br />
+summary:视图（View）是在表之上建立的虚拟表，它的结构和内容都来自表。一个视图可以对应一个表或多个表。如果您想保留查询结果，但不想创建表占用存储，可以通过视图实现。]]></content>
+      
+      
+      <categories>
+          
+          <category> bigdata </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> odps </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ODPS重点参数语法-使用小记</title>
+      <link href="/article/69/"/>
+      <url>/article/69/</url>
+      
+        <content type="html"><![CDATA[categories:bigdata<br />
+tags:odps<br />
+summary:在日常工作中，记录一些用到阿里云odps的常用的参数语法，记录一下，方便查找和定位。]]></content>
+      
+      
+      <categories>
+          
+          <category> bigdata </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> odps </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Puppeteer用法记录</title>
+      <link href="/article/61/"/>
+      <url>/article/61/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:web,puppeteer<br />
+summary:Puppeteer是Chrome开发团队在2017年发布的一个Node.js包，用来模拟Chrome浏览器的运行。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+            <tag> puppeteer </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySQL基础知识</title>
+      <link href="/article/68/"/>
+      <url>/article/68/</url>
+      
+        <content type="html"><![CDATA[categories:database<br />
+tags:database,mysql<br />
+summary:在使用MySQL过程中，一些常用的SQL备注和记录，方便查找定位。]]></content>
+      
+      
+      <categories>
+          
+          <category> database </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> database </tag>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Nginx配置SSL自签名证书的方法</title>
+      <link href="/article/67/"/>
+      <url>/article/67/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:nginx,签名,秘钥,CA证书<br />
+summary:SSL(Secure Sockets Layer 安全套接层),及其继任者传输层安全（Transport Layer Security，TLS）是为网络通信提供安全及数据完整性的一种安全协议。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nginx </tag>
+            
+            <tag> 签名 </tag>
+            
+            <tag> 秘钥 </tag>
+            
+            <tag> CA证书 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySQL树结构递归查询</title>
+      <link href="/article/65/"/>
+      <url>/article/65/</url>
+      
+        <content type="html"><![CDATA[categories:database<br />
+tags:database,mysql,递归查询<br />
+summary:在日常开发中我们经常会遇到树形结构数据的处理，如：组织机构之类的情况。在表结构通常会采用id、parent_id这种设计方案。一个常见的需求：查询某个节点下的所有子节点。]]></content>
+      
+      
+      <categories>
+          
+          <category> database </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> database </tag>
+            
+            <tag> mysql </tag>
+            
+            <tag> 递归查询 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySQL中SQL语句的执行过程</title>
+      <link href="/article/64/"/>
+      <url>/article/64/</url>
+      
+        <content type="html"><![CDATA[categories:database<br />
+tags:database,mysql,查询优化<br />
+summary:在使用MySQL过程中，要想避免一些复杂和慢查询，那么，了解MySQL中SQL语句从查询开始到返回结果，中间的执行过程是有必要了解一下的。]]></content>
+      
+      
+      <categories>
+          
+          <category> database </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> database </tag>
+            
+            <tag> mysql </tag>
+            
+            <tag> 查询优化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JAVA-SDK-调用dataworks-API接口案例</title>
+      <link href="/article/70/"/>
+      <url>/article/70/</url>
+      
+        <content type="html"><![CDATA[categories:dataworks<br />
+tags:java,dataworks,sdk,api<br />
+summary:阿里云企业版使用JAVA-SDK调用dataworks组件API接口案例]]></content>
+      
+      
+      <categories>
+          
+          <category> dataworks </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> dataworks </tag>
+            
+            <tag> sdk </tag>
+            
+            <tag> api </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows下解决端口占用问题</title>
+      <link href="/article/63/"/>
+      <url>/article/63/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:工具,windowns,端口占用<br />
+summary:在我们的日常生活和工作过程中，尝尝会面临这个多个服务同时开启的状态；而多个服务的访问时对应的端口，可能不会进行有规划的统一管理，这会导致多个服务共用一个端口的情况出现。为了解决这个问题，本文就windows系统端口占用，记录一下解决方案，留作备用参考。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+            <tag> windowns </tag>
+            
+            <tag> 端口占用 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>记住这些,解决你80%以上MySQL查询优化的问题</title>
+      <link href="/article/62/"/>
+      <url>/article/62/</url>
+      
+        <content type="html"><![CDATA[categories:database<br />
+tags:database,mysql,查询优化<br />
+summary:在使用MySQL过程中，根据本文提供的原则和方法，避免一些容易导致SQL查询比较慢的场景。]]></content>
+      
+      
+      <categories>
+          
+          <category> database </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> database </tag>
+            
+            <tag> mysql </tag>
+            
+            <tag> 查询优化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SHELL命令-常用的日期函数</title>
+      <link href="/article/60/"/>
+      <url>/article/60/</url>
+      
+        <content type="html"><![CDATA[categories:shell<br />
+tags:date<br />
+summary:SHELL命令-常用的日期函数。]]></content>
+      
+      
+      <categories>
+          
+          <category> shell </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> date </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SQOOP原理和使用小记</title>
+      <link href="/article/59/"/>
+      <url>/article/59/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:etl,sqoop<br />
+summary:Sqoop是一个在结构化数据和Hadoop之间进行批量数据迁移的工具,结构化数据可以是MySQL、Oracle等RDBMS.Sqoop底层用MapReduce程序实现抽取、转换、加载,MapReduce天生的特性保证了并行化和高容错率,而且相比Kettle等传统ETL工具,任务跑在Hadoop集群上,减少了ETL服务器资源的使用情况。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> etl </tag>
+            
+            <tag> sqoop </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DATAX使用小记</title>
+      <link href="/article/58/"/>
+      <url>/article/58/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:datax,etl<br />
+summary:datax是阿里巴巴内部被广泛使用的离线数据同步工具或平台,通过配置reader+writer的配置方式，实现各种异步数据源之间的数据同步。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> datax </tag>
+            
+            <tag> etl </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>TeamViewer解决5分钟强制退出问题</title>
+      <link href="/article/57/"/>
+      <url>/article/57/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:mac,teamviewer<br />
+summary:TeamViewer解决5分钟强制退出问题]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mac </tag>
+            
+            <tag> teamviewer </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CentOS7.x上sftp的安装配置</title>
+      <link href="/article/56/"/>
+      <url>/article/56/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:centos,sftp<br />
+summary:sftp是Secure FileTransferProtocol的缩写，安全文件传送协议，可以为传输文件提供一种安全的加密方法。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> centos </tag>
+            
+            <tag> sftp </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CentOS7.x上一键FTP安装脚本</title>
+      <link href="/article/55/"/>
+      <url>/article/55/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:centos,ftp<br />
+summary:FTP是FileTransferProtocol（文件传输协议）的英文简称，而中文简称为“文传协议”。用于Internet上的控制文件的双向传输。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> centos </tag>
+            
+            <tag> ftp </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CentOS7.x上安装samba服务</title>
+      <link href="/article/54/"/>
+      <url>/article/54/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:centos,samba<br />
+summary:Samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，由服务器及客户端程序构成。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> centos </tag>
+            
+            <tag> samba </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DRG付费与DIP付费</title>
+      <link href="/article/53/"/>
+      <url>/article/53/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:drg,dip<br />
+summary:过去，按项目付费是医保结算主流模式，通俗点解释，就是根据诊治过程中用到的所有药品，服务项目，耗材，如支架、针管、纱布等等，用了多少结算多少，医保根据费用按比例报销。这种模式，容易滋生过度医疗，不但造成医疗资源的浪费，还让参保人多花钱、医保基金多支出。开展DIP和DRG付费国家试点是进一步深化医保支付方式改革的一项重要工作，可实现医疗、医保、患者三方共赢。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> drg </tag>
+            
+            <tag> dip </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hive一些优化方法记录</title>
+      <link href="/article/52/"/>
+      <url>/article/52/</url>
+      
+        <content type="html"><![CDATA[categories:database<br />
+tags:database,hive<br />
+summary:在使用hive过程中，一些常用的SQL备注和使用记录，方便查找定位。]]></content>
+      
+      
+      <categories>
+          
+          <category> database </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> database </tag>
+            
+            <tag> hive </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SQLSERVER使用小记</title>
+      <link href="/article/51/"/>
+      <url>/article/51/</url>
+      
+        <content type="html"><![CDATA[categories:database<br />
+tags:database,sqlserver,mssql<br />
+summary:在使用SQLSERVER过程中，一些常用的SQL备注和记录，方便查找定位。]]></content>
+      
+      
+      <categories>
+          
+          <category> database </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> database </tag>
+            
+            <tag> sqlserver </tag>
+            
+            <tag> mssql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySQL使用小记</title>
+      <link href="/article/50/"/>
+      <url>/article/50/</url>
+      
+        <content type="html"><![CDATA[categories:database<br />
+tags:database,mysql<br />
+summary:在使用MySQL过程中，一些常用的SQL备注和记录，方便查找定位。]]></content>
+      
+      
+      <categories>
+          
+          <category> database </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> database </tag>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JAVA实现访问ODPS表导出数据</title>
+      <link href="/article/49/"/>
+      <url>/article/49/</url>
+      
+        <content type="html"><![CDATA[categories:ODPS<br />
+tags:java,odps,maxcompute<br />
+summary:本文为您介绍如何使用MaxCompute Java SDK实现数据下载。]]></content>
+      
+      
+      <categories>
+          
+          <category> ODPS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> odps </tag>
+            
+            <tag> maxcompute </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>docker快速部署kafka</title>
+      <link href="/article/48/"/>
+      <url>/article/48/</url>
+      
+        <content type="html"><![CDATA[categories:docker<br />
+tags:docker,kafka<br />
+summary:通过docker部署kafka，进行实验操作]]></content>
+      
+      
+      <categories>
+          
+          <category> docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+            <tag> kafka </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>docker快速本地部署flink</title>
+      <link href="/article/47/"/>
+      <url>/article/47/</url>
+      
+        <content type="html"><![CDATA[categories:docker<br />
+tags:docker,flink<br />
+summary:通过docker部署flink，进行实验操作]]></content>
+      
+      
+      <categories>
+          
+          <category> docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+            <tag> flink </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>docker快速本地部署mysql</title>
+      <link href="/article/46/"/>
+      <url>/article/46/</url>
+      
+        <content type="html"><![CDATA[categories:docker<br />
+tags:docker,mysql<br />
+summary:通过docker部署mysql，进行实验操作]]></content>
+      
+      
+      <categories>
+          
+          <category> docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>intellij-idea-maven集成lombok实例</title>
+      <link href="/article/45/"/>
+      <url>/article/45/</url>
+      
+        <content type="html"><![CDATA[categories:java<br />
+tags:java,Maven,lombok<br />
+summary:lombok通过简单注解方式简化java代码。（如消除实体对象的get/setter方法,日志对象声明等...）]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> Maven </tag>
+            
+            <tag> lombok </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Maven基础知识</title>
+      <link href="/article/44/"/>
+      <url>/article/44/</url>
+      
+        <content type="html"><![CDATA[categories:java<br />
+tags:java,Maven<br />
+summary:Maven是基于项目对象模型(POM project object model)，可以通过一小段描述信息（配置）来管理项目的构建，报告和文档的软件项目管理工具。]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> Maven </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SHELL命令-envsubst</title>
+      <link href="/article/43/"/>
+      <url>/article/43/</url>
+      
+        <content type="html"><![CDATA[categories:shell<br />
+tags:envsubst<br />
+summary:通常我们需要获取某一个或者几个环境去替换系统中的某些变量，这种情况下我们只需使用sed去简单的替换掉即可，在这种场景中，sed就可以满足我们的需求，但是如果我们需要修改的变量较多，而且不确定到底有哪些变量时，envsubst就排上了用场。]]></content>
+      
+      
+      <categories>
+          
+          <category> shell </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> envsubst </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>正则表达式</title>
+      <link href="/article/42/"/>
+      <url>/article/42/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:正则表达式<br />
+summary:正则表达式是对字符串操作的一种逻辑公式,就是用事先定义好的一些特定字符、及这些特定字符的组合,组成一个&quot;规则字符串&quot;, 这个&quot;规则字符串&quot;用来表达对字符串的一种过滤逻辑。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 正则表达式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>树莓派-系统配置</title>
+      <link href="/article/41/"/>
+      <url>/article/41/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:工具,系统,树莓派<br />
+summary:树莓派官方深度定制的硬件驱动与软件程序,官方推荐系统。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+            <tag> 系统 </tag>
+            
+            <tag> 树莓派 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mac上制作win10安装u盘</title>
+      <link href="/article/40/"/>
+      <url>/article/40/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:工具,系统<br />
+summary:mac上制作win10安装u盘]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+            <tag> 系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SHELL-等比例批量生成缩略图</title>
+      <link href="/article/39/"/>
+      <url>/article/39/</url>
+      
+        <content type="html"><![CDATA[categories:shell<br />
+tags:缩略图<br />
+summary:SHELL-等比例批量生成缩略图。]]></content>
+      
+      
+      <categories>
+          
+          <category> shell </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 缩略图 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java虚拟机</title>
+      <link href="/article/38/"/>
+      <url>/article/38/</url>
+      
+        <content type="html"><![CDATA[categories:java<br />
+tags:java,虚拟机<br />
+summary:虚拟机是一种抽象化的计算机，通过在实际的计算机上仿真模拟各种计算机功能来实现的。Java虚拟机有自己完善的硬体架构，如处理器、堆栈、寄存器等，还具有相应的指令系统。]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 虚拟机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常见分类衡量指标</title>
+      <link href="/article/37/"/>
+      <url>/article/37/</url>
+      
+        <content type="html"><![CDATA[categories:algorithm<br />
+tags:algorithm,分类指标<br />
+summary:一些常见的分类衡量指标整理。]]></content>
+      
+      
+      <categories>
+          
+          <category> algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> algorithm </tag>
+            
+            <tag> 分类指标 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常见基本回测指标</title>
+      <link href="/article/36/"/>
+      <url>/article/36/</url>
+      
+        <content type="html"><![CDATA[categories:algorithm<br />
+tags:algorithm,回测指标<br />
+summary:一些常见的基本回测指标整理。]]></content>
+      
+      
+      <categories>
+          
+          <category> algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> algorithm </tag>
+            
+            <tag> 回测指标 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>一文带你轻松了解SSH命令</title>
+      <link href="/article/34/"/>
+      <url>/article/34/</url>
+      
+        <content type="html"><![CDATA[categories:shell<br />
+tags:ssh<br />
+summary:OpenSSH是SSH连接工具的免费版本。telnet，rlogin和ftp用户可能还没意识到他们在互联网上传输的密码是未加密的，但SSH是加密的，OpenSSH加密所有通信（包括密码），有效消除了窃听，连接劫持和其它攻击。]]></content>
+      
+      
+      <categories>
+          
+          <category> shell </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ssh </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>clickhouse基础知识</title>
+      <link href="/article/13/"/>
+      <url>/article/13/</url>
+      
+        <content type="html"><![CDATA[categories:database<br />
+tags:database,clickhouse,olap<br />
+summary:Clickhouse是一个用于联机分析处理（OLAP）的列式数据库管理系统（columnar DBMS）。如果你的需求是解决怎样快速查询出结果,那么ClickHouse也许可以解决你的问题。]]></content>
+      
+      
+      <categories>
+          
+          <category> database </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> database </tag>
+            
+            <tag> clickhouse </tag>
+            
+            <tag> olap </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>算法的时间与空间复杂度</title>
+      <link href="/article/33/"/>
+      <url>/article/33/</url>
+      
+        <content type="html"><![CDATA[categories:algorithm<br />
+tags:algorithm,时间复杂度,空间复杂度<br />
+summary:从算法所占用的「时间」和「空间」两个维度去考量不同算法之间的优劣。]]></content>
+      
+      
+      <categories>
+          
+          <category> algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> algorithm </tag>
+            
+            <tag> 时间复杂度 </tag>
+            
+            <tag> 空间复杂度 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SHELL命令-运算符</title>
+      <link href="/article/31/"/>
+      <url>/article/31/</url>
+      
+        <content type="html"><![CDATA[categories:shell<br />
+tags:运算符<br />
+summary:Linux中SHELL命令原生bash不支持简单的数学运算，但是可以通过其他命令来实现，例如 awk 和 expr，expr 最常用。]]></content>
+      
+      
+      <categories>
+          
+          <category> shell </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 运算符 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SHELL命令-输入输出重定向</title>
+      <link href="/article/30/"/>
+      <url>/article/30/</url>
+      
+        <content type="html"><![CDATA[categories:shell<br />
+tags:重定向<br />
+summary:Linux中SHELL命令-输入输出重定向。]]></content>
+      
+      
+      <categories>
+          
+          <category> shell </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 重定向 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SHELL命令-特殊参数</title>
+      <link href="/article/29/"/>
+      <url>/article/29/</url>
+      
+        <content type="html"><![CDATA[categories:shell<br />
+tags:特殊参数<br />
+summary:Linux中在执行 Shell 脚本时，向脚本传递参数，脚本内获取参数的格式为：$n; n 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二个参数，以此类推……]]></content>
+      
+      
+      <categories>
+          
+          <category> shell </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 特殊参数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Docker基础入门</title>
+      <link href="/article/28/"/>
+      <url>/article/28/</url>
+      
+        <content type="html"><![CDATA[categories:docker<br />
+tags:docker<br />
+summary:Docker是一种虚拟化技术,使开发人员可以在不考虑环境的情况进行开发和部署。]]></content>
+      
+      
+      <categories>
+          
+          <category> docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>certbot自动化生成https证书-应用篇(2)</title>
+      <link href="/article/19/"/>
+      <url>/article/19/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:nginx,certbot<br />
+summary:certbot自动化生成https证书，为你的网站保驾护航。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nginx </tag>
+            
+            <tag> certbot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>certbot自动化生成https证书-应用篇(1)</title>
+      <link href="/article/18/"/>
+      <url>/article/18/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:nginx,certbot<br />
+summary:certbot自动化生成https证书，为你的网站保驾护航。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nginx </tag>
+            
+            <tag> certbot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Ngnix-是如何实现高性能的?</title>
+      <link href="/article/26/"/>
+      <url>/article/26/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:nginx,高性能<br />
+summary:Nginx高性能原因是什么? Ngnix是如何实现高性能的?]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nginx </tag>
+            
+            <tag> 高性能 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTTP基础知识</title>
+      <link href="/article/32/"/>
+      <url>/article/32/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:基础知识,http<br />
+summary:HTTP使用URL(统一资源定位符)来定位资源，它是URI(统一资源标识符)的子集，URL在URI的基础上增加了定位能力。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 基础知识 </tag>
+            
+            <tag> http </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>nginx实现301跳转到https的根域名</title>
+      <link href="/article/25/"/>
+      <url>/article/25/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:nginx,https<br />
+summary:当我们需要将某个http地址都统一跳转到https的根域名,我们可以通过nginx实现301跳转。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nginx </tag>
+            
+            <tag> https </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>自行签名生成秘钥和CA证书</title>
+      <link href="/article/24/"/>
+      <url>/article/24/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:nginx,签名,秘钥,CA证书<br />
+summary:需要http-ssl-module模块,生成的证书是未经过第三方验证的,可以用来测试。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nginx </tag>
+            
+            <tag> 签名 </tag>
+            
+            <tag> 秘钥 </tag>
+            
+            <tag> CA证书 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ginx-原理和架构</title>
+      <link href="/article/23/"/>
+      <url>/article/23/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:nginx<br />
+summary:Nginx 是一个免费的，开源的，高性能的 HTTP服务器和反向代理，以及IMAP/POP3代理服务器;Nginx 以其高性能，稳定性，丰富的功能，简单的配置和低资源消耗而闻名。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nginx </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>nginx-三种反向代理</title>
+      <link href="/article/22/"/>
+      <url>/article/22/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:nginx<br />
+summary:很多应用服务的运行效率是很低的，QPS，TPS，并发等都是受限的，所以需要把很多应用服务组成一个集群，向用户提供高可用性的服务，这个时候需要 Nginx 的反向代理功能，而应用服务的动态扩容需要负载均衡功能，另外一个，Nginx 层还需要做缓存。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nginx </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Markdown语法汇总</title>
+      <link href="/article/17/"/>
+      <url>/article/17/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:基础知识,markdown,md<br />
+summary:Markdown是一种轻量标记语言,通过简单的语法，使普通文本具有一定的格式;通过文本写出你想要的文字和排版，为用户提供了超高效的沉浸式写作体验。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 基础知识 </tag>
+            
+            <tag> markdown </tag>
+            
+            <tag> md </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>无头浏览器中的爬虫与反爬虫</title>
+      <link href="/article/16/"/>
+      <url>/article/16/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:web,webdriver,反爬虫<br />
+summary:一些网站为了防止数据的爬取，一般会检测访问我们的web程序是否为无头浏览器，以及他们的一些反检测的方法，所有的形式都可以有伪装与绕过的方法。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+            <tag> webdriver </tag>
+            
+            <tag> 反爬虫 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JAVA并发</title>
+      <link href="/article/35/"/>
+      <url>/article/35/</url>
+      
+        <content type="html"><![CDATA[categories:java<br />
+tags:并发,多线程<br />
+summary:Java是一种多线程编程语言，我们可以使用Java来开发多线程程序。 多线程程序包含两个或多个可同时运行的部分，每个部分可以同时处理不同的任务，从而能更好地利用可用资源，特别是当您的计算机有多个CPU时。多线程使您能够写入多个活动，可以在同一程序中同时进行操作处理。]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 并发 </tag>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JAVA IO</title>
+      <link href="/article/11/"/>
+      <url>/article/11/</url>
+      
+        <content type="html"><![CDATA[categories:java<br />
+tags:IO<br />
+summary:I/O与NIO最重要的区别是数据打包和传输的方式，I/O以流的方式处理数据，而NIO以块的方式处理数据。]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IO </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JAVA容器</title>
+      <link href="/article/10/"/>
+      <url>/article/10/</url>
+      
+        <content type="html"><![CDATA[categories:java<br />
+tags:collection,map<br />
+summary:容器主要包括 Collection 和 Map 两种,Collection 存储着对象的集合,而 Map 存储着键值对（两个对象）的映射表。]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> collection </tag>
+            
+            <tag> map </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>K8S本地基础实验环境安装配置-Mac</title>
+      <link href="/article/8/"/>
+      <url>/article/8/</url>
+      
+        <content type="html"><![CDATA[categories:tools<br />
+tags:环境配置,st3,工具<br />
+summary:Sublime-Text3自定义快速生成代码。]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 环境配置 </tag>
+            
+            <tag> st3 </tag>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Redis基础知识</title>
+      <link href="/article/66/"/>
+      <url>/article/66/</url>
+      
+        <content type="html"><![CDATA[categories:database<br />
+tags:基础知识,redis<br />
+summary:Redis是完全开源的,遵守BSD协议,是一个高性能的key-value数据库.为了保证效率,数据都是缓存在内存中,他也可以周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件。]]></content>
+      
+      
+      <categories>
+          
+          <category> database </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 基础知识 </tag>
+            
+            <tag> redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>docker+frp,轻松实现内网穿透,访问内网服务</title>
+      <link href="/article/4/"/>
+      <url>/article/4/</url>
+      
+        <content type="html"><![CDATA[categories:docker<br />
+tags:docker,frp,内网穿透<br />
+summary:通过frp,实现内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。可以将内网服务以安全、便捷的方式通过具有公网IP节点的中转暴露到公网。]]></content>
+      
+      
+      <categories>
+          
+          <category> docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+            <tag> frp </tag>
+            
+            <tag> 内网穿透 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java基础知识</title>
+      <link href="/article/9/"/>
+      <url>/article/9/</url>
+      
+        <content type="html"><![CDATA[categories:java<br />
+tags:基础知识<br />
+summary:一篇关于java基础知识的文章。]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>K8S本地基础实验环境安装配置-Ubuntu</title>
+      <link href="/article/6/"/>
+      <url>/article/6/</url>
+      
+        <content type="html"><![CDATA[categories:k8s<br />
+tags:k8s,环境配置,ubuntu<br />
+summary:Kubernetes作为一款社区最火的容器管理调度软件，解决了容器的编排调度和一致性能力问题。]]></content>
+      
+      
+      <categories>
+          
+          <category> k8s </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> k8s </tag>
+            
+            <tag> 环境配置 </tag>
+            
+            <tag> ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>K8S本地基础实验环境安装配置-Centos</title>
+      <link href="/article/5/"/>
+      <url>/article/5/</url>
+      
+        <content type="html"><![CDATA[categories:k8s<br />
+tags:k8s,centos,环境配置<br />
+summary:Kubernetes作为一款社区最火的容器管理调度软件，解决了容器的编排调度和一致性能力问题。]]></content>
+      
+      
+      <categories>
+          
+          <category> k8s </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> k8s </tag>
+            
+            <tag> centos </tag>
+            
+            <tag> 环境配置 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>K8S本地基础实验环境安装配置-Mac</title>
+      <link href="/article/7/"/>
+      <url>/article/7/</url>
+      
+        <content type="html"><![CDATA[categories:k8s<br />
+tags:k8s,环境配置,mac<br />
+summary:Kubernetes作为一款社区最火的容器管理调度软件，解决了容器的编排调度和一致性能力问题。]]></content>
+      
+      
+      <categories>
+          
+          <category> k8s </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> k8s </tag>
+            
+            <tag> 环境配置 </tag>
+            
+            <tag> mac </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Anaconda解决python版本顺滑切换</title>
+      <link href="/article/3/"/>
+      <url>/article/3/</url>
+      
+        <content type="html"><![CDATA[categories:python<br />
+tags:python,包管理,环境管理<br />
+summary:Anaconda提供包管理功和环境管理的功能，解决了多版本Python并存、切换和安装第三方包经常失败的问题。]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 包管理 </tag>
+            
+            <tag> 环境管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SHELL命令-screen</title>
+      <link href="/article/12/"/>
+      <url>/article/12/</url>
+      
+        <content type="html"><![CDATA[categories:shell<br />
+tags:screen<br />
+summary:Linux screen命令用于多重视窗管理程序。通常只有在使用telnet登入主机或是使用老式的终端机时，才有可能用到screen程序。]]></content>
+      
+      
+      <categories>
+          
+          <category> shell </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> screen </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git常用命令总结</title>
+      <link href="/article/2/"/>
+      <url>/article/2/</url>
+      
+        <content type="html"><![CDATA[categories:git<br />
+tags:git,版本控制<br />
+summary:Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。]]></content>
+      
+      
+      <categories>
+          
+          <category> git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> 版本控制 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GIT多个远程仓库操作</title>
+      <link href="/article/21/"/>
+      <url>/article/21/</url>
+      
+        <content type="html"><![CDATA[categories:git<br />
+tags:git,远程仓库<br />
+summary:Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。]]></content>
+      
+      
+      <categories>
+          
+          <category> git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> 远程仓库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>写代码水平的几个发展阶段</title>
+      <link href="/article/20/"/>
+      <url>/article/20/</url>
+      
+        <content type="html"><![CDATA[categories:mark<br />
+tags:footprint<br />
+summary:开始学习编程或学习一种新技术的时候，会有种雾里看花的感觉，似懂非懂，就算记住了也不会用。要突破这个阶段的方法就是“练习”，通过各种项目让自己熟练起来，做到任何一个不太难的业务需求可以快速想到解决方案并且开始动手实现。]]></content>
+      
+      
+      <categories>
+          
+          <category> mark </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> footprint </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SHELL命令-字符串操作</title>
+      <link href="/article/27/"/>
+      <url>/article/27/</url>
+      
+        <content type="html"><![CDATA[categories:shell<br />
+tags:字符串<br />
+summary:Linux中SHELL命令-字符串操作。]]></content>
+      
+      
+      <categories>
+          
+          <category> shell </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>R语言基础知识</title>
+      <link href="/article/1/"/>
+      <url>/article/1/</url>
+      
+        <content type="html"><![CDATA[categories:R<br />
+tags:R<br />
+summary:R语言是为数学研究工作者设计的一种数学编程语言，主要用于统计分析、绘图、数据挖掘。]]></content>
+      
+      
+      <categories>
+          
+          <category> R </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> R </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SHELL命令-常用表达式</title>
+      <link href="/article/15/"/>
+      <url>/article/15/</url>
+      
+        <content type="html"><![CDATA[categories:shell<br />
+tags:表达式<br />
+summary:Linux中SHELL命令-常用表达式。]]></content>
+      
+      
+      <categories>
+          
+          <category> shell </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 表达式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SHELL命令-find</title>
+      <link href="/article/14/"/>
+      <url>/article/14/</url>
+      
+        <content type="html"><![CDATA[categories:shell<br />
+tags:find<br />
+summary:Linux从指定的起始目录开始,递归地搜索其各个子目录,查找满足寻找条件的文件,并可以对其进行相关的操作。]]></content>
+      
+      
+      <categories>
+          
+          <category> shell </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> find </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
