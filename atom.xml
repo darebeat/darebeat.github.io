@@ -6,7 +6,7 @@
   <link href="https://www.darebeat.cn/atom.xml" rel="self"/>
   
   <link href="https://www.darebeat.cn/"/>
-  <updated>2025-08-30T07:38:45.656Z</updated>
+  <updated>2025-09-01T03:46:07.772Z</updated>
   <id>https://www.darebeat.cn/</id>
   
   <author>
@@ -17,11 +17,106 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>总线</title>
+    <link href="https://www.darebeat.cn/article/85/"/>
+    <id>https://www.darebeat.cn/article/85/</id>
+    <published>2025-08-31T01:33:17.000Z</published>
+    <updated>2025-09-01T03:46:07.772Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="RIT" scheme="https://www.darebeat.cn/categories/RIT/"/>
+    
+    
+    <category term="RIT" scheme="https://www.darebeat.cn/tags/RIT/"/>
+    
+    <category term="SAD" scheme="https://www.darebeat.cn/tags/SAD/"/>
+    
+    <category term="总线" scheme="https://www.darebeat.cn/tags/%E6%80%BB%E7%BA%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>校验码</title>
+    <link href="https://www.darebeat.cn/article/84/"/>
+    <id>https://www.darebeat.cn/article/84/</id>
+    <published>2025-08-31T00:44:15.000Z</published>
+    <updated>2025-09-01T03:34:04.389Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="RIT" scheme="https://www.darebeat.cn/categories/RIT/"/>
+    
+    
+    <category term="RIT" scheme="https://www.darebeat.cn/tags/RIT/"/>
+    
+    <category term="SAD" scheme="https://www.darebeat.cn/tags/SAD/"/>
+    
+    <category term="CRC" scheme="https://www.darebeat.cn/tags/CRC/"/>
+    
+    <category term="校验码" scheme="https://www.darebeat.cn/tags/%E6%A0%A1%E9%AA%8C%E7%A0%81/"/>
+    
+    <category term="循环冗余校验码" scheme="https://www.darebeat.cn/tags/%E5%BE%AA%E7%8E%AF%E5%86%97%E4%BD%99%E6%A0%A1%E9%AA%8C%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>存储系统</title>
+    <link href="https://www.darebeat.cn/article/83/"/>
+    <id>https://www.darebeat.cn/article/83/</id>
+    <published>2025-08-30T11:33:11.000Z</published>
+    <updated>2025-09-01T03:20:06.751Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="RIT" scheme="https://www.darebeat.cn/categories/RIT/"/>
+    
+    
+    <category term="RIT" scheme="https://www.darebeat.cn/tags/RIT/"/>
+    
+    <category term="SAD" scheme="https://www.darebeat.cn/tags/SAD/"/>
+    
+    <category term="寄存器" scheme="https://www.darebeat.cn/tags/%E5%AF%84%E5%AD%98%E5%99%A8/"/>
+    
+    <category term="主存" scheme="https://www.darebeat.cn/tags/%E4%B8%BB%E5%AD%98/"/>
+    
+    <category term="辅存" scheme="https://www.darebeat.cn/tags/%E8%BE%85%E5%AD%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>指令系统概述</title>
     <link href="https://www.darebeat.cn/article/82/"/>
     <id>https://www.darebeat.cn/article/82/</id>
     <published>2025-08-29T00:26:30.000Z</published>
-    <updated>2025-08-30T07:38:45.656Z</updated>
+    <updated>2025-09-01T02:58:43.160Z</updated>
     
     
       
@@ -52,7 +147,7 @@
     <link href="https://www.darebeat.cn/article/81/"/>
     <id>https://www.darebeat.cn/article/81/</id>
     <published>2025-08-28T04:46:30.000Z</published>
-    <updated>2025-08-30T04:42:03.136Z</updated>
+    <updated>2025-09-01T02:59:32.864Z</updated>
     
     
       
@@ -114,7 +209,7 @@
     <link href="https://www.darebeat.cn/article/79/"/>
     <id>https://www.darebeat.cn/article/79/</id>
     <published>2025-03-17T01:45:33.000Z</published>
-    <updated>2025-08-30T03:40:54.067Z</updated>
+    <updated>2025-09-01T01:18:32.153Z</updated>
     
     
       
@@ -484,95 +579,6 @@
     <category term="mysql" scheme="https://www.darebeat.cn/tags/mysql/"/>
     
     <category term="递归查询" scheme="https://www.darebeat.cn/tags/%E9%80%92%E5%BD%92%E6%9F%A5%E8%AF%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL中SQL语句的执行过程</title>
-    <link href="https://www.darebeat.cn/article/64/"/>
-    <id>https://www.darebeat.cn/article/64/</id>
-    <published>2022-05-18T08:14:54.000Z</published>
-    <updated>2025-08-30T09:14:52.033Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="database" scheme="https://www.darebeat.cn/categories/database/"/>
-    
-    
-    <category term="database" scheme="https://www.darebeat.cn/tags/database/"/>
-    
-    <category term="mysql" scheme="https://www.darebeat.cn/tags/mysql/"/>
-    
-    <category term="查询优化" scheme="https://www.darebeat.cn/tags/%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JAVA-SDK-调用dataworks-API接口案例</title>
-    <link href="https://www.darebeat.cn/article/70/"/>
-    <id>https://www.darebeat.cn/article/70/</id>
-    <published>2022-03-17T11:43:28.000Z</published>
-    <updated>2024-10-28T07:52:01.142Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="dataworks" scheme="https://www.darebeat.cn/categories/dataworks/"/>
-    
-    
-    <category term="java" scheme="https://www.darebeat.cn/tags/java/"/>
-    
-    <category term="dataworks" scheme="https://www.darebeat.cn/tags/dataworks/"/>
-    
-    <category term="sdk" scheme="https://www.darebeat.cn/tags/sdk/"/>
-    
-    <category term="api" scheme="https://www.darebeat.cn/tags/api/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows下解决端口占用问题</title>
-    <link href="https://www.darebeat.cn/article/63/"/>
-    <id>https://www.darebeat.cn/article/63/</id>
-    <published>2022-02-19T01:04:37.000Z</published>
-    <updated>2025-08-30T03:40:54.067Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="tools" scheme="https://www.darebeat.cn/categories/tools/"/>
-    
-    
-    <category term="工具" scheme="https://www.darebeat.cn/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="windowns" scheme="https://www.darebeat.cn/tags/windowns/"/>
-    
-    <category term="端口占用" scheme="https://www.darebeat.cn/tags/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/"/>
     
   </entry>
   
